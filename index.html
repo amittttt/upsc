@@ -1,0 +1,353 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UPSC Prelims Microthemes – Most Repeated Themes (2009–2025)</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', sans-serif; background: #0f1117; color: #e2e8f0; min-height: 100vh; }
+  
+  header {
+    background: linear-gradient(135deg, #1a1f2e 0%, #16213e 100%);
+    border-bottom: 2px solid #2d3a5e;
+    padding: 24px 20px 16px;
+    text-align: center;
+  }
+  header h1 { font-size: 1.5rem; color: #f8d76b; letter-spacing: 1px; text-transform: uppercase; }
+  header p { color: #8892b0; margin-top: 6px; font-size: 0.85rem; }
+
+  .stats-bar {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 12px;
+    padding: 16px 20px;
+    background: #13161f;
+    border-bottom: 1px solid #1e2535;
+  }
+  .stat-pill {
+    background: #1a2035; border: 1px solid #2a3554;
+    border-radius: 20px; padding: 6px 16px;
+    font-size: 0.78rem; color: #94a3b8;
+  }
+  .stat-pill strong { color: #f8d76b; }
+
+  .subject-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 16px;
+    padding: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .card {
+    background: #13161f;
+    border: 1px solid #1e2535;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .card:hover { transform: translateY(-2px); border-color: #3a4a7a; }
+
+  .card-header {
+    padding: 14px 16px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .card-header h2 { font-size: 0.9rem; font-weight: 700; letter-spacing: 0.5px; }
+  .card-header .meta { font-size: 0.72rem; color: #64748b; margin-top: 2px; }
+  .badge { font-size: 0.7rem; padding: 3px 10px; border-radius: 12px; font-weight: 600; white-space: nowrap; }
+
+  /* Subject colours */
+  .polity    .card-header { background: linear-gradient(135deg,#1a2a4a,#1e3460); }
+  .polity    .card-header h2 { color: #7dd3fc; }
+  .polity    .badge { background:#1e4080; color:#7dd3fc; }
+
+  .economics .card-header { background: linear-gradient(135deg,#1a3a2a,#1e4034); }
+  .economics .card-header h2 { color: #6ee7b7; }
+  .economics .badge { background:#1a4a30; color:#6ee7b7; }
+
+  .geography .card-header { background: linear-gradient(135deg,#2a2a1a,#3a3418); }
+  .geography .card-header h2 { color: #fde68a; }
+  .geography .badge { background:#4a3e10; color:#fde68a; }
+
+  .agriculture .card-header { background: linear-gradient(135deg,#1a3020,#1e4028); }
+  .agriculture .card-header h2 { color: #86efac; }
+  .agriculture .badge { background:#1a4020; color:#86efac; }
+
+  .history   .card-header { background: linear-gradient(135deg,#3a1a1a,#4a2020); }
+  .history   .card-header h2 { color: #fca5a5; }
+  .history   .badge { background:#4a2020; color:#fca5a5; }
+
+  .environment .card-header { background: linear-gradient(135deg,#1a2a1a,#1a3a20); }
+  .environment .card-header h2 { color: #4ade80; }
+  .environment .badge { background:#1a4020; color:#4ade80; }
+
+  .ir        .card-header { background: linear-gradient(135deg,#2a1a3a,#341e4a); }
+  .ir        .card-header h2 { color: #c4b5fd; }
+  .ir        .badge { background:#3a1a5a; color:#c4b5fd; }
+
+  .governance .card-header { background: linear-gradient(135deg,#2a2a1a,#38361a); }
+  .governance .card-header h2 { color: #fcd34d; }
+  .governance .badge { background:#453e10; color:#fcd34d; }
+
+  .arts      .card-header { background: linear-gradient(135deg,#3a1a2a,#4a1e36); }
+  .arts      .card-header h2 { color: #f9a8d4; }
+  .arts      .badge { background:#4a1a30; color:#f9a8d4; }
+
+  .science   .card-header { background: linear-gradient(135deg,#1a2a3a,#1e3450); }
+  .science   .card-header h2 { color: #93c5fd; }
+  .science   .badge { background:#1a3060; color:#93c5fd; }
+
+  .misc      .card-header { background: linear-gradient(135deg,#2a2a2a,#343434); }
+  .misc      .card-header h2 { color: #d1d5db; }
+  .misc      .badge { background:#404040; color:#d1d5db; }
+
+  .theme-list { padding: 0; }
+  .theme-row {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 9px 16px;
+    border-bottom: 1px solid #1a1f2e;
+    gap: 10px;
+  }
+  .theme-row:last-child { border-bottom: none; }
+  .theme-row:hover { background: #1a1f2e; }
+
+  .rank {
+    font-size: 0.7rem; color: #475569; min-width: 22px;
+    font-weight: 600;
+  }
+  .rank.gold   { color: #f8d76b; }
+  .rank.silver { color: #94a3b8; }
+  .rank.bronze { color: #cd7c3e; }
+
+  .theme-name { font-size: 0.82rem; color: #cbd5e1; flex: 1; }
+  
+  .bar-wrap { display: flex; align-items: center; gap: 8px; min-width: 90px; }
+  .bar-bg { height: 6px; background: #1e2535; border-radius: 3px; flex: 1; min-width: 50px; }
+  .bar-fill { height: 100%; border-radius: 3px; }
+  .qs-count { font-size: 0.75rem; font-weight: 700; min-width: 28px; text-align: right; }
+
+  /* Bar colours per subject */
+  .polity    .bar-fill { background: #7dd3fc; }
+  .economics .bar-fill { background: #6ee7b7; }
+  .geography .bar-fill { background: #fde68a; }
+  .agriculture .bar-fill { background: #86efac; }
+  .history   .bar-fill { background: #fca5a5; }
+  .environment .bar-fill { background: #4ade80; }
+  .ir        .bar-fill { background: #c4b5fd; }
+  .governance .bar-fill { background: #fcd34d; }
+  .arts      .bar-fill { background: #f9a8d4; }
+  .science   .bar-fill { background: #93c5fd; }
+  .misc      .bar-fill { background: #d1d5db; }
+
+  .polity    .qs-count { color: #7dd3fc; }
+  .economics .qs-count { color: #6ee7b7; }
+  .geography .qs-count { color: #fde68a; }
+  .agriculture .qs-count { color: #86efac; }
+  .history   .qs-count { color: #fca5a5; }
+  .environment .qs-count { color: #4ade80; }
+  .ir        .qs-count { color: #c4b5fd; }
+  .governance .qs-count { color: #fcd34d; }
+  .arts      .qs-count { color: #f9a8d4; }
+  .science   .qs-count { color: #93c5fd; }
+  .misc      .qs-count { color: #d1d5db; }
+
+  footer {
+    text-align: center; padding: 16px; color: #334155; font-size: 0.72rem;
+    border-top: 1px solid #1e2535; margin-top: 8px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>📊 UPSC Prelims Microthemes — Most Repeated (2009–2025)</h1>
+  <p>17 Years · 183 Microthemes · 1764 Questions · Source: Civilsdaily PYQ Analysis</p>
+</header>
+
+<div class="stats-bar">
+  <div class="stat-pill">🏆 Most Qs: <strong>Environment (284)</strong></div>
+  <div class="stat-pill">📘 Polity: <strong>216 Qs</strong></div>
+  <div class="stat-pill">💰 Economics: <strong>236 Qs</strong></div>
+  <div class="stat-pill">🌍 Geography: <strong>196 Qs</strong></div>
+  <div class="stat-pill">🔬 Science & Tech: <strong>190 Qs</strong></div>
+  <div class="stat-pill">🎨 Arts & Culture: <strong>154 Qs</strong></div>
+  <div class="stat-pill">🏛️ Modern History: <strong>134 Qs</strong></div>
+</div>
+
+<div class="subject-grid" id="grid"></div>
+
+<footer>Civilsdaily IAS | Prelims Microthemes 2009–2025 | For Personal Study Use Only</footer>
+
+<script>
+const data = [
+  {
+    id: 'polity', label: 'POLITY', total: 216, themes: 31,
+    themes_data: [
+      ['Political Theory', 21], ['Fundamental Rights & Duties', 20], ['Judiciary', 19],
+      ['DPSP', 12], ['Schedules/Parts', 11], ['Union & State Executive', 11],
+      ['Parliament – Procedures', 10], ['Local Self-Government', 9], ['Nature of Bills', 9],
+      ['5th & 6th Schedules', 8], ['Non-Constitutional/Statutory Bodies', 8],
+      ['Amendment', 7], ['Constitutional Bodies', 7], ['Governor', 7],
+      ['Parliament – Houses', 6], ['Federalism', 4], ['Parliament – Budget', 5],
+      ['Parliament – Committees', 4], ['Parliament – Presiding Officers', 5],
+      ['President Powers', 5], ['RPA & Elections', 5], ['Political Parties', 4],
+      ['Preamble', 4], ['President Election', 3], ['Alternate Dispute Resolution', 3],
+      ['Emergency', 2], ['Attorney General', 2], ['Writs', 2],
+      ['Citizenship', 1], ['States Reorganization', 1], ['Tribunals', 1]
+    ]
+  },
+  {
+    id: 'economics', label: 'ECONOMICS', total: 236, themes: 15,
+    themes_data: [
+      ['RBI Functions / Monetary Policy', 36], ['Fiscal Policy & Budget', 31],
+      ['Economic Growth', 27], ['Banking & Finance', 24], ['Trade', 19],
+      ['Finance / Capital Market', 17], ['GST', 12], ['Infrastructure', 13],
+      ['National Income & Exchange Rate', 10], ['Inflation', 11],
+      ['Investment', 9], ['Bonds', 8], ['Differentiated Banks', 7],
+      ['Index', 6], ['Digitalisation of Economy', 6]
+    ]
+  },
+  {
+    id: 'geography', label: 'GEOGRAPHY', total: 196, themes: 20,
+    themes_data: [
+      ['River Systems', 25], ['World Map Related', 24], ['Minerals', 23],
+      ['Economic / Human Geography', 20], ['Climatic / Geographic Region', 16],
+      ['Oceanography', 11], ['Atmosphere', 9], ['World Map – Water Bodies', 8],
+      ['Indian Geography – Physiography', 7], ['Latitude, Longitude, Solstice', 7],
+      ['Geomorphology', 6], ['Mountains / Hills', 6], ['Climatology', 5],
+      ['Climatology – Pressure & Wind', 5], ['India Map', 4],
+      ['Universe / Solar System / Earth', 4], ['Trees / Forests / Vegetation', 4],
+      ['Arctic & Antarctic', 3], ['Cloudbursts', 2], ['Monsoon', 3]
+    ]
+  },
+  {
+    id: 'agriculture', label: 'AGRICULTURE', total: 77, themes: 6,
+    themes_data: [
+      ['Crop-Specific Details', 23], ['Farming Techniques', 23],
+      ['Subsidies × Agriculture', 12], ['Soils', 11],
+      ['GM Crops', 7], ['Schemes – Rural / Agri', 1]
+    ]
+  },
+  {
+    id: 'history', label: 'MODERN HISTORY', total: 134, themes: 17,
+    themes_data: [
+      ['Freedom Movement Personalities', 23], ['Constitutional Development', 20],
+      ['British Policies', 10], ['Non-Congress Parties / Organizations', 10],
+      ['Advent of Europeans', 9], ['National Movement 1927–1932', 9],
+      ['Movement – Social Reform', 8], ['British Policies – Economic', 7],
+      ['National Movement – Cripps Mission', 7], ['Quit India Movement (QIM)', 6],
+      ['Land Revenue Systems', 5], ['Movements – Tribals & Peasants', 5],
+      ['Non-Cooperation Movement', 4], ['Revolutionary Movement', 4],
+      ['Satyagraha', 3], ['Bengal Partition & Swadeshi', 2], ['Regional Kingdom', 1]
+    ]
+  },
+  {
+    id: 'environment', label: 'ENVIRONMENT', total: 284, themes: 21,
+    themes_data: [
+      ['Pollution – Sources', 32], ['Species – Peculiar Features', 19],
+      ['Trees / Forests / Vegetation', 17], ['Ecological Theory', 17],
+      ['Environmental Organisations', 17], ['National Parks', 15],
+      ['Environmental Acts', 15], ['Pollution – Impact & Remediation', 15],
+      ['Species – Habitat', 14], ['Fuels & Biofertilizers', 13],
+      ['Marine Ecosystem', 12], ['Species – Threats & Conservation', 12],
+      ['Environmental Policies', 11], ['Species – Exotic / Invasive', 11],
+      ['Climate Change', 10], ['Wetlands', 9], ['Biodiversity', 9],
+      ['Pollution – Acid Rain', 7], ['UNFCCC / IPCC', 6],
+      ['Intl. Org. / Treaties – Environment', 5], ['Flagship Species', 4]
+    ]
+  },
+  {
+    id: 'ir', label: 'INT. RELATIONS', total: 125, themes: 6,
+    themes_data: [
+      ['Intl. Org. / Treaties – Economy', 28], ['International Funding Agencies', 22],
+      ['United Nations & Agencies', 20], ['Regional Groupings – Neighbour', 19],
+      ['Intl. Reports, Indices & Summits', 18], ['Conflict Zones / Areas of Interest', 18]
+    ]
+  },
+  {
+    id: 'governance', label: 'GOVERNANCE', total: 111, themes: 11,
+    themes_data: [
+      ['Domestic Bodies / Agencies', 30], ['Govt. Programs', 26],
+      ['Scheme – Insurance', 9], ['Scheme – Rural / Agri', 9],
+      ['Scheme – Health', 9], ['Scheme – Vulnerable', 7],
+      ['Scheme – HR', 7], ['Various Acts', 7], ['Defence', 4],
+      ['Scheme – Finance', 3], ['Scheme – MNRE', 0]
+    ]
+  },
+  {
+    id: 'arts', label: 'ARTS & CULTURE', total: 154, themes: 30,
+    themes_data: [
+      ['Sources – Literature', 12], ['Buddhism – Philosophy', 10],
+      ['Medieval Administration', 9], ['Architecture – Temple', 8],
+      ['Architecture – Cave & Rock-cut', 8], ['Jainism – Philosophy', 7],
+      ['Regional Kingdom', 6], ['Art – Music', 6], ['Bhakti & Sufi Movements', 6],
+      ['Administration – Gupta', 6], ['Art Forms', 5], ['Art – Painting', 5],
+      ['Historical Sites', 5], ['Historical Terms', 5], ['Indus Valley Civilization', 5],
+      ['Buddhism – Places', 4], ['Vijayanagara Kingdom', 4],
+      ['Buddhism & Jainism', 4], ['Empires – Invasion', 3],
+      ['Foreign Travellers', 3], ['Historical Sites – UNESCO', 3],
+      ['Historical Sites – Ashoka', 3], ['Art Forms – Dance', 3],
+      ['Festivals', 3], ['Historical Sites – Ports', 2],
+      ['Kingdom – Chola', 2], ['Medieval Architecture', 2],
+      ['Philosophical Schools', 2], ['Vedic Culture', 2],
+      ['Ancient History – Science & Medicine', 1]
+    ]
+  },
+  {
+    id: 'science', label: 'SCIENCE & TECH', total: 190, themes: 21,
+    themes_data: [
+      ['Physics – General', 21], ['Emerging Tech – IT', 18],
+      ['Genetics', 18], ['Specific Diseases', 16],
+      ['Emerging Tech – Communication', 14], ['Defence', 11],
+      ['Biology – Cell / Microorganism', 11], ['Chemistry', 11],
+      ['Space Programs – India', 11], ['Emerging Tech – Medical', 10],
+      ['Space – Theory', 9], ['Physics – Light & Energy', 9],
+      ['Space Programs – International', 8], ['Alternate Energy / Solar', 8],
+      ['Biotechnology', 8], ['Emerging Tech – Space', 7],
+      ['Carbon-Based', 6], ['Emerging Tech – Environment', 6],
+      ['Nuclear Energy', 5], ['Vaccines', 4], ['EVs', 3]
+    ]
+  },
+  {
+    id: 'misc', label: 'MISC', total: 37, themes: 5,
+    themes_data: [
+      ['Sports', 11], ['National / International Prize', 9],
+      ['Person in News', 8], ['Private Organisations', 6], ['Books', 3]
+    ]
+  }
+];
+
+function buildCard(subj) {
+  const maxQs = subj.themes_data[0][1];
+  const rows = subj.themes_data.map(([name, qs], i) => {
+    const rankClass = i === 0 ? 'gold' : i === 1 ? 'silver' : i === 2 ? 'bronze' : '';
+    const pct = maxQs > 0 ? Math.round((qs / maxQs) * 100) : 0;
+    return `
+      <div class="theme-row">
+        <span class="rank ${rankClass}">#${i+1}</span>
+        <span class="theme-name">${name}</span>
+        <div class="bar-wrap">
+          <div class="bar-bg"><div class="bar-fill" style="width:${pct}%"></div></div>
+          <span class="qs-count">${qs}</span>
+        </div>
+      </div>`;
+  }).join('');
+
+  return `
+    <div class="card ${subj.id}">
+      <div class="card-header">
+        <div>
+          <h2>${subj.label}</h2>
+          <div class="meta">${subj.themes} themes</div>
+        </div>
+        <span class="badge">${subj.total} Qs</span>
+      </div>
+      <div class="theme-list">${rows}</div>
+    </div>`;
+}
+
+document.getElementById('grid').innerHTML = data.map(buildCard).join('');
+</script>
+</body>
+</html>
