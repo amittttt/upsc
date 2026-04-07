@@ -1,0 +1,1358 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UPSC Prelims Notes — 8 Months Compilation</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1209;
+    --paper: #faf6f0;
+    --paper2: #f4ede2;
+    --saffron: #d4500a;
+    --saffron-light: #f7e0d0;
+    --navy: #0f2744;
+    --navy-mid: #1d4068;
+    --gold: #c8922a;
+    --gold-light: #fdf3e0;
+    --green: #1a5c3a;
+    --green-light: #e3f0e9;
+    --red: #8b1a1a;
+    --red-light: #fce8e8;
+    --teal: #0d5c5c;
+    --teal-light: #e0f0f0;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Crimson Pro', Georgia, serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  /* ── HEADER ─────────────────────────────────────── */
+  .masthead {
+    background: var(--navy);
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .masthead::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 40px,
+      rgba(255,255,255,0.015) 40px,
+      rgba(255,255,255,0.015) 80px
+    );
+  }
+  .masthead-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 48px 32px 36px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 24px;
+    position: relative;
+    z-index: 1;
+  }
+  .masthead-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .masthead h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 52px);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+  .masthead h1 span { color: var(--gold); }
+  .masthead-sub {
+    font-family: 'Crimson Pro', serif;
+    font-size: 15px;
+    color: rgba(255,255,255,0.55);
+    margin-top: 10px;
+    font-style: italic;
+  }
+  .masthead-badge {
+    background: var(--saffron);
+    color: #fff;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    padding: 8px 16px;
+    border-radius: 2px;
+    white-space: nowrap;
+    align-self: start;
+    margin-top: 6px;
+  }
+
+  /* ── NAV TABS ──────────────────────────────────── */
+  .nav-strip {
+    background: var(--navy-mid);
+    border-bottom: 2px solid var(--gold);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-strip-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .nav-strip-inner::-webkit-scrollbar { display: none; }
+  .nav-tab {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    padding: 12px 16px;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    white-space: nowrap;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .nav-tab:hover { color: #fff; border-color: rgba(255,255,255,0.3); }
+  .nav-tab.active { color: var(--gold); border-color: var(--gold); }
+
+  /* ── LAYOUT ────────────────────────────────────── */
+  .page-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+
+  /* ── SIDEBAR TOC ───────────────────────────────── */
+  .sidebar {
+    position: sticky;
+    top: 56px;
+    padding-top: 32px;
+  }
+  .toc-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--gold);
+  }
+  .toc-list { list-style: none; }
+  .toc-list li { margin-bottom: 2px; }
+  .toc-list a {
+    font-family: 'Crimson Pro', serif;
+    font-size: 13.5px;
+    color: var(--navy-mid);
+    text-decoration: none;
+    display: block;
+    padding: 4px 10px;
+    border-radius: 2px;
+    transition: background 0.15s, color 0.15s;
+    border-left: 2px solid transparent;
+  }
+  .toc-list a:hover {
+    background: var(--paper2);
+    color: var(--saffron);
+    border-left-color: var(--saffron);
+  }
+  .toc-list .toc-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--gold);
+    margin-right: 6px;
+  }
+
+  /* ── CONTENT ───────────────────────────────────── */
+  .content { padding-top: 32px; }
+
+  /* ── SECTION ───────────────────────────────────── */
+  .section {
+    margin-bottom: 56px;
+    animation: fadeUp 0.5s ease both;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .section:nth-child(1) { animation-delay: 0.05s; }
+  .section:nth-child(2) { animation-delay: 0.1s; }
+  .section:nth-child(3) { animation-delay: 0.15s; }
+  .section:nth-child(4) { animation-delay: 0.2s; }
+  .section:nth-child(5) { animation-delay: 0.25s; }
+  .section:nth-child(6) { animation-delay: 0.3s; }
+  .section:nth-child(7) { animation-delay: 0.35s; }
+  .section:nth-child(8) { animation-delay: 0.4s; }
+
+  /* Section heading bar */
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--navy);
+  }
+  .section-num {
+    background: var(--navy);
+    color: var(--gold);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: -0.01em;
+  }
+
+  /* ── SUBSECTION ────────────────────────────────── */
+  .subsection { margin-bottom: 32px; }
+  .subsection-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  .subsection-letter {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--saffron);
+    background: var(--saffron-light);
+    padding: 2px 8px;
+    border-radius: 2px;
+    font-weight: 600;
+  }
+  .subsection-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--saffron);
+  }
+
+  /* ── TOPIC CARD ────────────────────────────────── */
+  .topic { margin-bottom: 18px; }
+  .topic-title {
+    font-family: 'Crimson Pro', serif;
+    font-size: 15.5px;
+    font-weight: 600;
+    color: var(--ink);
+    padding: 6px 12px;
+    background: var(--paper2);
+    border-left: 3px solid var(--navy-mid);
+    margin-bottom: 8px;
+    border-radius: 0 3px 3px 0;
+  }
+  .topic-title::before {
+    content: '▸ ';
+    color: var(--navy-mid);
+    font-size: 12px;
+  }
+
+  /* ── BULLETS ───────────────────────────────────── */
+  ul.notes { list-style: none; padding: 0; margin: 0 0 8px 0; }
+  ul.notes li {
+    padding: 3px 0 3px 22px;
+    position: relative;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #2a2010;
+  }
+  ul.notes li::before {
+    content: '·';
+    position: absolute;
+    left: 8px;
+    color: var(--navy-mid);
+    font-size: 20px;
+    line-height: 1.2;
+    font-weight: 700;
+  }
+  ul.notes li.sub {
+    padding-left: 40px;
+    font-size: 14.5px;
+    color: #3a3020;
+  }
+  ul.notes li.sub::before { left: 26px; content: '–'; font-size: 14px; line-height: 1.65; }
+  ul.notes li strong { color: var(--navy); }
+  ul.notes li em { color: var(--teal); font-style: normal; font-weight: 600; }
+
+  /* ── BOXES ─────────────────────────────────────── */
+  .box {
+    border-radius: 4px;
+    padding: 14px 18px;
+    margin: 10px 0 14px;
+    border: 1px solid;
+  }
+  .box-blue { background: #eef3fa; border-color: #b0c4de; }
+  .box-gold { background: var(--gold-light); border-color: #d4a84b; }
+  .box-green { background: var(--green-light); border-color: #5a9a74; }
+  .box-red { background: var(--red-light); border-color: #c46a6a; }
+  .box-teal { background: var(--teal-light); border-color: #5aa8a8; }
+
+  /* ── EXAM FOCUS TAG ────────────────────────────── */
+  .exam-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--red);
+    color: #fff;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 2px;
+    margin: 6px 0 12px;
+    letter-spacing: 0.04em;
+  }
+  .exam-tag::before { content: '★'; font-size: 11px; }
+
+  /* ── TABLE ─────────────────────────────────────── */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 12px 0 16px;
+  }
+  .data-table thead tr {
+    background: var(--navy);
+    color: #fff;
+  }
+  .data-table thead th {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 10px 12px;
+    text-align: left;
+  }
+  .data-table tbody tr { border-bottom: 1px solid #e0d8cc; }
+  .data-table tbody tr:nth-child(odd) { background: var(--paper2); }
+  .data-table tbody tr:hover { background: #ede5d8; }
+  .data-table td { padding: 8px 12px; vertical-align: top; line-height: 1.5; }
+  .data-table td:first-child { font-weight: 600; color: var(--navy-mid); }
+
+  /* ── QUOTE/HIGHLIGHT ───────────────────────────── */
+  .callout {
+    border-left: 4px solid var(--gold);
+    padding: 10px 16px;
+    margin: 10px 0;
+    font-style: italic;
+    font-size: 15px;
+    color: #3a3010;
+    background: var(--gold-light);
+    border-radius: 0 4px 4px 0;
+  }
+
+  /* ── PRINT ─────────────────────────────────────── */
+  @media print {
+    .nav-strip, .sidebar { display: none; }
+    .page-wrap { grid-template-columns: 1fr; }
+    .section { page-break-inside: avoid; }
+    .masthead { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+
+  /* ── RESPONSIVE ────────────────────────────────── */
+  @media (max-width: 768px) {
+    .page-wrap { grid-template-columns: 1fr; }
+    .sidebar { position: static; display: none; }
+    .masthead-inner { grid-template-columns: 1fr; }
+    .masthead-badge { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="masthead-inner">
+    <div>
+      <div class="masthead-eyebrow">UPSC Civil Services Examination · Preliminary Stage</div>
+      <h1>Current Affairs <span>Notes</span></h1>
+      <div class="masthead-sub">History · Geography · Mapping · Society · Miscellaneous — 8 Months Compilation</div>
+    </div>
+    <div class="masthead-badge">8-Month Compilation</div>
+  </div>
+</header>
+
+<!-- STICKY NAV -->
+<nav class="nav-strip">
+  <div class="nav-strip-inner">
+    <a href="#s1" class="nav-tab active">Mapping</a>
+    <a href="#s2" class="nav-tab">India Geography</a>
+    <a href="#s3" class="nav-tab">Physical Geog.</a>
+    <a href="#s4" class="nav-tab">Resources</a>
+    <a href="#s5" class="nav-tab">History</a>
+    <a href="#s6" class="nav-tab">UNESCO</a>
+    <a href="#s7" class="nav-tab">Society</a>
+    <a href="#s8" class="nav-tab">Misc</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <!-- SIDEBAR TOC -->
+  <aside class="sidebar">
+    <div class="toc-title">Contents</div>
+    <ul class="toc-list">
+      <li><a href="#s1"><span class="toc-num">01</span> Mapping — Places in News</a></li>
+      <li><a href="#s2"><span class="toc-num">02</span> India Physical Geography</a></li>
+      <li><a href="#s3"><span class="toc-num">03</span> Physical Geography Concepts</a></li>
+      <li><a href="#s4"><span class="toc-num">04</span> Resources &amp; Agriculture</a></li>
+      <li><a href="#s5"><span class="toc-num">05</span> History — Art &amp; Culture</a></li>
+      <li><a href="#s6"><span class="toc-num">06</span> UNESCO &amp; Int'l Heritage</a></li>
+      <li><a href="#s7"><span class="toc-num">07</span> Society &amp; Tribes</a></li>
+      <li><a href="#s8"><span class="toc-num">08</span> Miscellaneous</a></li>
+    </ul>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="content">
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <section class="section" id="s1">
+      <div class="section-header">
+        <span class="section-num">01</span>
+        <h2 class="section-title">Mapping — Places in News</h2>
+      </div>
+
+      <div class="subsection">
+        <div class="subsection-header">
+          <span class="subsection-letter">A</span>
+          <h3 class="subsection-title">South Asia / Neighbourhood</h3>
+        </div>
+
+        <div class="topic">
+          <div class="topic-title">Afghanistan's Key Borders & Passes</div>
+          <div class="box box-blue">
+            <ul class="notes">
+              <li><strong>Durand Line</strong> — Afghan-Pakistan border (2,600 km); drawn 1893 by Sir Mortimer Durand; Iran to China</li>
+              <li><strong>Wakhan Corridor</strong> — Afghan-China border; narrow strip, Pamir to Karakoram</li>
+              <li><strong>Sistan Border</strong> — Afghan-Iran (1935); desert border</li>
+              <li><strong>Panj River Border</strong> — Afghan-Tajikistan</li>
+              <li><strong>Torkham Crossing</strong> — Connects Nangarhar (Afghanistan) to Khyber Pakhtunkhwa (Pakistan)</li>
+              <li><strong>Chaman Crossing</strong> — Connects Kandahar (Afghanistan) to Balochistan (Pakistan)</li>
+              <li><strong>Bagram Airfield</strong> — Largest Afghan military base; 50-60 km N of Kabul in Parwan province; built by Soviets 1950s</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="topic">
+          <div class="topic-title">Mt. Makalu</div>
+          <ul class="notes">
+            <li>World's <strong>5th highest peak</strong> (8,485 m), Nepal</li>
+            <li>Top 5: <em>Everest (8,849m) › K2 (8,611m) › Kangchenjunga (8,586m) › Lhotse (8,516m) › Makalu (8,485m)</em></li>
+          </ul>
+          <span class="exam-tag">Order of 5 highest peaks — frequent MCQ</span>
+        </div>
+
+        <div class="topic">
+          <div class="topic-title">Mongla Port (Bangladesh)</div>
+          <ul class="notes">
+            <li><strong>2nd largest seaport</strong> of Bangladesh; in Bagerhat district at confluence of Pasur &amp; Mongla rivers</li>
+            <li>Strategic for India: shorter access route to landlocked NE states</li>
+          </ul>
+        </div>
+
+        <div class="topic">
+          <div class="topic-title">Nagorno-Karabakh</div>
+          <ul class="notes">
+            <li>Azerbaijani region with ethnic Armenian majority; <strong>2023: Azerbaijan regained full control</strong></li>
+            <li>Connected to Armenia via <strong>Lachin Corridor</strong> (5 km)</li>
+            <li>Armenia = Christian; Azerbaijan = Muslim</li>
+            <li>US-brokered Armenia-Azerbaijan peace agreement signed</li>
+          </ul>
+        </div>
+
+        <div class="topic">
+          <div class="topic-title">Ayni/Gissar Airbase (Tajikistan)</div>
+          <ul class="notes">
+            <li>India's <strong>only overseas military base</strong> — ~10 km from Dushanbe, 20 km from Wakhan Corridor</li>
+            <li>India withdrew after 2002 bilateral agreement lapsed; last used 2021 for Afghan evacuation</li>
+          </ul>
+        </div>
+
+        <div class="topic">
+          <div class="topic-title">Baikonur Cosmodrome (Kazakhstan)</div>
+          <ul class="notes">
+            <li>Leased and operated by Russia (till 2050); built 1950s as missile test range</li>
+            <li>Launch site of <strong>Sputnik-1 (1957)</strong> and <strong>Vostok-1 (1961)</strong> — Yuri Gagarin</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <div class="subsection-header">
+          <span class="subsection-letter">B</span>
+          <h3 class="subsection-title">South-East Asia &amp; Oceania</h3>
+        </div>
+
+        <div class="topic">
+          <div class="topic-title">South China Sea</div>
+          <div class="box box-blue">
+            <ul class="notes">
+              <li><strong>Spratly Islands</strong>: Claimed by China, Taiwan, Vietnam, Philippines, Malaysia</li>
+              <li><strong>Paracel Islands</strong>: China, Taiwan, Vietnam</li>
+              <li><strong>Scarborough Shoal</strong>: China, Philippines, Taiwan — inside Philippine EEZ; China seized 2012</li>
+              <li><strong>Nine-dash line</strong>: China claims ~90% of SCS; exceeds UNCLOS limits</li>
+              <li><strong>2016 PCA ruling</strong>: Favoured Philippines but did not address sovereignty</li>
+              <li><strong>String of Pearls</strong>: Chinese strategy — network of ports/facilities across IOR</li>
+              <li><strong>Necklace of Diamonds</strong>: India's counter-strategy with littoral partnerships</li>
+            </ul>
+          </div>
+          <span class="exam-tag">Nine-dash line, UNCLOS, PCA ruling — frequently tested</span>
+        </div>
+
+        <div class="topic">
+          <div class="topic-title">Thailand-Cambodia Border Dispute</div>
+          <ul class="notes">
+            <li><strong>Preah Vihear Temple</strong>: 11th-century Khmer Hindu temple; ICJ 1962 — Cambodia's favor; UNESCO WHS</li>
+            <li><strong>Prasat Ta Muen Thom</strong>: 12th-century Khmer complex dedicated to Shiva; border of Surin &amp; Oddar Meanchey</li>
+            <li><strong>Emerald Triangle</strong>: Where Thailand, Cambodia, and Laos meet</li>
+            <li>US-mediated Kuala Lumpur Peace Accord (Oct 2025) — failed</li>
+          </ul>
+        </div>
+
+        <div class="topic">
+          <div class="topic-title">Ring of Fire</div>
+          <ul class="notes">
+            <li>Horseshoe-shaped fault lines encircling Pacific Ocean; accounts for <strong>80%+ of largest earthquakes</strong></li>
+            <li>Indonesia: 120 active volcanoes along Ring of Fire</li>
+            <li>Mt. Lewotobi Laki-laki: Stratovolcano on Flores Island, East Nusa Tenggara</li>
+            <li>Taal Volcano (Philippines): Complex/compound volcano south of Manila</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <div class="subsection-header">
+          <span class="subsection-letter">C</span>
+          <h3 class="subsection-title">Middle East &amp; Africa</h3>
+        </div>
+
+        <div class="topic">
+          <div class="topic-title">Red Sea</div>
+          <ul class="notes">
+            <li>Borders 9 countries: Egypt, Sudan, Eritrea (NE Africa); Djibouti, Saudi Arabia, Yemen; Israel/Jordan (via Gulf of Aqaba)</li>
+            <li><strong>Bab-el-Mandeb Strait</strong>: Links Red Sea to Gulf of Aden &amp; Arabian Sea — key global chokepoint</li>
+            <li>Undersea cables SEA-ME-WE 4 and IMEWE cut → India-Europe internet latency</li>
+          </ul>
+        </div>
+
+        <div class="topic">
+          <div class="topic-title">GERD — Grand Ethiopian Renaissance Dam</div>
+          <ul class="notes">
+            <li><strong>Africa's largest hydroelectric project</strong> on Blue Nile</li>
+            <li><strong>Blue Nile</strong>: Originates from Lake Tana (Amhara, Ethiopia) → flows ~1,450 km → joins White Nile at Khartoum (Sudan)</li>
+            <li><strong>White Nile</strong>: Longer headstream; source: Kagera River (Burundi); flows through Uganda &amp; South Sudan</li>
+          </ul>
+        </div>
+
+        <div class="topic">
+          <div class="topic-title">Sudan Conflict</div>
+          <ul class="notes">
+            <li>Civil war since 2023: Sudanese Army vs <strong>RSF (Rapid Support Forces)</strong></li>
+            <li>RSF evolved from <em>Janjaweed militia</em> (Darfur genocide 2000s); led by Hemedti</li>
+            <li>Conflict concentrated in Darfur; El Fasher &amp; Kadugli famine risk</li>
+          </ul>
+        </div>
+
+        <div class="topic">
+          <div class="topic-title">ECOWAS</div>
+          <ul class="notes">
+            <li>Established 28 May 1975 by Treaty of Lagos; HQ: Abuja, Nigeria</li>
+            <li><strong>2024</strong>: Burkina Faso, Niger, and Mali withdrew → current members = 12</li>
+            <li>India became Observer to ECOWAS: 2004</li>
+            <li>Eswatini (formerly Swaziland): Only absolute monarchy in Africa; landlocked; borders South Africa (3 sides) &amp; Mozambique</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <div class="subsection-header">
+          <span class="subsection-letter">D</span>
+          <h3 class="subsection-title">Europe</h3>
+        </div>
+        <div class="topic">
+          <div class="topic-title">Ukraine-Russia Conflict</div>
+          <ul class="notes">
+            <li>Russia controls <strong>~19% of internationally-recognised Ukrainian territory</strong></li>
+            <li><strong>Donbas</strong> = Donetsk + Luhansk (Ukraine's largest coal reserves)</li>
+            <li>Luhansk = first Ukrainian region fully under Russia since 2014 Crimea annexation</li>
+            <li><strong>Ottawa Convention</strong>: Bans anti-personnel landmines; Ukraine withdrawing</li>
+            <li>Nord Stream Pipeline: Undersea Russia-Germany gas pipeline; sabotaged 2022</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <section class="section" id="s2">
+      <div class="section-header">
+        <span class="section-num">02</span>
+        <h2 class="section-title">India — Physical Geography</h2>
+      </div>
+
+      <div class="subsection">
+        <div class="subsection-header">
+          <span class="subsection-letter">A</span>
+          <h3 class="subsection-title">Mountains, Passes &amp; Glaciers</h3>
+        </div>
+
+        <div class="topic">
+          <div class="topic-title">Key Passes</div>
+          <ul class="notes">
+            <li><strong>Shipki La (HP)</strong>: 3,930m on India-China border; Kinnaur district; now open for border tourism</li>
+            <li><strong>Lipulekh Pass (Uttarakhand)</strong>: Kailash Mansarovar Yatra route (since 1981)</li>
+            <li><strong>Nathu La (Sikkim)</strong>: Kailash Mansarovar Yatra route (since 2015)</li>
+            <li>Mt. Kailash: 6,638m; diamond-shaped black rock peak; in Tibet</li>
+          </ul>
+        </div>
+
+        <div class="topic">
+          <div class="topic-title">Siachen Glacier</div>
+          <ul class="notes">
+            <li><strong>World's highest battlefield</strong> (up to 20,000 ft); Karakoram range, Ladakh</li>
+            <li>India holds it since <strong>Operation Meghdoot (1984)</strong></li>
+            <li>Located NE of Point NJ9842 where LoC ends; India-Pakistan positioned along AGPL</li>
+            <li>Feeds Nubra and Indus rivers</li>
+          </ul>
+        </div>
+
+        <div class="topic">
+          <div class="topic-title">Kangchenjunga (Khangchendzonga)</div>
+          <ul class="notes">
+            <li><strong>World's 3rd highest peak</strong>; sacred to Lepcha, Bhutia, Nepalese of Sikkim</li>
+            <li>Name = 'Five Treasures of High Snows'; locally 'Dzoe-Nga'</li>
+            <li><strong>NIMAS</strong>: Dirang, Arunachal Pradesh; first institution with land + air + water adventure training; under MoD</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <div class="subsection-header">
+          <span class="subsection-letter">B</span>
+          <h3 class="subsection-title">Major Rivers</h3>
+        </div>
+
+        <div class="topic">
+          <div class="topic-title">Brahmaputra River System</div>
+          <div class="box box-blue">
+            <ul class="notes">
+              <li><strong>Origin</strong>: Angsi/Chemayungdung Glacier, east of Mansarovar Lake, Tibet</li>
+              <li><strong>Tibet name</strong>: Yarlung Tsangpo (largest river on Tibetan plateau)</li>
+              <li>'Great Bend' at <strong>Namcha Barwa</strong> (U-turn); enters India as Siang/Dihang</li>
+              <li>Joined by <em>Dibang &amp; Lohit</em> (left bank) → becomes Brahmaputra</li>
+              <li><strong>Bangladesh</strong>: Called Jamuna (after Teesta joins); merges with Padma → Bay of Bengal</li>
+              <li>Basin: China = 50.5% | India = 33.3% | Bangladesh = 8.1% | Bhutan = 7.8%</li>
+              <li><strong>Majuli</strong>: World's largest riverine island (in Brahmaputra, Assam)</li>
+              <li>China dam at Nyingchi City near 'Great Bend'; 2,000m drop over 50 km — massive hydro potential</li>
+              <li><strong>Right-bank tributaries</strong>: Kameng, Manas, Beki, Raidak, Teesta</li>
+              <li><strong>Left-bank tributaries</strong>: Lohit, Dibang, Subansiri, Kopili, Dhansiri</li>
+            </ul>
+          </div>
+          <span class="exam-tag">Tributaries, basin stats, Majuli — exam-ready</span>
+        </div>
+
+        <div class="topic">
+          <div class="topic-title">West-Flowing Rivers</div>
+          <ul class="notes">
+            <li><strong>Mahi River</strong>: Intersects Tropic of Cancer <em>twice</em> — unique among Indian rivers; origin: Dhar district, MP; drains via Gulf of Khambhat</li>
+            <li><strong>Tapti</strong>: 2nd-longest west-flowing after Narmada; origin: Multai, MP; Narmada &amp; Tapti run parallel, separated by Satpura Range</li>
+            <li>Tapti = 'Twin of Narmada'; drains via Gulf of Khambhat in Gujarat</li>
+          </ul>
+        </div>
+
+        <div class="topic">
+          <div class="topic-title">Other Important Rivers</div>
+          <table class="data-table">
+            <thead><tr><th>River</th><th>Origin / Key Facts</th><th>Significance</th></tr></thead>
+            <tbody>
+              <tr><td>Subarnarekha</td><td>Nagri village, Ranchi, Jharkhand (600m, Chota Nagpur Plateau)</td><td>Flows → Bay of Bengal near Talsari; 'Streak of Gold'; Hundrugbagh waterfall</td></tr>
+              <tr><td>Musi</td><td>Anantagiri Hills, Vikarabad (~90 km W of Hyderabad)</td><td>Tributary of Krishna; Himayat &amp; Osman Sagar dams; 2025 World Monuments Watch</td></tr>
+              <tr><td>Tawi</td><td>Kailash Kund glacier, Doda, J&K</td><td>Left-bank tributary of Chenab; flows through Jammu city; 'Surya Putri'</td></tr>
+              <tr><td>Indrayani</td><td>Near Lonavala, Western Ghats, Maharashtra</td><td>Tributary of Bhima (tributary of Krishna); Alandi &amp; Dehu on banks</td></tr>
+              <tr><td>Kosi</td><td>7 Himalayan tributaries in Tibet/Nepal (Sapta Kosi)</td><td>'River of Sorrow'; shifted course 120 km in 250 years; enters India near Hanuman Nagar</td></tr>
+              <tr><td>Ganga</td><td>Gangotri Glacier via Bhagirathi</td><td>Sustains 600 mn people; 40% of India's GDP; drying at millennial-scale rate</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="topic">
+          <div class="topic-title">Alaknanda &amp; Panch Prayag</div>
+          <ul class="notes">
+            <li>Origin: <strong>Satopanth Glacier</strong>, Uttarakhand; joins Bhagirathi at Devprayag → Ganga</li>
+            <li><strong>Panch Prayag</strong>: Vishnuprayag (+ Dhauliganga) → Nandaprayag (+Nandakini) → Karnaprayag (+Pindar) → Rudraprayag (+Mandakini) → Devprayag (+Bhagirathi)</li>
+          </ul>
+          <span class="exam-tag">Panch Prayag — confluences and tributaries — standard MCQ</span>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <div class="subsection-header">
+          <span class="subsection-letter">C</span>
+          <h3 class="subsection-title">Lakes &amp; Ramsar Sites</h3>
+        </div>
+
+        <div class="topic">
+          <div class="topic-title">Ramsar Sites — Key Facts (India)</div>
+          <div class="box box-green">
+            <ul class="notes">
+              <li><strong>Total</strong>: 96 Ramsar sites (as of January 2026); 7 new added in 2025</li>
+              <li><strong>New 2025 sites</strong>: Menar Wetland (Raj), Khichan (Raj), Gokul Jalashay (Bihar), Udaipur Jheel (Bihar), Siliresh Lake (Raj), Kopra Jalashay (CG), Gogabil Lake (Bihar)</li>
+              <li><strong>First</strong>: Chilika Lake, Odisha (1981) | <strong>Largest</strong>: Sundarbans, WB | <strong>Smallest</strong>: Renuka, HP</li>
+              <li><strong>Most sites</strong>: Tamil Nadu (20) → then UP</li>
+              <li><strong>Montreux Record</strong>: Only Loktak Lake, Manipur (Chilika was removed after restoration)</li>
+              <li>India joined Ramsar Convention: <em>1982</em>; Convention established 1971 at Ramsar, Iran</li>
+              <li>Global leaders: UK (176 sites), Mexico (144); Brazil = largest area</li>
+            </ul>
+          </div>
+          <span class="exam-tag">96 total, first site, Montreux record — exam essentials</span>
+        </div>
+
+        <div class="topic">
+          <div class="topic-title">Vembanad Lake</div>
+          <ul class="notes">
+            <li>Longest lake in India (96.5 km); largest in Kerala; Ramsar site</li>
+            <li>Spans Alappuzha, Kottayam, Ernakulam; 6 rivers drain into it</li>
+            <li>Threats: Pollution, eutrophication, water hyacinth → 66% decline in fish catch over 3 decades</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <div class="subsection-header">
+          <span class="subsection-letter">D</span>
+          <h3 class="subsection-title">Dams &amp; Hydropower</h3>
+        </div>
+        <div class="box box-blue">
+          <ul class="notes">
+            <li><strong>Subansiri Lower HEP</strong>: India's largest HEP (2,000 MW); Gerukamukh, Arunachal-Assam boundary</li>
+            <li><strong>Oju HEP</strong>: 2,220 MW on Subansiri near China border (highest approved capacity in basin)</li>
+            <li><strong>Sawalkote HEP</strong>: 1,865 MW on Chenab; <em>first major hydro project after IWT suspension</em></li>
+            <li><strong>Dulhasti Stage 2</strong>: 260 MW on Chenab, Kishtwar, J&K</li>
+            <li><strong>Almatti Dam</strong>: 'Lal Bahadur Shastri Dam' on Krishna river, Karnataka</li>
+            <li><strong>Mullaperiyar Dam</strong>: 1895; on Periyar river; operated by Tamil Nadu; seismic concerns</li>
+            <li><strong>DVC</strong> (Damodar Valley Corporation): India's 1st multipurpose river project (statutory body, 1948)</li>
+            <li><strong>Three Gorges Dam</strong>: World's largest (22.5 GW) on Yangtze River, China</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <div class="subsection-header">
+          <span class="subsection-letter">E</span>
+          <h3 class="subsection-title">Misc India Geography</h3>
+        </div>
+        <div class="topic">
+          <div class="topic-title">Nyoma Air Base</div>
+          <ul class="notes">
+            <li>IAF's new airbase, southeastern Ladakh; altitude = <strong>4,200m</strong> (one of world's highest airfields)</li>
+            <li>Can handle Rafale, Su-30MKI, C-17 Globemaster III; ~35 km from LAC</li>
+          </ul>
+        </div>
+        <div class="topic">
+          <div class="topic-title">Coastline of India (Revised)</div>
+          <ul class="notes">
+            <li>Revised: <strong>11,098.8 km</strong> (earlier 7,516.6 km from 1970s low-resolution mapping)</li>
+            <li>Technology: GIS, satellite altimetry, LIDAR-GPS, drone imaging</li>
+            <li><strong>Coastline Paradox</strong>: Identified by Lewis Fry Richardson; popularised by Benoît Mandelbrot (fractal geometry)</li>
+          </ul>
+        </div>
+        <div class="topic">
+          <div class="topic-title">Punjab's Holy Cities &amp; Five Takhts</div>
+          <ul class="notes">
+            <li>Amritsar, Anandpur Sahib, Talwandi Sabo → granted 'Holy City' status</li>
+            <li><strong>5 Sikh Takhts</strong>: Akal Takht (Amritsar) | Keshgarh Sahib (Anandpur Sahib) | Damdama Sahib (Talwandi Sabo) | Patna Sahib (Bihar) | Hazur Sahib (Nanded, Maharashtra)</li>
+            <li>Akal Takht: Established 1606 by Guru Hargobind; supreme among five</li>
+          </ul>
+          <span class="exam-tag">Five Takhts and their locations — high-probability MCQ</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <section class="section" id="s3">
+      <div class="section-header">
+        <span class="section-num">03</span>
+        <h2 class="section-title">Physical Geography — Concepts</h2>
+      </div>
+
+      <div class="subsection">
+        <div class="subsection-header">
+          <span class="subsection-letter">A</span>
+          <h3 class="subsection-title">Volcanoes</h3>
+        </div>
+        <div class="topic">
+          <div class="topic-title">Types of Volcanoes</div>
+          <div class="box box-red">
+            <ul class="notes">
+              <li><strong>Shield Volcano</strong>: Broad, gently sloping; thin fluid lava; less explosive (e.g., Hayli Gubbi, Ethiopia)</li>
+              <li><strong>Stratovolcano (Composite)</strong>: Steep, cone-shaped; explosive (e.g., Lewotobi, Indonesia; Mt. Etna, Sicily)</li>
+              <li><strong>Cinder Cone</strong>: Smallest; steep; formed from ejected lava fragments</li>
+              <li><strong>Lava Dome</strong>: Viscous lava piling near vent</li>
+              <li><strong>Complex/Compound Volcano</strong>: Two or more vents/domes (e.g., Taal, Philippines)</li>
+            </ul>
+          </div>
+          <ul class="notes">
+            <li><strong>India's Volcanoes</strong>: Barren Island (only active; South Asia's only active volcano) | Narcondam Island (dormant) | Mud Volcano, Baratang, A&amp;N (geological only)</li>
+            <li><strong>Mud Volcano</strong>: Erupts mud + water + methane; no molten lava; found near natural gas areas</li>
+            <li><strong>Mt. Etna</strong>: Europe's largest active volcano; Sicily; UNESCO WHS since 2013</li>
+          </ul>
+          <span class="exam-tag">Barren Island = South Asia's only active volcano; India's only mud volcano = Baratang</span>
+        </div>
+        <div class="topic">
+          <div class="topic-title">Melting Glaciers → Volcanic Eruptions</div>
+          <ul class="notes">
+            <li>Ice exerts pressure on magma chambers; melting ice reduces pressure → gases &amp; magma expand → explosive eruptions</li>
+            <li>In Iceland: Volcanic eruption rates were 30-50× higher during major deglaciation periods</li>
+            <li>West Antarctica has ~100 volcanoes buried under ice</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <div class="subsection-header">
+          <span class="subsection-letter">B</span>
+          <h3 class="subsection-title">Earthquakes</h3>
+        </div>
+        <div class="topic">
+          <div class="topic-title">India's Revised Seismic Zones (2025)</div>
+          <div class="box box-gold">
+            <ul class="notes">
+              <li>BIS released revised Earthquake Design Code <strong>(IS 1893) 2025</strong> — new <em>Zone VI</em> added</li>
+              <li>Entire Himalayan region → Zone VI (highest risk)</li>
+              <li><strong>61% of India's landmass</strong> and <strong>75% of population</strong> under moderate-to-high seismic hazard</li>
+              <li>Previous: 4 zones (II–V); Now: <strong>5 zones (II–VI)</strong></li>
+              <li>Method: Probabilistic Seismic Hazard Assessment (PSHA)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="topic">
+          <div class="topic-title">Himalayan Fault Systems</div>
+          <ul class="notes">
+            <li><strong>MCT</strong> (Main Central Thrust): Greater Himalayas vs Lesser Himalayas</li>
+            <li><strong>MBT</strong> (Main Boundary Thrust): Lesser Himalayas vs Shiwaliks</li>
+            <li><strong>MFT/HFF</strong> (Main Frontal Thrust / Himalayan Frontal Fault): Shiwaliks vs Indo-Gangetic Plains</li>
+          </ul>
+        </div>
+        <div class="topic">
+          <div class="topic-title">Key Earthquake Facts</div>
+          <ul class="notes">
+            <li>India = <strong>7th most earthquake-prone</strong> country</li>
+            <li><strong>1950 Great Assam Earthquake</strong>: M 8.6; epicentre Mishmi Hills, Arunachal-Tibet border; combined strike-slip + thrusting</li>
+            <li><strong>Human-induced Quakes</strong>: Mining, groundwater pumping (Delhi-NCR), dam impoundment (Koyna 1967 = M 6.3), fracking</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <div class="subsection-header">
+          <span class="subsection-letter">C</span>
+          <h3 class="subsection-title">Monsoon &amp; Weather</h3>
+        </div>
+        <div class="topic">
+          <div class="topic-title">Southwest Monsoon</div>
+          <ul class="notes">
+            <li>Contributes <strong>70%+ of annual rainfall</strong> (June–September)</li>
+            <li>Normal onset over Kerala: <strong>June 1</strong> | Covers entire India by ~July 15</li>
+            <li>IMD uses: Rainfall amount + wind speed/direction + OLR to declare onset</li>
+            <li><strong>LPA (Long Period Average)</strong>: Average June-September rainfall over 50 years; benchmark for forecasting</li>
+          </ul>
+        </div>
+        <div class="topic">
+          <div class="topic-title">Key Monsoon Drivers</div>
+          <div class="box box-teal">
+            <ul class="notes">
+              <li><strong>ENSO</strong>: El Niño (warm E. Pacific) → reduced rainfall; La Niña → stronger monsoon</li>
+              <li><strong>IOD</strong>: Positive IOD (Arabian Sea warmer than Bay of Bengal) → favourable for monsoon</li>
+              <li><strong>Mascarene High</strong>: High-pressure near Mascarene Islands (S. Indian Ocean); drives west coast rains</li>
+              <li><strong>Somali Jet</strong>: Low-level inter-hemispheric wind; strong jet = stronger monsoon</li>
+              <li><strong>MJO (Madden-Julian Oscillation)</strong>: Eastward moving 30-60 day cycle; identified by Madden &amp; Julian in 1971</li>
+              <li><strong>Atmospheric Memory</strong>: Atmosphere stores water vapour; bistability — if raining, rain persists</li>
+            </ul>
+          </div>
+          <span class="exam-tag">ENSO, IOD, MJO definitions and impact on monsoon — key for Prelims</span>
+        </div>
+        <div class="topic">
+          <div class="topic-title">Bharat Forecasting System (BFS)</div>
+          <ul class="notes">
+            <li>Developed by <strong>IITM, Pune</strong>; <strong>6 km × 6 km resolution</strong> — highest in world (earlier 12 km)</li>
+            <li>Enabled by new supercomputer '<em>Arka</em>'</li>
+            <li>IMD established: <strong>1875</strong>; HQ moves: Calcutta → Shimla → Pune → New Delhi</li>
+            <li><strong>Mission Mausam</strong>: ₹2,000 crore; target 60 weather radars + 15 wind profilers + 15 radiosondes by 2026</li>
+          </ul>
+        </div>
+        <div class="topic">
+          <div class="topic-title">Cyclones</div>
+          <div class="box box-blue">
+            <ul class="notes">
+              <li>Formation: SST &gt; 26.5°C (depth 50m), unstable atmosphere, Coriolis force, low wind shear</li>
+              <li>Coriolis: Anticlockwise in NH; Clockwise in SH; weak within 5° of equator</li>
+              <li>Names: Hurricane (Atlantic/E. Pacific) | Typhoon (W. Pacific) | Cyclone (Indian Ocean)</li>
+              <li>NIO Cyclone Season: Pre-monsoon (Mar-May) &amp; Post-monsoon (Oct-Dec)</li>
+              <li><strong>Super Typhoon</strong>: Sustained winds &gt; 185 kmph / 100 knots</li>
+              <li>Saffir-Simpson Scale: Category 1-5; Category 3+ = major hurricanes</li>
+              <li>Colour Alerts: Green → Yellow (be aware) → Orange (be prepared) → Red (take action)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="topic">
+          <div class="topic-title">Cloudbursts &amp; GLOFs</div>
+          <ul class="notes">
+            <li><strong>Cloudburst</strong>: ≥10 cm rain in 1 hour over ~10 km × 10 km area; Orographic lift → delayed release</li>
+            <li><strong>Mini-cloudburst</strong>: ~5 cm in 1 hour over 20-30 sq km; harder to predict</li>
+            <li><strong>GLOF</strong>: Abrupt discharge from glacial lake; India has <em>7,500 glacial lakes</em></li>
+            <li>Major GLOFs: South Lhonak (2023, Sikkim) | Chorabari (2013, Kedarnath)</li>
+            <li>UN declared <strong>2025</strong> as International Year of Glaciers' Preservation</li>
+            <li><strong>Yala Glacier</strong> (Nepal): Shrunk 66% since 1970s; first glacier funeral: Okjokull Glacier, Iceland (2019)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <section class="section" id="s4">
+      <div class="section-header">
+        <span class="section-num">04</span>
+        <h2 class="section-title">Resources &amp; Agriculture</h2>
+      </div>
+
+      <div class="topic">
+        <div class="topic-title">Crop Quick-Reference Table</div>
+        <table class="data-table">
+          <thead>
+            <tr><th>Crop</th><th>Top Indian States</th><th>Key Facts / Brought by</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Rice</td><td>India = #1 world producer &amp; exporter</td><td>Basmati → West Asia; Non-basmati → Africa; US ranked 13th</td></tr>
+            <tr><td>Cotton</td><td>Gujarat, Maharashtra, Telangana</td><td>India = 2nd after China; 24% global; Bt cotton 95% acreage; Brought by British</td></tr>
+            <tr><td>Coffee</td><td>Karnataka (2/3); Kerala; TN</td><td>Arabica (15-25°C, high altitude) &amp; Robusta (20-30°C); Baba Budan Giris origin (1600 AD)</td></tr>
+            <tr><td>Tea</td><td>Assam (largest), WB, TN, Kerala</td><td>India = 2nd producer, 3rd exporter; China&gt;India&gt;Kenya&gt;Sri Lanka = 81% world output; Brought by British</td></tr>
+            <tr><td>Milk</td><td>UP (15.72%), Rajasthan (14.44%), MP</td><td>India = #1 globally; Op. Flood 1970 (White Revolution); Per capita: 471g/day</td></tr>
+            <tr><td>Almond</td><td>J&amp;K (90%), HP</td><td>Brought to India by Persians; World: USA (California) leads</td></tr>
+            <tr><td>Onion</td><td>Maharashtra (largest), MP, Gujarat, Karnataka</td><td>Price Stabilisation Fund (PSF) for buffer stock; Ancient traders from Central Asia/Persia</td></tr>
+            <tr><td>Apple</td><td>J&amp;K (largest), HP, Uttarakhand</td><td>Originated in Central Asia (Almati, Kazakhstan); World: China &gt; USA &gt; Poland; Brought by British</td></tr>
+            <tr><td>Maize</td><td>Karnataka, MP, Maharashtra, UP</td><td>Brought by Portuguese; world avg 6T/ha vs India &lt;4T/ha; Kharif crop</td></tr>
+            <tr><td>Tapioca</td><td>TN &amp; Kerala (90%+ combined)</td><td>Anagyrus lopezi wasp for biological control of mealybug; Brought by Portuguese</td></tr>
+            <tr><td>Honey</td><td>UP &gt; WB &gt; Punjab &gt; Bihar &gt; Raj</td><td>India = 7th largest globally; India's first lavender honey: CSIR-IIIM, Pulwama, Kashmir</td></tr>
+          </tbody>
+        </table>
+        <span class="exam-tag">GI-tagged crops — Pokkali (Kerala), Chakhao (Manipur), Darjeeling tea</span>
+      </div>
+
+      <div class="topic">
+        <div class="topic-title">Special Crops</div>
+        <ul class="notes">
+          <li><strong>Pokkali Paddy</strong>: GI-tagged saltwater-tolerant rice from Kerala (Pizhala island near Kochi); integrated rice-fish farming system</li>
+          <li><strong>Chakhao Rice</strong>: GI-tagged black sticky rice of Manipur (awarded 2020); rich in antioxidants, protein, iron</li>
+          <li><strong>Civet Coffee</strong> (Kopi Luwak): From Asian palm civet (<em>Paradoxurus hermaphroditus</em>); beans undergo natural fermentation in civet's gut</li>
+          <li><strong>Rubber</strong>: Kerala produces 90% of India's rubber; India = 6th largest globally; ambrosia beetle + Fusarium fungi threat</li>
+        </ul>
+      </div>
+
+      <div class="topic">
+        <div class="topic-title">Critical Minerals &amp; Resources</div>
+        <ul class="notes">
+          <li><strong>Rare Earth Permanent Magnets (REPM)</strong>: Critical for EVs, wind turbines; China dominates</li>
+          <li><strong>Germanium</strong>: Critical mineral; key for semiconductors</li>
+          <li><strong>Ferrous Scrap</strong>: Important for steel recycling</li>
+          <li>India: 75% electricity from coal; aims for 121 GW wind capacity by 2032 (from 45 GW)</li>
+          <li>Top wind energy states: Gujarat (leads) &gt; Tamil Nadu &gt; Karnataka &gt; Maharashtra &gt; Rajasthan</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <section class="section" id="s5">
+      <div class="section-header">
+        <span class="section-num">05</span>
+        <h2 class="section-title">History — Art, Architecture &amp; Culture</h2>
+      </div>
+
+      <div class="subsection">
+        <div class="subsection-header">
+          <span class="subsection-letter">A</span>
+          <h3 class="subsection-title">World Heritage Sites &amp; Protected Monuments</h3>
+        </div>
+
+        <div class="topic">
+          <div class="topic-title">Maratha Military Landscapes</div>
+          <ul class="notes">
+            <li>Inscribed at <strong>47th WHC session</strong> as India's <strong>44th World Heritage Site</strong></li>
+            <li><strong>12 Forts</strong>: Raigad, Rajgad, Pratapgad, Panhala, Shivneri, Lohgad, Salher, Sindhudurg, Suvarnadurg, Vijaydurg, Khanderi <em>(all Maharashtra)</em> + Gingee <em>(Tamil Nadu)</em></li>
+            <li>Dates: 17th–19th centuries CE; showcase Maratha military architecture &amp; indigenous water management</li>
+          </ul>
+        </div>
+
+        <div class="topic">
+          <div class="topic-title">Ellora Caves</div>
+          <ul class="notes">
+            <li>India's <strong>FIRST UNESCO World Heritage Site</strong>; Chhatrapati Sambhajinagar, Maharashtra</li>
+            <li>Rock-cut cave complex; artwork 600–1000 AD; Hindu, Buddhist, and Jain structures</li>
+            <li><strong>Kailasa Temple</strong>: World's largest single monolithic rock excavation; dedicated to Lord Shiva</li>
+          </ul>
+        </div>
+
+        <div class="topic">
+          <div class="topic-title">Sheesh Mahal (Delhi) &amp; Monument Rules</div>
+          <ul class="notes">
+            <li>Mughal-era palace in Shalimar Bagh, Delhi; built <strong>1653</strong> by Izz-un-Nisha Begum (wife of Shah Jahan)</li>
+            <li>Site of <strong>Aurangzeb's coronation (1658)</strong>; British military camp during 1857 revolt</li>
+            <li><strong>Monument of National Importance</strong>: Under AMSAR Act 1958; 100m prohibited zone + 200m regulated zone</li>
+          </ul>
+        </div>
+
+        <div class="topic">
+          <div class="topic-title">Lothal — National Maritime Heritage Complex</div>
+          <ul class="notes">
+            <li>Indus Valley Civilisation port; to house <strong>world's largest maritime museum</strong> (completed by 2029)</li>
+            <li>World's oldest known artificial dock found here; connected to old Sabarmati river course</li>
+            <li>Ministry of Ports, Shipping &amp; Waterways (MoPSW) is developing NMHC</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <div class="subsection-header">
+          <span class="subsection-letter">B</span>
+          <h3 class="subsection-title">Archaeological Sites</h3>
+        </div>
+
+        <div class="topic">
+          <div class="topic-title">Keezhadi Excavations</div>
+          <ul class="notes">
+            <li>Location: Sivaganga district, TN; Vaigai river; <strong>Sangam age urban civilization</strong></li>
+            <li>Age: 6th–3rd century BCE (2,600+ years old); <strong>18,000+ artefacts</strong> including Tamil Brahmi inscriptions</li>
+            <li>Evidence of trade links, advanced infrastructure; no religious symbols found</li>
+            <li>Initiated by ASI; later continued by Tamil Nadu Archaeology Department (2015)</li>
+          </ul>
+        </div>
+
+        <div class="topic">
+          <div class="topic-title">Khadir Island, Kutch</div>
+          <ul class="notes">
+            <li>Shell-midden sites near Dholavira reveal human presence <strong>5,000 years before Harappan era</strong></li>
+            <li>Study by IIT Gandhinagar; dated using <strong>AMS (Accelerator Mass Spectrometry)</strong></li>
+            <li><strong>Radiocarbon dating</strong>: Based on C-14 decay; up to ~60,000 years; developed by Willard Libby (late 1940s)</li>
+          </ul>
+        </div>
+
+        <div class="topic">
+          <div class="topic-title">Zehanpora Excavation (J&K)</div>
+          <ul class="notes">
+            <li>Baramulla, J&K; Kushan period (~2,000 years old); ancient Buddhist stupas</li>
+            <li>Emperor Ashoka believed to have founded Srinagar; established monasteries in Kashmir</li>
+            <li><strong>Fourth Buddhist Council</strong> held in Kashmir under Emperor Kanishka; presided by Vasumitra</li>
+            <li><strong>Gilgit Manuscripts</strong>: Among oldest surviving Buddhist texts</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <div class="subsection-header">
+          <span class="subsection-letter">C</span>
+          <h3 class="subsection-title">Temples &amp; Inscriptions</h3>
+        </div>
+
+        <div class="topic">
+          <div class="topic-title">Temples in News</div>
+          <table class="data-table">
+            <thead><tr><th>Temple</th><th>Location</th><th>Key Fact</th></tr></thead>
+            <tbody>
+              <tr><td>Sri Venkateswara Swamy</td><td>Tirupati, Seshachalam Hills, AP</td><td>Dravidian style; built by Pallavas/Cholas/Vijayanagara Empire; Krishnadevaraya was major patron</td></tr>
+              <tr><td>Yadagirigutta Temple</td><td>Yadadri Bhongir, Telangana</td><td>Dedicated to Narasimha; Pancha Narasimha Kshetram; Dravidian + Kakatiyan architecture</td></tr>
+              <tr><td>Tripura Sundari Temple</td><td>Udaipur, Tripura</td><td>One of 51 Shaktipeethas; built 1501 by Maharaj Dhanya Manikya Bahadur; turtle-shaped hillock</td></tr>
+              <tr><td>Karni Mata Temple</td><td>Deshnok, near Bikaner, Rajasthan</td><td>'Rat temple'; Karni Mata = 14th-15th century sage; incarnation of Goddess Durga (born 1387 CE)</td></tr>
+              <tr><td>Shree Lairai Devi Temple</td><td>Shirgao, Goa</td><td>Annual Lairai Jatra; fire-walking ritual = Agnidivya/Homkhand</td></tr>
+              <tr><td>Mata Sita Temple</td><td>Punaura Dham, Sitamarhi, Bihar</td><td>Birthplace of Goddess Sita; Shree Janaki Janm Bhumi trust formed</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="topic">
+          <div class="topic-title">Chandrashekara Temple Inscription</div>
+          <ul class="notes">
+            <li>Found in Guttala, Haveri, Karnataka; written in Kannada; dated Saka 1461</li>
+            <li><strong>FIRST historical record of a humanitarian disaster</strong> from natural calamity in India</li>
+            <li>Documents death of <em>6,307 people due to drought</em></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <div class="subsection-header">
+          <span class="subsection-letter">D</span>
+          <h3 class="subsection-title">Art, Crafts &amp; GI Tags</h3>
+        </div>
+
+        <div class="topic">
+          <div class="topic-title">GI Tags in News</div>
+          <div class="box box-green">
+            <ul class="notes">
+              <li><strong>Kolhapuri Chappal</strong>: Maharashtra/Karnataka</li>
+              <li><strong>Kumbakonam Vetrilai</strong> (Betel leaf): Tamil Nadu</li>
+              <li><strong>Kashmiri Pashmina Shawl</strong>: J&K</li>
+              <li><strong>Pokkali Paddy</strong>: Kerala (saltwater-tolerant rice)</li>
+              <li><strong>Chakhao Rice</strong>: Manipur (black sticky rice, GI awarded 2020)</li>
+              <li><strong>Assam GI Tags</strong>: Multiple new tags added (verify specific items)</li>
+            </ul>
+          </div>
+          <span class="exam-tag">GI tags — know state + product pairings for direct MCQ</span>
+        </div>
+
+        <div class="topic">
+          <div class="topic-title">Key Art Forms &amp; Crafts</div>
+          <ul class="notes">
+            <li><strong>Jamdani Saree</strong>: Handwoven muslin; UNESCO Intangible Cultural Heritage</li>
+            <li><strong>Vrindavani Vastra</strong>: Traditional woven textile of Assam; intricate silk weaving</li>
+            <li><strong>Gussadi Dance</strong>: Tribal dance of Gond community (Telangana/Maharashtra)</li>
+            <li><strong>INS Kaundinya</strong>: Indian Navy ship; <em>Tankai Method</em> = traditional Indian sewn-plank shipbuilding</li>
+            <li><strong>Irumudi</strong>: Sacred bundle carried during Sabarimala pilgrimage</li>
+          </ul>
+        </div>
+
+        <div class="topic">
+          <div class="topic-title">Festivals in News</div>
+          <table class="data-table">
+            <thead><tr><th>Festival</th><th>State</th><th>Note</th></tr></thead>
+            <tbody>
+              <tr><td>Sangai Festival</td><td>Manipur</td><td>Sangai = state animal (Brow-antlered deer / dancing deer)</td></tr>
+              <tr><td>Karthigai Deepam</td><td>Tamil Nadu</td><td>Festival of lights; at Tiruvannamalai (Arunachala Hill)</td></tr>
+              <tr><td>Simhastha Kumbh</td><td>Ujjain, MP</td><td>Every 12 years on banks of Shipra river</td></tr>
+              <tr><td>Ramman Festival</td><td>Uttarakhand</td><td>Garhwal Himalayas; UNESCO Intangible Cultural Heritage</td></tr>
+              <tr><td>Bonalu</td><td>Telangana</td><td>Dedicated to Goddess Mahakali</td></tr>
+              <tr><td>Gajapayana</td><td>Karnataka</td><td>Annual march of elephants to Mysore for Dasara</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <div class="subsection-header">
+          <span class="subsection-letter">E</span>
+          <h3 class="subsection-title">Freedom Movement &amp; Modern History</h3>
+        </div>
+        <div class="box box-blue">
+          <ul class="notes">
+            <li><strong>Mahad Satyagraha (1927)</strong>: Led by Ambedkar; first major Dalit rights movement; Mahad, Maharashtra</li>
+            <li><strong>Batukeshwar Dutt</strong>: Threw bombs in Central Legislative Assembly (1929) with Bhagat Singh</li>
+            <li><strong>Vande Mataram</strong>: From Bankim Chandra Chattopadhyay's 'Anandamath' (1882)</li>
+            <li><strong>Narayana Guru</strong>: Social reformer of Kerala; 'One caste, one religion, one God for man'</li>
+            <li><strong>Digvijay Divas</strong>: Celebrates India's liberation of Goa (December 19, 1961)</li>
+            <li><strong>Vietnam Reunification</strong>: 50th anniversary in 2025 (1975–2025)</li>
+            <li><strong>WW-2</strong>: 80th anniversary in 2025; Hiroshima atomic bombing: August 6, 1945</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <section class="section" id="s6">
+      <div class="section-header">
+        <span class="section-num">06</span>
+        <h2 class="section-title">UNESCO &amp; International Heritage</h2>
+      </div>
+
+      <div class="topic">
+        <div class="topic-title">Recent UNESCO Designations</div>
+        <ul class="notes">
+          <li><strong>Maratha Military Landscapes</strong>: India's 44th WHS (47th WHC)</li>
+          <li><strong>Erra Matti Dibbalu</strong>: Red sand dune formations on Andhra Pradesh coast</li>
+          <li><strong>Sarnath</strong>: Buddhist heritage site; Buddha gave first sermon here</li>
+          <li><strong>Sirpur Archaeological Site</strong>: Chhattisgarh; proposed UNESCO nomination</li>
+          <li><strong>Intangible Cultural Heritage</strong>: Ramman Festival (Uttarakhand), Jamdani weaving</li>
+        </ul>
+      </div>
+
+      <div class="topic">
+        <div class="topic-title">BBNJ Treaty (High Seas Treaty)</div>
+        <div class="box box-teal">
+          <ul class="notes">
+            <li>Full name: <strong>Biodiversity Beyond National Jurisdictions</strong> — legally binding under UNCLOS</li>
+            <li>Aims: Curb pollution, limit resource extraction, create protected areas in high seas, equitable benefit-sharing</li>
+            <li><strong>High Seas</strong>: Beyond national territorial waters and EEZs; ~64% of ocean area; global commons</li>
+            <li>India: <em>Signed but NOT yet ratified</em>; drafting domestic law (12-member committee; headed by Sanjay Upadhyay)</li>
+            <li>60+ countries have ratified; enters force 120 days after 60th ratification</li>
+            <li><strong>UNCLOS (1982)</strong>: Territorial sea = 12 NM (full sovereignty); EEZ = 200 NM (economic rights only)</li>
+          </ul>
+        </div>
+        <span class="exam-tag">BBNJ vs UNCLOS; India = signed but not ratified</span>
+      </div>
+
+      <div class="topic">
+        <div class="topic-title">Mercator Map &amp; Equal Earth</div>
+        <ul class="notes">
+          <li><strong>Mercator projection</strong>: Designed 1569 by Gerardus Mercator; preserves shape &amp; angles but distorts area near poles</li>
+          <li>Africa (30 mn sq km) appears same size as Greenland (14× smaller); Europe appears 3× its actual size vs Africa</li>
+          <li><strong>Equal Earth projection (2018)</strong>: Preserves relative area accurately</li>
+          <li>African Union endorsed 'Correct the Map' campaign to replace Mercator with alternatives</li>
+          <li><strong>Gall-Peters projection</strong>: Also preserves area but elongates continents</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <section class="section" id="s7">
+      <div class="section-header">
+        <span class="section-num">07</span>
+        <h2 class="section-title">Society, Tribes &amp; Population</h2>
+      </div>
+
+      <div class="topic">
+        <div class="topic-title">Key Tribes in News</div>
+        <table class="data-table">
+          <thead><tr><th>Tribe</th><th>Location</th><th>Key Facts</th></tr></thead>
+          <tbody>
+            <tr><td>Dongaria Kondh</td><td>Odisha (Niyamgiri Hills)</td><td>PVTG; worship Niyam Raja; resisted Vedanta bauxite mining</td></tr>
+            <tr><td>Dard-Shin</td><td>Ladakh / Kashmir / HP</td><td>Ancient Aryan/Indo-Iranian community; traditional arts and architecture</td></tr>
+            <tr><td>Jarawas</td><td>Andaman &amp; Nicobar Islands</td><td>Protected tribe; contact restricted; Andaman Trunk Road controversy</td></tr>
+            <tr><td>Apatanis</td><td>Ziro Valley, Arunachal Pradesh</td><td>Known for sustainable rice cultivation and pine forests</td></tr>
+            <tr><td>Dandami Madia (Maria)</td><td>Chhattisgarh (Bastar region)</td><td>Sub-group of Gond; known for Ghotul (youth dormitory) social system</td></tr>
+            <tr><td>Kolhan / Manki-Munda</td><td>Jharkhand (Kolhan region)</td><td>Traditional governance; Manki = head of cluster of villages</td></tr>
+            <tr><td>Mishmi</td><td>Arunachal Pradesh</td><td>4 groups: Idu, Digaro, Miju, Deng; Tibeto-Burman linguistic heritage</td></tr>
+            <tr><td>Kaithi Lambadas</td><td>Telangana (Gandhari mandal)</td><td>Vegetarian grazers; migrated from UP (Mathura); knife-shaped hair crests; mirrors on clothes</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="topic">
+        <div class="topic-title">Population &amp; Urbanization</div>
+        <ul class="notes">
+          <li><strong>TFR (Total Fertility Rate)</strong>: Average children per woman; India targeting replacement level (2.1)</li>
+          <li><strong>Birth Certificate</strong>: Mandatory under Registration of Births and Deaths Act (1969 as amended)</li>
+          <li><strong>Global Liveability Index 2025</strong>: Measures stability, healthcare, culture/environment, education, infrastructure</li>
+          <li><strong>Denotified Tribes</strong>: Historically criminalised under Criminal Tribes Act (1871); denotified 1952</li>
+          <li><strong>Yakten Village (Sikkim)</strong>: India's FIRST digital nomad village (Pakyong district)</li>
+          <li><strong>Urban Challenge Fund</strong>: For urban infrastructure development</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <section class="section" id="s8">
+      <div class="section-header">
+        <span class="section-num">08</span>
+        <h2 class="section-title">Miscellaneous</h2>
+      </div>
+
+      <div class="subsection">
+        <div class="subsection-header">
+          <span class="subsection-letter">A</span>
+          <h3 class="subsection-title">Polar Research &amp; Oceans</h3>
+        </div>
+        <div class="box box-blue">
+          <ul class="notes">
+            <li><strong>NCPOR</strong> (National Centre for Polar &amp; Ocean Research): Established 1998, under MoES</li>
+            <li><strong>Antarctic Stations</strong>: Maitri (operational) | Bharati (operational) | Dakshin Gangotri (buried in ice; now supply base)</li>
+            <li><strong>Maitri II</strong>: Approved for eastern Antarctica; India's 4th station; ready by 2029</li>
+            <li><strong>Arctic Station</strong>: Himadri (Ny-Ålesund, Norway; established 2008)</li>
+            <li>India joined Antarctic Treaty: <strong>1983</strong> (Consultative Party); original 12 signatories: 1959</li>
+            <li><strong>Svalbard Treaty (1920)</strong>: Norway has full sovereignty; India signed 1920</li>
+            <li><strong>Samudrayaan</strong>: India's first manned submersible; can dive to 6,000m; NIOT Chennai; ISRO making titanium hull</li>
+            <li><strong>Polar Research Vehicle</strong>: GRSE (India) + Kongsberg (Norway) MoU; India's first PRV</li>
+            <li><strong>Maritime Development Fund</strong>: ₹25,000 crore (Budget 2025); Govt contributes 49%</li>
+          </ul>
+        </div>
+        <span class="exam-tag">4 Indian stations (3 Antarctic + 1 Arctic) and their names — frequently asked</span>
+      </div>
+
+      <div class="subsection">
+        <div class="subsection-header">
+          <span class="subsection-letter">B</span>
+          <h3 class="subsection-title">Sports</h3>
+        </div>
+        <table class="data-table">
+          <thead><tr><th>Event</th><th>Host / Key Info</th></tr></thead>
+          <tbody>
+            <tr><td>BWF World Championships 2026</td><td>Delhi, India</td></tr>
+            <tr><td>World Athletics Championships 2025</td><td>Tokyo, Japan</td></tr>
+            <tr><td>World Para Athletics Championships</td><td>Delhi, India</td></tr>
+            <tr><td>FIH Junior Men's Hockey World Cup</td><td>Chennai, India</td></tr>
+            <tr><td>12th Men's Hockey Asia Cup 2025</td><td>Rajgir, Bihar</td></tr>
+            <tr><td>Deaflympics 2025</td><td>International multi-sport event for deaf athletes</td></tr>
+            <tr><td>Divya Deshmukh</td><td>India's first Women's Chess World Cup winner</td></tr>
+            <tr><td>Asia's Longest Ski Drag Lift</td><td>Located in India</td></tr>
+            <tr><td>CAFA Nations Cup</td><td>Tajikistan and Uzbekistan</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="subsection">
+        <div class="subsection-header">
+          <span class="subsection-letter">C</span>
+          <h3 class="subsection-title">Important One-Liners</h3>
+        </div>
+        <div class="box box-gold">
+          <ul class="notes">
+            <li><strong>Metre Convention (1875)</strong>: International treaty establishing BIPM; standardises SI units</li>
+            <li><strong>Yuge Yugeen Bharat Museum</strong>: National museum showcasing India's history from ancient to modern</li>
+            <li><strong>Rashtra Prerna Sthal</strong>: 65-acre lotus-shaped memorial, Lucknow (Gomti river); statues of Vajpayee, Deen Dayal Upadhyay, Shyama Prasad Mookerjee</li>
+            <li><strong>National Ayurveda Day</strong>: Observed on Dhanvantari Jayanti (Dhanteras)</li>
+            <li><strong>Wazwan</strong>: Traditional multi-course meal of Kashmiri cuisine</li>
+            <li><strong>Nyoma Air Base</strong>: One of world's highest airfields (4,200m); southeastern Ladakh; ~35 km from LAC</li>
+            <li><strong>Sagarmatha Sambaad</strong>: Nepal-hosted multilateral dialogue; theme: 'Climate Change, Mountains, and Future of Humanity'</li>
+            <li><strong>Coastline Paradox</strong>: Coastline length increases with finer measurement scale; identified by Lewis Fry Richardson; popularised by Benoît Mandelbrot</li>
+            <li><strong>Cherrapunji Eastern Craft Gin</strong>: First alcohol label from NE India to be exported; made from rainwater of Sohra &amp; Mawsynram</li>
+            <li><strong>Operation Flood (1970)</strong>: White Revolution; transformed India's dairy sector; architect: Dr. Verghese Kurien</li>
+            <li><strong>Bekal Fort</strong>: Largest &amp; best-preserved fort in Kerala (Kasaragod); built c.1650 by Shivappa Nayaka (Keladi dynasty); constructed from laterite</li>
+            <li><strong>Mud Volcano</strong> (Baratang, A&amp;N): India's only mud volcano; erupted after 20 years; erupts mud + methane (no lava)</li>
+            <li><strong>Daojali Hading</strong> (Assam): Neolithic site in Dima Hasao; 2,700+ years old; artefacts include polished double-shouldered celts</li>
+            <li><strong>Dandakaranya</strong>: Large forested region spanning Chhattisgarh, Odisha, Telangana, AP; drained by Mahanadi &amp; Godavari tributaries; Dandaka forest of Ramayana</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script>
+  // Active nav tab on scroll
+  const tabs = document.querySelectorAll('.nav-tab');
+  const sections = document.querySelectorAll('.section');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        tabs.forEach(t => {
+          t.classList.toggle('active', t.getAttribute('href') === '#' + id);
+        });
+      }
+    });
+  }, { rootMargin: '-50% 0px -50% 0px' });
+
+  sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>
