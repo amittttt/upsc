@@ -1,0 +1,1403 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Economy Prelims — Quick Revision Notes</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0e1a;
+    --surface: #111827;
+    --surface2: #1a2235;
+    --border: #1e2d45;
+    --accent: #f59e0b;
+    --accent2: #10b981;
+    --accent3: #6366f1;
+    --accent4: #ef4444;
+    --accent5: #ec4899;
+    --text: #e2e8f0;
+    --text-muted: #64748b;
+    --text-dim: #94a3b8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 13px;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* HEADER */
+  header {
+    background: linear-gradient(135deg, #0a0e1a 0%, #0f1929 50%, #0a1628 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 32px 40px 28px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+  }
+
+  .header-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .header-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+  }
+
+  .header-title span { color: var(--accent); }
+
+  .header-meta {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+  }
+
+  .badge-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+  }
+
+  .badge {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    padding: 3px 10px;
+    border-radius: 2px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+  }
+
+  .badge-amber { background: #78350f; color: var(--accent); border: 1px solid #92400e; }
+  .badge-green { background: #064e3b; color: var(--accent2); border: 1px solid #065f46; }
+  .badge-indigo { background: #1e1b4b; color: #a5b4fc; border: 1px solid #312e81; }
+
+  /* NAV */
+  .nav-strip {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 0 40px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .nav-strip::-webkit-scrollbar { display: none; }
+
+  .nav-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    gap: 0;
+  }
+
+  .nav-item {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding: 12px 16px;
+    white-space: nowrap;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .nav-item:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+  /* MAIN LAYOUT */
+  .main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 32px 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+
+  /* SECTION CARDS */
+  .section-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    break-inside: avoid;
+  }
+
+  .section-card.wide { grid-column: span 2; }
+  .section-card.full { grid-column: span 3; }
+
+  .section-header {
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--bg);
+    padding: 2px 7px;
+    border-radius: 2px;
+    min-width: 28px;
+    text-align: center;
+  }
+
+  .num-amber { background: var(--accent); }
+  .num-green { background: var(--accent2); }
+  .num-indigo { background: #818cf8; }
+  .num-red { background: var(--accent4); }
+  .num-pink { background: var(--accent5); }
+  .num-teal { background: #14b8a6; }
+  .num-sky { background: #38bdf8; }
+  .num-orange { background: #f97316; }
+  .num-lime { background: #84cc16; color: #1a2e05 !important; }
+  .num-violet { background: #a855f7; }
+  .num-cyan { background: #06b6d4; color: #0c1a2e !important; }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    font-weight: 700;
+    flex: 1;
+  }
+
+  .section-body { padding: 14px 16px; }
+
+  /* TOPIC BLOCKS */
+  .topic {
+    margin-bottom: 14px;
+    border-left: 2px solid var(--border);
+    padding-left: 12px;
+  }
+
+  .topic:last-child { margin-bottom: 0; }
+
+  .topic-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 6px;
+  }
+
+  .topic-title.green { color: var(--accent2); }
+  .topic-title.indigo { color: #a5b4fc; }
+  .topic-title.red { color: #fca5a5; }
+  .topic-title.pink { color: #f9a8d4; }
+  .topic-title.teal { color: #5eead4; }
+  .topic-title.sky { color: #7dd3fc; }
+  .topic-title.orange { color: #fdba74; }
+  .topic-title.lime { color: #bef264; }
+  .topic-title.violet { color: #d8b4fe; }
+
+  .fact-list { list-style: none; }
+
+  .fact-list li {
+    position: relative;
+    padding-left: 14px;
+    margin-bottom: 4px;
+    color: var(--text-dim);
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .fact-list li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: var(--text-muted);
+    font-weight: bold;
+  }
+
+  .fact-list li strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .fact-list li em {
+    color: var(--accent);
+    font-style: normal;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+  }
+
+  /* HIGHLIGHT BOX */
+  .highlight-box {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 10px 12px;
+    margin-bottom: 12px;
+  }
+
+  .highlight-box.amber { border-left: 3px solid var(--accent); }
+  .highlight-box.green { border-left: 3px solid var(--accent2); }
+  .highlight-box.red { border-left: 3px solid var(--accent4); }
+  .highlight-box.indigo { border-left: 3px solid #818cf8; }
+  .highlight-box.teal { border-left: 3px solid #14b8a6; }
+
+  .hb-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+  }
+
+  .hb-value {
+    font-size: 12px;
+    color: var(--text-dim);
+    line-height: 1.5;
+  }
+
+  .hb-value strong { color: var(--text); }
+
+  /* TABLE */
+  .mini-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11px;
+    margin-bottom: 10px;
+  }
+
+  .mini-table th {
+    background: var(--surface2);
+    color: var(--text-muted);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    padding: 6px 8px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .mini-table td {
+    padding: 5px 8px;
+    color: var(--text-dim);
+    border-bottom: 1px solid rgba(30,45,69,0.5);
+    vertical-align: top;
+    line-height: 1.4;
+  }
+
+  .mini-table td strong { color: var(--text); }
+
+  .mini-table tr:last-child td { border-bottom: none; }
+  .mini-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+  /* TAG PILLS */
+  .tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 8px;
+  }
+
+  .tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 2px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+  }
+
+  /* DIVIDER */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 12px 0;
+  }
+
+  /* GRID 2 INSIDE CARD */
+  .inner-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .inner-grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+  }
+
+  /* STAT BLOCK */
+  .stat-block {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 10px 12px;
+    text-align: center;
+  }
+
+  .stat-val {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .stat-val.green { color: var(--accent2); }
+  .stat-val.indigo { color: #a5b4fc; }
+  .stat-val.pink { color: #f9a8d4; }
+
+  .stat-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+  }
+
+  /* COMPARE ROW */
+  .compare-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .compare-col {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 10px 12px;
+  }
+
+  .compare-col-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 24px;
+    color: var(--text-muted);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    border-top: 1px solid var(--border);
+    margin-top: 20px;
+  }
+
+  /* SEARCH BAR */
+  .search-wrap {
+    position: relative;
+  }
+
+  #searchInput {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    padding: 7px 12px 7px 32px;
+    border-radius: 3px;
+    width: 220px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  #searchInput:focus { border-color: var(--accent); }
+  #searchInput::placeholder { color: var(--text-muted); }
+
+  .search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    font-size: 12px;
+  }
+
+  .hidden { display: none !important; }
+
+  /* SCROLL TO TOP */
+  .scroll-top {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: var(--accent);
+    color: var(--bg);
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    z-index: 200;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .scroll-top.visible { opacity: 1; }
+
+  @media (max-width: 900px) {
+    .main { grid-template-columns: 1fr 1fr; padding: 20px; }
+    .section-card.wide { grid-column: span 2; }
+    .section-card.full { grid-column: span 2; }
+    header { padding: 20px; }
+    .nav-strip { padding: 0 20px; }
+  }
+
+  @media (max-width: 600px) {
+    .main { grid-template-columns: 1fr; padding: 12px; }
+    .section-card.wide, .section-card.full { grid-column: span 1; }
+    .inner-grid, .inner-grid-3, .compare-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div>
+      <div class="header-title">Economy <span>Prelims</span> Notes</div>
+      <div class="badge-row">
+        <span class="badge badge-amber">Vision IAS · Apr–Nov 2025</span>
+        <span class="badge badge-green">GS Paper III</span>
+        <span class="badge badge-indigo">PT 365 Edition</span>
+      </div>
+    </div>
+    <div>
+      <div class="search-wrap">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" placeholder="Search topics..." oninput="searchCards(this.value)">
+      </div>
+      <div class="header-meta" style="margin-top:8px;text-align:right;">11 Sections · Quick Revision</div>
+    </div>
+  </div>
+</header>
+
+<div class="nav-strip">
+  <div class="nav-inner">
+    <a class="nav-item" href="#banking">Banking</a>
+    <a class="nav-item" href="#finance">Finance</a>
+    <a class="nav-item" href="#financial-market">Fin. Market</a>
+    <a class="nav-item" href="#external">External</a>
+    <a class="nav-item" href="#growth">Growth</a>
+    <a class="nav-item" href="#agriculture">Agriculture</a>
+    <a class="nav-item" href="#labour">Labour</a>
+    <a class="nav-item" href="#business">Business</a>
+    <a class="nav-item" href="#infra">Infrastructure</a>
+    <a class="nav-item" href="#mining">Mining</a>
+    <a class="nav-item" href="#indices">Key Indices</a>
+  </div>
+</div>
+
+<div class="main" id="mainGrid">
+
+  <!-- ===== BANKING ===== -->
+  <div class="section-card wide" id="banking" data-search="rbi monetary policy repo crr slr banking ombudsman rrb sfb sarfaesi nbfc ecf">
+    <div class="section-header">
+      <span class="section-num num-amber">01</span>
+      <span class="section-title">Banking &amp; Monetary Policy</span>
+    </div>
+    <div class="section-body">
+      <div class="inner-grid">
+        <div>
+          <div class="topic">
+            <div class="topic-title">RBI Monetary Policy Tools</div>
+            <table class="mini-table">
+              <tr><th>Tool</th><th>Type</th><th>Effect</th></tr>
+              <tr><td><strong>Repo Rate</strong></td><td>Quantitative</td><td>↑Rate = ↓Money Supply</td></tr>
+              <tr><td><strong>Reverse Repo</strong></td><td>Quantitative</td><td>Absorbs liquidity</td></tr>
+              <tr><td><strong>CRR</strong></td><td>Quantitative</td><td>% NDTL as cash with RBI; no interest</td></tr>
+              <tr><td><strong>SLR</strong></td><td>Quantitative</td><td>% NDTL in liquid assets (gold/bonds/cash)</td></tr>
+              <tr><td><strong>SDF</strong></td><td>Liquidity</td><td>Absorbs liquidity WITHOUT collateral; replaced Fixed Rate RR as LAF floor</td></tr>
+              <tr><td><strong>VRRR</strong></td><td>Liquidity</td><td>Market-determined rate; absorbs excess money</td></tr>
+              <tr><td><strong>Moral Suasion</strong></td><td>Qualitative</td><td>Non-binding persuasion</td></tr>
+            </table>
+          </div>
+          <div class="topic">
+            <div class="topic-title orange">ECF &amp; Surplus Transfer</div>
+            <ul class="fact-list">
+              <li><strong>ECF (2019)</strong> — Based on Bimal Jalan Committee; reviewed every 5 years</li>
+              <li>Under <strong>Section 47, RBI Act 1934</strong></li>
+              <li><strong>Realized Equity</strong> = Capital + Reserve Fund + Contingency Fund + ADF</li>
+              <li><strong>CRB</strong> = Contingent Risk Buffer (monetary/financial stability risks)</li>
+              <li>FY25 surplus transferred: <em>₹2.69 Lakh Crore</em></li>
+            </ul>
+          </div>
+          <div class="topic">
+            <div class="topic-title green">Forex Reserves Components</div>
+            <ul class="fact-list">
+              <li><strong>FCA</strong> — USD, EUR, GBP, AUD, JPY</li>
+              <li><strong>Gold Reserves</strong> — Now <em>$102.3 bn</em> (≈15% of forex reserves, up from 7% decade ago)</li>
+              <li><strong>SDR</strong> — Interest-bearing IMF reserve asset</li>
+              <li><strong>Reserve Tranche Position (RTP)</strong> — Quota minus IMF's holdings; no strict conditions</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="topic">
+            <div class="topic-title">One State One RRB</div>
+            <ul class="fact-list">
+              <li>4th phase amalgamation → <strong>28 RRBs</strong> (down from 43) in 26 states+2 UTs</li>
+              <li>Earlier phases based on <strong>Dr. Vyas Committee</strong> recommendations</li>
+              <li>Genesis: <em>1975</em>, Narasimham Working Group</li>
+              <li>Ownership: <strong>GoI 50% | State 15% | Sponsor Bank 35%</strong></li>
+              <li>Regulated by <strong>RBI</strong> under Banking Regulation Act 1949; supervised by <strong>NABARD</strong></li>
+              <li>Must allocate <strong>75% of ANBC</strong> to PSL; CRAR <strong>9%</strong></li>
+            </ul>
+          </div>
+          <div class="topic">
+            <div class="topic-title indigo">Small Finance Banks</div>
+            <ul class="fact-list">
+              <li>Licensed under <strong>Section 22(1), Banking Regulation Act 1949</strong></li>
+              <li>Announced in Union Budget <strong>2014-15</strong>; registered as public limited company</li>
+              <li>Min paid-up capital: <em>₹200 crore</em></li>
+              <li>AU SFB → first SFB to get in-principle approval for <strong>Universal Bank</strong> transition</li>
+              <li>Criteria: 5 yr scheduled status, stock listed, net worth <em>₹1,000 cr</em>, GNPA ≤3%, NNPA ≤1%</li>
+              <li><strong>New PSL rule (FY26)</strong>: Total PSL reduced to <em>60% ANBC</em> (from 75%)</li>
+            </ul>
+          </div>
+          <div class="topic">
+            <div class="topic-title red">SARFAESI Act 2002</div>
+            <ul class="fact-list">
+              <li>Objective: Recovery of <strong>NPAs</strong> (loan overdue &gt;90 days = NPA)</li>
+              <li>Methods: Securitisation | Asset Reconstruction | Court-free enforcement (Sec 13)</li>
+              <li><strong>ARC</strong> = buys NPAs to clean up bank balance sheets; registered with RBI under SARFAESI</li>
+              <li>Grievance: Borrowers → <strong>DRT</strong> (Recovery of Debts &amp; Bankruptcy Act 1993)</li>
+              <li>Sec 13(8) contradiction with Rules 8&amp;9 highlighted by Supreme Court</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <hr class="divider">
+      <div class="inner-grid-3">
+        <div class="highlight-box amber">
+          <div class="hb-label">RB-IOS 2021</div>
+          <div class="hb-value"><strong>One Nation One Ombudsman</strong> — Merged 3 schemes (Banking 2006, NBFC 2018, Digital Txn 2019). Co-op banks now covered. Award: ₹20 lakh + ₹1 lakh (harassment)</div>
+        </div>
+        <div class="highlight-box green">
+          <div class="hb-label">SRO for NBFCs</div>
+          <div class="hb-value">RBI granted SRO status to <strong>FIDC</strong>. SROs set up as Sec 8 (not-for-profit) companies. No entity &gt;10% paid-up share. 1/3rd Board must be independent.</div>
+        </div>
+        <div class="highlight-box indigo">
+          <div class="hb-label">New RBI Initiatives</div>
+          <div class="hb-value"><strong>ULI</strong> = Digital Public Infrastructure for credit delivery. <strong>CBDC Retail Sandbox</strong> for fintech innovation. <strong>Tokenisation of CDs</strong> on blockchain.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== PRIORITY SECTOR ===== -->
+  <div class="section-card" id="psl" data-search="priority sector lending PSL agriculture MSME education housing">
+    <div class="section-header">
+      <span class="section-num num-green">PSL</span>
+      <span class="section-title">Priority Sector Lending</span>
+    </div>
+    <div class="section-body">
+      <div class="topic">
+        <div class="topic-title green">PSL Categories</div>
+        <ul class="fact-list">
+          <li>Agriculture | MSMEs | Export Credit | Education | Housing | Social Infrastructure | Renewable Energy</li>
+          <li>Applicable to: Commercial Banks (incl. RRBs, SFBs, LABs) &amp; Primary (Urban) Co-op Banks</li>
+        </ul>
+      </div>
+      <table class="mini-table">
+        <tr><th>Bank Type</th><th>PSL Target</th></tr>
+        <tr><td>Commercial Banks / RRBs</td><td>40% ANBC</td></tr>
+        <tr><td>SFBs (new from FY26)</td><td><strong>60% ANBC</strong> (40% mandatory + 20% flexible)</td></tr>
+      </table>
+      <div class="highlight-box amber">
+        <div class="hb-label">Co-lending norms</div>
+        <div class="hb-value">Min 10% share each. PSL status claimable by each lender. Uniform NPA classification — if one tags NPA, all must.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FINANCE & TAXATION ===== -->
+  <div class="section-card wide" id="finance" data-search="FRBM fiscal deficit GST income tax direct indirect taxation goods services">
+    <div class="section-header">
+      <span class="section-num num-indigo">02</span>
+      <span class="section-title">Finance &amp; Taxation</span>
+    </div>
+    <div class="section-body">
+      <div class="inner-grid">
+        <div>
+          <div class="topic">
+            <div class="topic-title indigo">FRBM Act 2003 — Key Targets</div>
+            <table class="mini-table">
+              <tr><th>Parameter</th><th>Target</th></tr>
+              <tr><td>Fiscal Deficit (original)</td><td><strong>3% of GDP</strong></td></tr>
+              <tr><td>General Govt Debt</td><td>≤60% of GDP</td></tr>
+              <tr><td>Central Govt Debt</td><td>≤40% of GDP</td></tr>
+              <tr><td>Revised consolidation path</td><td>&lt;4.5% of GDP fiscal deficit</td></tr>
+              <tr><td>Additional Guarantees</td><td>≤0.5% of GDP/year</td></tr>
+            </table>
+            <ul class="fact-list">
+              <li><strong>Revenue &amp; Effective Revenue Deficit targets removed</strong> by 2018 Amendment</li>
+              <li>CAG conducts annual compliance review</li>
+              <li>Debt-to-GDP peaked at <em>61.38%</em> in FY21 (pandemic)</li>
+            </ul>
+          </div>
+          <div class="topic">
+            <div class="topic-title">Income Tax Act 2025</div>
+            <ul class="fact-list">
+              <li>Replaces Income-Tax Act <strong>1961</strong></li>
+              <li><strong>MAT</strong> (corporate only) &amp; <strong>AMT</strong> (non-corporate) separated</li>
+              <li>Undisclosed income expanded to include <strong>virtual digital assets</strong></li>
+              <li>IT authorities can access email servers, social media during search</li>
+              <li>Dispute Resolution Panel for transfer pricing / non-residents / foreign companies</li>
+            </ul>
+          </div>
+          <div class="topic">
+            <div class="topic-title orange">Tax Terms</div>
+            <table class="mini-table">
+              <tr><th>Term</th><th>Meaning</th></tr>
+              <tr><td>Safe Harbour</td><td>Tax authority accepts TP declared price as arm's length. Threshold raised: ₹200→<strong>₹300 cr</strong></td></tr>
+              <tr><td>APA</td><td>Pre-agreed TP methodology. Max 5 years. FY25 record: <strong>174 APAs</strong></td></tr>
+              <tr><td>STT</td><td>Direct tax on stock exchange transactions. Finance Act <strong>2004</strong></td></tr>
+              <tr><td>Anti-Dumping Duty</td><td>Protectionist tariff; GATT allows it against dumped imports</td></tr>
+              <tr><td>Safeguard Duty</td><td>WTO member measure. Max 4 yrs (extendable to 8). Not country-specific generally</td></tr>
+            </table>
+          </div>
+        </div>
+        <div>
+          <div class="topic">
+            <div class="topic-title">GST 2.0 — Key Reforms</div>
+            <div class="highlight-box amber">
+              <div class="hb-label">Constitutional Basis</div>
+              <div class="hb-value">101st Constitutional Amendment Act 2017. GST Council under <strong>Article 279A</strong>. Voting: Centre 1/3rd, States 2/3rds; 3/4th majority needed.</div>
+            </div>
+            <ul class="fact-list">
+              <li>56th GST Council approved <strong>two-slab system: 5% &amp; 18%</strong> (removes 12% &amp; 28%)</li>
+              <li><strong>40% Special De-Merit Rate</strong> for sin goods (replaces compensation cess)</li>
+              <li>Median rate moves: 12% → <em>5%</em></li>
+            </ul>
+            <table class="mini-table">
+              <tr><th>Sector</th><th>Change</th></tr>
+              <tr><td>FMCG (hair oil, soap)</td><td>18% → 5%</td></tr>
+              <tr><td>Life/Health Insurance</td><td>18% → Exempt</td></tr>
+              <tr><td>ACs, TVs, Dishwashers</td><td>28% → 18%</td></tr>
+              <tr><td>Cement</td><td>28% → 18%</td></tr>
+              <tr><td>Small cars, Bikes ≤350cc</td><td>28% → 18%</td></tr>
+              <tr><td>36 lifesaving drugs</td><td>→ Nil rate</td></tr>
+            </table>
+            <ul class="fact-list">
+              <li><strong>GSTAT</strong> operational by Sept 2025</li>
+              <li>Auto-registration for small businesses from <em>Nov 1, 2025</em></li>
+            </ul>
+          </div>
+          <div class="topic">
+            <div class="topic-title green">Indian Tax Structure Quick Ref</div>
+            <div class="compare-row">
+              <div class="compare-col">
+                <div class="compare-col-title">Direct Tax (CBDT)</div>
+                <ul class="fact-list">
+                  <li>Income Tax</li>
+                  <li>Corporate Tax</li>
+                  <li>Capital Gains Tax</li>
+                  <li>Progressive; burden on payer</li>
+                </ul>
+              </div>
+              <div class="compare-col">
+                <div class="compare-col-title">Indirect Tax (CBIC)</div>
+                <ul class="fact-list">
+                  <li>GST (CGST+SGST+IGST)</li>
+                  <li>Customs Duty</li>
+                  <li>Excise (Petroleum/Liquor)</li>
+                  <li>Regressive; burden shifted</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FINANCIAL MARKET ===== -->
+  <div class="section-card" id="financial-market" data-search="SEBI UPI NPCI digital payments bond yield GIFT city IFSC FPI">
+    <div class="section-header">
+      <span class="section-num num-teal">03</span>
+      <span class="section-title">Financial Market &amp; Payments</span>
+    </div>
+    <div class="section-body">
+      <div class="topic">
+        <div class="topic-title teal">SEBI</div>
+        <ul class="fact-list">
+          <li>Set up 1988; statutory body by <strong>SEBI Act 1992</strong></li>
+          <li>Board: 1 Govt-nominated Chairman + 2 MoF + 1 RBI + 5 Govt-nominated (≥3 full-time)</li>
+          <li>New: <strong>SWAGAT-FI Framework</strong> for trusted FPIs &amp; FVCIs</li>
+          <li>REITs reclassified as <strong>equity</strong> (enables MF investment)</li>
+          <li>AIF: Reg. under SEBI AIF Regs 2012. Cat I (startups) | Cat II (PE/Debt) | Cat III (Hedge Funds)</li>
+        </ul>
+      </div>
+      <hr class="divider">
+      <div class="topic">
+        <div class="topic-title sky">UPI &amp; Digital Payments</div>
+        <ul class="fact-list">
+          <li>UPI launched <em>2016</em> by NPCI; built on <strong>IMPS</strong> infrastructure</li>
+          <li>Per-transaction limit: <em>₹5 lakh</em>; daily limit (P2M): <em>₹10 lakh</em></li>
+          <li>Namibia = first African country to adopt UPI (2025)</li>
+          <li>UPI active in: Bhutan, France, Mauritius, Nepal, Singapore, Sri Lanka, UAE</li>
+          <li><strong>NPCI</strong> = RBI + IBA initiative; not-for-profit; also runs RuPay, FASTag (NETC), NACH</li>
+          <li>NIPL (NPCI subsidiary, 2020) deploys RuPay &amp; UPI outside India</li>
+        </ul>
+      </div>
+      <hr class="divider">
+      <div class="topic">
+        <div class="topic-title">GIFT City IFSC</div>
+        <ul class="fact-list">
+          <li>India's first &amp; only IFSC; SEZ since <em>2015</em>; Gandhinagar, Gujarat</li>
+          <li>Regulated by <strong>IFSCA</strong> (est. 2020, IFSCA Act 2019)</li>
+          <li>New: <strong>FCSS</strong> (Foreign Currency Settlement System) — local USD settlement via CCIL IFSC</li>
+          <li>GFI Ranking: <em>46th</em> globally; FinTech: <em>45th</em></li>
+        </ul>
+      </div>
+      <hr class="divider">
+      <div class="topic">
+        <div class="topic-title orange">Bond Terms</div>
+        <ul class="fact-list">
+          <li><strong>Bond Price ↑ = Yield ↓</strong> (inverse relationship)</li>
+          <li><strong>AT1 Bonds</strong> = Perpetual bonds; no maturity; call option; meet capital adequacy</li>
+          <li><strong>Transition Bonds</strong> = Sub-category of green debt; for hard-to-abate sectors (steel, cement)</li>
+          <li><strong>India's S&P Rating</strong>: Upgraded to <em>BBB</em> (from BBB-); investment grade range: BBB- to AAA</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== EXTERNAL SECTOR ===== -->
+  <div class="section-card wide" id="external" data-search="FDI FPI remittance FTA UK EFTA trade rupee internationalization export">
+    <div class="section-header">
+      <span class="section-num num-sky">04</span>
+      <span class="section-title">External Sector</span>
+    </div>
+    <div class="section-body">
+      <div class="inner-grid">
+        <div>
+          <div class="topic">
+            <div class="topic-title sky">FDI Key Facts</div>
+            <ul class="fact-list">
+              <li>Governed by: FEMA 1999 | Consolidated FDI Policy 2020 | FEMA (NDI) Rules 2019</li>
+              <li><strong>90%</strong> of FDI now via automatic route</li>
+              <li>Net FDI fell <em>96%</em> in FY25 vs FY24 (despite gross FDI rise)</li>
+              <li>Top sectors FY25: Service (19%) | Computer software (16%) | Trading (8%)</li>
+              <li>Top countries: Singapore (30%) | Mauritius (17%) | USA (11%)</li>
+              <li><strong>Prohibited</strong>: Lottery, Gambling, Chit funds, Nidhi, Atomic Energy, Railway ops</li>
+            </ul>
+          </div>
+          <div class="topic">
+            <div class="topic-title">Remittances</div>
+            <ul class="fact-list">
+              <li>India <strong>#1 recipient</strong> globally; USD <em>118.7 bn</em> in 2023-24</li>
+              <li>Top source: USA (27.7%) → UAE → UK → Saudi Arabia → Singapore</li>
+              <li>Top recipient states: Maharashtra (20.5%) → Kerala → Tamil Nadu</li>
+              <li>= 47% of India's merchandise trade deficit; &gt;10% of gross current account inflows</li>
+              <li><strong>US Remittance Tax</strong>: 3.5% excise tax proposed (effective Jan 2026)</li>
+              <li><strong>LRS</strong>: ₹250,000/FY for resident individuals; not for HUFs/trusts</li>
+            </ul>
+          </div>
+          <div class="topic">
+            <div class="topic-title orange">Rupee Internationalization</div>
+            <ul class="fact-list">
+              <li><strong>SRVA mechanism</strong> (July 2022): Invoice &amp; settle trade in INR</li>
+              <li><strong>Vostro</strong> = foreign bank's account in domestic bank (in INR)</li>
+              <li><strong>Nostro</strong> = domestic bank's account in foreign bank (in foreign currency)</li>
+              <li><strong>REER</strong> = NEER × (Domestic PI / Foreign PI); lower REER = undervalued = export boost</li>
+              <li>India: Current account fully convertible; Capital account <strong>partially convertible</strong></li>
+              <li>Other steps: ACU INR inclusion, Masala bonds, Bilateral swap agreements</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="topic">
+            <div class="topic-title green">India-UK FTA (2025)</div>
+            <ul class="fact-list">
+              <li>≈<strong>99% of Indian exports</strong> get zero-duty to UK; India cuts levies on <em>90%</em> of British products</li>
+              <li>Eases mobility for Indian professionals (contractual, business visitors, ICTs)</li>
+              <li>UK businesses can participate in government procurement</li>
+              <li><strong>DCC</strong> (Double Contributions Convention) also agreed = social security in one country at a time; up to 3 years</li>
+            </ul>
+          </div>
+          <div class="topic">
+            <div class="topic-title">India-EFTA TEPA (Oct 2025)</div>
+            <ul class="fact-list">
+              <li>EFTA = Iceland + Liechtenstein + Norway + <strong>Switzerland</strong> (India's largest partner in EFTA)</li>
+              <li>First FTA with <strong>binding investment + job commitment</strong>: $100 bn investment, 1 mn direct jobs in 15 years</li>
+              <li>EFTA offers 100% access on non-agricultural products</li>
+              <li>IT/business services/education exports stimulated; MRAs for nursing, CA, architecture</li>
+            </ul>
+          </div>
+          <div class="topic">
+            <div class="topic-title teal">Export Promotion Mission</div>
+            <ul class="fact-list">
+              <li>Outlay: <em>₹25,060 crore</em> | Timeline: FY2026–FY2031</li>
+              <li>Sub-schemes: <strong>Niryat Protsahan</strong> (financial) + <strong>Niryat Disha</strong> (non-financial)</li>
+              <li>Implementing Agency: <strong>DGFT</strong></li>
+              <li>India's total exports FY25: <em>$824.9 bn</em> (Merch $437.4 bn + Services $387.5 bn — historic high)</li>
+              <li><strong>CGSE</strong>: ₹20,000 crore collateral-free credit; 100% guarantee by NCGTC</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== GROWTH & DEVELOPMENT ===== -->
+  <div class="section-card" id="growth" data-search="GDP inflation CPI WPI MPI poverty inequality HDR AMRUT public debt">
+    <div class="section-header">
+      <span class="section-num num-pink">05</span>
+      <span class="section-title">Growth &amp; Development</span>
+    </div>
+    <div class="section-body">
+      <div class="topic">
+        <div class="topic-title pink">Price Indices Comparison</div>
+        <table class="mini-table">
+          <tr><th>Index</th><th>Measures</th><th>Released by</th><th>Base</th></tr>
+          <tr><td><strong>WPI</strong></td><td>Wholesale stage; Goods only</td><td>OEA, Commerce Ministry</td><td>2011-12</td></tr>
+          <tr><td><strong>CPI</strong></td><td>Retail; Goods + Services</td><td>NSO, MoSPI</td><td>2012</td></tr>
+          <tr><td><strong>PPI</strong></td><td>Factory gate; Goods + Services; Excl. taxes</td><td>Proposed (DPIIT/NITI)</td><td>Proposed</td></tr>
+        </table>
+        <ul class="fact-list">
+          <li>India transitioning WPI → <strong>PPI</strong> to align with global standards; 18-member WG led by Ramesh Chand</li>
+          <li>CPI-AL/RL base revised to <strong>2019=100</strong> (from 1986-87); by Labour Bureau</li>
+        </ul>
+      </div>
+      <hr class="divider">
+      <div class="topic">
+        <div class="topic-title">Poverty &amp; Inequality</div>
+        <ul class="fact-list">
+          <li><strong>Global MPI 2025</strong>: 1.1 bn (18.3%) in acute poverty; India's poor: 55.1% (2005) → <em>16.4%</em> (2019-21) — 414 mn lifted</li>
+          <li>MPI = H × A (Headcount ratio × Intensity); threshold: 33.3% deprivation score</li>
+          <li>10 indicators: Health (1/3) | Education (1/3) | Living Standards (1/3)</li>
+          <li><strong>NITI MPI</strong> adds 2 more: Maternal Health + Bank Accounts (total 12)</li>
+          <li><strong>World Inequality Report 2026</strong>: India top 10% earns 58% of national income; top 1% holds 40% wealth</li>
+          <li><strong>Gini Index</strong>: 0=perfect equality; 100=absolute inequality. Plotted on <strong>Lorenz Curve</strong></li>
+        </ul>
+      </div>
+      <hr class="divider">
+      <div class="topic">
+        <div class="topic-title green">India GDP — Key Facts</div>
+        <ul class="fact-list">
+          <li>India = <strong>4th largest economy</strong> (surpassed Japan); $4.18 tn (IMF WEO)</li>
+          <li>GDP = GVA at basic prices + Net Product Taxes</li>
+          <li>Base year shift: 2011-12 → <strong>2022-23</strong> (ACNAS committee, Prof. B.N. Goldar)</li>
+          <li>Private CAPEX: Grew <em>66%</em> from FY22 to FY25 (~₹6.5 lakh crore)</li>
+          <li><strong>HDR 2025</strong>: India rank <em>130</em>/193; HDI value 0.685; life expectancy 72 yrs; mean schooling 13 yrs</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== PUBLIC DEBT ===== -->
+  <div class="section-card" id="debt" data-search="public debt fiscal deficit FRBM borrowing external debt">
+    <div class="section-header">
+      <span class="section-num num-red">DEBT</span>
+      <span class="section-title">Public Debt &amp; Fiscal</span>
+    </div>
+    <div class="section-body">
+      <div class="inner-grid-3">
+        <div class="stat-block">
+          <div class="stat-val">80%+</div>
+          <div class="stat-label">India's Public Debt / GDP (2024)</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-val green">96.59%</div>
+          <div class="stat-label">Internal Debt Share</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-val indigo">$736.3B</div>
+          <div class="stat-label">External Debt (Mar 2025)</div>
+        </div>
+      </div>
+      <ul class="fact-list" style="margin-top:12px">
+        <li>External debt: USD (54.2%) | INR (31.1%) | JPY | SDRs</li>
+        <li>Largest borrowers: Non-financial corps (35.5%) | Deposit-taking corps (27.5%)</li>
+        <li>Largest instrument: <strong>Loans (34%)</strong></li>
+        <li>Fiscal deficit FY25: <em>₹15.77 lakh crore</em></li>
+        <li><strong>Govt Securities Act 2006</strong>: RBI manages Central Govt debt (Section 20, RBI Act)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ===== AGRICULTURE ===== -->
+  <div class="section-card wide" id="agriculture" data-search="PMMSY fisheries pulses turmeric Swaminathan PM KISAN PMFBY irrigation makhana silk cotton KCC">
+    <div class="section-header">
+      <span class="section-num num-lime">06</span>
+      <span class="section-title">Agriculture &amp; Allied Sector</span>
+    </div>
+    <div class="section-body">
+      <div class="inner-grid">
+        <div>
+          <div class="topic">
+            <div class="topic-title lime">PM Dhan Dhaanya Krishi Yojana (PMDDKY)</div>
+            <ul class="fact-list">
+              <li>Announced: Union Budget <strong>2025-26</strong>; inspired by NITI Aayog's Aspirational Districts</li>
+              <li>Consolidates <strong>36 schemes</strong> across <strong>11 ministries</strong></li>
+              <li>Coverage: <em>100 underperforming districts</em> (min 1 per state)</li>
+              <li>Target: 1.7 crore farmers; <strong>₹24,000 cr/yr</strong> for 6 years (total ₹1.44 lakh cr)</li>
+              <li>Budget: 40% subsidies | 30% infrastructure | 20% loans | 10% training</li>
+              <li>Goal: Double farmer incomes by 2030; post-harvest losses &lt;5%</li>
+            </ul>
+          </div>
+          <div class="topic">
+            <div class="topic-title">Mission for Aatmanirbharta in Pulses</div>
+            <ul class="fact-list">
+              <li>Target: Self-sufficiency by <em>Dec 2027</em></li>
+              <li>Outlay: <em>₹11,440 cr</em>; Duration: 6 years</li>
+              <li>Focus crops: <strong>Tur/Arhar, Urad, Masoor</strong></li>
+              <li>100% MSP procurement for 4 years via <strong>NAFED &amp; NCCF</strong> under PM-AASHA</li>
+              <li>India = largest <strong>producer, consumer &amp; importer</strong> of pulses</li>
+              <li>Top state: MP (22.11%) → Maharashtra → Rajasthan</li>
+            </ul>
+          </div>
+          <div class="topic">
+            <div class="topic-title green">PMMSY (Fisheries)</div>
+            <ul class="fact-list">
+              <li>Launched <em>2020</em>; Dept of Fisheries; extended to FY26</li>
+              <li>India = <strong>2nd largest fish producer</strong>; 8% of global production</li>
+              <li>India = largest <strong>inland capture fish producer</strong> globally</li>
+              <li>Fisheries = 1.12% national GVA; 7.26% agricultural GVA</li>
+              <li>Inland fish = <em>75%</em> of total; listed in <strong>State List</strong></li>
+              <li>Achievement: Per capita consumption 5-6 kg → <em>12-13 kg</em></li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="topic">
+            <div class="topic-title orange">Crops Quick Reference</div>
+            <table class="mini-table">
+              <tr><th>Crop</th><th>Key Facts</th></tr>
+              <tr><td><strong>Makhana</strong></td><td>Euryale ferox; India 90% global supply; Bihar 85-90%; GI: Mithila Makhana (2022)</td></tr>
+              <tr><td><strong>Turmeric</strong></td><td>India = largest producer (70% global); Telangana+MH+TN+AP = 63.4%; GI: Sangli, Erode, Lakadong</td></tr>
+              <tr><td><strong>Cotton</strong></td><td>"White Gold"; semi-xerophyte kharif; India 2nd producer (after China); grows all 4 species</td></tr>
+              <tr><td><strong>Silk</strong></td><td>India 2nd largest producer, largest consumer; only country with all 4 types (Mulberry/Tussar/Eri/Muga)</td></tr>
+              <tr><td><strong>Opium</strong></td><td>Only country authorised by UN Single Convention 1961 for gum opium; NDPS Act 1985</td></tr>
+            </table>
+          </div>
+          <div class="topic">
+            <div class="topic-title teal">MS Swaminathan — Key Contributions</div>
+            <ul class="fact-list">
+              <li>Green Revolution architect; semi-dwarf Mexican wheat (Sonora, Lerma Rojo 64)</li>
+              <li>Pusa Basmati 1989 — world's first semi-dwarf high-yielding basmati</li>
+              <li>Evergreen Revolution: Ecoagriculture + Biovillages + pro-poor, pro-nature</li>
+              <li>Chaired <strong>NCF 2004-2006</strong>; founded NAAS 1990</li>
+              <li>Awards: <strong>Bharat Ratna 2024</strong> (posthumous); World Food Prize 1987 (inaugural); Ramon Magsaysay 1971</li>
+            </ul>
+          </div>
+          <div class="topic">
+            <div class="topic-title sky">Kisan Credit Card</div>
+            <ul class="fact-list">
+              <li>Introduced <em>1998</em>; expanded <em>2019</em> to animal husbandry/fisheries</li>
+              <li>Duration: <strong>5 years</strong>; issued by PSBs, SFBs, RRBs, Rural Co-op Banks</li>
+              <li>Digital support: <strong>Kisan Rin Portal (KRP)</strong></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== LABOUR ===== -->
+  <div class="section-card" id="labour" data-search="labour codes wages industrial relations social security OSHWC PLFS LFPR skill India GCC">
+    <div class="section-header">
+      <span class="section-num num-violet">07</span>
+      <span class="section-title">Labour &amp; Employment</span>
+    </div>
+    <div class="section-body">
+      <div class="topic">
+        <div class="topic-title violet">4 Labour Codes — Quick Ref</div>
+        <table class="mini-table">
+          <tr><th>Code</th><th>Consolidates</th><th>Key Provision</th></tr>
+          <tr><td><strong>Code on Wages 2019</strong></td><td>4 laws</td><td>Universal minimum wages; Floor wage (no state below); Overtime ≥2x</td></tr>
+          <tr><td><strong>Industrial Relations 2020</strong></td><td>3 laws</td><td>51% membership for sole negotiating union; threshold 100→<strong>300</strong> workers for lay-off/closure; Re-skilling fund (15 days wages)</td></tr>
+          <tr><td><strong>Social Security 2020</strong></td><td>9 laws</td><td>Gig/platform workers first defined; aggregators 1-2% turnover to SS fund; Gratuity for FTEs after <strong>1 year</strong> (was 5)</td></tr>
+          <tr><td><strong>OSHWC 2020</strong></td><td>13 laws</td><td>Women in night shifts (with consent); ISMWs broader definition; 10-employee e-registration threshold</td></tr>
+        </table>
+      </div>
+      <hr class="divider">
+      <div class="topic">
+        <div class="topic-title sky">PLFS Key Terms</div>
+        <ul class="fact-list">
+          <li>Conducted by <strong>NSO</strong>, MoSPI; introduced <em>2017</em></li>
+          <li>LFPR 2024: <em>59.6%</em>; Female LFPR: 41.7%; 90% in unorganized sector</li>
+          <li><strong>LFPR</strong> = % in labour force | <strong>WPR</strong> = % employed in population | <strong>UR</strong> = % unemployed among labour force</li>
+          <li>Usual Status (PS+SS) = last 365 days; CWS = last 7 days; CDS = last 1 day</li>
+        </ul>
+      </div>
+      <hr class="divider">
+      <div class="topic">
+        <div class="topic-title">Skilling — Key Schemes</div>
+        <ul class="fact-list">
+          <li><strong>Skill India Mission 2015</strong>: Ministry MSDE; NSDC as knowledge partner (PPP, not-for-profit)</li>
+          <li><strong>PMKVY 4.0</strong>: FY2022–2026; free short-duration skill training</li>
+          <li><strong>PM-NAPS</strong>: 25% stipend (up to ₹1,500/month) via DBT; age 14-35; Apprentices Act 1961</li>
+          <li><strong>DDU-GKY 2014</strong>: Under NRLM; rural youth income diversification</li>
+          <li><strong>PM-SETU</strong>: ₹60,000 cr; hub-spoke model (200 hubs + 800 spoke ITIs); ADB+WB co-finance 50% of Central share</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== BUSINESS ===== -->
+  <div class="section-card" id="business" data-search="CCI competition MUDRA IPR GII Nobel prize CSR startup innovation">
+    <div class="section-header">
+      <span class="section-num num-orange">08</span>
+      <span class="section-title">Business, Innovation &amp; Entrepreneurship</span>
+    </div>
+    <div class="section-body">
+      <div class="topic">
+        <div class="topic-title orange">CCI &amp; Competition</div>
+        <ul class="fact-list">
+          <li>Est. 2003 (Competition Act 2002); operational <em>2009</em>; under MCA</li>
+          <li>Appellate: <strong>NCLAT</strong></li>
+          <li>Amendment 2023: <strong>Deal Value Threshold (DVT)</strong> &gt;₹2,000 cr must notify CCI</li>
+          <li>Settlement &amp; Commitment mechanism introduced; 25% mandatory deposit for appeal</li>
+          <li><strong>Cost Regulations 2025</strong>: New definitions to curb predatory pricing (Sec 4(2) = abuse of dominance)</li>
+        </ul>
+      </div>
+      <hr class="divider">
+      <div class="topic">
+        <div class="topic-title">PMMY (MUDRA)</div>
+        <ul class="fact-list">
+          <li>Launched <em>2015</em>; Ministry of Finance; MUDRA = refinance agency (NOT direct lender)</li>
+          <li>Shishu ≤₹50k | Kishor ₹50k–5L | Tarun ₹5–10L | Tarun Plus ₹10–20L</li>
+          <li>Collateral-free; guaranteed by <strong>CGFMU</strong> (managed by NCGTC)</li>
+          <li>Kishor share: 5.9% (FY16) → <em>44.7%</em> (FY25) — shift to small enterprises</li>
+        </ul>
+      </div>
+      <hr class="divider">
+      <div class="topic">
+        <div class="topic-title green">IPR Quick Reference</div>
+        <table class="mini-table">
+          <tr><th>Type</th><th>Term</th><th>Notable</th></tr>
+          <tr><td>Patent</td><td>20 years</td><td>Novel + inventive + industrial utility; DPIIT</td></tr>
+          <tr><td>Copyright</td><td>Author: Life+60 yrs</td><td>Producers: 60; Performers: 50</td></tr>
+          <tr><td>Trademark</td><td>10+10 yrs</td><td>Brand name/logo</td></tr>
+          <tr><td>GI</td><td>10+10 yrs</td><td>380% surge in filings</td></tr>
+          <tr><td>Design</td><td>10+5 yrs</td><td>Visual/ornamental</td></tr>
+          <tr><td>Plant Variety</td><td>6-10 yrs</td><td>PPV&amp;FR Act 2001; Agri Ministry</td></tr>
+        </table>
+        <ul class="fact-list">
+          <li>India granted <strong>1,03,057 patents</strong> in FY24 (highest ever); 6th in global filings (WIPO 2023)</li>
+          <li><strong>GII 2025</strong>: India rank <em>38</em> (from 81 in 2015); 15-yr overperformer; top clusters: Bengaluru (21), Delhi (26)</li>
+        </ul>
+      </div>
+      <div class="topic">
+        <div class="topic-title violet">Nobel Economics 2025</div>
+        <ul class="fact-list">
+          <li>Joel Mokyr (prerequisites: science+tech evolution, mechanical competence, openness) + Philippe Aghion + Peter Howitt</li>
+          <li><strong>Creative Destruction</strong>: New product makes old obsolete; firms invest R&D for temporary monopoly via patents</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== INFRASTRUCTURE ===== -->
+  <div class="section-card wide" id="infra" data-search="Sagarmala ports shipping logistics AMRUT digital India roadways aviation USBRL">
+    <div class="section-header">
+      <span class="section-num num-cyan">09</span>
+      <span class="section-title">Infrastructure</span>
+    </div>
+    <div class="section-body">
+      <div class="inner-grid">
+        <div>
+          <div class="topic">
+            <div class="topic-title teal">Maritime &amp; Ports</div>
+            <ul class="fact-list">
+              <li>India: <strong>12 major ports</strong> (13th under construction — Vadhavan, Palghar, MH); ~200 non-major</li>
+              <li>95% trading by volume; 70% by value = maritime</li>
+              <li>India = 16th largest maritime nation; 3rd in ship recycling by tonnage</li>
+              <li>LPI (World Bank): 44th (2018) → <em>22nd</em> (2023)</li>
+              <li><strong>Sagarmala 2015</strong>: MoPSW; 5 components (Port modernisation, connectivity, port-linked industrialisation, coastal community development, coastal shipping)</li>
+              <li><strong>Sagarmala 2.0 (2025)</strong>: Focus on shipbuilding &amp; port modernization</li>
+              <li>NSAC chaired by Minister of Shipping; SCSC by Cabinet Secretary</li>
+              <li><strong>Indian Ports Act 2025</strong> replaces 1908 act; MSDC &amp; SMBs get statutory recognition</li>
+            </ul>
+          </div>
+          <div class="topic">
+            <div class="topic-title sky">New Shipping Acts 2025</div>
+            <ul class="fact-list">
+              <li><strong>Merchant Shipping Act 2025</strong>: Mandatory registration all vessels; expands vessel definition</li>
+              <li><strong>Carriage of Goods by Sea 2025</strong>: Aligned with Hague-Visby Rules 1924</li>
+              <li><strong>Coastal Shipping Act 2025</strong>: Regulates coastal trade; "coastal waters" = territorial waters + EEZ</li>
+              <li><strong>Bills of Lading Act 2025</strong>: Replaces 1856 act</li>
+              <li><strong>Vizhinjam Port</strong>: India's first deep-water container transshipment port; Kerala; PPP landlord model; 10 nautical miles from int'l shipping route</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="topic">
+            <div class="topic-title orange">Logistics &amp; Asset Monetisation</div>
+            <ul class="fact-list">
+              <li><strong>NLP 2022</strong>: Complement to PM GatiShakti NMP (2021); 57+ ministries integrated; 7 engines of NMP</li>
+              <li>Target: Top 25 LPI by 2030; India at rank <em>38</em> (2023)</li>
+              <li>ULIP: 30+ digital systems; 160 crore+ transactions</li>
+              <li>Asset Monetisation: Does NOT mean disinvestment; TOT / DBFOT / InvITs / REITs models</li>
+              <li><strong>NMP (National Monetisation Pipeline)</strong>: ~₹6 lakh crore over 2022-25</li>
+            </ul>
+          </div>
+          <div class="topic">
+            <div class="topic-title">Road Safety</div>
+            <ul class="fact-list">
+              <li>NRSB: Section 215B, Motor Vehicles (Amendment) Act 2019</li>
+              <li><strong>Cashless Road Accident Scheme 2025</strong>: ₹1.5 lakh; 7 days; MoRTH; State Health Agency pays within 10 days</li>
+              <li>Good Samaritan: Section 134A, MVA 1988 (added by 2019 amendment)</li>
+              <li><strong>Bharat NCAP 2.0</strong>: 5 areas; voluntary; CIRT Pune issues rating</li>
+            </ul>
+          </div>
+          <div class="topic">
+            <div class="topic-title violet">Key Infrastructure Projects</div>
+            <table class="mini-table">
+              <tr><th>Project</th><th>Significance</th></tr>
+              <tr><td>Chenab Bridge</td><td>World's highest railway arch bridge (359m); part of USBRL</td></tr>
+              <tr><td>USBRL</td><td>Definitive rail link for Kashmir Valley</td></tr>
+              <tr><td>Bairabi-Sairang</td><td>Connects Mizoram capital to rail grid; Act East Policy</td></tr>
+              <tr><td>Z-Morh Tunnel</td><td>All-weather Sonamarg access; Ladakh troop mobility</td></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== MINING, ENERGY & INDUSTRY ===== -->
+  <div class="section-card wide" id="mining" data-search="mining minerals MMDR semiconductor steel coal textile PM MITRA DMF copper aluminium uranium">
+    <div class="section-header">
+      <span class="section-num num-red">11</span>
+      <span class="section-title">Mining, Energy &amp; Industry</span>
+    </div>
+    <div class="section-body">
+      <div class="inner-grid">
+        <div>
+          <div class="topic">
+            <div class="topic-title red">MMDR Amendment Act 2025</div>
+            <ul class="fact-list">
+              <li>Amends MMDR Act 1957; earlier 2023 amendment added <strong>24 critical minerals</strong></li>
+              <li><strong>NMET → NMEDT</strong>: Can use funds offshore + globally now; levy increased 2%→<em>3%</em> of royalty</li>
+              <li>Captive mines: <strong>No cap on sale</strong> (earlier 50% limit)</li>
+              <li><strong>Mineral Exchanges</strong>: New electronic trading platforms authorised</li>
+              <li>Contiguous area expansion: Mining lease up 10%; composite lease up 30%</li>
+            </ul>
+          </div>
+          <div class="topic">
+            <div class="topic-title orange">Minerals Quick Ref</div>
+            <table class="mini-table">
+              <tr><th>Mineral</th><th>India Key Facts</th></tr>
+              <tr><td><strong>Bauxite/Aluminium</strong></td><td>Odisha 41% reserves; 73% production; China leads global Al (58%)</td></tr>
+              <tr><td><strong>Copper</strong></td><td>Rajasthan 52% reserves; MP 57% production; Chile largest world producer</td></tr>
+              <tr><td><strong>Uranium</strong></td><td>First commercial mine: Jaduguda (Jharkhand); India's deposits small+low grade</td></tr>
+              <tr><td><strong>Thorium</strong></td><td>India has large reserves; Monazite = 8-10% thorium; Kerala+Odisha beaches</td></tr>
+              <tr><td><strong>Potash</strong></td><td>91% in Nagaur, Rajasthan; 100% imported currently; Sylvinite = principal ore</td></tr>
+              <tr><td><strong>Coal</strong></td><td>5th largest world reserves; 55% of India's energy; highest in Jharkhand</td></tr>
+            </table>
+          </div>
+          <div class="topic">
+            <div class="topic-title">District Mineral Foundation</div>
+            <ul class="fact-list">
+              <li>Created 2015 via MMDR Amendment; non-profit statutory trust</li>
+              <li>Funded by: <strong>10%</strong> royalty (post-2015 leases) | <strong>30%</strong> (pre-2015 leases)</li>
+              <li>PMKKKY: 2015; 70% funds → high-priority (water/health/education); 70% in directly affected areas</li>
+              <li>Endowment Fund: 10% of annual receipts for post-mining livelihoods</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="topic">
+            <div class="topic-title violet">Semiconductor Ecosystem</div>
+            <ul class="fact-list">
+              <li>Global market → USD 1 tn by 2030; Taiwan produces 60% of world chips, 90% advanced</li>
+              <li><strong>India Semiconductor Mission (ISM) 2021</strong>: 50% fiscal support for fabs (28nm or below)</li>
+              <li>DLI Scheme: Design startups &amp; MSMEs; up to ₹15 cr/company</li>
+              <li>First 2nm chip designed in India (ARM, Bengaluru)</li>
+              <li><strong>Vikram</strong>: India's first indigenous 32-bit microprocessor</li>
+            </ul>
+          </div>
+          <div class="topic">
+            <div class="topic-title sky">Manufacturing in India</div>
+            <ul class="fact-list">
+              <li>Contributes <em>17%</em> to GDP; ~3% global manufacturing share</li>
+              <li>India 2nd largest mobile phone manufacturer; electronics import dependence → <em>0.02%</em></li>
+              <li>India 4th largest automobile producer; 3rd in pharma by volume</li>
+              <li><strong>PM MITRA</strong>: 7 parks; ₹4,445 cr; Centre 49%/State 51% SPV; "5F" vision; ₹800 cr/greenfield</li>
+              <li><strong>New Steel Policy 2025 (DMI&amp;SP)</strong>: No GTE for most steel; 50% DVA for capital goods; covers procurement &gt;₹5 lakh</li>
+              <li>India = 2nd largest crude steel producer; largest sponge iron producer; Odisha = top state</li>
+            </ul>
+          </div>
+          <div class="topic">
+            <div class="topic-title teal">Energy &amp; Natural Gas</div>
+            <ul class="fact-list">
+              <li>Natural gas discovery: Andaman Basin (Sri Vijayapuram 2 well); 371 MMTOE estimated</li>
+              <li>India's target: 15% natural gas in energy mix by 2030 (currently ~50% demand met domestically)</li>
+              <li>LNG imports from: Qatar | USA | UAE</li>
+              <li>Russia = world's largest gas reserves; followed by Iran &amp; Qatar</li>
+              <li><strong>PNGRB</strong>: Statutory body under PNGRB Act 2006; appeals to Appellate Tribunals for Electricity (Electricity Act 2003)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== KEY INDICES & REPORTS ===== -->
+  <div class="section-card full" id="indices" data-search="HDI GII MPI WEO IMF World Bank index report LEADS IIP ASI">
+    <div class="section-header">
+      <span class="section-num num-amber">IDX</span>
+      <span class="section-title">Key Indices, Reports &amp; Data Points</span>
+    </div>
+    <div class="section-body">
+      <div class="inner-grid-3">
+        <div>
+          <div class="topic">
+            <div class="topic-title">Economic Indices</div>
+            <table class="mini-table">
+              <tr><th>Index</th><th>By</th><th>India / Key Fact</th></tr>
+              <tr><td>GII 2025</td><td>WIPO</td><td>Rank <strong>38</strong> (from 81 in 2015); Switzerland #1</td></tr>
+              <tr><td>LPI 2023</td><td>World Bank</td><td>Rank <strong>38</strong> (improved from 44)</td></tr>
+              <tr><td>HDR 2025</td><td>UNDP</td><td>India rank <strong>130</strong>/193; HDI 0.685</td></tr>
+              <tr><td>Global MPI 2025</td><td>UNDP+OPHI</td><td>1.1 bn poor globally; India 16.4% (2019-21)</td></tr>
+              <tr><td>FI-Index 2025</td><td>RBI</td><td><strong>67</strong>; +24.3% since 2021; Access (35%) Usage (45%) Quality (20%)</td></tr>
+              <tr><td>FSR 2025</td><td>RBI-FSDC</td><td>GNPA ratio at multi-decadal low <strong>2.3%</strong>; NNPA 0.5%</td></tr>
+              <tr><td>GFI Index</td><td>—</td><td>GIFT IFSC rank <strong>46</strong></td></tr>
+            </table>
+          </div>
+        </div>
+        <div>
+          <div class="topic">
+            <div class="topic-title green">Industrial Surveys</div>
+            <table class="mini-table">
+              <tr><th>Survey</th><th>By</th><th>Key</th></tr>
+              <tr><td>IIP</td><td>CSO/NSO</td><td>Monthly; Base 2011-12; Mining+Mfg+Electricity; now released in <strong>28 days</strong></td></tr>
+              <tr><td>ASI 2023-24</td><td>NSO, MoSPI</td><td>GVA +11.89%; Top states: MH (16%), GJ, TN, KA, UP</td></tr>
+              <tr><td>NIC 2025</td><td>MoSPI</td><td>5-digit → 6-digit coding; aligned with ISIC Rev 5 (UNSD); includes renewable energy, fintech, digital economy</td></tr>
+              <tr><td>CAPEX Survey</td><td>NSO (MOSPI)</td><td>First-ever; Private CAPEX ₹6.5L cr in FY25 (+66% from FY22)</td></tr>
+            </table>
+          </div>
+          <div class="topic">
+            <div class="topic-title teal">AMRUT 2.0</div>
+            <ul class="fact-list">
+              <li>Ministry: MoHUA; Centrally Sponsored Scheme</li>
+              <li>AMRUT 2.0 (2021): Only water &amp; sewerage; 500 AMRUT cities</li>
+              <li>PPP mandatory for cities &gt;1 mn people</li>
+              <li>Components: Pey Jal Survekshan + BCC + Technology Sub-Mission</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="topic">
+            <div class="topic-title orange">Important Schemes — Quick Numbers</div>
+            <table class="mini-table">
+              <tr><th>Scheme</th><th>Key Number</th></tr>
+              <tr><td>PM MITRA</td><td>7 parks; ₹4,445 cr; Centre 49%/State 51%</td></tr>
+              <tr><td>Export Promotion Mission</td><td>₹25,060 cr; FY26-31</td></tr>
+              <tr><td>PMDDKY</td><td>100 districts; ₹1.44L cr total; 36 schemes merged</td></tr>
+              <tr><td>Pulses Mission</td><td>₹11,440 cr; 2 cr farmers; Dec 2027 target</td></tr>
+              <tr><td>PM-SETU</td><td>₹60,000 cr; 200 hub + 800 spoke ITIs</td></tr>
+              <tr><td>CGSE</td><td>₹20,000 cr; 100% guarantee by NCGTC</td></tr>
+              <tr><td>National Monetisation Pipeline</td><td>~₹6 lakh cr (2022-25)</td></tr>
+              <tr><td>India Semiconductor Mission</td><td>50% fiscal support for fabs</td></tr>
+            </table>
+          </div>
+          <div class="topic">
+            <div class="topic-title violet">New Legislation 2025</div>
+            <ul class="fact-list">
+              <li>Indian Ports Act 2025 (replaces 1908)</li>
+              <li>Merchant Shipping Act 2025</li>
+              <li>Coastal Shipping Act 2025</li>
+              <li>Carriage of Goods by Sea Act 2025 (Hague-Visby)</li>
+              <li>Bills of Lading Act 2025 (replaces 1856)</li>
+              <li>Income Tax Act 2025 (replaces 1961)</li>
+              <li>MMDR Amendment Act 2025</li>
+              <li>Protection of Interests in Aircraft Objects Act 2025 (Cape Town Convention)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end main -->
+
+<footer>
+  Vision IAS Economy PT 365 · Apr–Nov 2025 · UPSC CSE Quick Revision Notes · For Academic Use Only
+</footer>
+
+<button class="scroll-top" id="scrollBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+  // Search function
+  function searchCards(query) {
+    const q = query.toLowerCase().trim();
+    const cards = document.querySelectorAll('.section-card');
+    if (!q) {
+      cards.forEach(c => c.classList.remove('hidden'));
+      return;
+    }
+    cards.forEach(card => {
+      const searchText = (card.getAttribute('data-search') || '') + ' ' + card.textContent;
+      card.classList.toggle('hidden', !searchText.toLowerCase().includes(q));
+    });
+  }
+
+  // Scroll to top button
+  const scrollBtn = document.getElementById('scrollBtn');
+  window.addEventListener('scroll', () => {
+    scrollBtn.classList.toggle('visible', window.scrollY > 400);
+  });
+
+  // Smooth nav highlights
+  const navItems = document.querySelectorAll('.nav-item');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        navItems.forEach(n => {
+          n.style.color = n.getAttribute('href') === '#' + id ? 'var(--accent)' : '';
+          n.style.borderBottomColor = n.getAttribute('href') === '#' + id ? 'var(--accent)' : '';
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+
+  document.querySelectorAll('[id]').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
