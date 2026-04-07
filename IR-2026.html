@@ -1,0 +1,925 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IR Prelims Notes | PT 365</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=IBM+Plex+Mono:wght@400;600&family=Source+Serif+4:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0c10;
+    --surface: #111318;
+    --card: #161b24;
+    --border: #1e2535;
+    --gold: #c9a84c;
+    --gold-light: #e8c97a;
+    --teal: #2ec4b6;
+    --red: #e63946;
+    --blue: #4895ef;
+    --green: #4cc9a0;
+    --purple: #a78bfa;
+    --text: #e8eaf0;
+    --muted: #7a8399;
+    --tag-bg: #1e2535;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Source Serif 4', serif;
+    font-weight: 300;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ─── HEADER ─── */
+  header {
+    background: linear-gradient(135deg, #0a0c10 0%, #0d1520 50%, #0a0c10 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 32px 24px 24px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(12px);
+  }
+
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--gold);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.15;
+  }
+
+  h1 span { color: var(--gold); }
+
+  .badge {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    padding: 4px 12px;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    border-radius: 2px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* ─── NAV TABS ─── */
+  .nav-tabs {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 4px;
+    padding: 20px 24px 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .nav-tabs::-webkit-scrollbar { display: none; }
+
+  .tab-btn {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    padding: 8px 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    border-radius: 3px 3px 0 0;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .tab-btn:hover { color: var(--text); border-color: var(--gold); }
+  .tab-btn.active { background: var(--card); border-color: var(--gold); color: var(--gold); border-bottom-color: var(--card); }
+
+  /* ─── MAIN ─── */
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+  }
+
+  .section { display: none; }
+  .section.active { display: block; animation: fadeIn 0.3s ease; }
+
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* ─── GRID ─── */
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 16px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+
+  /* ─── CARD ─── */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .card:hover { border-color: var(--gold); transform: translateY(-2px); }
+
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--accent, var(--gold));
+  }
+
+  .card.teal { --accent: var(--teal); }
+  .card.red { --accent: var(--red); }
+  .card.blue { --accent: var(--blue); }
+  .card.green { --accent: var(--green); }
+  .card.purple { --accent: var(--purple); }
+  .card.gold { --accent: var(--gold); }
+
+  .card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--gold-light);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .card-title .icon {
+    font-size: 1.1rem;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--tag-bg);
+    border-radius: 4px;
+    flex-shrink: 0;
+  }
+
+  /* ─── FACT ROWS ─── */
+  .fact { display: flex; gap: 10px; margin-bottom: 8px; font-size: 0.83rem; line-height: 1.5; }
+  .fact:last-child { margin-bottom: 0; }
+  .fact-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--accent, var(--gold));
+    background: var(--tag-bg);
+    padding: 1px 7px;
+    border-radius: 2px;
+    white-space: nowrap;
+    align-self: flex-start;
+    margin-top: 2px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    flex-shrink: 0;
+  }
+  .fact-val { color: var(--text); }
+  .fact-val strong { color: var(--gold-light); font-weight: 600; }
+
+  /* ─── INLINE LIST ─── */
+  .pill-list { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+  .pill {
+    font-size: 0.72rem;
+    padding: 3px 10px;
+    background: var(--tag-bg);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    color: var(--muted);
+    font-family: 'IBM Plex Mono', monospace;
+  }
+  .pill.hot { border-color: var(--red); color: var(--red); background: rgba(230,57,70,0.08); }
+  .pill.important { border-color: var(--gold); color: var(--gold); background: rgba(201,168,76,0.08); }
+
+  /* ─── TABLE ─── */
+  .mini-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; margin-top: 8px; }
+  .mini-table th {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--gold);
+    border-bottom: 1px solid var(--border);
+    padding: 6px 10px;
+    text-align: left;
+    background: rgba(201,168,76,0.05);
+  }
+  .mini-table td { padding: 7px 10px; border-bottom: 1px solid rgba(30,37,53,0.6); vertical-align: top; }
+  .mini-table tr:hover td { background: rgba(201,168,76,0.04); }
+  .mini-table td:first-child { color: var(--gold-light); font-weight: 600; }
+
+  /* ─── SECTION HEADER ─── */
+  .sec-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  .sec-head h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fff;
+  }
+  .sec-head .num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--muted);
+    background: var(--tag-bg);
+    padding: 3px 10px;
+    border-radius: 2px;
+  }
+
+  /* ─── ALERT BOX ─── */
+  .alert {
+    background: rgba(201,168,76,0.06);
+    border: 1px solid rgba(201,168,76,0.25);
+    border-left: 3px solid var(--gold);
+    padding: 12px 16px;
+    border-radius: 0 4px 4px 0;
+    font-size: 0.82rem;
+    margin-bottom: 12px;
+    line-height: 1.6;
+  }
+  .alert.red-alert { background: rgba(230,57,70,0.06); border-color: rgba(230,57,70,0.25); border-left-color: var(--red); }
+  .alert.teal-alert { background: rgba(46,196,182,0.06); border-color: rgba(46,196,182,0.25); border-left-color: var(--teal); }
+
+  /* ─── DIVIDER ─── */
+  .divider { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
+
+  /* ─── WIDE CARD ─── */
+  .wide { grid-column: 1 / -1; }
+
+  /* ─── EXERCISE TABLE CARD ─── */
+  .ex-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 10px; margin-top: 10px; }
+  .ex-item {
+    padding: 10px 14px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    font-size: 0.8rem;
+  }
+  .ex-name { color: var(--teal); font-weight: 600; font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem; margin-bottom: 3px; }
+  .ex-detail { color: var(--muted); font-size: 0.75rem; }
+  .ex-detail strong { color: var(--text); }
+
+  footer {
+    text-align: center;
+    padding: 32px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+    letter-spacing: 0.08em;
+    margin-top: 40px;
+  }
+
+  @media (max-width: 600px) {
+    .grid, .grid-3 { grid-template-columns: 1fr; }
+    main { padding: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div>
+      <div class="logo">PT 365 · Vision IAS</div>
+      <h1>International <span>Relations</span></h1>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px">
+      <span class="badge">Prelims Quick Notes</span>
+      <span class="badge" style="color:var(--teal);border-color:var(--teal)">Apr 2025 – Nov 2025</span>
+    </div>
+  </div>
+</header>
+
+<div class="nav-tabs">
+  <button class="tab-btn active" onclick="showTab('multilateral')">Multilateral</button>
+  <button class="tab-btn" onclick="showTab('bilateral')">Bilateral</button>
+  <button class="tab-btn" onclick="showTab('places')">Places in News</button>
+  <button class="tab-btn" onclick="showTab('security')">Security</button>
+  <button class="tab-btn" onclick="showTab('other')">Other News</button>
+  <button class="tab-btn" onclick="showTab('exercises')">Exercises</button>
+</div>
+
+<main>
+
+<!-- ═══════════════ MULTILATERAL ═══════════════ -->
+<div class="section active" id="multilateral">
+  <div class="sec-head"><h2>Multilateral Organisations</h2><span class="num">18 topics</span></div>
+
+  <div class="grid">
+
+    <!-- UN80 -->
+    <div class="card gold">
+      <div class="card-title"><span class="icon">🇺🇳</span>UN80 Initiative</div>
+      <div class="fact"><span class="fact-label">Launched</span><span class="fact-val">March 2025 by Secretary-General; marks UN's <strong>80th anniversary</strong></span></div>
+      <div class="fact"><span class="fact-label">Aim</span><span class="fact-val">Streamline operations, reassert multilateralism values</span></div>
+      <div class="fact"><span class="fact-label">Workstreams</span><span class="fact-val">① Identify efficiencies ② Review mandates ③ Structural changes</span></div>
+      <div class="fact"><span class="fact-label">Coordinated by</span><span class="fact-val">UN80 Task Force, chaired by Under-Sec-General for Policy</span></div>
+    </div>
+
+    <!-- UNSC -->
+    <div class="card teal">
+      <div class="card-title"><span class="icon">🔒</span>UN Security Council</div>
+      <div class="fact"><span class="fact-label">New Members</span><span class="fact-val">Bahrain, Colombia, DRC, Latvia, Liberia — non-permanent</span></div>
+      <div class="fact"><span class="fact-label">Composition</span><span class="fact-val"><strong>5 P5</strong> (veto) + <strong>10 non-perm</strong> elected for 2-yr term by UNGA</span></div>
+      <div class="fact"><span class="fact-label">Reform (G4)</span><span class="fact-val">India, Brazil, Germany, Japan propose new permanent seats</span></div>
+      <div class="fact"><span class="fact-label">Opposition</span><span class="fact-val">"Uniting for Consensus / Coffee Club" coalition</span></div>
+      <div class="fact"><span class="fact-label">C10</span><span class="fact-val">10 AU states — Africa's Common Position on UNSC reform</span></div>
+      <div class="fact"><span class="fact-label">India</span><span class="fact-val">Elected non-permanent member <strong>8 times</strong>; last: 2021-22</span></div>
+    </div>
+
+    <!-- ECOSOC -->
+    <div class="card blue">
+      <div class="card-title"><span class="icon">📊</span>ECOSOC</div>
+      <div class="fact"><span class="fact-label">India</span><span class="fact-val">Elected for term <strong>2026–2028</strong> under Asia-Pacific group</span></div>
+      <div class="fact"><span class="fact-label">With</span><span class="fact-val">China, Lebanon, Turkmenistan (4 seats)</span></div>
+      <div class="fact"><span class="fact-label">Composition</span><span class="fact-val"><strong>54 members</strong>; elected by UNGA for 3-yr term, 18 elected each year</span></div>
+      <div class="fact"><span class="fact-label">HQ</span><span class="fact-val">New York. 8 Functional Commissions</span></div>
+    </div>
+
+    <!-- UNHCR -->
+    <div class="card green">
+      <div class="card-title"><span class="icon">🏕</span>UNHCR</div>
+      <div class="fact"><span class="fact-label">Report</span><span class="fact-val">Global Trends Report: Forced Displacement in 2024 released</span></div>
+      <div class="fact"><span class="fact-label">Genesis</span><span class="fact-val">Established by UNGA in <strong>1950</strong>; Nobel Peace Prize 1954 & 1981</span></div>
+      <div class="fact"><span class="fact-label">HQ</span><span class="fact-val">Geneva, Switzerland</span></div>
+      <div class="fact"><span class="fact-label">GCM 2018</span><span class="fact-val">Global Compact for Migration — <strong>non-legally binding</strong></span></div>
+    </div>
+
+    <!-- UNESCO -->
+    <div class="card red">
+      <div class="card-title"><span class="icon">🎓</span>UNESCO</div>
+      <div class="fact"><span class="fact-label">News</span><span class="fact-val">US pulls out — <strong>3rd exit</strong>, 2nd under current leadership</span></div>
+      <div class="fact"><span class="fact-label">DG</span><span class="fact-val">First Arab leader nominated as Director-General</span></div>
+      <div class="fact"><span class="fact-label">Members</span><span class="fact-val"><strong>194 Members</strong> + 12 Associate Members. HQ: Paris</span></div>
+      <div class="fact"><span class="fact-label">Purpose</span><span class="fact-val">Peace via education, science, culture collaboration</span></div>
+    </div>
+
+    <!-- UN Peacekeeping -->
+    <div class="card teal">
+      <div class="card-title"><span class="icon">🪖</span>UN Peacekeeping</div>
+      <div class="fact"><span class="fact-label">Ministerial 2025</span><span class="fact-val">Berlin, Germany — co-organized by Germany</span></div>
+      <div class="fact"><span class="fact-label">India pledge</span><span class="fact-val">QRF Company + Women-led Police Unit + SWAT Police Unit</span></div>
+      <div class="fact"><span class="fact-label">CUNPK</span><span class="fact-val">India's peacekeeping training centre in New Delhi</span></div>
+      <div class="fact"><span class="fact-label">Gender</span><span class="fact-val">India — <strong>1st country</strong> to deploy all-women Formed Police Unit (2007, Liberia)</span></div>
+      <div class="fact"><span class="fact-label">Origin</span><span class="fact-val">Began 1948 (UNTSO). Also called "Blue Helmet". Nobel 1988</span></div>
+    </div>
+
+    <!-- UNHRC -->
+    <div class="card purple">
+      <div class="card-title"><span class="icon">⚖️</span>UN Human Rights Council</div>
+      <div class="fact"><span class="fact-label">India</span><span class="fact-val">Elected <strong>unopposed</strong>, 7th time, term 2026–28</span></div>
+      <div class="fact"><span class="fact-label">Genesis</span><span class="fact-val">2006, replaced Commission on Human Rights</span></div>
+      <div class="fact"><span class="fact-label">Membership</span><span class="fact-val"><strong>47 members</strong>, 3-yr terms, max 2 consecutive terms</span></div>
+    </div>
+
+    <!-- IMF -->
+    <div class="card gold">
+      <div class="card-title"><span class="icon">💰</span>IMF</div>
+      <div class="fact"><span class="fact-label">Pakistan</span><span class="fact-val">India raised concerns; IMF disbursed ~$1B (SDR 760M) under <strong>EFF</strong></span></div>
+      <div class="fact"><span class="fact-label">SDR</span><span class="fact-val">Not a currency; unit of account; 5-currency basket: USD, EUR, CNY, JPY, GBP</span></div>
+      <div class="fact"><span class="fact-label">India Quota</span><span class="fact-val"><strong>2.75%</strong> (8th largest); US ~17%</span></div>
+      <div class="fact"><span class="fact-label">Genesis</span><span class="fact-val">Bretton Woods Conference 1944; HQ Washington D.C.; 191 members</span></div>
+    </div>
+
+    <!-- SCO -->
+    <div class="card blue">
+      <div class="card-title"><span class="icon">🌏</span>Shanghai Cooperation Organisation</div>
+      <div class="fact"><span class="fact-label">Summit</span><span class="fact-val">25th SCO Summit 2025, <strong>Tianjin, China</strong></span></div>
+      <div class="fact"><span class="fact-label">Declaration</span><span class="fact-val">Tianjin Declaration + SCO Development Strategy 2035</span></div>
+      <div class="fact"><span class="fact-label">Chairmanship</span><span class="fact-val">2025–26 passed to <strong>Kyrgyz Republic</strong></span></div>
+      <div class="fact"><span class="fact-label">New Partner</span><span class="fact-val">Laos; <strong>10 members</strong>, 17 partner countries</span></div>
+      <div class="fact"><span class="fact-label">Key Outcomes</span><span class="fact-val">SCO Anti-Drug Centre; BeiDou nav system access; India's "One Earth, One Family, One Future" recognized</span></div>
+      <div class="fact"><span class="fact-label">India</span><span class="fact-val">Observer 2005; Full member <strong>2017</strong>. HQ: Beijing</span></div>
+    </div>
+
+    <!-- WTO Fisheries -->
+    <div class="card green">
+      <div class="card-title"><span class="icon">🐟</span>WTO Agreement on Fisheries Subsidies</div>
+      <div class="fact"><span class="fact-label">Status</span><span class="fact-val">Entered into force — 2/3 of WTO members accepted</span></div>
+      <div class="fact"><span class="fact-label">Adopted</span><span class="fact-val">WTO 12th Ministerial Conference, 2022</span></div>
+      <div class="fact"><span class="fact-label">Focus</span><span class="fact-val">First WTO multilateral on <strong>environmental sustainability</strong>; supports SDG 14</span></div>
+      <div class="fact"><span class="fact-label">India</span><span class="fact-val">Not joined — protecting small fisher subsidies & food security</span></div>
+      <div class="fact"><span class="fact-label">Prohibited</span><span class="fact-val">Subsidies for IUU fishing, overfished stocks, unregulated high seas</span></div>
+    </div>
+
+    <!-- G7 -->
+    <div class="card teal">
+      <div class="card-title"><span class="icon">7️⃣</span>G7 — 51st Summit 2025</div>
+      <div class="fact"><span class="fact-label">Venue</span><span class="fact-val"><strong>Kananaskis, Canada</strong>; India as Outreach Country</span></div>
+      <div class="fact"><span class="fact-label">Key outcomes</span><span class="fact-val">Kananaskis Wildfire Charter (endorsed by India); G7 Critical Minerals Action Plan; G7 AI Network (GAIN)</span></div>
+      <div class="fact"><span class="fact-label">Members</span><span class="fact-val">France, Germany, Italy, UK, Japan, USA, Canada. EU participates. Genesis: 1975</span></div>
+    </div>
+
+    <!-- BRICS -->
+    <div class="card gold">
+      <div class="card-title"><span class="icon">🌐</span>BRICS — Rio de Janeiro Declaration</div>
+      <div class="fact"><span class="fact-label">Summit</span><span class="fact-val">17th BRICS Summit; theme: "Strengthening Global South Cooperation"</span></div>
+      <div class="fact"><span class="fact-label">New Member</span><span class="fact-val"><strong>Indonesia</strong> (1st SE Asian member); New Partner: <strong>Vietnam</strong></span></div>
+      <div class="fact"><span class="fact-label">First</span><span class="fact-val">First summit with 11 full members + 10 partner countries</span></div>
+      <div class="fact"><span class="fact-label">AI Declaration</span><span class="fact-val">BRICS Leaders' Declaration on Global Governance of AI</span></div>
+      <div class="fact"><span class="fact-label">Climate</span><span class="fact-val">Framework Declaration on Climate Finance — 5-yr roadmap</span></div>
+      <div class="fact"><span class="fact-label">TFFF</span><span class="fact-val">Tropical Forest Forever Fund — innovative tropical forest conservation</span></div>
+    </div>
+
+    <!-- NDB -->
+    <div class="card blue">
+      <div class="card-title"><span class="icon">🏦</span>New Development Bank</div>
+      <div class="fact"><span class="fact-label">News</span><span class="fact-val"><strong>Algeria</strong> becomes 9th member</span></div>
+      <div class="fact"><span class="fact-label">Genesis</span><span class="fact-val">2015, by BRICS nations; 6th BRICS Summit, Fortaleza, Brazil (2014 announced)</span></div>
+      <div class="fact"><span class="fact-label">Members</span><span class="fact-val">Brazil, Russia, India, China, SA, Bangladesh, UAE, Egypt, Algeria</span></div>
+      <div class="fact"><span class="fact-label">Capital</span><span class="fact-val">$100B authorized; 5 founders equal share = $50B</span></div>
+      <div class="fact"><span class="fact-label">Voting</span><span class="fact-val">Founders' combined voting power ≥ <strong>55%</strong></span></div>
+    </div>
+
+    <!-- BIMSTEC -->
+    <div class="card green">
+      <div class="card-title"><span class="icon">🌊</span>BIMSTEC — 6th Summit</div>
+      <div class="fact"><span class="fact-label">Theme</span><span class="fact-val">"BIMSTEC: Prosperous, Resilient and Open" — Bangkok</span></div>
+      <div class="fact"><span class="fact-label">India initiatives</span><span class="fact-val">Centres of Excellence (Disaster Mgmt, Maritime Transport, Traditional Medicine, Agriculture); BODHI scheme; First BIMSTEC Games 2027</span></div>
+      <div class="fact"><span class="fact-label">Bangkok Vision</span><span class="fact-val">2030 vision — "PRO BIMSTEC"</span></div>
+      <div class="fact"><span class="fact-label">Members</span><span class="fact-val">7: Bangladesh, Bhutan, India, Myanmar, Nepal, Sri Lanka, Thailand. HQ: Dhaka</span></div>
+      <div class="fact"><span class="fact-label">India lead</span><span class="fact-val">Security pillar — Counter-terrorism, Disaster Mgmt, Energy Security</span></div>
+    </div>
+
+    <!-- ASEAN -->
+    <div class="card purple">
+      <div class="card-title"><span class="icon">🎋</span>ASEAN — 47th Summit</div>
+      <div class="fact"><span class="fact-label">Venue</span><span class="fact-val">Kuala Lumpur, Malaysia; Theme: Inclusivity & Sustainability</span></div>
+      <div class="fact"><span class="fact-label">New member</span><span class="fact-val"><strong>Timor-Leste</strong> — 11th member; Asia's youngest nation; only Asian nation fully in Southern Hemisphere</span></div>
+      <div class="fact"><span class="fact-label">India-ASEAN</span><span class="fact-val">22nd Summit; India upgraded to <strong>Comprehensive Strategic Partnership (CSP)</strong> 2022; 2026 = ASEAN-India Year of Maritime Cooperation</span></div>
+      <div class="fact"><span class="fact-label">Kuala Lumpur Accord</span><span class="fact-val">Joint ceasefire — Thailand & Cambodia</span></div>
+      <div class="fact"><span class="fact-label">Genesis</span><span class="fact-val">1967, Bangkok Declaration. HQ: Jakarta</span></div>
+    </div>
+
+    <!-- QUAD -->
+    <div class="card teal">
+      <div class="card-title"><span class="icon">🔷</span>QUAD — Wilmington Declaration</div>
+      <div class="fact"><span class="fact-label">News</span><span class="fact-val">First-ever "QUAD at Sea Ship Observer Mission" launched by 4 coast guards</span></div>
+      <div class="fact"><span class="fact-label">Declaration</span><span class="fact-val">Outcome of QUAD Leaders' Summit 2024, Wilmington, USA</span></div>
+      <div class="fact"><span class="fact-label">Key items</span><span class="fact-val">QUAD Cancer Moonshot (cervical cancer); MAITRI; QUAD Critical Minerals Initiative; BioExplore Initiative; Semiconductor Supply Chain Network</span></div>
+      <div class="fact"><span class="fact-label">Members</span><span class="fact-val">India, Australia, Japan, USA. Origins: 2004 Tsunami relief</span></div>
+    </div>
+
+    <!-- IAEA -->
+    <div class="card red">
+      <div class="card-title"><span class="icon">☢️</span>IAEA — Iran Breach</div>
+      <div class="fact"><span class="fact-label">News</span><span class="fact-val">19 of 35 IAEA Board members voted to censure Iran — first in 20 years</span></div>
+      <div class="fact"><span class="fact-label">Uranium</span><span class="fact-val">Iran has enough 60% enriched uranium for potentially <strong>9 nuclear bombs</strong></span></div>
+      <div class="fact"><span class="fact-label">JCPOA</span><span class="fact-val">P5+1 deal 2015; US withdrew 2018; Iran breaching since 2019</span></div>
+      <div class="fact"><span class="fact-label">IAEA</span><span class="fact-val">HQ: Vienna; 180 members; Nobel Peace Prize 2005; motto: "Atoms for Peace"</span></div>
+    </div>
+
+    <!-- Other Orgs -->
+    <div class="card gold wide">
+      <div class="card-title"><span class="icon">🏛</span>Other Important Organizations — Quick Facts</div>
+      <table class="mini-table">
+        <tr><th>Org</th><th>Key News/Fact</th><th>HQ / Genesis</th></tr>
+        <tr><td>NATO</td><td>Members agreed to increase defence spending from 2% to <strong>5% of GDP by 2035</strong>; 32 countries; Sweden latest member; Article 5 = collective defence</td><td>Brussels; 1949 (Washington Treaty)</td></tr>
+        <tr><td>ICC</td><td>Burkina Faso, Mali, Niger withdrew; 125 member countries; India, US, Russia, China NOT parties to Rome Statute</td><td>Hague; Rome Statute 1998/2002</td></tr>
+        <tr><td>IOMed</td><td>China-led alternative to ICJ/PCA; 30+ founding members (Asia, Africa, Caribbean); non-Western orientation</td><td>China-established</td></tr>
+        <tr><td>ILO</td><td>113th ILC; Adopted Convention No.192 (bio hazards); MLC amendment; India signed MoU for ISCO</td><td>Geneva; 1919 Treaty of Versailles; Nobel 1969</td></tr>
+        <tr><td>EAEU</td><td>India-EAEU signed Terms of Reference for <strong>FTA</strong></td><td>Members: Armenia, Belarus, Kazakhstan, Kyrgyzstan, Russia; 2014 Treaty</td></tr>
+        <tr><td>ECOWAS</td><td>Marked <strong>50th anniversary</strong>; Free trade 1990; common external tariff 2015; 12 members (June 2025)</td><td>Abuja, Nigeria; 28 May 1975, Treaty of Lagos</td></tr>
+        <tr><td>APO</td><td>India assumed <strong>Chairmanship 2025-26</strong>; India founding member; 21 Asia-Pacific economies</td><td>1961; intergovernmental</td></tr>
+      </table>
+    </div>
+
+  </div><!-- end grid -->
+</div>
+
+<!-- ═══════════════ BILATERAL ═══════════════ -->
+<div class="section" id="bilateral">
+  <div class="sec-head"><h2>Bilateral Relations</h2><span class="num">15 pairs</span></div>
+  <div class="grid">
+
+    <div class="card gold">
+      <div class="card-title"><span class="icon">🐉</span>India–China</div>
+      <div class="fact"><span class="fact-label">Highlight</span><span class="fact-val">75 years of ties; "Dragon-Elephant Tango"; PM-Xi met at SCO Summit Tianjin — first PM visit since 2018</span></div>
+      <div class="fact"><span class="fact-label">Trade</span><span class="fact-val">China = India's <strong>largest trading partner</strong>; significant trade deficit</span></div>
+      <div class="fact"><span class="fact-label">LAC</span><span class="fact-val">India: 3,488 km; China: ~2,000 km; 3 sectors (Western/Middle/Eastern)</span></div>
+      <div class="fact"><span class="fact-label">Passes</span><span class="fact-val">Lipulekh (UK), Shipki La (HP), Nathu La (Sikkim) to reopen for trade</span></div>
+      <div class="fact"><span class="fact-label">Medog Dam</span><span class="fact-val">On Yarlung Zangbo; will surpass Three Gorges Dam as world's largest</span></div>
+      <div class="fact"><span class="fact-label">CPEC</span><span class="fact-val">Extended to Afghanistan; Gwadar (Pak) → Kashgar (Xinjiang)</span></div>
+    </div>
+
+    <div class="card red">
+      <div class="card-title"><span class="icon">🇵🇰</span>India–Pakistan</div>
+      <div class="fact"><span class="fact-label">IWT</span><span class="fact-val">India placed Indus Waters Treaty (1960) "in abeyance" post Pahalgam terror attack</span></div>
+      <div class="fact"><span class="fact-label">IWT rivers</span><span class="fact-val">India: Ravi, Beas, Sutlej; Pakistan: Indus, Jhelum, Chenab</span></div>
+      <div class="fact"><span class="fact-label">Simla Agmt</span><span class="fact-val">Signed 1972 post 1971 war; converted ceasefire line to <strong>LoC</strong>; Pakistan placed in abeyance</span></div>
+      <div class="fact"><span class="fact-label">Continental Shelf</span><span class="fact-val">India expanded claim in Central Arabian Sea by ~10,000 sq km; dispute re: Sir Creek</span></div>
+    </div>
+
+    <div class="card teal">
+      <div class="card-title"><span class="icon">🇧🇩</span>India–Bangladesh</div>
+      <div class="fact"><span class="fact-label">News</span><span class="fact-val">India revoked transshipment facility for Bangladesh exports</span></div>
+      <div class="fact"><span class="fact-label">Trade</span><span class="fact-val">Bangladesh = India's biggest South Asia trade partner; India = BD's 2nd largest in Asia</span></div>
+      <div class="fact"><span class="fact-label">Exercises</span><span class="fact-val">SAMPRITI (Army), MILAN (multilateral naval)</span></div>
+      <div class="fact"><span class="fact-label">Border</span><span class="fact-val">India shares <strong>longest land border</strong> with Bangladesh</span></div>
+    </div>
+
+    <div class="card green">
+      <div class="card-title"><span class="icon">🇦🇫</span>India–Afghanistan</div>
+      <div class="fact"><span class="fact-label">Historic</span><span class="fact-val">First ministerial-level Taliban visit to India since 2021 takeover</span></div>
+      <div class="fact"><span class="fact-label">Outcomes</span><span class="fact-val">India upgraded Kabul Technical Mission to <strong>full Embassy</strong>; India-Afghanistan Air Freight Corridor commenced</span></div>
+      <div class="fact"><span class="fact-label">Moscow format</span><span class="fact-val">India in 7th Moscow Format Consultations on Afghanistan</span></div>
+    </div>
+
+    <div class="card blue">
+      <div class="card-title"><span class="icon">🇱🇰</span>India–Sri Lanka</div>
+      <div class="fact"><span class="fact-label">Award</span><span class="fact-val">PM India received Sri Lanka's highest civilian award: <strong>Mithra Vibhushana</strong></span></div>
+      <div class="fact"><span class="fact-label">Outcomes</span><span class="fact-val">India-Sri Lanka-UAE energy hub at Trincomalee; Digital Identity project support; $100M loans converted to grants</span></div>
+      <div class="fact"><span class="fact-label">Exercises</span><span class="fact-val">SLINEX (Naval), MITRA SHAKTI (Army)</span></div>
+      <div class="fact"><span class="fact-label">Issue</span><span class="fact-val">Hambantota Port — Chinese control; Kachchatheevu island dispute</span></div>
+    </div>
+
+    <div class="card gold">
+      <div class="card-title"><span class="icon">🇺🇸</span>India–USA</div>
+      <div class="fact"><span class="fact-label">Tariff</span><span class="fact-val">US imposed <strong>50% tariffs</strong> on India</span></div>
+      <div class="fact"><span class="fact-label">Defence</span><span class="fact-val">Major Defence Partner (2016); agreements: LEMOA, COMCASA, BECA, SOSA (2024 — 18th SOSA partner)</span></div>
+      <div class="fact"><span class="fact-label">INDUS-X</span><span class="fact-val">Under iCET (Critical & Emerging Technologies); launched June 2023</span></div>
+      <div class="fact"><span class="fact-label">Exercises</span><span class="fact-val">Malabar, Cope India, Tiger Triumph, Yudh Abhyas</span></div>
+    </div>
+
+    <div class="card teal">
+      <div class="card-title"><span class="icon">🇷🇺</span>India–Russia</div>
+      <div class="fact"><span class="fact-label">Anniversary</span><span class="fact-val">25 years of Strategic Partnership (signed 2000)</span></div>
+      <div class="fact"><span class="fact-label">Defence</span><span class="fact-val">BrahMos cruise missile; AK-203; S-400; Tushil frigate; Russia = top military supplier 36% imports (2020-24, SIPRI)</span></div>
+      <div class="fact"><span class="fact-label">RELOS</span><span class="fact-val">Reciprocal Exchange of Logistics Agreement (RELOS) approved</span></div>
+      <div class="fact"><span class="fact-label">Trade</span><span class="fact-val">90% trade in local currencies (Ruble + Rupee)</span></div>
+    </div>
+
+    <div class="card purple">
+      <div class="card-title"><span class="icon">🇬🇧</span>India–UK</div>
+      <div class="fact"><span class="fact-label">Historic</span><span class="fact-val">India-UK <strong>CETA</strong> (Comprehensive Economic and Trade Agreement) signed</span></div>
+      <div class="fact"><span class="fact-label">FTA</span><span class="fact-val">FTA concluded after 3 years; 27 chapters (digital trade, environment etc.)</span></div>
+      <div class="fact"><span class="fact-label">Tariffs</span><span class="fact-val">UK eliminates >99% tariff lines; India opens 89.5% lines covering 91% UK exports</span></div>
+      <div class="fact"><span class="fact-label">India-UK Vision</span><span class="fact-val">Vision 2035: JEACT (Jet Engine), Defence Industrial Roadmap, R&I Corridor</span></div>
+      <div class="fact"><span class="fact-label">DCC</span><span class="fact-val">Double Contribution Convention — exempts Indian workers from UK social security (3 yrs)</span></div>
+    </div>
+
+    <div class="card blue">
+      <div class="card-title"><span class="icon">🇯🇵</span>India–Japan</div>
+      <div class="fact"><span class="fact-label">Status</span><span class="fact-val"><strong>Special Strategic and Global Partnership</strong> (2014)</span></div>
+      <div class="fact"><span class="fact-label">Outcomes</span><span class="fact-val">India-Japan Joint Vision for Next Decade; Chandrayaan-5 LUPEX space cooperation; Economic Security Initiative</span></div>
+      <div class="fact"><span class="fact-label">State-Prefecture</span><span class="fact-val">AP-Toyama, TN-Ehime, UP-Yamanashi, Gujarat-Shizuoka partnerships</span></div>
+      <div class="fact"><span class="fact-label">CEPA</span><span class="fact-val">India-Japan CEPA in effect since <strong>2011</strong>; MAHSR flagship project</span></div>
+    </div>
+
+    <div class="card green">
+      <div class="card-title"><span class="icon">🇦🇪</span>India–UAE</div>
+      <div class="fact"><span class="fact-label">Visit</span><span class="fact-val">Crown Prince of Dubai first official visit to India</span></div>
+      <div class="fact"><span class="fact-label">Key</span><span class="fact-val">Bharat Mart (India's Dragon Mart equiv.) + Virtual Trade Corridor</span></div>
+      <div class="fact"><span class="fact-label">Trade</span><span class="fact-val">UAE = India's <strong>3rd largest trading partner</strong>, 2nd largest export destination</span></div>
+      <div class="fact"><span class="fact-label">Unique</span><span class="fact-val">Only country with both CEPA (2022) + BIT (2023) with India</span></div>
+      <div class="fact"><span class="fact-label">Energy</span><span class="fact-val">4th largest crude source; 2nd largest LNG/LPG source; only nation storing strategic oil reserves in India</span></div>
+    </div>
+
+    <div class="card gold">
+      <div class="card-title"><span class="icon">🇸🇦</span>India–Saudi Arabia</div>
+      <div class="fact"><span class="fact-label">Visit</span><span class="fact-val">PM Modi visited Saudi Arabia</span></div>
+      <div class="fact"><span class="fact-label">SPC</span><span class="fact-val">2nd India-Saudi SPC; India = 4th country with SPC after UK, France, China</span></div>
+      <div class="fact"><span class="fact-label">Investment</span><span class="fact-val">HLTF to fast-track Saudi's $100 billion investment in India</span></div>
+      <div class="fact"><span class="fact-label">Energy</span><span class="fact-val">India's 3rd largest crude source; 3rd largest LPG supplier (2023-24)</span></div>
+    </div>
+
+    <div class="card teal">
+      <div class="card-title"><span class="icon">🌍</span>India–Africa</div>
+      <div class="fact"><span class="fact-label">Visits</span><span class="fact-val">PM visited Ghana (Officer of Order of Star of Ghana) and Namibia (UPI agreement)</span></div>
+      <div class="fact"><span class="fact-label">Trade</span><span class="fact-val">India = Africa's <strong>3rd largest trading partner</strong> (after EU, China)</span></div>
+      <div class="fact"><span class="fact-label">AIKEYME</span><span class="fact-val">Africa India Key Maritime Engagement — new multilateral naval exercise</span></div>
+      <div class="fact"><span class="fact-label">DFTP</span><span class="fact-val">India = first developing country to give non-reciprocal duty-free access to LDCs</span></div>
+    </div>
+
+    <div class="card purple">
+      <div class="card-title"><span class="icon">🌎</span>India–Latin America</div>
+      <div class="fact"><span class="fact-label">Visits</span><span class="fact-val">PM visited Trinidad & Tobago (Order of Republic), Argentina, Brazil (Grand Collar of Southern Cross)</span></div>
+      <div class="fact"><span class="fact-label">Lithium</span><span class="fact-val">KABIL signed with CAMYEN (Argentina) — first Indian state-owned lithium exploration abroad; Lithium Triangle: Chile + Argentina + Bolivia (>75% global reserves)</span></div>
+      <div class="fact"><span class="fact-label">Trade</span><span class="fact-val">India has Preferential Trade Agreement with <strong>MERCOSUR</strong></span></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════ PLACES ═══════════════ -->
+<div class="section" id="places">
+  <div class="sec-head"><h2>Places in News</h2><span class="num">Conflict + International</span></div>
+  <div class="grid">
+
+    <div class="card red">
+      <div class="card-title"><span class="icon">🗺</span>Conflict Zones — Key Facts</div>
+      <table class="mini-table">
+        <tr><th>Place</th><th>Context + Geography</th></tr>
+        <tr><td>Myanmar (Sagaing)</td><td>Rohingya refugee crisis; borders India (Mizoram, Manipur, Nagaland, AP); Andaman Sea + Bay of Bengal</td></tr>
+        <tr><td>Sudan (Darfur)</td><td>Civil war — Army vs RSF since April 2023; 3rd largest Africa; Nile (White + Blue) runs through; Red Sea coast</td></tr>
+        <tr><td>Ukraine (Kyiv)</td><td>Russia damaged Saint Sophia Cathedral (UNESCO WHS); 2nd largest in Europe; Dnieper River</td></tr>
+        <tr><td>DRC</td><td>DRC + Rwanda-backed M23 ceasefire; M23 = ethnic Tutsis; 2nd largest Africa; Congo river (2nd longest Africa)</td></tr>
+        <tr><td>Taiwan Strait</td><td>China "Strait Thunder-2025A" drills; 44% of world's container fleet; connects South + East China Seas</td></tr>
+        <tr><td>Red Sea</td><td>Houthi attacks; Bab-el-Mandeb → Gulf of Aden; Suez Canal → Mediterranean; world's most saline seawater</td></tr>
+        <tr><td>Kerch Strait</td><td>Connects Sea of Azov + Black Sea; Kerch Bridge (Russia-Crimea link, 19km)</td></tr>
+        <tr><td>Zangezur Corridor</td><td>43km route in Armenia's Syunik; connects Azerbaijan's Baku (Caspian) to Nakhchivan; Turkey concern; threatens India's Chabahar + INSTC</td></tr>
+      </table>
+    </div>
+
+    <div class="card blue">
+      <div class="card-title"><span class="icon">🌐</span>International Developments — Key Locations</div>
+      <table class="mini-table">
+        <tr><th>Place</th><th>Key Info</th></tr>
+        <tr><td>Greenland</td><td>World's largest island; 80% ice sheet (2nd after Antarctica); Arctic geopolitics; US tried to annex (Danish semi-autonomous territory)</td></tr>
+        <tr><td>Northern Sea Route (NSR)</td><td>India-Norway feasibility study; 13,000 km (vs Suez 21,000 km); saves 10-14 days; 5 ports: Sabetta, Dudinka, Khatanga, Tiksi, Pevek</td></tr>
+        <tr><td>Chagos Archipelago</td><td>UK handed sovereignty to Mauritius; UK pays $136M/yr to lease back Diego Garcia (US base); 7 Atolls; Central Indian Ocean</td></tr>
+        <tr><td>Qatar</td><td>Iran attacked al-Udeid Air Base (largest US base in West Asia); only land border with Saudi Arabia; No rivers/lakes</td></tr>
+        <tr><td>Tiexian Reef</td><td>Sandy Cay; China seized near Thitu Island (Philippines); part of Spratly Islands; near Subi Reef</td></tr>
+        <tr><td>Baltic Sea</td><td>Youngest sea; largest brackish water expanse; Kiel Canal links to North Sea; Russian aircraft entered airspace</td></tr>
+        <tr><td>Cyprus</td><td>PM India visited; 3rd largest Mediterranean island (after Sicily, Sardinia); EU member despite being in Asia; Cyprus problem (Northern Cyprus vs Republic)</td></tr>
+        <tr><td>Chile</td><td>India-Chile PM talks; top copper producer; Lithium Triangle; Atacama Desert (driest nonpolar); Argentina-Chile = longest border in South America</td></tr>
+        <tr><td>Maldives</td><td>PM India visit; 60 years of ties; UPI launched; 8 Degree Channel (separates Minicoy from Maldives); 2.4m highest point</td></tr>
+        <tr><td>Bitra Island</td><td>Lakshadweep — smallest inhabited island; 0.105 sq km; near Agatti Island; defence acquisition consideration</td></tr>
+      </table>
+    </div>
+
+    <div class="card teal">
+      <div class="card-title"><span class="icon">🟦</span>Conflict Lines (West Asia)</div>
+      <div class="fact"><span class="fact-label">Blue Line</span><span class="fact-val">Lebanon-Israel de facto border (UN 2000); marked by blue barrels; Mediterranean → Golan Heights</span></div>
+      <div class="fact"><span class="fact-label">Green Line</span><span class="fact-val">1949 ceasefire boundary — Israel vs West Bank</span></div>
+      <div class="fact"><span class="fact-label">Yellow Line</span><span class="fact-val">US-brokered ceasefire — Israeli-controlled eastern Gaza vs Palestinian areas</span></div>
+      <div class="fact"><span class="fact-label">Morag Axis</span><span class="fact-val">Agricultural land between Khan Younis and Rafah, east-west across Gaza Strip</span></div>
+    </div>
+
+    <div class="card gold">
+      <div class="card-title"><span class="icon">🔑</span>Key Indian Ocean Channels</div>
+      <div class="fact"><span class="fact-label">8° Channel</span><span class="fact-val">Separates Minicoy island from <strong>Maldives</strong></span></div>
+      <div class="fact"><span class="fact-label">9° Channel</span><span class="fact-val">Separates Minicoy from main <strong>Lakshadweep</strong> archipelago</span></div>
+      <div class="fact"><span class="fact-label">10° Channel</span><span class="fact-val">Separates Andaman Islands from <strong>Nicobar Islands</strong></span></div>
+      <div class="fact"><span class="fact-label">Persian Gulf</span><span class="fact-val">Strait of Hormuz → Arabian Sea; bordered by Iran, Oman, UAE, Qatar, Bahrain, Saudi Arabia, Kuwait, Iraq; Tigris + Euphrates + Karun rivers</span></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════ SECURITY ═══════════════ -->
+<div class="section" id="security">
+  <div class="sec-head"><h2>Issues Related to Security</h2><span class="num">15 topics</span></div>
+  <div class="grid">
+
+    <div class="card red">
+      <div class="card-title"><span class="icon">🛡</span>AFSPA, 1958</div>
+      <div class="fact"><span class="fact-label">News</span><span class="fact-val">Extended 6 months in parts of Manipur, Nagaland, Arunachal Pradesh</span></div>
+      <div class="fact"><span class="fact-label">Current</span><span class="fact-val">In force: Nagaland, Assam, Manipur, Arunachal Pradesh; J&K via 1990 Act</span></div>
+      <div class="fact"><span class="fact-label">Lifted</span><span class="fact-val">Tripura (2015), Meghalaya (2018), Mizoram (1980s)</span></div>
+      <div class="fact"><span class="fact-label">Section 3</span><span class="fact-val">Governor/Administrator/Centre can declare "disturbed area"</span></div>
+      <div class="fact"><span class="fact-label">Section 6</span><span class="fact-val">Immunity from prosecution without Central Govt sanction</span></div>
+      <div class="fact"><span class="fact-label">Reddy Cmte</span><span class="fact-val">Recommended repeal of AFSPA; amend UAPA for NE states</span></div>
+    </div>
+
+    <div class="card blue">
+      <div class="card-title"><span class="icon">💻</span>Cybercrime & I4C</div>
+      <div class="fact"><span class="fact-label">I4C</span><span class="fact-val">Indian Cyber Crime Coordination Centre; inaugurated 2020; Helpline <strong>1930</strong>; NCRP portal</span></div>
+      <div class="fact"><span class="fact-label">PMLA</span><span class="fact-val">I4C included under Section 66 of PMLA 2002 — can share info with ED</span></div>
+      <div class="fact"><span class="fact-label">Pig Butchering</span><span class="fact-val">Romance + investment fraud (crypto) scam</span></div>
+      <div class="fact"><span class="fact-label">Juice Jacking</span><span class="fact-val">Cyberattack via public USB charging ports</span></div>
+      <div class="fact"><span class="fact-label">Cryptojacking</span><span class="fact-val">Hijacking computing resources to mine cryptocurrency</span></div>
+    </div>
+
+    <div class="card teal">
+      <div class="card-title"><span class="icon">🌐</span>UN Convention against Cybercrime</div>
+      <div class="fact"><span class="fact-label">Status</span><span class="fact-val">72 of 193 states signed in Hanoi, Vietnam; adopted by UNGA Dec 24, 2024</span></div>
+      <div class="fact"><span class="fact-label">First</span><span class="fact-val">First universal <strong>legally binding framework</strong> for electronic evidence sharing for serious offences</span></div>
+      <div class="fact"><span class="fact-label">India</span><span class="fact-val">Has <strong>not signed</strong> yet; signing open till Dec 31, 2026</span></div>
+      <div class="fact"><span class="fact-label">Budapest</span><span class="fact-val">2001 convention (Council of Europe) — first intl cybercrime treaty; Russia, China rejected it</span></div>
+    </div>
+
+    <div class="card purple">
+      <div class="card-title"><span class="icon">🚀</span>Mission Sudarshan Chakra</div>
+      <div class="fact"><span class="fact-label">Announced</span><span class="fact-val">PM at 79th Independence Day celebrations</span></div>
+      <div class="fact"><span class="fact-label">Aim</span><span class="fact-val">Air Defence system — neutralise enemy infiltrations + enhance offensive capabilities</span></div>
+      <div class="fact"><span class="fact-label">Timeline</span><span class="fact-val">To be completed by <strong>2035</strong>; part of multi-layered Missile Defence System</span></div>
+      <div class="fact"><span class="fact-label">Features</span><span class="fact-val">100% indigenous; covers air, land, sea; integrates advanced surveillance + cyber protection</span></div>
+      <div class="fact"><span class="fact-label">Project Kusha</span><span class="fact-val">DRDO-led indigenous long-range air defence missile system (IAF)</span></div>
+    </div>
+
+    <div class="card green">
+      <div class="card-title"><span class="icon">🧬</span>Biological Weapons Convention (BWC)</div>
+      <div class="fact"><span class="fact-label">News</span><span class="fact-val">UNODA celebrated BWC's <strong>50th anniversary</strong></div>
+      <div class="fact"><span class="fact-label">Genesis</span><span class="fact-val">Opened for signature 1972; entered into force <strong>1975</strong></span></div>
+      <div class="fact"><span class="fact-label">First</span><span class="fact-val">1st multilateral disarmament treaty banning entire WMD category</span></div>
+      <div class="fact"><span class="fact-label">India</span><span class="fact-val">Signed and ratified in <strong>1974</strong>; 188 State Parties total</span></div>
+      <div class="fact"><span class="fact-label">Supplement</span><span class="fact-val">Supplements 1925 Geneva Protocol (only banned use; BWC also bans dev/prod)</span></div>
+      <div class="fact"><span class="fact-label">Non-parties</span><span class="fact-val">5 states neither signed nor acceded: Israel, Chad, Djibouti, Eritrea, Kiribati</span></div>
+    </div>
+
+    <div class="card gold">
+      <div class="card-title"><span class="icon">⚡</span>INF Treaty</div>
+      <div class="fact"><span class="fact-label">News</span><span class="fact-val">Russia officially ended commitment to INF Treaty</span></div>
+      <div class="fact"><span class="fact-label">About</span><span class="fact-val">US-Soviet Union, 1987; required destruction of all ground-launched missiles with ranges <strong>500–5,500 km</strong></span></div>
+      <div class="fact"><span class="fact-label">US withdrew</span><span class="fact-val">US withdrew in <strong>2019</strong>; Russia cites Typhon missile deployment in Philippines as reason</span></div>
+    </div>
+
+    <div class="card teal">
+      <div class="card-title"><span class="icon">🔴</span>INTERPOL — Silver Notice</div>
+      <div class="fact"><span class="fact-label">News</span><span class="fact-val">First Silver Notice issued on India's request</span></div>
+      <div class="fact"><span class="fact-label">Purpose</span><span class="fact-val">Trace and gather info on <strong>assets of fugitives</strong> in foreign countries</span></div>
+      <div class="fact"><span class="fact-label">Pilot</span><span class="fact-val">51 countries including India; first Silver Notice issued in January (Italy's request)</span></div>
+      <div class="fact"><span class="fact-label">Limit</span><span class="fact-val">Each country can request up to <strong>9 Silver Notices</strong> during pilot</span></div>
+      <div class="fact"><span class="fact-label">INTERPOL</span><span class="fact-val">HQ: Lyon, France; 196 members; established 1923 as ICPC; India founding member; CBI = India's NCB</span></div>
+    </div>
+
+    <div class="card blue">
+      <div class="card-title"><span class="icon">🔑</span>Important Operations & Projects</div>
+      <div class="fact"><span class="fact-label">Op. Black Forest</span><span class="fact-val">Biggest anti-Naxal op; Karregutta hill (Chhattisgarh-Telangana border); LWE districts reduced from 6 to 3</span></div>
+      <div class="fact"><span class="fact-label">Op. Spider Web</span><span class="fact-val">Ukraine's SBU; FPV drone strike on Russian strategic bombers (4 air bases)</span></div>
+      <div class="fact"><span class="fact-label">Project Varsha</span><span class="fact-val">Classified naval base (Rambilli, AP) for 12+ nuclear-powered SSBNs; operational by 2026</span></div>
+      <div class="fact"><span class="fact-label">SAKSHAM</span><span class="fact-val">Counter-drone C2 system; real-time detect/neutralise; developed with BEL; covers TBS (up to 3,000m)</span></div>
+      <div class="fact"><span class="fact-label">Igla-S</span><span class="fact-val">Russian man-portable SAM; IR-homing; range 6 km / altitude 3.5 km; improved VSHORADS</span></div>
+      <div class="fact"><span class="fact-label">Mig La Pass</span><span class="fact-val">World's highest motorable road (19,400 ft); Ladakh; BRO Project Himank; Likaru-Mig La-Fukche axis</span></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════ OTHER NEWS ═══════════════ -->
+<div class="section" id="other">
+  <div class="sec-head"><h2>Other Important News</h2><span class="num">Key developments</span></div>
+  <div class="grid">
+
+    <div class="card red">
+      <div class="card-title"><span class="icon">💥</span>Israel-US-Iran Conflict</div>
+      <div class="fact"><span class="fact-label">Israel Op.</span><span class="fact-val">"Operation Rising Lion" — strikes on Iranian nuclear infrastructure</span></div>
+      <div class="fact"><span class="fact-label">US Op.</span><span class="fact-val">"Operation Midnight Hammer" — precision strikes on Natanz, Isfahan, Fordow</span></div>
+      <div class="fact"><span class="fact-label">Iran Op.</span><span class="fact-val">"Operation True Promise 3" — retaliation</span></div>
+      <div class="fact"><span class="fact-label">Israel defence</span><span class="fact-val">"Barak Magen / Lightning Shield" — protects against drones, cruise & ballistic missiles</span></div>
+      <div class="fact"><span class="fact-label">India impact</span><span class="fact-val">Strait of Hormuz closure threat; Chabahar + INSTC affected; India launched <strong>Operation Sindhu</strong> to evacuate nationals</span></div>
+      <div class="fact"><span class="fact-label">Hormuz</span><span class="fact-val"><strong>35%</strong> global seaborne oil + <strong>20%</strong> LNG pass through Strait of Hormuz</span></div>
+    </div>
+
+    <div class="card gold">
+      <div class="card-title"><span class="icon">🕊</span>Gaza Peace Summit</div>
+      <div class="fact"><span class="fact-label">Venue</span><span class="fact-val">Sharm El-Sheikh, Egypt; co-hosted by USA + Egypt</span></div>
+      <div class="fact"><span class="fact-label">Declaration</span><span class="fact-val">US, Egypt, Qatar, Turkey signed Trump Declaration — 20-point Gaza peace plan</span></div>
+      <div class="fact"><span class="fact-label">Key points</span><span class="fact-val">Hamas disarmament; no forced displacement; Israel won't occupy/annex Gaza; NO guarantee of two-state solution</span></div>
+      <div class="fact"><span class="fact-label">Famine</span><span class="fact-val">UN declared famine in Gaza (August 2025); 500,000 at risk</span></div>
+      <div class="fact"><span class="fact-label">India</span><span class="fact-val">Recognized Palestinian State in <strong>1988</strong>; voted for New York Declaration (Two-State Solution)</span></div>
+    </div>
+
+    <div class="card teal">
+      <div class="card-title"><span class="icon">🤝</span>AUKUS — Geelong Treaty</div>
+      <div class="fact"><span class="fact-label">News</span><span class="fact-val">Australia-UK signed Geelong Treaty under AUKUS Pillar I (50 years)</span></div>
+      <div class="fact"><span class="fact-label">Also known as</span><span class="fact-val">Nuclear-Powered Submarine Partnership and Collaboration Treaty</span></div>
+      <div class="fact"><span class="fact-label">AUKUS</span><span class="fact-val">Established 2021; Australia, UK, USA; Pillar I: nuclear submarines; Pillar II: 8 advanced military capability areas</span></div>
+    </div>
+
+    <div class="card blue">
+      <div class="card-title"><span class="icon">🛤</span>IMEC</div>
+      <div class="fact"><span class="fact-label">Benefits</span><span class="fact-val">Logistics cost ↓30%; transport time ↓40%</span></div>
+      <div class="fact"><span class="fact-label">MoU signatories</span><span class="fact-val">India, EU, France, Germany, Italy, Saudi Arabia, UAE, USA at G20 Summit 2023, New Delhi</span></div>
+      <div class="fact"><span class="fact-label">Route</span><span class="fact-val">Mumbai → UAE (Al Ghuwaifat/Jabal Ali) → Saudi Arabia → Israel (Haifa) → Greece (Piraeus) → Europe</span></div>
+    </div>
+
+    <div class="card green">
+      <div class="card-title"><span class="icon">🌏</span>Indian Diaspora</div>
+      <div class="fact"><span class="fact-label">Total</span><span class="fact-val"><strong>35.42 million</strong> (Jan 2024): 15.85M NRIs + 19.57M PIOs/OCIs</span></div>
+      <div class="fact"><span class="fact-label">Remittances</span><span class="fact-val">India = world's top recipient — <strong>USD 118.7 billion</strong> (2023-24)</span></div>
+      <div class="fact"><span class="fact-label">PIO+OCI</span><span class="fact-val">Merged into single OCI category in <strong>2015</strong></span></div>
+      <div class="fact"><span class="fact-label">PBD</span><span class="fact-val">Pravasi Bharatiya Divas — January 9; initiated 2003; marks Gandhi's return from S. Africa 1915</span></div>
+    </div>
+
+    <div class="card purple">
+      <div class="card-title"><span class="icon">📋</span>Important Conventions & Agreements</div>
+      <div class="fact"><span class="fact-label">Ottawa Convention</span><span class="fact-val">Anti-Personnel Mine Ban; Finland withdrew; Estonia, Lithuania, Latvia, Poland also withdrawing; India NOT a member (165 countries)</span></div>
+      <div class="fact"><span class="fact-label">KMTTP</span><span class="fact-val">Kaladan Multimodal Transit Transport Project — operational by 2027; Sittwe Port (Myanmar) → Paletwa → Zorinpui (Mizoram)</span></div>
+      <div class="fact"><span class="fact-label">Extradition</span><span class="fact-val">26/11 accused extradited from US; India has treaties with 48 nations; MEA is nodal authority</span></div>
+      <div class="fact"><span class="fact-label">e-Passport</span><span class="fact-val">RFID chip + antenna; PKI security; safeguards against forgery</span></div>
+      <div class="fact"><span class="fact-label">PMDA</span><span class="fact-val">Russia withdrew from Plutonium Mgmt & Disposition Agreement; 2000 agreement with US to dispose 34 MT weapons-grade plutonium</span></div>
+    </div>
+
+    <div class="card gold">
+      <div class="card-title"><span class="icon">📊</span>Key Indices 2025</div>
+      <div class="fact"><span class="fact-label">Global Peace Index</span><span class="fact-val">19th ed.; IEP; 163 states; Iceland 1st; India rank: <strong>115th</strong>; Russia last (163rd)</span></div>
+      <div class="fact"><span class="fact-label">Henley Passport Index</span><span class="fact-val">India rank: <strong>77</strong> (up from 85 in 2024); 59 visa-free destinations; Singapore = 1st; based on IATA data</span></div>
+      <div class="fact"><span class="fact-label">Druzhba Pipeline</span><span class="fact-val">Russia → Belarus/Ukraine → Slovakia/Hungary; Ukraine attack suspended Russian oil flows</span></div>
+      <div class="fact"><span class="fact-label">Power of Siberia 2</span><span class="fact-val">Russia-China legally binding deal; West Siberia → northern China via eastern Mongolia</span></div>
+    </div>
+
+    <div class="card teal">
+      <div class="card-title"><span class="icon">🌿</span>Environment & Initiatives</div>
+      <div class="fact"><span class="fact-label">Great Green Wall</span><span class="fact-val">Launched 2007 by African Union; 100M ha restoration; 250M tons carbon; 10M green jobs by 2030; Sahel Region</span></div>
+      <div class="fact"><span class="fact-label">APoA</span><span class="fact-val">Awaza Programme of Action (2024-2034); for Landlocked Developing Countries; LLDC3 at Turkmenistan</span></div>
+      <div class="fact"><span class="fact-label">Sevilla Forum on Debt</span><span class="fact-val">UNCTAD16; tackles developing country debt; led by Spain; part of Sevilla Platform for Action; $4 trillion SDG financing gap</span></div>
+      <div class="fact"><span class="fact-label">ICJ Climate ruling</span><span class="fact-val">States obliged to limit GHG emissions; clean environment = human right; protect SIDS (39 states, 18 assoc. members)</span></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════ EXERCISES ═══════════════ -->
+<div class="section" id="exercises">
+  <div class="sec-head"><h2>Exercises in News</h2><span class="num">30+ exercises</span></div>
+
+  <div class="card wide blue" style="margin-bottom:16px">
+    <div class="card-title"><span class="icon">⚔️</span>Bilateral Exercises</div>
+    <div class="ex-grid">
+      <div class="ex-item"><div class="ex-name">DUSTLIK (6th ed.)</div><div class="ex-detail"><strong>India–Uzbekistan</strong>; annual; Pune, Maharashtra</div></div>
+      <div class="ex-item"><div class="ex-name">TIGER TRIUMPH (4th ed.)</div><div class="ex-detail"><strong>India–USA</strong>; Tri-Service HADR; Vishakhapatnam</div></div>
+      <div class="ex-item"><div class="ex-name">BOLD KURUKSHETRA (14th)</div><div class="ex-detail"><strong>India–Singapore</strong>; Army</div></div>
+      <div class="ex-item"><div class="ex-name">SIMBEX (32nd)</div><div class="ex-detail"><strong>India–Singapore</strong>; naval; began as "Exercise Lion King" 1994</div></div>
+      <div class="ex-item"><div class="ex-name">NOMADIC ELEPHANT (17th)</div><div class="ex-detail"><strong>India–Mongolia</strong>; annual; Ulaanbaatar; last (2024) at Umroi, Meghalaya</div></div>
+      <div class="ex-item"><div class="ex-name">PASSEX</div><div class="ex-detail"><strong>India–UK</strong>; naval; northern Arabian Sea</div></div>
+      <div class="ex-item"><div class="ex-name">JAA MATA</div><div class="ex-detail"><strong>India–Japan</strong> Coast Guard; Chennai; "See you later"</div></div>
+      <div class="ex-item"><div class="ex-name">SLINEX (12th)</div><div class="ex-detail"><strong>India–Sri Lanka</strong>; naval; Colombo; started 2005</div></div>
+      <div class="ex-item"><div class="ex-name">EXERCISE MAITREE (14th)</div><div class="ex-detail"><strong>India–Thailand</strong>; Army; instituted 2006; Meghalaya</div></div>
+      <div class="ex-item"><div class="ex-name">YUDH ABHYAS (21st)</div><div class="ex-detail"><strong>India–USA</strong>; Army</div></div>
+      <div class="ex-item"><div class="ex-name">EXERCISE SHAKTI</div><div class="ex-detail"><strong>India–France</strong>; Army; biennial; Camp Larzac, France. Varuna (Navy) + Garuda (Airforce) with France</div></div>
+      <div class="ex-item"><div class="ex-name">KONKAN-25</div><div class="ex-detail"><strong>India–UK</strong> Royal Navy</div></div>
+      <div class="ex-item"><div class="ex-name">AUSTRAHIND 2025</div><div class="ex-detail"><strong>India–Australia</strong>; annual military</div></div>
+      <div class="ex-item"><div class="ex-name">JAIMEX 2025</div><div class="ex-detail"><strong>India–Japan</strong>; naval; biennial; Japan Maritime Self-Defense Force</div></div>
+      <div class="ex-item"><div class="ex-name">SAMUDRA SHAKTI</div><div class="ex-detail"><strong>India–Indonesia</strong>; maritime bilateral</div></div>
+      <div class="ex-item"><div class="ex-name">OP. ATALANTA</div><div class="ex-detail"><strong>EU NAVFOR–India</strong>; Western Indian Ocean + Red Sea region</div></div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="card teal">
+      <div class="card-title"><span class="icon">🌐</span>Multilateral Exercises</div>
+      <div class="ex-grid">
+        <div class="ex-item"><div class="ex-name">EXERCISE BRIGHT STAR</div><div class="ex-detail">India participates (2025); multinational since 1995</div></div>
+        <div class="ex-item"><div class="ex-name">INIOCHOS-25</div><div class="ex-detail">Greece's Hellenic AF; annual multinational air</div></div>
+        <div class="ex-item"><div class="ex-name">DESERT FLAG-10</div><div class="ex-detail">Premier multinational air combat; UAE hosts</div></div>
+        <div class="ex-item"><div class="ex-name">TALISMAN SABRE 2025</div><div class="ex-detail">Australia's largest multilateral military ex; Sydney</div></div>
+        <div class="ex-item"><div class="ex-name">EXERCISE MALABAR</div><div class="ex-detail">Annual maritime; Australia, Japan, USA, India</div></div>
+        <div class="ex-item"><div class="ex-name">TARANG SHAKTI</div><div class="ex-detail">IAF hosted Phase-I; India's <strong>first multinational air exercise</strong></div></div>
+        <div class="ex-item"><div class="ex-name">KHAAN QUEST (22nd)</div><div class="ex-detail">Multinational; Mongolia; Genesis: US-Mongolia 2003 bilateral; first multilateral 2006</div></div>
+        <div class="ex-item"><div class="ex-name">EXERCISE OCEAN SKY</div><div class="ex-detail">Spanish Air Force; India = first non-NATO country to participate</div></div>
+        <div class="ex-item"><div class="ex-name">EXERCISE ZAPAD</div><div class="ex-detail">Russia + Belarus; India participated</div></div>
+        <div class="ex-item"><div class="ex-name">PACIFIC REACH 2025</div><div class="ex-detail">Biennial multilateral; Singapore; INS Nistar (DSV) participated</div></div>
+        <div class="ex-item"><div class="ex-name">IMDEX ASIA 2025 (14th)</div><div class="ex-detail">International Maritime Defence Exhibition; Singapore; INS Kiltan</div></div>
+      </div>
+    </div>
+
+    <div class="card green">
+      <div class="card-title"><span class="icon">🆘</span>Humanitarian + Trilateral</div>
+      <div class="fact"><span class="fact-label">Op. Sadbhav</span><span class="fact-val">India launched HADR to Laos, Myanmar, Vietnam (Note: Op Sadbhavana = Indian Army civic action in J&K/Ladakh/Sikkim)</span></div>
+      <div class="fact"><span class="fact-label">Freedom Edge</span><span class="fact-val">South Korea, US, Japan — first trilateral multi-domain exercise</span></div>
+      <div class="fact"><span class="fact-label">IMT TRILAT</span><span class="fact-val">India-Mozambique-Tanzania trilateral maritime exercise</span></div>
+      <div class="fact"><span class="fact-label">Indo-Pacific Logistics Ntwk</span><span class="fact-val">QUAD partners; simulated in Honolulu, Hawaii; supports civilian disaster response</span></div>
+    </div>
+
+    <div class="card purple">
+      <div class="card-title"><span class="icon">🔬</span>Miscellaneous Operations</div>
+      <div class="fact"><span class="fact-label">NATPOLREX-X</span><span class="fact-val">10th National Level Pollution Response Exercise; biennial; Indian Coast Guard; marine oil spill readiness</span></div>
+      <div class="fact"><span class="fact-label">Op. Chakra-V</span><span class="fact-val">CBI against transnational cybercrime/digital arrests; leverages INTERPOL channels</div></div>
+      <div class="fact"><span class="fact-label">Op. HAECHI-VI</span><span class="fact-val">Interpol operation; 6th iteration; combats cyber-enabled financial crimes; funded by South Korea</span></div>
+      <div class="fact"><span class="fact-label">Bharat NCX 2025</span><span class="fact-val">National Cybersecurity Exercise; conducted by NSCS + RRU Gandhinagar</span></div>
+      <div class="fact"><span class="fact-label">Exercise Siyom Prahar</span><span class="fact-val">Indian Army; Arunachal Pradesh; validate drone integration in tactical operations</span></div>
+    </div>
+
+  </div>
+</div>
+
+</main>
+
+<footer>PT 365 International Relations · Apr 2025 – Nov 2025 · UPSC Prelims 2026 · Vision IAS</footer>
+
+<script>
+function showTab(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+}
+</script>
+</body>
+</html>
