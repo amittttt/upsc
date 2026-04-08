@@ -1,0 +1,891 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>PT 365 Updated Part 1 – UPSC Revision Guide</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f4f8;color:#1a2332;font-size:14px;line-height:1.6}
+
+  /* HEADER */
+  .header{background:linear-gradient(135deg,#1a2e4a,#2d5a8e);color:#fff;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.3)}
+  .header h1{font-size:18px;font-weight:700;letter-spacing:.5px}
+  .header p{font-size:11px;opacity:.8;margin-top:2px}
+  .badge{background:#e8a020;color:#fff;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:700}
+
+  /* TABS */
+  .tabs{display:flex;overflow-x:auto;background:#1a2e4a;scrollbar-width:none}
+  .tabs::-webkit-scrollbar{display:none}
+  .tab{padding:12px 18px;color:#9ab4d0;cursor:pointer;white-space:nowrap;font-size:12.5px;font-weight:600;border-bottom:3px solid transparent;transition:all .2s;flex-shrink:0}
+  .tab:hover{color:#fff;background:rgba(255,255,255,.08)}
+  .tab.active{color:#fff;border-bottom:3px solid #e8a020;background:rgba(255,255,255,.1)}
+
+  /* CONTENT */
+  .content{display:none;padding:20px;max-width:1100px;margin:0 auto}
+  .content.active{display:block}
+
+  /* SECTION TITLE */
+  .sec-title{background:linear-gradient(90deg,#1a2e4a,#2d5a8e);color:#fff;padding:10px 16px;border-radius:8px;font-size:15px;font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+  .sec-title span{background:#e8a020;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
+
+  /* CARDS */
+  .card{background:#fff;border-radius:10px;padding:14px 16px;margin-bottom:14px;box-shadow:0 1px 4px rgba(0,0,0,.1);border-left:4px solid #2d5a8e}
+  .card.green{border-left-color:#2e7d32}
+  .card.orange{border-left-color:#e65100}
+  .card.purple{border-left-color:#6a1b9a}
+  .card.teal{border-left-color:#00695c}
+  .card.red{border-left-color:#c62828}
+  .card h3{font-size:13.5px;font-weight:700;color:#1a2e4a;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+  .card h3 .tag{font-size:10px;background:#e3f2fd;color:#1565c0;padding:2px 7px;border-radius:10px;font-weight:600;white-space:nowrap}
+  .card h3 .tag.green{background:#e8f5e9;color:#2e7d32}
+  .card h3 .tag.orange{background:#fff3e0;color:#e65100}
+  .card h3 .tag.purple{background:#f3e5f5;color:#6a1b9a}
+  .card h3 .tag.red{background:#ffebee;color:#c62828}
+
+  /* TABLE */
+  table{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:8px}
+  th{background:#1a2e4a;color:#fff;padding:7px 10px;text-align:left;font-weight:600}
+  td{padding:6px 10px;border-bottom:1px solid #e8ecf0;vertical-align:top}
+  tr:nth-child(even) td{background:#f7f9fc}
+  tr:hover td{background:#eef4fb}
+
+  /* KEY POINTS */
+  ul.kp{padding-left:18px;margin-top:6px}
+  ul.kp li{margin-bottom:4px;font-size:13px}
+  ul.kp li strong{color:#1a2e4a}
+
+  /* HIGHLIGHT BOX */
+  .hbox{background:#fff8e1;border:1px solid #ffe082;border-radius:8px;padding:10px 14px;margin:8px 0;font-size:12.5px}
+  .hbox.blue{background:#e3f2fd;border-color:#90caf9}
+  .hbox.green{background:#e8f5e9;border-color:#a5d6a7}
+  .hbox.red{background:#ffebee;border-color:#ef9a9a}
+  .hbox b{color:#1a2e4a}
+
+  /* MINI GRID */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:600px){.grid2{grid-template-columns:1fr}}
+
+  /* ERRATA */
+  .errata{background:#fff3e0;border:1px solid #ffcc02;border-radius:8px;padding:10px 14px;margin-bottom:12px;font-size:12.5px}
+  .errata b{color:#e65100}
+
+  /* QUICK FACT */
+  .qf{display:inline-block;background:#e3f2fd;color:#1565c0;border-radius:6px;padding:3px 9px;font-size:11.5px;font-weight:600;margin:2px}
+
+  /* SCROLL TO TOP */
+  #totop{position:fixed;bottom:20px;right:20px;background:#2d5a8e;color:#fff;border:none;border-radius:50%;width:42px;height:42px;font-size:20px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.3);display:none;z-index:999}
+  #totop.show{display:block}
+
+  .pill{display:inline-block;background:#2d5a8e;color:#fff;border-radius:12px;padding:2px 9px;font-size:11px;margin:2px}
+  .pill.g{background:#2e7d32}
+  .pill.o{background:#e65100}
+  .pill.p{background:#6a1b9a}
+  .pill.t{background:#00695c}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <h1>📘 PT 365 Updated Part 1 — UPSC Prelims Revision Guide</h1>
+    <p>Vision IAS · 104 Pages · 6 Subjects · Click tabs to jump directly</p>
+  </div>
+  <span class="badge">2025–26 Edition</span>
+</div>
+
+<!-- TABS -->
+<div class="tabs">
+  <div class="tab active" onclick="show('polity')">🏛 Polity &amp; Governance</div>
+  <div class="tab" onclick="show('ir')">🌐 International Relations</div>
+  <div class="tab" onclick="show('economy')">💰 Economy</div>
+  <div class="tab" onclick="show('env')">🌿 Environment</div>
+  <div class="tab" onclick="show('sci')">🔬 Science &amp; Tech</div>
+  <div class="tab" onclick="show('culture')">🎭 Culture</div>
+</div>
+
+<!-- ==================== POLITY ==================== -->
+<div id="polity" class="content active">
+
+  <div class="sec-title"><span>1</span>Polity, Governance &amp; Social Issues</div>
+
+  <div class="card">
+    <h3>1.1 Delimitation <span class="tag">Constitutional</span></h3>
+    <table>
+      <tr><th>Aspect</th><th>Detail</th></tr>
+      <tr><td><b>What</b></td><td>Fixing number of Lok Sabha/Assembly seats and constituency boundaries</td></tr>
+      <tr><td><b>Done by</b></td><td>Delimitation Commission (high-power body)</td></tr>
+      <tr><td><b>Previous</b></td><td>1952, 1963, 1973, 2002</td></tr>
+      <tr><td><b>Articles</b></td><td>82 &amp; 170 (readjustment); 330 &amp; 332 (SC/ST seats)</td></tr>
+      <tr><td><b>Key Rule</b></td><td>Orders cannot be challenged in court; No modification by Parliament/State Legislature; effective from date specified by President</td></tr>
+      <tr><td><b>SC 2024</b></td><td><i>Kishorchandra v. UOI</i> — Courts CAN review if order is manifestly arbitrary</td></tr>
+      <tr><td><b>Current Issue</b></td><td>Southern states worried population-based delimitation will reduce their seats (they controlled population better)</td></tr>
+    </table>
+  </div>
+
+  <div class="card green">
+    <h3>1.2 PESA Act, 1996 <span class="tag green">30th Anniversary</span></h3>
+    <ul class="kp">
+      <li><strong>Full form:</strong> Panchayats (Extension to Scheduled Areas) Act</li>
+      <li><strong>Constitutional basis:</strong> Article 243M(4)(b) — extends Part IX (Panchayati Raj) to Fifth Schedule Areas</li>
+      <li><strong>States covered:</strong> 10 states — AP, Chhattisgarh, Gujarat, HP, Jharkhand, MP, Maharashtra, Odisha, Rajasthan, Telangana</li>
+      <li><strong>Status:</strong> 9/10 states framed PESA rules; Odisha has only draft rules</li>
+      <li><strong>ST seats:</strong> Minimum 50% seats + all Chairperson posts reserved for STs</li>
+    </ul>
+    <div class="grid2" style="margin-top:10px">
+      <div class="hbox green"><b>Gram Sabha Powers:</b> Control over intoxicants, minor forest produce ownership, land alienation prevention, money lending to STs, village markets</div>
+      <div class="hbox blue"><b>Mandatory Consultation:</b> Land acquisition, minor water bodies, mining leases, mineral auction concessions</div>
+    </div>
+  </div>
+
+  <div class="card orange">
+    <h3>1.3 Prevention of Corruption Act, 1988 <span class="tag orange">Split SC Verdict 2026</span></h3>
+    <table>
+      <tr><th>Provision</th><th>Detail</th></tr>
+      <tr><td>Bribery Punishment</td><td>Min 3 years → max 7 years + fine</td></tr>
+      <tr><td>Habitual Offender</td><td>Min 5 years → max 10 years + fine</td></tr>
+      <tr><td>Section 17A</td><td>Prior govt sanction needed to investigate a public servant — SC gave split verdict on constitutionality</td></tr>
+      <tr><td>Investigation rank</td><td>Min Inspector (Delhi SPE), Asst Commr (metros), Dy SP (elsewhere)</td></tr>
+    </table>
+    <div class="hbox" style="margin-top:8px"><b>Related:</b> UN Convention against Corruption — Only legally binding universal anti-corruption instrument; 2003 (UNGA), enforced 2005; 192 Parties. COSP-11 adopted <b>Doha Declaration 2025</b> — use AI/digital tech against corruption. UNODC = Secretariat.</div>
+  </div>
+
+  <div class="card">
+    <h3>1.4 RFCTLARR Act, 2013 <span class="tag">Land Acquisition</span></h3>
+    <table>
+      <tr><th>Provision</th><th>Detail</th></tr>
+      <tr><td>Full name</td><td>Right to Fair Compensation &amp; Transparency in Land Acquisition, Rehabilitation &amp; Resettlement Act</td></tr>
+      <tr><td>Replaced</td><td>Land Acquisition Act, 1894</td></tr>
+      <tr><td>Compensation</td><td>4× market value (rural); 2× market value (urban)</td></tr>
+      <tr><td>Consent</td><td>80% affected families for private; 70% for PPP projects</td></tr>
+      <tr><td>Unutilised land</td><td>Must return to owner if not used within 5 years</td></tr>
+      <tr><td>SIA</td><td>Social Impact Assessment mandatory before acquisition</td></tr>
+      <tr><td>Exemptions</td><td>Defence, railways, atomic energy — exempt from Act but R&R provisions still apply</td></tr>
+      <tr><td>Dispute body</td><td>LARRA (Land Acquisition, Rehabilitation &amp; Resettlement Authority)</td></tr>
+    </table>
+  </div>
+
+  <div class="card purple">
+    <h3>1.5 AMRUT 2.0 <span class="tag purple">Urban Mission</span></h3>
+    <ul class="kp">
+      <li><strong>Ministry:</strong> Housing &amp; Urban Affairs | <strong>Type:</strong> Centrally Sponsored Scheme</li>
+      <li><strong>PPP Mandate:</strong> Cities &gt;1 million must allocate ≥10% through PPP</li>
+      <li><strong>Pey Jal Survekshan:</strong> Competitive tool like Swachh Survekshan for water quality/quantity</li>
+      <li><strong>AMRUT Mitra:</strong> Gig economy model — youth/women for feedback roles</li>
+    </ul>
+    <table style="margin-top:8px">
+      <tr><th>Planning Hierarchy</th><th>Purpose</th></tr>
+      <tr><td>CWBP (City Water Balance Plan)</td><td>Assess supply-demand gaps</td></tr>
+      <tr><td>CWAP (City Water Action Plan)</td><td>Projects to bridge gaps</td></tr>
+      <tr><td>SWAP (State Water Action Plan)</td><td>Aggregated to Centre</td></tr>
+      <tr><td>Urban Aquifer Management Plan</td><td>Positive groundwater balance</td></tr>
+    </table>
+    <div class="hbox blue" style="margin-top:8px"><b>World Urbanisation Prospects 2025 (UN DESA):</b> Cities = 45% of global population (~8.2B). Most populous: Jakarta &gt; Dhaka &gt; Tokyo &gt; New Delhi</div>
+  </div>
+
+  <div class="card">
+    <h3>1.6 POCSO Act, 2012 (Amended 2019) <span class="tag">Child Protection</span></h3>
+    <ul class="kp">
+      <li>Protects children (&lt;18 yrs) from sexual assault, harassment, pornography</li>
+      <li><strong>Gender-neutral</strong> — applies to any gender of child or offender</li>
+      <li><strong>Storage of child porn:</strong> Fine ₹5,000; repeat ₹10,000</li>
+      <li><strong>Reporting:</strong> Must report to Special Juvenile Police Unit or local police</li>
+      <li><strong>Police must report to:</strong> Child Welfare Committee &amp; Special Court within 24 hrs</li>
+      <li><strong>Failure to report:</strong> Up to 6 months imprisonment</li>
+      <li><strong>Special Courts:</strong> In-camera trials within 1 year</li>
+      <li><strong>Monitoring:</strong> NCPCR + SCPCR</li>
+      <li><strong>SC suggestion:</strong> "Romeo-Juliet clause" for consensual adolescent relationships</li>
+    </ul>
+    <div class="hbox red" style="margin-top:6px"><b>Australia</b> first country to ban social media for children &lt;16 (Online Safety Amendment Act 2024)</div>
+  </div>
+
+  <div class="card green">
+    <h3>1.7 VBSA Bill, 2025 <span class="tag green">Higher Education Overhaul</span></h3>
+    <ul class="kp">
+      <li><strong>Full name:</strong> Viksit Bharat Shiksha Adhishthan Bill, 2025</li>
+      <li><strong>Basis:</strong> Entry 66, Union List (coordination of higher education standards)</li>
+      <li><strong>Repeals:</strong> UGC Act 1956, AICTE Act 1987, NCTE Act 1993</li>
+      <li><strong>VBSA</strong> = Apex regulatory body (does NOT control funding)</li>
+      <li><strong>Exempted:</strong> Legal and medical education (regulated separately)</li>
+    </ul>
+    <table style="margin-top:8px">
+      <tr><th>Vertical Council</th><th>Function</th></tr>
+      <tr><td>Viksit Bharat Shiksha Viniyaman Parishad</td><td>Regulation</td></tr>
+      <tr><td>Viksit Bharat Shiksha Gunvatta Parishad</td><td>Accreditation</td></tr>
+      <tr><td>Viksit Bharat Shiksha Manak Parishad</td><td>Academic Standards</td></tr>
+    </table>
+    <div class="hbox blue" style="margin-top:8px"><b>RTE Act SC Ruling:</b> All schools must provide 25% free seats under Sec 12(1)(c). Article 21A = Right to Education (6–14 yrs). Article 51A(k) = parental duty. Article 45 = DPSP early childhood care.</div>
+    <div class="hbox" style="margin-top:4px"><b>UNESCO Convention against Discrimination in Education (1960):</b> First legally binding international instrument on right to education. India has NOT ratified it.</div>
+  </div>
+
+  <div class="card orange">
+    <h3>1.8 Doping in Sports <span class="tag orange">India #1 in World</span></h3>
+    <ul class="kp">
+      <li>India: <strong>260 positive cases</strong>, positivity rate 3.6% (WADA Annual Report 2024) — highest for 3rd consecutive year</li>
+      <li>Followed by France and Italy</li>
+      <li><strong>NIDAMS Portal</strong> — NADA India Data Administration and Management System</li>
+      <li><strong>NADA INDIA app</strong> — anti-doping rules, prohibited substances, test results</li>
+      <li>"Know Your Medicine" (KYM) app promoted via social media</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>1.9 Other Important News</h3>
+    <table>
+      <tr><th>Topic</th><th>Key Points</th></tr>
+      <tr><td><b>Electoral Trusts</b></td><td>Under Electoral Trusts Scheme 2013; registered under Companies Act; must distribute 95% donations to political parties; governed by Income Tax Act 1961; must report to Election Commission</td></tr>
+      <tr><td><b>Presidential Address</b></td><td>Art 86: address either House; Art 87: mandatory at first session after general election &amp; first session of each year</td></tr>
+      <tr><td><b>Article 175 &amp; 176</b></td><td>Art 175: Governor can address state legislature at any time; Art 176: Mandatory at first session each year and post general election. Done on aid &amp; advice of CoM (Nabam Rebia 2016)</td></tr>
+      <tr><td><b>PRAGATI (50th meeting)</b></td><td>Launched 2015; PM-chaired multi-modal governance platform; hosts PM Gati Shakti, PARIVESH, PM Reference Portal</td></tr>
+      <tr><td><b>PANKHUDI Portal</b></td><td>MoWCD; integrated CSR &amp; partnership platform for nutrition, health, ECCE, child welfare</td></tr>
+      <tr><td><b>Demographic Transition</b></td><td>India median age 28 yrs; Youthful states: Bihar, UP; Ageing states: Kerala, TN; "Demographic Winter" = birth rate below 2.1 replacement level</td></tr>
+      <tr><td><b>Aspirational District Programme</b></td><td>NITI Aayog; 112 districts; 5 themes; 49 indicators; 3C model: Convergence, Collaboration, Competition. Aspirational Block Programme (2023): 513 blocks in 329 districts. Sampoornata Abhiyan 2.0 launched</td></tr>
+    </table>
+  </div>
+
+  <div class="card red">
+    <h3>1.10 Reports in News</h3>
+    <table>
+      <tr><th>Report</th><th>By</th><th>Key Finding</th></tr>
+      <tr><td>World Inequality Report 2026</td><td>World Inequality Lab</td><td>India: Top 1% = 40% wealth; Top 10% = 65% wealth</td></tr>
+      <tr><td>Employment &amp; Social Trends 2026</td><td>ILO</td><td>Global unemployment stays at 4.9%; India = 3% of global manufacturing</td></tr>
+    </table>
+  </div>
+
+  <div class="errata"><b>⚠ ERRATA:</b> 39th Amendment removed SC's power to adjudicate Presidential/VP/PM/Speaker election petitions. This was REVERSED by 44th Amendment Act, 1978 (restoring SC's power).</div>
+
+</div>
+
+<!-- ==================== IR ==================== -->
+<div id="ir" class="content">
+
+  <div class="sec-title"><span>2</span>International Relations</div>
+
+  <div class="card">
+    <h3>2.1.1 G20 Summit 2025 <span class="tag">Johannesburg, South Africa</span></h3>
+    <ul class="kp">
+      <li><strong>Theme:</strong> "Solidarity, Equality, Sustainability"</li>
+      <li>First G20 Summit on African soil</li>
+      <li>South Africa's presidency guided by <strong>Ubuntu</strong> philosophy</li>
+      <li><strong>ACITI:</strong> India-Australia-Canada trilateral on critical &amp; emerging technologies, clean energy, critical minerals</li>
+    </ul>
+    <table style="margin-top:8px">
+      <tr><th>Declaration Highlights</th><th>Detail</th></tr>
+      <tr><td>Early Warning Systems</td><td>Universal coverage by 2027 (UN Early Warnings for All)</td></tr>
+      <tr><td>Mission 300</td><td>World Bank + African Dev Bank — 300 million people to electricity in Africa by 2030</td></tr>
+      <tr><td>Critical Minerals Framework</td><td>Voluntary &amp; non-binding; preserves sovereign rights of mineral-rich countries</td></tr>
+      <tr><td>Nelson Mandela Bay Target</td><td>Reduce NEET youth by 5% by 2030</td></tr>
+      <tr><td>Brisbane-eThekwini Goal</td><td>Reduce gender gap in labour force participation by 25% by 2030 (from 2012)</td></tr>
+    </table>
+  </div>
+
+  <div class="card green">
+    <h3>2.1.2 IBSA Forum <span class="tag green">India-Brazil-South Africa</span></h3>
+    <ul class="kp">
+      <li>Founded 2003 via Brasilia Declaration; three major Global South democracies</li>
+      <li><strong>IBSA Trust Fund</strong> (2004) — for LDCs; managed by UNOSSC (Fund Manager)</li>
+      <li><strong>IBSAMAR</strong> — joint multinational maritime exercise (India-Brazil-South Africa navies)</li>
+    </ul>
+  </div>
+
+  <div class="card orange">
+    <h3>2.1.3 Other Important Organisations</h3>
+    <table>
+      <tr><th>Organisation</th><th>Key Facts</th></tr>
+      <tr><td><b>East Asia Summit</b></td><td>20th EAS at Kuala Lumpur; Leaders-led forum est. 2005; Members: ASEAN + Australia, China, India, Japan, NZ, S.Korea, USA, Russia</td></tr>
+      <tr><td><b>IPOI</b></td><td>Indo-Pacific Oceans Initiative; launched by India at EAS 2019 (Bangkok); builds on SAGAR (2015); 7 pillars; Spain recently joined</td></tr>
+      <tr><td><b>APEC</b></td><td>Founded 1989; Secretariat: Singapore; 21 economies; India NOT a member (observer); 2025 summit in Gyeongju, S.Korea; China proposed WAICO (AI governance body)</td></tr>
+      <tr><td><b>Abraham Accords</b></td><td>Signed 2020 (Israel + UAE, Bahrain, Morocco); normalize Arab-Israel relations; Kazakhstan to join</td></tr>
+      <tr><td><b>Three Seas Initiative (3SI)</b></td><td>13 member states between Baltic, Adriatic, Black Seas; est. 2015 by Poland &amp; Croatia presidents; focus: energy, transport, digital infrastructure</td></tr>
+      <tr><td><b>Water Convention</b></td><td>Helsinki 1992, enforced 1996; legally binding; Bangladesh = first South Asian country to join</td></tr>
+      <tr><td><b>WSIS+20</b></td><td>20th anniversary review of UN World Summit on Information Society; co-organised by ITU, UNESCO, UNDP, UNCTAD</td></tr>
+      <tr><td><b>ITU</b></td><td>UN specialised agency for ICTs; HQ Geneva; founded 1865; 194 member states; WTDC-25 concluded in Baku</td></tr>
+      <tr><td><b>ICAO Council</b></td><td>India re-elected for 2025-28; 36-member governing body; Chicago Convention 1944; India founding member</td></tr>
+      <tr><td><b>Washington Accords</b></td><td>DRC–Rwanda peace deal facilitated by USA; DRC = world's largest cobalt producer (70% of global supply)</td></tr>
+      <tr><td><b>Colombo Security Conclave</b></td><td>Est. 2020; Members: India, Sri Lanka, Mauritius, Maldives, Bangladesh, Seychelles (6th member); 5 pillars of cooperation</td></tr>
+      <tr><td><b>UN Alliance of Civilizations</b></td><td>HQ New York; launched 2005 by Türkiye and Spain; promotes cross-cultural relations</td></tr>
+      <tr><td><b>Kimberley Process</b></td><td>Tripartite (govts + diamond industry + civil society); prevents "conflict diamond" trade; India to chair from 1 Jan 2026; 60 participants; 99%+ of global rough diamond trade</td></tr>
+    </table>
+  </div>
+
+  <div class="card purple">
+    <h3>2.2 Places in News</h3>
+    <table>
+      <tr><th>Place</th><th>Why in News</th><th>Key Geography</th></tr>
+      <tr><td><b>Anegada Passage</b></td><td>US Operation Southern Spear (narco terrorism)</td><td>West Indies; connects Atlantic-Caribbean; separates British Virgin Is. from Leeward Is.</td></tr>
+      <tr><td><b>Cambodia</b></td><td>Thailand launched airstrikes</td><td>ASEAN; Borders: Vietnam, Laos, Thailand; Tonlé Sap = SE Asia's largest freshwater lake; Mekong river</td></tr>
+      <tr><td><b>Syria</b></td><td>US airstrikes on IS targets</td><td>West Asia; Levant; Borders: Turkey, Iraq, Jordan, Israel, Lebanon; Golan Heights seized by Israel 1967</td></tr>
+      <tr><td><b>Guinea-Bissau</b></td><td>Military coup</td><td>Western Africa; borders Senegal, Guinea; Bijagós archipelago</td></tr>
+      <tr><td><b>Senkaku Islands</b></td><td>China-Japan maritime dispute</td><td>East China Sea; Okinawa Prefecture; also known as Diaoyu (Chinese)</td></tr>
+      <tr><td><b>Republic of Somaliland</b></td><td>Israel first to formally recognize it</td><td>Horn of Africa; declared independence 1991; Capital: Hargeisa</td></tr>
+      <tr><td><b>Ethiopia</b></td><td>Selected for UNFCCC COP32 (2027, Addis Ababa)</td><td>Landlocked Horn of Africa; Mount Ras Dejen (highest); Kobar Sink (116m below sea level)</td></tr>
+      <tr><td><b>Jordan</b></td><td>PM Modi visit; 75 yrs of India-Jordan ties</td><td>SW Asia; Gulf of Aqaba (sole port); Dead Sea; Syrian/Arabian Desert</td></tr>
+      <tr><td><b>Myanmar</b></td><td>USDP won elections</td><td>SE Asia; Borders: Bangladesh, China, India, Laos, Thailand; Major rivers: Mekong, Salween, Irrawaddy</td></tr>
+      <tr><td><b>Bulgaria</b></td><td>Became 21st Eurozone member (adopted euro)</td><td>SE Europe; Balkan Peninsula; Black Sea coast</td></tr>
+    </table>
+  </div>
+
+  <div class="card teal">
+    <h3>2.3 Bilateral Relations</h3>
+    <div class="grid2">
+      <div>
+        <div class="hbox blue"><b>India-EU FTA</b><br>
+        • 16th India-EU Summit; EU becomes India's 22nd FTA partner<br>
+        • EU-India Security &amp; Defence Partnership (SDP) also signed — EU's 3rd SDP in Asia after Japan &amp; S.Korea<br>
+        • India gets preferential access to 97% tariff lines (99.5% trade value)<br>
+        • Key sectors: Textiles, leather, footwear, marine, chemicals<br>
+        • 100% FDI in insurance via this period<br>
+        • Recent FTAs: UAE CEPA (2022), Australia ECTA (2022), EFTA TEPA (2024), Oman CEPA (2025), NZ FTA (2025)</div>
+      </div>
+      <div>
+        <div class="hbox green"><b>India-US Defence (10-Year Framework Pact)</b><br>
+        Foundational Agreements:<br>
+        • GSOMIA (2002): Classified info sharing<br>
+        • LEMOA (2016): Military base access<br>
+        • COMCASA (2018): Encrypted comms<br>
+        • BECA (2020): Geospatial data sharing<br>
+        India = Major Defense Partner (2016); STA-1 status (2018); Javelin missiles + Excalibur munitions approved</div>
+        <div class="hbox" style="margin-top:8px"><b>India-Russia (23rd Annual Summit)</b><br>
+        • Trade target: $100 billion by 2030 (Programme 2030)<br>
+        • 96% bilateral trade in national currencies (rupee-ruble)<br>
+        • Russia joined IBCA (International Big Cat Alliance)<br>
+        • RELOS pact ratified — military base/port/airfield access</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card red">
+    <h3>2.4 Other Important News</h3>
+    <table>
+      <tr><th>Topic</th><th>Key Points</th></tr>
+      <tr><td><b>USA Strikes Venezuela</b></td><td>Operation Absolute Resolve; Captured Venezuelan President; Linked to "Donroe Doctrine" (revival of Monroe Doctrine). Venezuela: World's largest oil reserves; Orinoco Belt; founding OPEC member</td></tr>
+      <tr><td><b>Greenland</b></td><td>US withdrew tariff threat; GIUK Gap strategic importance; Pituffik Space Base; Rare Earth Elements (Kvanefjeld, Kringlerne); Golden Dome project; Denmark invoked Art 5 NATO threat</td></tr>
+      <tr><td><b>US Withdrawal from Intl Orgs</b></td><td>Left Paris Agreement (2nd time, Jan 2026); withdrew from WHO, UNFCCC, IPCC, ISA, IRENA, IUCN, UNHRC, UNESCO (3rd exit: 1984, 2017, now), UNRWA, UNFPA, UN Women etc.</td></tr>
+      <tr><td><b>Board of Peace (Gaza)</b></td><td>Core element of US 20-point Gaza Peace Plan; endorsed by UNSC Resolution 2803 (2025); India attended as observer</td></tr>
+      <tr><td><b>Pax Silica</b></td><td>US-led initiative for secure tech ecosystem; covers semiconductors, AI, critical minerals; India signed; Members: Japan, S.Korea, Singapore, UK, Israel</td></tr>
+      <tr><td><b>Responsible Nations Index</b></td><td>By WIF + JNU + IIM Mumbai; 154 countries; 58 indicators → 13 sub-themes → 7 themes → 3 dimensions; Singapore #1; India #16 (highest among major Asian nations)</td></tr>
+      <tr><td><b>World Bank NCPF</b></td><td>India-World Bank partnership 2026-2031; $8-10 billion; rural prosperity, urban transformation, human capital, energy security</td></tr>
+      <tr><td><b>BWC (50 years)</b></td><td>Biological Weapons Convention; first multilateral treaty banning entire class of WMDs; opened for signature April 1972, enforced 1975; supplements 1925 Geneva Protocol; 189 State Parties; India signed &amp; ratified 1974</td></tr>
+      <tr><td><b>Article 51 UN Charter</b></td><td>Right to self-defence; two interpretations: Restrictive (only after armed attack) vs Expansive (pre-emptive/against non-state actors)</td></tr>
+      <tr><td><b>Mudh-Nyoma Airbase</b></td><td>Eastern Ladakh; ~13,000 ft altitude; near LAC; overlooks Depsang Plains, Pangong Tso, Chushul Valley; built by BRO; 4th major airbase in Ladakh</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>2.5 Exercises in News</h3>
+    <table>
+      <tr><th>Exercise</th><th>Countries</th><th>Type</th></tr>
+      <tr><td>Mitra Shakti</td><td>India-Sri Lanka</td><td>Annual Army</td></tr>
+      <tr><td>VINBAX</td><td>India-Vietnam</td><td>Army (UN peacekeeping focus)</td></tr>
+      <tr><td>GARUDA</td><td>India-France</td><td>Air exercise (IAF + French Air &amp; Space Force)</td></tr>
+      <tr><td>AJEYA WARRIOR</td><td>India-UK</td><td>Biennial joint military</td></tr>
+      <tr><td>Ex-SURYAKIRAN</td><td>India-Nepal</td><td>Army (since 2011)</td></tr>
+      <tr><td>Exercise Ekuverin</td><td>India-Maldives</td><td>Annual army (since 2009)</td></tr>
+      <tr><td>SHAKTI</td><td>India-France</td><td>Army</td></tr>
+      <tr><td>Ex Harimau Shakti</td><td>India-Malaysia</td><td>Joint Military</td></tr>
+      <tr><td>Exercise Ekatha</td><td>India-Maldives Navy</td><td>Annual Maritime (since 2017)</td></tr>
+      <tr><td>Exercise Desert Cyclone II</td><td>India-UAE</td><td>Joint Military</td></tr>
+      <tr><td>Trishul 2025</td><td>India</td><td>Tri-Service (western border: Gujarat-Rajasthan)</td></tr>
+      <tr><td>Sagar Kavach</td><td>Indian Coast Guard</td><td>Biannual coastal security</td></tr>
+      <tr><td>Sanjha Shakti</td><td>India Army + 16 civilian agencies</td><td>Military-Civil Fusion</td></tr>
+    </table>
+  </div>
+
+  <div class="card green">
+    <h3>Important Reports &amp; Indices (IR Section)</h3>
+    <table>
+      <tr><th>Report</th><th>By</th></tr>
+      <tr><td>Global Risk Report 2026</td><td>World Economic Forum</td></tr>
+      <tr><td>Global Economic Prospects Report 2026</td><td>World Bank</td></tr>
+      <tr><td>World Nuclear Outlook Report</td><td>World Nuclear Association</td></tr>
+      <tr><td>Asia Power Index 2025</td><td>Lowy Institute</td></tr>
+      <tr><td>International Migration Outlook 2025</td><td>OECD</td></tr>
+    </table>
+  </div>
+
+</div>
+
+<!-- ==================== ECONOMY ==================== -->
+<div id="economy" class="content">
+
+  <div class="sec-title"><span>3</span>Economy</div>
+
+  <div class="card">
+    <h3>3.1 VB-G RAM G Act, 2025 <span class="tag">Replaced MGNREGA</span></h3>
+    <table>
+      <tr><th>Aspect</th><th>MGNREGA</th><th>Viksit Bharat-G RAM G Act, 2025</th></tr>
+      <tr><td>Days Guarantee</td><td>100 days/household</td><td><b>125 days/household</b></td></tr>
+      <tr><td>Nature of Works</td><td>Multiple scattered categories</td><td>4 priority areas: water security, rural infra, livelihoods, climate resilience</td></tr>
+      <tr><td>Funding</td><td>Centre bears unskilled wages; States bear unemployment allowance</td><td><b>60:40</b> (most states); <b>90:10</b> (special category regions)</td></tr>
+      <tr><td>Pause Provision</td><td>None</td><td>States can pause up to 60 days (sowing/harvesting)</td></tr>
+      <tr><td>Funding Approach</td><td>Demand-based (unpredictable)</td><td>Normative funding (predictable)</td></tr>
+      <tr><td>Planning</td><td>Gram Panchayat-centric</td><td>Viksit Gram Panchayat Plans (VGPP) + PM Gati Shakti integration</td></tr>
+    </table>
+  </div>
+
+  <div class="card green">
+    <h3>3.3 Consumer Price Index (CPI) — New Base Year 2024</h3>
+    <table>
+      <tr><th>Feature</th><th>CPI 2024</th><th>CPI 2012</th></tr>
+      <tr><td>Base Year</td><td>2024</td><td>2012</td></tr>
+      <tr><td>Total items</td><td>358 (308 goods + 50 services)</td><td>299</td></tr>
+      <tr><td>Weight reference</td><td>HCES 2023-24</td><td>CES 2011-12</td></tr>
+      <tr><td>Classification</td><td>COICOP 2018 (12 divisions)</td><td>COICOP 1999 (6 groups)</td></tr>
+      <tr><td>Data collection</td><td>CAPI (tablets)</td><td>Paper-based</td></tr>
+      <tr><td>Rural housing index</td><td>Included for first time</td><td>Only urban</td></tr>
+      <tr><td>Food &amp; Beverages weight</td><td>36.75%</td><td>45.86%</td></tr>
+    </table>
+    <div class="hbox" style="margin-top:8px">
+      <b>New items added:</b> Online streaming, rural housing, value-added dairy, barley, pen-drive, external hard disk, attendant, babysitter, exercise equipment<br>
+      <b>Items removed:</b> VCR/VCD/DVD player, radio, tape recorder, second-hand clothing, CDs/DVDs<br>
+      <b>Formula:</b> Laspeyre's Index Formula
+    </div>
+    <div class="hbox blue" style="margin-top:4px"><b>IMF graded India's National Accounts data as "C"</b>; CPI, External Sector, Monetary/Financial stats got "B"</div>
+  </div>
+
+  <div class="card orange">
+    <h3>3.4 Export Preparedness Index (EPI) 2024 <span class="tag orange">4th Edition, NITI Aayog</span></h3>
+    <ul class="kp">
+      <li>First published: 2020; aligned with $1 trillion merchandise exports goal by 2030</li>
+      <li><b>Categories:</b> Large States | Small States / NE States / UTs</li>
+      <li><b>Classification:</b> Aspirers → Challengers → Leaders</li>
+      <li><b>Top Large States:</b> Maharashtra, Tamil Nadu, Gujarat, UP, Andhra Pradesh</li>
+      <li><b>Pillar weightage:</b> Business Ecosystem (40%) &gt; Export Infrastructure, Policy, Export Performance (20% each)</li>
+    </ul>
+    <div class="hbox green" style="margin-top:6px">
+      <b>India Exports FY25:</b> Total = $825.3B (+6.1% YoY) | Merchandise = $437.7B | Services = $387.5B (all-time high, +13.6%)
+    </div>
+  </div>
+
+  <div class="card purple">
+    <h3>3.5 Startup India <span class="tag purple">10 Years — Jan 16, 2026</span></h3>
+    <table>
+      <tr><th>Criterion</th><th>Normal Startup</th><th>Deep Tech Startup</th></tr>
+      <tr><td>Legal form</td><td colspan="2">Pvt Ltd / Partnership / LLP / Cooperative Society</td></tr>
+      <tr><td>Age limit</td><td>≤10 years</td><td>≤20 years</td></tr>
+      <tr><td>Turnover limit</td><td>≤₹200 crore/year</td><td>≤₹300 crore/year</td></tr>
+    </table>
+    <table style="margin-top:8px">
+      <tr><th>Scheme</th><th>Detail</th></tr>
+      <tr><td>FFS (Fund of Funds)</td><td>₹10,000 crore corpus; managed by SIDBI</td></tr>
+      <tr><td>SISFS (Seed Fund)</td><td>Early-stage proof of concept, prototyping, market entry</td></tr>
+      <tr><td>CGSS (Credit Guarantee)</td><td>Collateral-free loans; managed by National Credit Guarantee Trustee Co.</td></tr>
+      <tr><td>MAARG Portal</td><td>National Mentorship Portal</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>3.6 Corporate Bond Market</h3>
+    <ul class="kp">
+      <li>98% of corporate bond issuances in India via <strong>private placements</strong> (institutional investors only)</li>
+      <li>Corporate bond yield changes with market price (inverse to interest rates)</li>
+      <li>NITI Aayog released report: "Deepening the Corporate Bond Market in India"</li>
+    </ul>
+  </div>
+
+  <div class="card green">
+    <h3>3.7 Insurance Laws Amendment Act, 2025 <span class="tag green">Sabka Bima Sabki Raksha</span></h3>
+    <table>
+      <tr><th>Provision</th><th>Change</th></tr>
+      <tr><td>FDI in Insurance</td><td>100% (was 74%)</td></tr>
+      <tr><td>Reinsurer fund requirement</td><td>₹1,000 crore (was ₹5,000 crore)</td></tr>
+      <tr><td>Capital for cooperative insurers</td><td>Minimum ₹100 crore requirement removed</td></tr>
+      <tr><td>New body</td><td>Policyholders' Education and Protection Fund</td></tr>
+      <tr><td>LIC autonomy</td><td>Can open zonal offices independently</td></tr>
+      <tr><td>IRDAI powers</td><td>Can supersede boards, regulate remuneration, inspect intermediaries</td></tr>
+    </table>
+  </div>
+
+  <div class="card orange">
+    <h3>3.8–3.9 PMKVY &amp; PMGSY</h3>
+    <div class="grid2">
+      <div class="hbox"><b>PMKVY</b><br>Launched 2015 by MSDE; Implemented by NSDC; 75:25 (Centre:State) allocation; Over 1.6 crore youth trained since 2015</div>
+      <div class="hbox blue"><b>PMGSY (25 years in 2025)</b><br>Phase I (2000): connectivity to unconnected habitations<br>Phase II (2013): strengthen existing roads<br>Phase III (2019): upgrade through routes to markets/schools/hospitals<br>Phase IV (2024-29): 25,000 unconnected habitations; Support via NRIDA; Monitoring: OMMAS</div>
+    </div>
+  </div>
+
+  <div class="card purple">
+    <h3>3.10 Fertiliser Sector</h3>
+    <ul class="kp">
+      <li>India = <strong>2nd largest consumer</strong> and <strong>3rd largest producer</strong> of fertilizers globally</li>
+      <li>N:P:K ratio highly skewed toward Nitrogen (recommended 4:2:1) due to urea subsidy</li>
+      <li>India has <strong>no known commercial potash (K) reserves</strong></li>
+      <li>Fertilizer subsidy = 2nd largest subsidy after food (&gt;10% central expenditure)</li>
+    </ul>
+    <table style="margin-top:8px">
+      <tr><th>Scheme</th><th>Coverage</th></tr>
+      <tr><td>Urea Subsidy Scheme</td><td>Ensures urea at statutory controlled price</td></tr>
+      <tr><td>Nutrient Based Subsidy (NBS)</td><td>Fixed subsidy on P&K fertilizers (DAP, MAP, MOP, TSP, SSP, etc.) based on nutrient content — 28 grades covered</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>3.11 Other Important Developments</h3>
+    <table>
+      <tr><th>Topic</th><th>Key Points</th></tr>
+      <tr><td><b>RB-IOS 2026</b></td><td>Reserve Bank Integrated Ombudsman Scheme; effective July 1, 2026; No limit on dispute amount; compensation up to ₹30 lakh; CRPC to be set up by RBI</td></tr>
+      <tr><td><b>OECD Global Minimum Tax</b></td><td>GloBE (Global Anti-Base Erosion) model rules; ensures MNCs pay minimum tax in each jurisdiction; counters BEPS (Base Erosion &amp; Profit Shifting)</td></tr>
+      <tr><td><b>India = Largest Rice Producer</b></td><td>Surpassed China; 150 MT production; Top states: UP (13.8%), Telangana, WB, Punjab; Largest exporter too (20.1 MMT in 2024-25)</td></tr>
+      <tr><td><b>NPS Vatsalya Scheme</b></td><td>PFRDA guidelines 2025; Ministry of Finance; for children — early savings &amp; pension preparedness</td></tr>
+      <tr><td><b>Export Promotion Mission</b></td><td>Interest subvention 2.75% on rupee export credit; CGTMSE guarantee: 85% (micro/small), 65% (medium); max ₹10 crore/year</td></tr>
+      <tr><td><b>GIRG Framework</b></td><td>Global Indices for Reforms &amp; Growth; tracks 26 indices across 4 themes; 16 international agencies; 17 nodal ministries; DMEO (NITI Aayog) coordinates</td></tr>
+      <tr><td><b>Risk-Based Deposit Insurance</b></td><td>RBI approved; replaces flat 12 paise per ₹100; safer banks pay lower premium</td></tr>
+      <tr><td><b>Tex-RAMPS</b></td><td>Textiles Focused Research, Assessment, Monitoring, Planning &amp; Start-up scheme; includes ITSS (Integrated Textiles Statistical System)</td></tr>
+      <tr><td><b>Animal Husbandry 2025</b></td><td>Milk: #1 globally, 247.87 MT, 485g/day per capita; Eggs: #2 globally, 149.11B; Meat: #4 globally, 10.50 MT; Wool: 34.57 M kg (Rajasthan 47.85% top)</td></tr>
+      <tr><td><b>DGMS</b></td><td>Directorate General of Mines Safety; 125th Foundation Day; est. 1902 as Bureau of Mines Inspection; HQ: Dhanbad; under Ministry of Labour &amp; Employment</td></tr>
+      <tr><td><b>NCVET</b></td><td>National Council for Vocational Education &amp; Training; est. 2018 under MSDE; subsumed NSDA &amp; NCVT; national regulator for vocational education</td></tr>
+    </table>
+  </div>
+
+  <div class="card red">
+    <h3>State Finances (CAG Report 2023-24)</h3>
+    <ul class="kp">
+      <li>SOTR = largest component of revenue receipts (~47%)</li>
+      <li>Share in Union Taxes rose from 21.34% (FY15) to 29.77% (FY24)</li>
+      <li>Revenue expenditure = 80-87% of total expenditure</li>
+      <li>Committed expenditure (salaries, pensions, interest) = &gt;51% of revenue expenditure in FY24</li>
+      <li>18 states recorded fiscal deficits above 3% of GSDP limit in FY24</li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- ==================== ENVIRONMENT ==================== -->
+<div id="env" class="content">
+
+  <div class="sec-title"><span>4</span>Environment</div>
+
+  <div class="card">
+    <h3>4.1 Aravallis <span class="tag">SC Judgment</span></h3>
+    <ul class="kp">
+      <li>One of world's oldest mountain ranges (Pre-Cambrian); predates Himalayas</li>
+      <li>Stretches SW from Delhi through Haryana, Rajasthan → Gujarat</li>
+      <li><strong>Highest peak:</strong> Guru Shikhar (Mt. Abu)</li>
+      <li><strong>Rivers:</strong> Luni, Sabarmati (west); Banas (east); Sahibi (north)</li>
+      <li>SC Definition: "Aravalli Hill" = landform with ≥100m elevation; "Range" = 2+ hills within 500m proximity</li>
+      <li><strong>Initiatives:</strong> Matri Van (750-acre urban forest Gurugram), Aravalli Green Wall Project (5km buffer in 4 states)</li>
+    </ul>
+  </div>
+
+  <div class="card green">
+    <h3>4.2 SWM Rules, 2026 <span class="tag green">Supersedes 2016 Rules</span></h3>
+    <ul class="kp">
+      <li>Under Environment (Protection) Act, 1986; effective April 1, 2026</li>
+      <li>Integrates <strong>Circular Economy</strong> and <strong>Extended Producer Responsibility (EPR)</strong></li>
+      <li><strong>4-stream segregation:</strong> Wet, Dry, Sanitary, Special Care Waste</li>
+      <li><strong>RDF (Refuse Derived Fuel)</strong> use mandatory for cement plants &amp; waste-to-energy plants</li>
+      <li>Annual landfill audits; biomining of legacy waste dumpsites</li>
+      <li>Environmental Compensation (EC) on Polluter Pays principle</li>
+    </ul>
+    <div class="hbox" style="margin-top:6px">India SWM Status: 55-60% biodegradable | 15-20% recyclable | 15-25% hazardous/non-recyclable. Only 60-70% waste collected; 15-20% processed. 60% from urban areas</div>
+  </div>
+
+  <div class="card orange">
+    <h3>4.3 Groundwater Report 2025</h3>
+    <ul class="kp">
+      <li>India = world's largest groundwater consumer (~25% of global extraction)</li>
+      <li>Groundwater: 64% irrigation, 85% rural drinking water, ~50% urban water</li>
+      <li>87% extracted for agriculture, ~11% domestic</li>
+      <li>Stage of Extraction (SoE) = 60.63% (marginally increased)</li>
+      <li><strong>Contaminants:</strong> Nitrate (Rajasthan, TN, MH), Fluoride (Haryana, Karnataka), Arsenic (Ganga-Brahmaputra floodplains), Uranium (Rajasthan, Punjab)</li>
+    </ul>
+  </div>
+
+  <div class="card purple">
+    <h3>4.4 ITPGRFA &amp; 4.5 PPV&amp;FR Act</h3>
+    <div class="hbox blue" style="margin-bottom:8px">
+      <b>ITPGRFA (Plant Genetic Resources Treaty):</b> 11th Governing Body session in Lima, Peru; MLS covers 35 major food crops + 29 forages (~80% world plant-based diet, Annexure 1); New SMTA adopted
+    </div>
+    <table>
+      <tr><th>PPV&FR Act 2001</th><th>Detail</th></tr>
+      <tr><td>Purpose</td><td>Fulfil TRIPS obligation via sui generis system; protect plant varieties &amp; farmer rights</td></tr>
+      <tr><td>Aligned with</td><td>UPOV 1978</td></tr>
+      <tr><td>Registration criteria</td><td>DUS — Distinctiveness, Uniformity, Stability</td></tr>
+      <tr><td>Breeders' Rights</td><td>Exclusive right to produce, sell, market, export protected variety</td></tr>
+      <tr><td>Farmers' Rights</td><td>Can register new variety; entitled to recognition for conserving landraces; cannot sell branded seed</td></tr>
+      <tr><td>Benefit Sharing</td><td>If farmer variety used commercially, farmer gets a share</td></tr>
+      <tr><td>Authority</td><td>PPV&amp;FRA (statutory body)</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>4.6 Wildfires &amp; 4.7 ENSO</h3>
+    <div class="grid2">
+      <div class="hbox red">
+        <b>Wildfires:</b><br>
+        India's UNEA-7 resolution on "Strengthening Global Management of Wildfires" adopted in Nairobi<br>
+        UNEA = highest environmental decision-making body; 193 members; est. 2012<br>
+        India: 54.4% forests exposed to occasional fires; Uttarakhand, Odisha, Chhattisgarh = top 3 states (2023-24)<br>
+        95% wildfires due to anthropogenic reasons (FSI)
+      </div>
+      <div>
+        <div class="hbox green">
+          <b>La Niña:</b> Cold phase of ENSO; trade winds strengthen; warm water pushed west; cold water rises east Pacific<br>
+          India effect: Good monsoon, colder winters, flood/cyclone risk in Bay of Bengal<br>
+          <b>2025 = warmest La Niña year on record</b>
+        </div>
+        <div class="hbox" style="margin-top:6px">
+          <b>El Niño:</b> Warm phase; trade winds weaken; warm water moves to S. America<br>
+          India effect: Weak monsoon, drought risk, poor kharif yields, heat stress
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card green">
+    <h3>4.8 Other Important Environment News</h3>
+    <table>
+      <tr><th>Topic</th><th>Key Points</th></tr>
+      <tr><td><b>Decarbonization</b></td><td>NITI Aayog roadmaps for cement (~6% GHG), aluminium (~2.8%), MSME. Aluminium: target 10% reduction by 2030; Cement: 80-85% by 2070</td></tr>
+      <tr><td><b>Ozone Hole</b></td><td>Antarctic hole closed early 2025; peaked at 21M sq km (below 2006 record of 29M sq km); stratospheric ozone at 10-40km; CFCs, halons, HCFCs are ODSs</td></tr>
+      <tr><td><b>Paris Agreement</b></td><td>USA left 2nd time (Jan 2026); UNFCCC COP21, Paris (2015); 195 parties; Target: well below 2°C, pursue 1.5°C</td></tr>
+      <tr><td><b>CBAM</b></td><td>EU's carbon border tax on imports; full enforcement from Jan 2026; Sectors: cement, aluminium, fertilisers, iron &amp; steel, hydrogen, electricity; Impact on Indian exports</td></tr>
+      <tr><td><b>Environmental Protection Fund</b></td><td>Under Section 16, Environment (Protection) Act 1986; 75% to States, 25% to Centre; corpus from Air, Water, Environment Act fines</td></tr>
+      <tr><td><b>CSR &amp; Environment</b></td><td>SC ruled CSR includes environmental protection (constitutional duty, not voluntary); Article 51A(g) = protect natural environment; Companies Act 2013, Sec 135 = 2% of 3-year avg net profit</td></tr>
+      <tr><td><b>Pumped Hydro Storage</b></td><td>India target: 100 GW by 2047; Current: ~7 GW; Potential: 267 GW (58 GW on-stream + 209 GW off-stream)</td></tr>
+      <tr><td><b>BPAN</b></td><td>Battery Pack Aadhaar Number; unique ID for each battery pack; covers EVs and industrial batteries &gt;2kWh; end-to-end lifecycle traceability</td></tr>
+      <tr><td><b>Kuttanad Wetland</b></td><td>Kerala; only Indian system for rice cultivation below sea level; under FAO GIAHS; 3 structures: wetlands, garden lands, water areas</td></tr>
+      <tr><td><b>TRRP</b></td><td>Tsunami Ready Recognition Programme (UNESCO-IOC); India targets 100 tsunami-ready villages; 24 villages in Odisha already recognized; 12 preparedness indicators</td></tr>
+      <tr><td><b>ACASA</b></td><td>Atlas of Climate Adaptation in Indian Agriculture; by ICAR (NICRA was launched 2011); digital platform for location-specific climate adaptation planning</td></tr>
+      <tr><td><b>ICGS Samudra Pratap</b></td><td>India's first indigenously designed Pollution Control Vessel; commissioned in Goa; built by Goa Shipyard Limited</td></tr>
+    </table>
+  </div>
+
+  <div class="card orange">
+    <h3>4.9 Terms/Concepts in News</h3>
+    <table>
+      <tr><th>Concept</th><th>Key Points</th></tr>
+      <tr><td><b>Rangelands &amp; Pastoralists</b></td><td>UN declared 2026 = International Year for Rangelands &amp; Pastoralists; Rangelands cover ~50% of Earth's land surface (grasslands, savannas, deserts, mountains)</td></tr>
+      <tr><td><b>Living Root Bridges</b></td><td>Meghalaya; "Jingkieng Jri" (Khasi); India rubber tree based; submitted for UNESCO World Heritage status; takes 10-15 years to be functional</td></tr>
+      <tr><td><b>Nature-Based Solutions (NbS)</b></td><td>Leverage healthy ecosystems; examples: restoring coral reefs, greener cities. State of Finance for Nature 2026 (UNEP) highlights nature-negative finance dominance</td></tr>
+      <tr><td><b>Doomsday Glacier</b></td><td>Thwaites Glacier, Antarctica; could add 65cm to global sea levels if melted; fastest changing ice-ocean system</td></tr>
+      <tr><td><b>Water Bankruptcy</b></td><td>Persistent condition where long-term use exceeds renewable inflows causing irreversible degradation (UN University); different from water stress or water crisis</td></tr>
+      <tr><td><b>Bio-bitumen</b></td><td>India = first country to commercially produce; from agricultural waste, lignin, bio-char, bio-oil; reduces crude imports; used in road construction</td></tr>
+      <tr><td><b>Biostimulants</b></td><td>Substances/micro-organisms stimulating plant processes; enhance nutrient uptake, stress tolerance; regulated under Fertilizer Control Order 1985</td></tr>
+      <tr><td><b>Bomb Cyclone</b></td><td>Formed by bombogenesis; pressure drops ≥24 millibars in 24 hours; winds up to 80 kmph; common in Western North Atlantic</td></tr>
+      <tr><td><b>River Deltas</b></td><td>7 major deltas (Ganga-Brahmaputra, Nile, Mekong, Yangtze, Amazon, Irrawaddy, Mississippi) = 57% of sinking delta area; 1% land area, 6% global population, 10 of 34 megacities</td></tr>
+    </table>
+  </div>
+
+  <div class="card purple">
+    <h3>4.10–4.13 Orgs, Reports, Updates</h3>
+    <table>
+      <tr><th>Topic</th><th>Key Facts</th></tr>
+      <tr><td><b>IRENA</b></td><td>International Renewable Energy Agency; USA withdrew from it</td></tr>
+      <tr><td><b>India Meteorological Department</b></td><td>Key weather forecasting body</td></tr>
+      <tr><td><b>Global Carbon Budget 2025</b></td><td>India = 3rd largest emitter (3.2B tonnes); USA (4.9B), China (12B)</td></tr>
+      <tr><td><b>Global Methane Status 2025</b></td><td>UNEP + CCAC; Global Methane Pledge: 30% reduction by 2030 (from 2020); India NOT a signatory; launched at COP26 (Glasgow)</td></tr>
+      <tr><td><b>Emission Gap Report 2025</b></td><td>UNEP; Even updated NDCs could lead to 2.3-2.5°C rise</td></tr>
+      <tr><td><b>Arctic Report Card 2025</b></td><td>NOAA; Highest Arctic temps since 1900; Atlantification; Rusting of Rivers; Greening of Arctic</td></tr>
+      <tr><td><b>Coal 2025 (IEA)</b></td><td>India's coal share in electricity to fall from 70% (2025) to 60% (2030)</td></tr>
+      <tr><td><b>World Nuclear Outlook</b></td><td>Global nuclear capacity to reach 1,446 GWe by 2050; COP28 Declaration to Triple Nuclear; India among top 5 countries</td></tr>
+      <tr><td><b>UN High Seas Treaty (BBNJ)</b></td><td>Came into force January 17, 2026</td></tr>
+      <tr><td><b>India's Ramsar Sites</b></td><td>Now 98 sites (2 new: Patna Bird Sanctuary, UP + Chhari-Dhand Wetland, Gujarat)</td></tr>
+      <tr><td><b>CITES CoP20</b></td><td>Samarkand, Uzbekistan (first in Central Asia); 77 species added; India opposed EU proposal to list guggul in Appendix II</td></tr>
+      <tr><td><b>GEI Target Rules 2025</b></td><td>4 new sectors added: Petroleum Refinery, Petrochemicals, Textiles, Secondary Aluminium; 208 units to reduce emission intensity; 3-7% reduction by 2026-27</td></tr>
+      <tr><td><b>GNIP</b></td><td>Great Nicobar Island Development Area notified</td></tr>
+    </table>
+    <div class="errata"><b>⚠ ERRATA:</b> NCPOR HQ is in Goa, India (NOT Geneva). Wild Bactrian Camel IUCN status = Endangered (NOT Critically Endangered). UNFCCC COP29-31 Troika = Azerbaijan, Brazil, Türkiye</div>
+  </div>
+
+</div>
+
+<!-- ==================== SCIENCE & TECH ==================== -->
+<div id="sci" class="content">
+
+  <div class="sec-title"><span>5</span>Science &amp; Technology</div>
+
+  <div class="card">
+    <h3>5.1 SHANTI Act, 2025 <span class="tag">Nuclear Energy Reform</span></h3>
+    <ul class="kp">
+      <li>Full name: Sustainable Harnessing &amp; Advancement of Nuclear Energy for Transforming India</li>
+      <li><strong>Repeals:</strong> Atomic Energy Act 1962 + Civil Liability for Nuclear Damage Act (CLNDA) 2010</li>
+      <li><strong>Private sector</strong> allowed in plant operations, power generation, fuel fabrication, uranium enrichment up to threshold</li>
+      <li><strong>AERB</strong> gets statutory status; now answerable to Parliament (not just executive)</li>
+    </ul>
+    <table style="margin-top:8px">
+      <tr><th>Feature</th><th>Detail</th></tr>
+      <tr><td>Liability caps</td><td>₹3,000 cr (large), ₹1,500 cr (medium), ₹100 cr (SMRs)</td></tr>
+      <tr><td>Supplier liability</td><td>Completely removed (unlike CLNDA 2010)</td></tr>
+      <tr><td>Dispute body</td><td>Atomic Energy Redressal Advisory Council + Nuclear Damage Claims Commission</td></tr>
+      <tr><td>Appellate authority</td><td>Appellate Tribunal for Electricity (Electricity Act 2003)</td></tr>
+    </table>
+    <div class="hbox blue" style="margin-top:8px">
+      <b>SMRs:</b> ≤300 MW per unit; ~1/3 of conventional nuclear capacity; prefabricated; refuel every 3-7 years (vs 1-2 years conventional)<br>
+      <b>LWR:</b> Uses ordinary water (H₂O) as coolant AND moderator; &gt;85% of world civil nuclear capacity; India traditionally used PHWRs but now prioritizing LWRs
+    </div>
+  </div>
+
+  <div class="card green">
+    <h3>5.2 Fourth Industrial Revolution (IR 4.0)</h3>
+    <ul class="kp">
+      <li>Term coined by <strong>Klaus Schwab</strong> (WEF) in 2016</li>
+      <li>Convergence of digital, physical, biological technologies (AI, robotics, IoT, quantum computing)</li>
+      <li>New WEF 4IR Centre to be built in Andhra Pradesh (3rd in India after Mumbai and Telangana)</li>
+      <li>"Smart factories" = cyber-physical systems</li>
+    </ul>
+  </div>
+
+  <div class="card orange">
+    <h3>5.3 Small Language Models (SLMs)</h3>
+    <table>
+      <tr><th>Feature</th><th>SLM</th><th>LLM</th></tr>
+      <tr><td>Parameters</td><td>Few million to ~30 billion</td><td>Hundreds of billions to trillions</td></tr>
+      <tr><td>Examples</td><td>Gemma, Gemini Nano (Google), Llama 3.2 1B/3B (Meta)</td><td>GPT-4</td></tr>
+      <tr><td>Deployment</td><td>On-device (phones, IoT)</td><td>Cloud servers</td></tr>
+      <tr><td>Energy</td><td>Less energy, lower carbon</td><td>High energy consumption</td></tr>
+    </table>
+    <div class="hbox" style="margin-top:6px">SLMs created via: <b>Knowledge Distillation</b> (small model learns from large), <b>Pruning</b> (remove unnecessary params), <b>Quantization</b> (reduce precision)</div>
+  </div>
+
+  <div class="card purple">
+    <h3>5.4 Supercomputers</h3>
+    <ul class="kp">
+      <li><strong>Param Shakti</strong> launched at IIT Madras — 3.1 Petaflop; uses C-DAC's RUDRA servers; Alma Linux</li>
+      <li>India's first: PARAM 8000 | First indigenous: Param Shivay | AI platform: AIRAWAT</li>
+    </ul>
+    <div class="hbox blue" style="margin-top:6px">
+      <b>National Supercomputing Mission (NSM):</b> Launched 2015; 70+ HPC facilities; cumulative target: 45 Petaflops; National Knowledge Network; Steered by DST + MeitY; Implemented by C-DAC + IISc
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>5.5 ISRO Missions</h3>
+    <table>
+      <tr><th>Mission</th><th>Key Facts</th></tr>
+      <tr><td>LVM3-M6</td><td>6th operational flight of LVM3; placed Bluebird Block-2 satellite (AST SpaceMobile, USA) in LEO; 223m² phased array — largest commercial comms satellite in LEO; 6,100 kg payload; launched from Sriharikota</td></tr>
+      <tr><td>PSLV-C62/EOS-N1</td><td>64th PSLV flight; 9th NSIL commercial mission; encountered anomaly in 3rd stage; EOS-N1 + 15 co-passengers</td></tr>
+      <tr><td>DEX (Dust EXperiment)</td><td>India's first dust detector; detects interplanetary dust every 1,000 sec; on PSLV-C58 POEM; developed by PRL Ahmedabad</td></tr>
+    </table>
+  </div>
+
+  <div class="card green">
+    <h3>5.6–5.8 Traditional Medicine, NCDs, Food Irradiation</h3>
+    <table>
+      <tr><th>Topic</th><th>Key Facts</th></tr>
+      <tr><td><b>Traditional Medicine</b></td><td>2nd WHO Global Summit on Traditional Medicine; Delhi Declaration adopted; 80% of world relies on TM for primary healthcare; WHO SEARO building inaugurated in New Delhi</td></tr>
+      <tr><td><b>NCDs Declaration (UNGA)</b></td><td>New areas: oral health, lung health, childhood cancer; new determinants: air pollution, clean cooking, lead exposure; Digital health risks included first time; stronger tobacco/e-cigarette regulation</td></tr>
+      <tr><td><b>Food Irradiation</b></td><td>Physical process; types: Gamma rays (Cobalt-60), X-rays, Electron beams; inhibits sprouting, kills pathogens; 16 projects approved by Aug 2025 (9 operational); supported under PMKSY Cold Chain scheme</td></tr>
+    </table>
+  </div>
+
+  <div class="card orange">
+    <h3>5.9 Miscellaneous</h3>
+    <table>
+      <tr><th>Topic</th><th>Key Facts</th></tr>
+      <tr><td><b>Graphene</b></td><td>"Wonder material"; single layer carbon hexagonal lattice; 200× stronger than steel by weight; conducts electricity better than copper; stretches 20-25% of length</td></tr>
+      <tr><td><b>FSO Communication</b></td><td>World's first 2 Tbit/s FSO achieved; wireless using modulated laser beams; requires clear line-of-sight; affected by fog/rain/turbulence</td></tr>
+      <tr><td><b>MAGLEV</b></td><td>China sets record: 700 kmph in 2 seconds; electromagnetic levitation — no wheel-rail contact</td></tr>
+      <tr><td><b>Mpemba Effect</b></td><td>Hotter substances can freeze faster; Indian scientists simulated using supercomputer; implications for refrigeration, quantum computing</td></tr>
+      <tr><td><b>DHRUV64</b></td><td>India's first 1.0 GHz, 64-bit dual-core indigenous microprocessor; by C-DAC under Microprocessor Development Programme</td></tr>
+      <tr><td><b>Voyager 1</b></td><td>Expected to become first human-made object at 1 light-day from Earth (16 billion miles); first to cross heliosphere and enter interstellar space</td></tr>
+      <tr><td><b>OSIRIS-REx</b></td><td>First US mission to return asteroid sample; Asteroid Bennu has sugars, amino acids, all 5 DNA/RNA nucleobases; renamed OSIRIS-APEX for Apophis mission (2029)</td></tr>
+      <tr><td><b>Hanle Dark Sky Reserve</b></td><td>First dark sky reserve in India; Changthang Wildlife Sanctuary; Indian Astronomical Observatory with Himalayan Chandra Telescope</td></tr>
+      <tr><td><b>Proton Exchange Membrane Fuel Cell</b></td><td>India's first indigenous hydrogen fuel cell vessel in Varanasi; electrochemical reaction (H₂ → protons + electrons → water + heat); zero emissions</td></tr>
+    </table>
+    <div class="card red" style="margin-top:12px">
+      <h3>Defence Equipment</h3>
+      <table>
+        <tr><th>Equipment</th><th>Key Facts</th></tr>
+        <tr><td>K-4 (Kalam-4)</td><td>Nuclear-capable SLBM; range 3,500 km; for Arihant-class submarines</td></tr>
+        <tr><td>Pinaka LRGR</td><td>Long Range Guided Rocket; range 120 km; MBRL system; DRDO tested</td></tr>
+        <tr><td>Akash-NG</td><td>Surface-to-air missile; DRDO + BEL</td></tr>
+        <tr><td>LR-AShM</td><td>India's first Long Range Hypersonic Glide Missile; range ~1,500 km; speed Mach 10 (peak), Mach 5 (avg)</td></tr>
+        <tr><td>Suryastra</td><td>Made in India universal multi-calibre rocket launcher; range up to 300 km; NIBE Ltd + Israel collaboration</td></tr>
+        <tr><td>C-295</td><td>First Made in India C-295 aircraft to roll out in 2026; twin-engine turboprop tactical transport</td></tr>
+        <tr><td>Heron MK-II</td><td>MALE UAV from Israel; intelligence, surveillance and reconnaissance</td></tr>
+        <tr><td>MH-60R Seahawk</td><td>$946 million sustainment package; maritime variant of Blackhawk</td></tr>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<!-- ==================== CULTURE ==================== -->
+<div id="culture" class="content">
+
+  <div class="sec-title"><span>6</span>Culture</div>
+
+  <div class="card">
+    <h3>6.1 UNESCO Intangible Cultural Heritage <span class="tag">Deepavali Added</span></h3>
+    <ul class="kp">
+      <li><strong>India now has 16 elements</strong> on UNESCO's Representative List of ICH of Humanity</li>
+      <li>Deepavali inscribed December 2025</li>
+    </ul>
+    <div class="hbox" style="margin-top:6px">
+      <b>Deepavali highlights:</b> Celebrated on Kartik Amavasya; includes Dhanteras, Naraka Chaturdashi, Lakshmi-Ganesha Puja, Bhai Dooj<br>
+      <b>Historical refs:</b> Al-Biruni (1030 CE) in Tarikh-al-Hind; Abul Fazl (Ain-i-Akbari 1590); Niccolò de'Conti (15th century)
+    </div>
+    <div class="hbox blue" style="margin-top:6px">
+      <b>ICH Convention:</b> Adopted 2003 at 32nd UNESCO General Conference; binding multilateral; 180+ state parties; 3 mechanisms: Urgent Safeguarding List, Representative List, Register of Best Practices
+    </div>
+  </div>
+
+  <div class="card green">
+    <h3>6.2 Somnath Temple <span class="tag green">1000 Years Since Mahmud of Ghazni Attack</span></h3>
+    <table>
+      <tr><th>Aspect</th><th>Detail</th></tr>
+      <tr><td>Location</td><td>Prabhas Patan, Veraval, Saurashtra, Gujarat; Triveni Sangam (Kapila, Hiran, Sarasvati rivers)</td></tr>
+      <tr><td>Significance</td><td>First among 12 Aadi Jyotirlingas of Lord Shiva</td></tr>
+      <tr><td>Architecture</td><td>Maru-Gurjara (Chalukya/Solanki) style; Kailash Mahameru Prasad form; 150-foot Shikhara with 10-tonne Kalash</td></tr>
+      <tr><td>Attacks</td><td>First attack by Mahmud of Ghazni in 1026 (reign of Bhima I); also 1297, 1394, 1706 (Aurangzeb); 17 times total</td></tr>
+      <tr><td>Reconstruction</td><td>Initiated by Sardar Vallabhbhai Patel (1947); Pran Pratishtha by President Rajendra Prasad, May 11, 1951; Earlier rebuilt by Ahilyabai Holkar (1783)</td></tr>
+    </table>
+    <div class="hbox" style="margin-top:6px">
+      <b>Maru-Gurjara Architecture features:</b> Jharokha (projecting window), Chattri (umbrella dome), Haveli, Jaali (perforated screen), Baoli (stepwell), Johad (rainwater tank). Originated 6th century; zenith under Solanki dynasty of Gujarat
+    </div>
+  </div>
+
+  <div class="card orange">
+    <h3>6.3 Communist Party of India — 100 Years</h3>
+    <table>
+      <tr><th>Aspect</th><th>Detail</th></tr>
+      <tr><td>Founded outside India</td><td>1920, Tashkent (Soviet Turkistan) by M.N. Roy &amp; 6 others; inspired by October Revolution 1917</td></tr>
+      <tr><td>Formal formation in India</td><td>Kanpur Communist Conference 1925</td></tr>
+      <tr><td>First President</td><td>Singaravelu Chettiar</td></tr>
+      <tr><td>First demand for full independence</td><td>CPI first to demand complete independence (Ahmedabad 1921, Gaya 1922 INC sessions)</td></tr>
+      <tr><td>Banned by British</td><td>1934; ban lifted 1942</td></tr>
+      <tr><td>Split</td><td>1964 — CPI (pro-Soviet) &amp; CPI(M) (pro-China)</td></tr>
+      <tr><td>Constitution contribution</td><td>M.N. Roy proposed idea of a Constitution in 1934; CPI put forth idea of Constituent Assembly; influenced secularism, equality, minority rights in Constitution</td></tr>
+    </table>
+  </div>
+
+  <div class="card purple">
+    <h3>6.4 Other Cultural News</h3>
+    <table>
+      <tr><th>Topic</th><th>Key Facts</th></tr>
+      <tr><td><b>Kushanas</b></td><td>1st century BCE–3rd century CE; Central Asian Yueh-chi tribe; Kanishka I = greatest ruler (convened 4th Buddhist Council); administered via satrapies; extensive gold coins; controlled Gandhara, Kashmir, Mathura; Kushana coins &amp; lapis lazuli found near Takshashila (UNESCO site)</td></tr>
+      <tr><td><b>Zehanpora Site</b></td><td>Baramulla, N.Kashmir; Kushan-period stupas; along ancient Silk Route to Kandahar; potential chaityas &amp; viharas</td></tr>
+      <tr><td><b>Petra &amp; Ellora Caves</b></td><td>India-Jordan twinning agreement; Ellora: Charanandri hills, Maharashtra, 600-1000 CE, Rashtrakuta &amp; Yadava dynasty, basalt rock-cut, Hindu+Buddhist+Jain; Petra: "Rose City", Nabataean Kingdom, 4th century BCE</td></tr>
+      <tr><td><b>Veer Surendra Sai</b></td><td>1809-1884; Odisha; guerrilla rebellion against British; British applied Doctrine of Lapse on Sambalpur 1849; fought in 1857 Mutiny</td></tr>
+      <tr><td><b>Bagurumba Dance</b></td><td>Traditional folk dance of Bodo community of Assam; inspired by nature, performed by women; associated with Bwisagu (Bodo New Year) festival</td></tr>
+      <tr><td><b>Gallantry Awards</b></td><td>Wartime: Param Vir Chakra, Maha Vir Chakra, Vir Chakra (Jan 26, 1950); Peacetime: Ashoka Chakra, Kirti Chakra, Shaurya Chakra (originally 1952, renamed 1967); Conferred by President; announced Republic Day &amp; Independence Day</td></tr>
+      <tr><td><b>FIDE Chess 2025</b></td><td>Held in Doha; Koneru Humpy &amp; Arjun Erigaisi won bronze; Arjun = 2nd Indian male after Viswanathan Anand to get podium; Magnus Carlsen won 6th World Rapid title; Alexandra Goryachkina won women's section</td></tr>
+    </table>
+  </div>
+
+  <div class="errata">
+    <b>⚠ ERRATA (Culture):</b><br>
+    1. Dancing Girl and Priest-King sculptures are from <b>Mohenjo Daro</b> (NOT Harappa)<br>
+    2. Ahilyabai Holkar was married to <b>Khanderao Holkar</b> (NOT Malhar Rao Holkar)
+  </div>
+
+</div>
+
+<button id="totop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+function show(id){
+  document.querySelectorAll('.content').forEach(c=>c.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+window.addEventListener('scroll',()=>{
+  document.getElementById('totop').classList.toggle('show',window.scrollY>300);
+});
+</script>
+</body>
+</html>
