@@ -1,0 +1,1080 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UPSC S&T Revision 2025 | Vision IAS PT365</title>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Exo+2:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0d0d0d;
+  --bg2: #111118;
+  --bg3: #1a1a2e;
+  --text: #e8e8e8;
+  --cyan: #00e5ff;
+  --amber: #ffd600;
+  --green: #69ff47;
+  --pink: #ff4081;
+  --card-border: #1e1e2e;
+  --card-hover: rgba(0,229,255,0.08);
+  --mono: 'Share Tech Mono', monospace;
+  --body: 'Exo 2', sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--body); font-size: 13px; line-height: 1.55; }
+
+/* NAV */
+#nav {
+  position: sticky; top: 0; z-index: 999;
+  background: rgba(13,13,13,0.97);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--cyan);
+  padding: 8px 12px;
+  overflow-x: auto;
+  white-space: nowrap;
+  display: flex; gap: 8px; align-items: center;
+}
+#nav::-webkit-scrollbar { height: 3px; }
+#nav::-webkit-scrollbar-track { background: #111; }
+#nav::-webkit-scrollbar-thumb { background: var(--cyan); border-radius: 2px; }
+.nav-label { font-family: var(--mono); color: var(--amber); font-size: 10px; margin-right: 4px; flex-shrink: 0; }
+.pill {
+  display: inline-block; padding: 4px 12px;
+  border: 1px solid var(--cyan); border-radius: 20px;
+  font-family: var(--mono); font-size: 10px; color: var(--cyan);
+  cursor: pointer; text-decoration: none; flex-shrink: 0;
+  transition: background 0.2s, color 0.2s;
+}
+.pill:hover { background: var(--cyan); color: #000; }
+
+/* HERO */
+#hero {
+  text-align: center; padding: 28px 16px 16px;
+  border-bottom: 1px solid #1e1e2e;
+}
+#hero h1 { font-family: var(--mono); color: var(--cyan); font-size: 22px; letter-spacing: 2px; }
+#hero p { color: #888; font-size: 11px; margin-top: 6px; }
+.badge { display: inline-block; background: var(--bg3); border: 1px solid var(--amber); border-radius: 4px; padding: 2px 8px; font-size: 10px; color: var(--amber); margin: 2px; }
+
+/* SECTION */
+.section { padding: 24px 14px 8px; border-bottom: 1px solid #1e1e2e; }
+.sec-title {
+  font-family: var(--mono); color: var(--cyan);
+  font-size: 18px; margin-bottom: 14px; letter-spacing: 1px;
+  display: flex; align-items: center; gap: 10px;
+}
+.sec-title::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, var(--cyan), transparent); }
+.subsec { font-family: var(--mono); color: var(--amber); font-size: 13px; margin: 16px 0 8px; border-left: 3px solid var(--amber); padding-left: 8px; }
+
+/* TAGS */
+.tag-pre { background: rgba(255,214,0,0.15); color: var(--amber); border: 1px solid var(--amber); border-radius: 3px; font-size: 9px; padding: 1px 5px; font-family: var(--mono); }
+.tag-mains { background: rgba(105,255,71,0.12); color: var(--green); border: 1px solid var(--green); border-radius: 3px; font-size: 9px; padding: 1px 5px; font-family: var(--mono); }
+.tag-essay { background: rgba(255,64,129,0.12); color: var(--pink); border: 1px solid var(--pink); border-radius: 3px; font-size: 9px; padding: 1px 5px; font-family: var(--mono); }
+
+/* GRID */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 10px; margin: 10px 0; }
+
+/* CARD */
+.card {
+  background: var(--bg2); border: 1px solid var(--card-border);
+  border-radius: 8px; padding: 10px 12px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.card:hover { border-color: var(--cyan); box-shadow: 0 0 12px rgba(0,229,255,0.12); }
+.card-title { color: var(--amber); font-weight: 700; font-size: 12px; margin-bottom: 6px; font-family: var(--mono); }
+.card ul { list-style: none; padding: 0; }
+.card ul li { padding: 2px 0; padding-left: 12px; position: relative; font-size: 12px; color: #ccc; }
+.card ul li::before { content: '▸'; position: absolute; left: 0; color: var(--cyan); font-size: 10px; top: 3px; }
+.card .tags { margin-top: 6px; }
+kw { color: var(--amber); font-weight: 700; }
+hi { color: var(--cyan); }
+alert { color: var(--pink); font-weight: 700; }
+gr { color: var(--green); }
+
+/* CONCEPT BOX */
+.concept {
+  background: #0a1a0a; border: 1px solid var(--green);
+  border-radius: 6px; padding: 10px 14px; margin: 10px 0;
+  font-size: 12px; color: #ccc;
+}
+.concept-title { color: var(--green); font-family: var(--mono); font-size: 12px; margin-bottom: 6px; font-weight: 700; }
+.concept pre { font-family: var(--mono); font-size: 11px; color: var(--green); margin-top: 6px; background: rgba(105,255,71,0.05); padding: 6px; border-radius: 4px; overflow-x: auto; white-space: pre-wrap; }
+
+/* TABLES */
+.tbl-wrap { overflow-x: auto; margin: 10px 0; }
+table { width: 100%; border-collapse: collapse; font-size: 12px; }
+th { background: var(--bg3); color: var(--cyan); font-family: var(--mono); padding: 6px 10px; text-align: left; border: 1px solid #2a2a3e; font-size: 11px; }
+td { padding: 5px 10px; border: 1px solid #1e1e2e; vertical-align: top; }
+tr:nth-child(even) td { background: #111118; }
+tr:nth-child(odd) td { background: #0d0d0d; }
+tr:hover td { background: rgba(0,229,255,0.04); }
+
+/* LAST MIN */
+#lastmin { padding: 24px 14px; }
+#lastmin .sec-title { font-size: 20px; }
+#lastmin table td:first-child { color: var(--amber); font-weight: 700; font-family: var(--mono); font-size: 11px; }
+#lastmin table td:last-child { color: #ddd; }
+
+/* FOOTER */
+footer { text-align: center; padding: 20px; color: #444; font-size: 10px; font-family: var(--mono); border-top: 1px solid #1e1e2e; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<div id="nav">
+  <span class="nav-label">PT365 S&T</span>
+  <a class="pill" href="#biotech">🧬 Biotech</a>
+  <a class="pill" href="#it">💻 IT & AI</a>
+  <a class="pill" href="#quantum">⚛️ Quantum</a>
+  <a class="pill" href="#physics">🌌 Physics</a>
+  <a class="pill" href="#space">🚀 Space</a>
+  <a class="pill" href="#health">🏥 Health</a>
+  <a class="pill" href="#defence">🛡️ Defence</a>
+  <a class="pill" href="#energy">⚡ Energy</a>
+  <a class="pill" href="#misc">🔬 Misc</a>
+  <a class="pill" href="#lastmin">⚡ Last-Min Rev</a>
+</div>
+
+<!-- HERO -->
+<div id="hero">
+  <h1>⚗️ UPSC S&T REVISION SHEET 2025</h1>
+  <p>Vision IAS PT365 | April 2025 – November 2025 | Black Background Night Mode</p>
+  <div style="margin-top:8px;">
+    <span class="badge">[Prelims]</span>
+    <span class="badge" style="border-color:var(--green);color:var(--green);">[Mains GS3]</span>
+    <span class="badge" style="border-color:var(--pink);color:var(--pink);">[Essay]</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- SECTION 1: BIOTECHNOLOGY -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="section" id="biotech">
+  <div class="sec-title">🧬 1. BIOTECHNOLOGY</div>
+
+  <div class="subsec">1.1 Gene Technology</div>
+
+  <div class="concept">
+    <div class="concept-title">📐 Concept: Gene & Genome Basics</div>
+    <b>Gene</b> = section of DNA (hereditary unit) | <b>Genome</b> = entire DNA set in a cell | <b>Chromosome</b> = thread-like DNA structure | <b>Gamete</b> = sex cell (haploid)<br>
+    <b>Genome Sequencing</b> = determines exact order of base pairs in DNA strand → used in diagnostics, paternity, agriculture
+    <pre>DNA → Transcription → mRNA → Translation → Protein
+Gene Editing: Guide RNA → Cas9 enzyme → cuts target DNA → repair/replace</pre>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <tr><th>Event/Item</th><th>Key Facts</th><th>UPSC Significance</th></tr>
+      <tr><td>Gene Editing (CRISPR)</td><td>India's 1st gene-edited sheep by Kashmir Univ + ICAR; Myostatin gene edited; muscle↑30%; no foreign DNA</td><td><span class="tag-pre">[Prelims]</span> <span class="tag-mains">[Mains GS3]</span></td></tr>
+      <tr><td>BIRSA-101</td><td>India's 1st indigenous CRISPR therapy for Sickle Cell Disease; CSIR-IGIB + Serum Institute; enFnCas9 tech</td><td><span class="tag-pre">[Prelims]</span></td></tr>
+      <tr><td>GlowCas9</td><td>CRISPR protein that emits light; Bose Institute (DST); fused with nano-luciferase from deep-sea shrimp</td><td><span class="tag-pre">[Prelims]</span></td></tr>
+      <tr><td>GE Rice (ICAR)</td><td>DRR Rice 100 (Kamla) + Pusa DST Rice 1; India = 1st country to develop GE rice; CRISPR-Cas based; no foreign DNA → not GMO</td><td><span class="tag-pre">[Prelims]</span></td></tr>
+      <tr><td>GM Crops India</td><td>Only Bt Cotton approved; Bt Brinjal → moratorium; GM Mustard DMH-11 → SC review; SDN1&SDN2 approved</td><td><span class="tag-mains">[Mains GS3]</span></td></tr>
+      <tr><td>Genome India Project</td><td>DBT + 20 institutions; map India's genetic diversity; storage at IBDC Faridabad; findings in Nature Genetics</td><td><span class="tag-mains">[Mains GS3]</span></td></tr>
+    </table>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="card-title">🧫 Gene Editing Techniques</div>
+      <ul>
+        <li><kw>ZFNs</kw> – Zinc Finger Nucleases → cuts DNA precisely</li>
+        <li><kw>TALENs</kw> – Transcription Activator-Like Effector Nucleases</li>
+        <li><kw>CRISPR/Cas9</kw> – RNA-guided Cas9 protein → most popular</li>
+        <li><kw>Meganucleases</kw> – natural enzymes; cut long DNA sections</li>
+        <li><kw>Somatic editing</kw> – not heritable | <kw>Germline</kw> – heritable</li>
+        <li><kw>Epigenome editing</kw> – reversible, no DNA sequence change</li>
+      </ul>
+      <div class="tags"><span class="tag-pre">[Prelims]</span></div>
+    </div>
+    <div class="card">
+      <div class="card-title">🌾 GM Crops Regulatory Framework</div>
+      <ul>
+        <li><kw>GEAC</kw> – Genetic Engineering Appraisal Committee (MoEFCC)</li>
+        <li><kw>RCGM</kw> – Review Committee on Genetic Manipulation (DBT)</li>
+        <li><kw>SBCC</kw> – State Biotechnology Coordination Committee</li>
+        <li><kw>FSSAI Act 2006</kw> – prohibits unapproved GM food</li>
+        <li>SDN1 & SDN2 genome editing approved; SDN3 = not approved</li>
+        <li>Transgenics ≠ genome editing (no foreign DNA in GE)</li>
+      </ul>
+      <div class="tags"><span class="tag-pre">[Prelims]</span></div>
+    </div>
+    <div class="card">
+      <div class="card-title">🔬 Gene-Drive Technology (GDT)</div>
+      <ul>
+        <li>Alters Mendelian inheritance → ensures trait passes to next gen</li>
+        <li>Used to control mosquitoes (vector-borne diseases) & crop pests</li>
+        <li>Key components: Gene + Cas9 enzyme + CRISPR</li>
+        <li>ICAR patented TnpB-based genome editing (Transposon-associated)</li>
+        <li>LINE-1 jumping gene → binds DNA during cell division</li>
+      </ul>
+      <div class="tags"><span class="tag-pre">[Prelims]</span></div>
+    </div>
+    <div class="card">
+      <div class="card-title">🧪 Related Biotech Concepts</div>
+      <ul>
+        <li><kw>Organ-on-Chip (OoC)</kw> – micro-scale human body model; drug testing; 3D cell culture</li>
+        <li><kw>RNA Silencing</kw> – siRNA/miRNA blocks mRNA translation; anti-CMV for banana</li>
+        <li><kw>Pangenome</kw> – genome collection of same species; China made Asian rice pangenome using HiFi sequencing</li>
+        <li><kw>SHUKR Gene</kw> – CSIR-CCMB; controls F-box genes; explains Darwin's abominable mystery (flowering plants)</li>
+        <li><kw>DNA Profiling</kw> – VNTRs; methods: STR, mtDNA, Y-chromosome, SNPs</li>
+      </ul>
+      <div class="tags"><span class="tag-pre">[Prelims]</span></div>
+    </div>
+  </div>
+
+  <div class="subsec">1.2 CAR-T Cell Therapy</div>
+  <div class="concept">
+    <div class="concept-title">📐 Concept: How CAR-T Works</div>
+    Patient's T-cells collected → lab-modified → CAR receptor added → recognize & destroy cancer cells → infused back<br>
+    Called "<b>living drug</b>" | Duration: ~45 days | For B-cell blood cancers
+    <pre>Blood → T-cells extracted → CAR receptor engineered → CAR-T cells grown → infused → kills cancer</pre>
+    <b>Risks:</b> Cytokine Release Syndrome (CRS) | Antigen Escape | Neurotoxicity
+  </div>
+  <div class="grid">
+    <div class="card">
+      <div class="card-title">💉 CAR-T: NexCAR19 & Qartemi</div>
+      <ul>
+        <li><kw>NexCAR19</kw> – India's 1st indigenous CAR-T therapy; IIT Bombay + Tata Memorial Hospital; ImmunoACT; DBT + BIRAC funded</li>
+        <li><kw>Qartemi</kw> – CAR-T approved by CDSCO for blood cancer</li>
+        <li>Personalized treatment using patient's own T-cells</li>
+        <li>Long-term remission possible</li>
+      </ul>
+      <div class="tags"><span class="tag-pre">[Prelims]</span> <span class="tag-mains">[Mains GS3]</span></div>
+    </div>
+    <div class="card">
+      <div class="card-title">🧬 Mitochondrial Replacement Therapy (MRT)</div>
+      <ul>
+        <li>UK clinical trial: 8 babies protected from mitochondrial diseases</li>
+        <li>Replaces abnormal mt-DNA with donor's healthy one</li>
+        <li>Child born = <kw>Three-Parent Baby</kw> (nuclear DNA from parents + donor mitochondria)</li>
+        <li>Techniques: Maternal Spindle Transfer (MST) pre-fertilization; Pronuclear Transfer (PNT) post-fertilization</li>
+        <li>Mitochondria → "power plants" → generate 90% cell energy</li>
+      </ul>
+      <div class="tags"><span class="tag-pre">[Prelims]</span></div>
+    </div>
+    <div class="card">
+      <div class="card-title">🔬 Stem Cells</div>
+      <ul>
+        <li>Adipose tissue stem cells → heal osteoporosis fractures</li>
+        <li><kw>Pluripotent</kw>: ESCs (embryo) + iPSCs (induced)</li>
+        <li><kw>Adult Stem Cells</kw>: Neural, Skin etc.</li>
+        <li>India's 1st Animal Stem Cell Biobank at NIAB Hyderabad; DBT-BIRAC supported</li>
+        <li>Features: 3D bioprinter, cryostorage, stem cell culture unit</li>
+      </ul>
+      <div class="tags"><span class="tag-pre">[Prelims]</span></div>
+    </div>
+    <div class="card">
+      <div class="card-title">🏛️ Phenome India National Biobank</div>
+      <ul>
+        <li>CSIR-IGIB; PI-Check (Phenome India-CSIR Health Cohort Knowledgebase)</li>
+        <li>Based on UK Biobank model; customized for Indian diversity</li>
+        <li>Collects genomic + lifestyle + clinical data of 10,000 individuals</li>
+        <li>Powers AI-driven diagnostics + gene-guided therapies</li>
+        <li><kw>Phenome</kw> = entire set of phenotypes in organism</li>
+      </ul>
+      <div class="tags"><span class="tag-mains">[Mains GS3]</span></div>
+    </div>
+    <div class="card">
+      <div class="card-title">🔬 Other Biotech News</div>
+      <ul>
+        <li><kw>Biochemical Markers</kw> – Indian researchers identified blood markers for kidney complications in diabetics (arabitol, myo-inositol, ribothymidine)</li>
+        <li><kw>National Biofoundry Network</kw> – Aug 2025; BioE3 Policy anniversary; automates DNA synthesis + gene editing</li>
+        <li><kw>BioE3 Policy</kw> – India's 1st Biotech policy; DBT; biomanufacturing, carbon capture, smart proteins</li>
+        <li><kw>DEEP Project</kw> – CSIR-CCMB + Univ of Bristol; 5-year epigenetic epidemiology study; environmental+genomic diversity</li>
+      </ul>
+      <div class="tags"><span class="tag-pre">[Prelims]</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- SECTION 2: IT & COMPUTER / AI -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="section" id="it">
+  <div class="sec-title">💻 2. IT & COMPUTER — ARTIFICIAL INTELLIGENCE</div>
+
+  <div class="concept">
+    <div class="concept-title">📐 Concept: AI Hierarchy</div>
+    <b>ANI</b> (Narrow) → specialized one task | <b>AGI</b> (General) → as smart as humans | <b>ASI</b> (Super) → surpasses humans<br>
+    <b>ML</b>: supervised (labeled data) + unsupervised (unlabeled) | <b>NLP</b>: interpret human language | <b>Deep Learning</b>: artificial neural networks<br>
+    <b>LLM</b>: transformer architecture → understands/generates text | <b>GPT</b>: generative pre-trained transformer | <b>Agentic AI</b>: autonomous decision-making
+    <pre>Input → Neural Network layers → Output
+GenAI: Generator ←→ Adversary (GAN) → creates realistic synthetic content</pre>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <tr><th>Event/Item</th><th>Key Facts</th><th>UPSC Tag</th></tr>
+      <tr><td>Bharat Gen</td><td>India's 1st indigenous Multimodal LLM; DST; NM-ICPS; IIT Bombay TIH; covers all 22 scheduled languages; Bharat Data Sagar initiative</td><td><span class="tag-pre">[Prelims]</span></td></tr>
+      <tr><td>Deepfakes (Take It Down Act)</td><td>US enacted; AI-manipulated videos/photos; Technologies: GANs + Autoencoders; India: DPDP Act 2023; IT Rules 2021 amendment proposed for SGI labelling</td><td><span class="tag-mains">[Mains GS3]</span> <span class="tag-essay">[Essay]</span></td></tr>
+      <tr><td>BioEmu (Microsoft)</td><td>Deep learning system; predicts full range of protein shapes under biological conditions</td><td><span class="tag-pre">[Prelims]</span></td></tr>
+      <tr><td>AlphaGenome</td><td>Google DeepMind; predicts how mutations affect DNA function; builds on Enformer + AlphaMissense</td><td><span class="tag-pre">[Prelims]</span></td></tr>
+      <tr><td>AlphaFold</td><td>Google DeepMind; predicts protein 3D structure from amino acid sequence; Nobel 2024 (Hassabis + Jumper)</td><td><span class="tag-pre">[Prelims]</span></td></tr>
+      <tr><td>C2S-SCALE (27B)</td><td>Google DeepMind + Yale; understands "language of cells"; interprets biological interactions</td><td><span class="tag-pre">[Prelims]</span></td></tr>
+      <tr><td>Project Suncatcher</td><td>Google; AI computing in space via solar-powered satellites in LEO</td><td><span class="tag-pre">[Prelims]</span></td></tr>
+      <tr><td>Ironwood TPU</td><td>Google's 7th-generation Tensor Processing Unit; ASIC chip for AI models</td><td><span class="tag-pre">[Prelims]</span></td></tr>
+    </table>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="card-title">🇮🇳 India's AI Ecosystem Initiatives</div>
+      <ul>
+        <li><kw>IndiaAI Mission 2024</kw> – MeitY; Digital India Corp; 7 pillars</li>
+        <li><kw>India AI Governance Guidelines</kw> – MeitY under IndiaAI Mission</li>
+        <li><kw>National AI Portal (INDIAai)</kw> – MeitY + NeGD + NASSCOM</li>
+        <li><kw>AIRAWAT</kw> – common compute platform for AI research</li>
+        <li><kw>GPAI</kw> – Global Partnership on AI; India = founding member</li>
+        <li><kw>Srijan</kw> – GenAI Centre of Excellence; YuvaAI skilling</li>
+      </ul>
+      <div class="tags"><span class="tag-pre">[Prelims]</span></div>
+    </div>
+    <div class="card">
+      <div class="card-title">🌐 Global AI Regulations</div>
+      <ul>
+        <li><kw>Europe's AI Act 2024</kw> – Europe's 1st major AI regulation</li>
+        <li><kw>Bletchley Declaration 2023</kw> – 28 countries + EU; risks of frontier AI</li>
+        <li><kw>G7 pact on AI 2023</kw></li>
+        <li><kw>Jevons Paradox</kw> – efficient tech → MORE demand for resource</li>
+        <li><kw>Solow Paradox</kw> – tech use doesn't always increase productivity</li>
+        <li>AI Kruti – India's 1st Agentic AI</li>
+      </ul>
+      <div class="tags"><span class="tag-mains">[Mains GS3]</span></div>
+    </div>
+    <div class="card">
+      <div class="card-title">🧠 Brain-Computer Interface (BCI)</div>
+      <ul>
+        <li>Stanford: privacy-focused BCI → mental password to decode thoughts</li>
+        <li>Translates neural signals → commands; bypasses muscular control</li>
+        <li><alert>Neuralink Blindsight</alert> – BCI to restore vision; bypasses retina; stimulates visual cortex; microelectrode array</li>
+        <li>Applications: paralysis, stroke, mental wellness, gaming, memory</li>
+        <li>Invasive (implants) vs Non-invasive (wearables)</li>
+      </ul>
+      <div class="tags"><span class="tag-pre">[Prelims]</span></div>
+    </div>
+    <div class="card">
+      <div class="card-title">🖨️ 3D & 4D Printing</div>
+      <ul>
+        <li>Japan: 3D-printed train station in 6 hours</li>
+        <li>Additive manufacturing → layers of material from digital file</li>
+        <li>Applications: custom prosthetics, organ-on-chip, forensics, fossils</li>
+        <li><kw>4D Printing</kw> – objects change shape over time (heat/light/moisture stimulus)</li>
+        <li>Benefits: less workforce, cost-effective, complex geometries</li>
+      </ul>
+      <div class="tags"><span class="tag-pre">[Prelims]</span></div>
+    </div>
+    <div class="card">
+      <div class="card-title">💰 Stablecoins & CBDC</div>
+      <ul>
+        <li>US GENIUS Act → regulatory framework for stablecoins</li>
+        <li><kw>Stablecoins</kw> – crypto linked to currency/commodity (e.g., Tether=USD)</li>
+        <li>Types: fiat-collateralized, crypto-collateralized, algorithmic</li>
+        <li><kw>CBDC</kw> – Central Bank Digital Currency; <alert>Digital Rupee</alert> = India's CBDC (RBI)</li>
+        <li>CBDC advantages over stablecoins: sovereign backing, legal tender, regulated</li>
+        <li>RBI pilot: Retail + Wholesale CBDCs; VDAs taxed @30% (Finance Act 2022)</li>
+      </ul>
+      <div class="tags"><span class="tag-pre">[Prelims]</span></div>
+    </div>
+    <div class="card">
+      <div class="card-title">📡 Other IT News</div>
+      <ul>
+        <li><kw>Bluetooth Mesh (Bitchat)</kw> – Twitter co-founder; many-to-many; no registration; end-to-end encrypted; no central database</li>
+        <li><kw>Project Waterworth</kw> – Meta; world's longest subsea cable; Mumbai + Visakhapatnam landing; 5 continents</li>
+        <li><kw>Vikram3201</kw> – India's 1st 32-bit processor; ISRO VSSC + SCL Chandigarh; Make-in-India; also KALPANA3201</li>
+        <li><kw>FASTag Annual Pass</kw> – MoRTH; RFID technology; NPCI-NETC program</li>
+        <li><kw>Digital Twin</kw> – digital replica of physical object; uses real-time sensor data</li>
+        <li><kw>SSI Mantra</kw> – India's indigenous surgical robot; world's 1st cardiac telesurgery across 10,000 km</li>
+      </ul>
+      <div class="tags"><span class="tag-pre">[Prelims]</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- SECTION 3: QUANTUM TECHNOLOGY -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="section" id="quantum">
+  <div class="sec-title">⚛️ 3. QUANTUM TECHNOLOGY</div>
+
+  <div class="concept">
+    <div class="concept-title">📐 Concept: Key Quantum Principles</div>
+    <b>Superposition</b>: particle in multiple states until measured | <b>Entanglement</b>: two linked particles; measuring one instantly affects other<br>
+    <b>Interference</b>: particles cross paths; constructive or destructive | <b>Qubit</b>: quantum bit = 0 AND 1 simultaneously (vs classical bit = 0 OR 1)<br>
+    <b>Quantum Tunnelling</b>: particle passes through energy barrier (e.g., radioactive alpha decay)
+    <pre>Classical Bit: 0 | 1
+Qubit:         0 AND 1 (superposition) → measured → collapses to 0 or 1
+Entanglement:  [Qubit A] ←quantum link→ [Qubit B] → instant correlation</pre>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <tr><th>Event/Item</th><th>Key Facts</th><th>UPSC Tag</th></tr>
+      <tr><td>Nobel Physics 2025</td><td>John Clarke, Michel Devoret, John Martinis → macroscopic quantum tunnelling + energy quantisation in Josephson Junction circuit; enabled qubit creation</td><td><span class="tag-pre">[Prelims]</span></td></tr>
+      <tr><td>QKD Network (QNu Labs)</td><td>India's 1st QKD network spanning 500 km; NQM-supported; uses quantum mechanics for secure encryption keys; over optical fiber</td><td><span class="tag-pre">[Prelims]</span></td></tr>
+      <tr><td>National Quantum Mission (NQM)</td><td>DST implementing; PMSTIAC initiative; 2000 km QKD network; 1000-qubit computers; 4 T-Hubs; QpiAI launched 25-qubit QpiAI-Indus</td><td><span class="tag-mains">[Mains GS3]</span></td></tr>
+      <tr><td>Google Willow Chip</td><td>Quantum info scrambling; 13,000× speed-up over classical supercomputers; Quantum Echoes algorithm detects scrambled data</td><td><span class="tag-pre">[Prelims]</span></td></tr>
+      <tr><td>QSIP (Quantum Security Chip)</td><td>PM dedicated to nation; Quantum Random Number Generator System in Package; quantum-certified randomness for cryptography; defence against cyber threats</td><td><span class="tag-pre">[Prelims]</span></td></tr>
+    </table>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="card-title">⚛️ Quantum Applications</div>
+      <ul>
+        <li><kw>QKD</kw> – Quantum Key Distribution; quantum cryptography/encryption; eavesdropping detectable</li>
+        <li><kw>Quantum Computing</kw> – uses qubits; exponentially powerful; 25-qubit India chip "QPU"</li>
+        <li><kw>Quantum Sensing</kw> – atomic clocks, magnetometers for precision</li>
+        <li><kw>Quantum Materials</kw> – novel devices; Google's Willow chip</li>
+        <li>NQM: 4 T-Hubs (computing, communication, sensing, materials)</li>
+      </ul>
+      <div class="tags"><span class="tag-pre">[Prelims]</span></div>
+    </div>
+    <div class="card">
+      <div class="card-title">🔬 Josephson Junction (Nobel 2025)</div>
+      <ul>
+        <li>Two superconductors separated by an insulator</li>
+        <li>All charged particles behave as single quantum particle</li>
+        <li>Demonstrated macroscopic quantum state → enabled qubits</li>
+        <li><kw>Quantisation of energy</kw> – particles absorb/emit energy in discrete quanta packets (fixed energy levels)</li>
+        <li>Werner Heisenberg → discovered quantum mechanics</li>
+      </ul>
+      <div class="tags"><span class="tag-pre">[Prelims]</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- SECTION 4: PHYSICS -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="section" id="physics">
+  <div class="sec-title">🌌 4. DEVELOPMENTS IN PHYSICS</div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="card-title">🌑 Black Hole Merger (GW231123)</div>
+      <ul>
+        <li>Two massive black holes → merged → 225× Sun's mass</li>
+        <li>Biggest black hole merger ever observed</li>
+        <li>Detected by <kw>LVK Network</kw>: LIGO (USA) + Virgo (Italy) + KAGRA (Japan)</li>
+        <li><kw>Gravitational Waves</kw> – ripples in spacetime; Einstein's General Theory; travel at light speed; first detected by LIGO 2015</li>
+        <li>Nobel 2017: LIGO contributions</li>
+        <li><alert>LIGO-India</alert> → Hingoli, Maharashtra (DAE + DST)</li>
+      </ul>
+      <div class="tags"><span class="tag-pre">[Prelims]</span></div>
+    </div>
+    <div class="card">
+      <div class="card-title">👻 Neutrino (JUNO Observatory)</div>
+      <ul>
+        <li>World's largest neutrino detector activated in China; 700m underground</li>
+        <li><kw>Neutrinos</kw> – ghost particles; zero charge, tiny mass; 2nd most abundant after photons</li>
+        <li>Interact only via weak nuclear force + gravity → hard to detect</li>
+        <li>3 types: Electron, Muon, Tau neutrino</li>
+        <li>India: <kw>INO</kw> – India-based Neutrino Observatory; Bodi West Hills, Tamil Nadu (DAE + DST)</li>
+        <li>IceCube (South Pole), KATRIN (Germany), TRIDENT (China), DUNE (USA)</li>
+      </ul>
+      <div class="tags"><span class="tag-pre">[Prelims]</span></div>
+    </div>
+    <div class="card">
+      <div class="card-title">⚗️ CERN & LHC (Breakthrough Prize 2025)</div>
+      <ul>
+        <li>Bose Institute (India) won Breakthrough Prize 2025 as part of ALICE at CERN</li>
+        <li>70+ countries; discovery of new strongly interacting particles; matter-antimatter asymmetry</li>
+        <li><kw>CERN</kw> – Franco-Swiss border; India = Associate Member</li>
+        <li>LHC = world's most powerful particle accelerator; confirmed <kw>Higgs Boson</kw> (God particle); invented World Wide Web</li>
+        <li>4 experiments: ATLAS, CMS, ALICE, LHCb</li>
+        <li><alert>CP Violation in baryons</alert> – first observed at CERN; explains matter-antimatter asymmetry</li>
+      </ul>
+      <div class="tags"><span class="tag-pre">[Prelims]</span></div>
+    </div>
+    <div class="card">
+      <div class="card-title">🌐 Ordinary Matter & Dark Matter</div>
+      <ul>
+        <li>Harvard+Caltech: detected universe's "missing" ordinary matter via <kw>Fast Radio Bursts (FRBs)</kw></li>
+        <li>FRBs = electromagnetic radiation bursts from distant galaxies; ms duration; disperse like prism → reveal matter</li>
+        <li><kw>Ordinary matter distribution</kw>: 76% intergalactic medium (IGM), 15% galaxy halos, 9% within galaxies</li>
+        <li><kw>Dark matter</kw> = 27% cosmos; invisible (doesn't interact with light); exerts gravity</li>
+        <li>Matter-antimatter: Big Bang should produce equal amounts; universe is almost all matter</li>
+      </ul>
+      <div class="tags"><span class="tag-pre">[Prelims]</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- SECTION 5: SPACE TECHNOLOGY -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="section" id="space">
+  <div class="sec-title">🚀 5. SPACE TECHNOLOGY</div>
+
+  <div class="concept">
+    <div class="concept-title">📐 Concept: Satellite Orbits at a Glance</div>
+    <pre>LEO (Low Earth) : < 2000 km → ISS, imaging, comms, NavSats
+SSO (Sun-sync)  : 600–800 km → weather, mapping, land-use (NISAR)
+MEO (Med Earth) : 2000–36000 km → navigation, telephony
+GEO (Geostat)   : 35,786 km → telecom, weather (GSAT series)
+HEO (Highly Elliptical) → special military/science missions</pre>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <tr><th>Mission/Satellite</th><th>Key Facts</th><th>UPSC Tag</th></tr>
+      <tr><td>NISAR (NASA-ISRO SAR)</td><td>Launched July 2025 via GSLV-F16 from Sriharikota; world's 1st L+S-band SAR satellite; SSO orbit; 5yr life; 12-day repeat cycle; 12m antenna; SweepSAR technology; 1st GSLV in SSO</td><td><span class="tag-pre">[Prelims]</span></td></tr>
+      <tr><td>Gaganyaan Mission</td><td>India's 1st human spaceflight; 3 members; 400km LEO; 3-day mission; LVM-3 rocket; Vyommitra (AI gynoid); scope extended to BAS; India = 4th country with crewed spacecraft</td><td><span class="tag-mains">[Mains GS3]</span></td></tr>
+      <tr><td>Aditya-L1</td><td>India's 1st solar mission; L1 point (1.5M km); 7 payloads (VELC, SUIT, ASPEX); studies CMEs, coronal heating; IIA+NASA found CME parameters from VELC data</td><td><span class="tag-pre">[Prelims]</span></td></tr>
+      <tr><td>SpaDeX Mission</td><td>India's 1st docking mission; 2nd successful docking achieved; SDX01 (Chaser)+SDX02 (Target); Bhartiya Docking System; India=4th country for in-space docking (US, Russia, China)</td><td><span class="tag-pre">[Prelims]</span></td></tr>
+      <tr><td>Chandrayaan-3</td><td>ChaSTE probe: 1st to penetrate celestial body soil to deploy thermal probe; soft-landing at Shiv Shakti point (South Pole); Pragyan Rover; India=4th lunar soft-landing; Japan SLIM=5th</td><td><span class="tag-pre">[Prelims]</span></td></tr>
+      <tr><td>Axiom-4 Mission</td><td>Shubhanshu Shukla (Gp Capt) returned July 15, 2025; 1st Indian on ISS; 2nd Indian in space after Rakesh Sharma 1984; SpaceX Dragon + Falcon 9; India, Poland, Hungary 1st ISS visit</td><td><span class="tag-pre">[Prelims]</span></td></tr>
+      <tr><td>NISAR GSLV-F16</td><td>1st time GSLV placed satellite in SSO (normally used for GTO)</td><td><span class="tag-pre">[Prelims]</span></td></tr>
+    </table>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="card-title">🛸 ISRO Missions Table</div>
+      <ul>
+        <li><kw>Astrosat</kw> – India's 1st astronomy satellite; X-ray+UV+optical; LEO</li>
+        <li><kw>Venus Orbiter Mission (VOM)</kw> – LVM-3; studies Venusian dust, atmosphere; payloads: VARTISS, VODEX</li>
+        <li><kw>XPoSat</kw> – X-ray Polarimeter; 2nd in world after NASA's IXPE; payloads: POLIX + XSPECT</li>
+        <li><kw>Aryabhata Satellite</kw> – India's 1st satellite; X-ray astronomy; aeronomics; solar physics; 50 years completed</li>
+        <li><kw>Chandrayaan-5/LUPEX</kw> – ISRO+JAXA; study lunar South Pole volatile materials; ISRO=lander, JAXA=rover</li>
+      </ul>
+      <div class="tags"><span class="tag-pre">[Prelims]</span></div>
+    </div>
+    <div class="card">
+      <div class="card-title">🌍 Other Agency Missions</div>
+      <ul>
+        <li><kw>Lucy (NASA)</kw> – explore Jupiter Trojan asteroids; launched 2021</li>
+        <li><kw>Tianwen-2 (CNSA)</kw> – samples from asteroid 2016HO3 + comet 311P</li>
+        <li><kw>Biomass (ESA)</kw> – 1st P-band SAR; maps world's forests biomass</li>
+        <li><kw>Solar Orbiter (ESA+NASA)</kw> – close-up Sun images; solar wind; Sun's polar regions</li>
+        <li><kw>OCO (NASA)</kw> – Orbiting Carbon Observatory; global CO₂ measurements</li>
+        <li><kw>ESCAPADE (NASA)</kw> – Mars magnetic environment + atmospheric escape</li>
+      </ul>
+      <div class="tags"><span class="tag-pre">[Prelims]</span></div>
+    </div>
+    <div class="card">
+      <div class="card-title">🔧 ISRO Launch Vehicles</div>
+      <ul>
+        <li><kw>PSLV</kw> – 4-stage; workhorse; SSO/LEO/GTO (Chandrayaan-1, MOM); 1st liquid stage vehicle; PSLV-C61/EOS-09 failed (3rd stage malfunction)</li>
+        <li><kw>GSLV</kw> – 4th gen; 3-stage; 2-ton class GTO; comms satellites</li>
+        <li><kw>LVM3</kw> – heavy-lift; 3-stage; 4-ton GTO/10-ton LEO; for BAS</li>
+        <li><kw>SSLV</kw> – all-solid; 3-stage; nano/micro satellites</li>
+        <li><kw>LMLV</kw> – ready by 2035; improved NGLV; India's 1st human lunar mission 2040</li>
+      </ul>
+      <div class="tags"><span class="tag-pre">[Prelims]</span></div>
+    </div>
+    <div class="card">
+      <div class="card-title">🧊 Cryogenic Engine (CE20)</div>
+      <ul>
+        <li>ISRO Boot-strap test of CE20 under vacuum; India's largest cryo engine</li>
+        <li>Developed by Liquid Propulsion Systems Centre, Valiamala Kerala</li>
+        <li>Powers LVM3 upper stage; qualified for Gaganyaan</li>
+        <li>Cryogenic = uses liquid fuel + oxidiser at very low temperatures</li>
+        <li>Semi-cryo: cryogenic oxidiser (LOX) + hydrocarbon fuel (kerosene)</li>
+        <li>Eco-friendly: H₂-O₂ combustion → only steam</li>
+      </ul>
+      <div class="tags"><span class="tag-pre">[Prelims]</span></div>
+    </div>
+    <div class="card">
+      <div class="card-title">🛰️ NavIC (Operation Sindoor)</div>
+      <ul>
+        <li>Used in Operation Sindoor: missile guidance, drone navigation, BDA</li>
+        <li>IRNSS → 7 satellites; 3 GEO + 4 inclined geosynchronous; 24×7 coverage 1500 km beyond India</li>
+        <li>Dual-band: L5 (encrypted military) + S-band (civilian SPS)</li>
+        <li>Independence from GPS; encrypted military channel; jam-resistant</li>
+        <li>Global systems: GPS (USA), GLONASS (Russia), Galileo (EU), BeiDou (China), QZSS (Japan)</li>
+      </ul>
+      <div class="tags"><span class="tag-pre">[Prelims]</span></div>
+    </div>
+    <div class="card">
+      <div class="card-title">🏔️ HOPE Analog Mission (ISRO)</div>
+      <ul>
+        <li>Himalayan Outpost for Planetary Exploration; Tso Kar Valley, Ladakh</li>
+        <li>Simulates Moon + Mars conditions: high UV, low pressure, extreme cold, saline permafrost</li>
+        <li>Led by ISRO's Human Space Flight Centre (HSFC)</li>
+        <li>Studies: epigenetics, genomics, physiology, psychology, microbiology</li>
+        <li>Similar: Mars Desert Research Station (USA), Flashline Mars Arctic Station (Canada), BIOS-3 (Russia)</li>
+      </ul>
+      <div class="tags"><span class="tag-pre">[Prelims]</span></div>
+    </div>
+    <div class="card">
+      <div class="card-title">☀️ Solar Flares & Space Weather</div>
+      <ul>
+        <li>NASA detected massive solar flare (wing-like plasma); Chandrayaan-2 (CHACE-2) 1st to observe CME effect on Moon</li>
+        <li>Solar flare classes: A, B, C, M, <alert>X (biggest)</alert></li>
+        <li>11-year solar cycle; solar max = more flares + sunspots</li>
+        <li><kw>CME</kw> – Coronal Mass Ejection; billion tons of plasma; reaches Earth in 15–18 hrs</li>
+        <li>Impact: geomagnetic storms, radio blackouts, satellite damage</li>
+        <li>Starlink lost 523 satellites (2020–2024) due to solar cycle peak</li>
+      </ul>
+      <div class="tags"><span class="tag-pre">[Prelims]</span></div>
+    </div>
+    <div class="card">
+      <div class="card-title">🛸 Space Debris</div>
+      <ul>
+        <li>Non-functional man-made objects in orbit; sources: on-orbit break-ups + collisions</li>
+        <li><kw>Kessler Syndrome</kw> – debris chain reaction → orbits unusable</li>
+        <li>India: DFSM 2030; IS4OM; Project NETRA</li>
+        <li>Global: IADC (1993); Zero Debris Charter (12 countries)</li>
+      </ul>
+      <div class="tags"><span class="tag-pre">[Prelims]</span></div>
+    </div>
+    <div class="card">
+      <div class="card-title">🔭 Space Concepts & Discoveries</div>
+      <ul>
+        <li><kw>Brown Dwarfs</kw> – "failed stars"; form like stars but lack mass for hydrogen fusion; quadruple star system UPM J1040 found in Milky Way</li>
+        <li><kw>Super Earth (TOI-1846)</kw> – exoplanet; up to 2× size, 10× mass of Earth; found by TESS</li>
+        <li><kw>ENTs</kw> – Extreme Nuclear Transients; stars 3× Sun mass torn by supermassive black holes → spaghettification</li>
+        <li><kw>JWST</kw> – NASA+ESA+CSA; infrared; L2 orbit; biosignatures on exoplanet K2-18b found</li>
+        <li><kw>3I/ATLAS</kw> – interstellar comet; hyperbolic orbit; found by NASA-funded ATLAS telescope (Chile)</li>
+        <li><kw>Sunbird</kw> – nuclear fusion rocket; Pulsar Fusion (UK) + Princeton; Helium-3 + deuterium; DDFD tech; could reach Pluto in 4 yrs</li>
+        <li><kw>Kodaikanal Solar Observatory</kw> (1899) – Indian Institute of Astrophysics (DST); Palani Hills; Evershed Effect</li>
+        <li><kw>Vikram-1</kw> – private launch vehicle; Skyroot Aerospace, Hyderabad; 4-stage; carbon-fibre body; 3D-printed engines; LEO/SSO</li>
+      </ul>
+      <div class="tags"><span class="tag-pre">[Prelims]</span></div>
+    </div>
+    <div class="card">
+      <div class="card-title">🛰️ Commercial EO & Satellite Internet</div>
+      <ul>
+        <li><kw>PixxelSpace EOSS</kw> – India's 1st indigenous commercial EO constellation; IN-SPACe PPP; 12 satellites; hyperspectral + SAR sensors</li>
+        <li><kw>Pixxel Firefly</kw> – 3 new satellites launched via SpaceX NAOS Falcon 9</li>
+        <li><kw>Starlink</kw> – SpaceX; MH Govt deal for rural connectivity</li>
+        <li><kw>Project Kuiper</kw> – Amazon | <kw>OneWeb</kw> – Eutelsat</li>
+        <li><kw>Qianfan</kw> – Chinese LEO internet megaconstellation</li>
+        <li><kw>Fram2</kw> – SpaceX Dragon; 1st human spaceflight over Earth's polar orbit</li>
+        <li><kw>GRAIL Mission (NASA)</kw> – most detailed Moon gravity map; Moon nearside warmer + more geologically active; tidal deformation</li>
+      </ul>
+      <div class="tags"><span class="tag-pre">[Prelims]</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- SECTION 6: HEALTH -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="section" id="health">
+  <div class="sec-title">🏥 6. HEALTH & PHARMA</div>
+
+  <div class="tbl-wrap">
+    <table>
+      <tr><th>Disease/Topic</th><th>Key Facts</th><th>UPSC Tag</th></tr>
+      <tr><td>Tuberculosis (TB)</td><td>WHO Global TB Report 2025: India's TB incidence reduced 21%; caused by Mycobacterium tuberculosis; airborne; MDR-TB (rifampicin+isoniazid resistant); XDR-TB</td><td><span class="tag-pre">[Prelims]</span> <span class="tag-mains">[Mains GS3]</span></td></tr>
+      <tr><td>HIV – Lenacapavir</td><td>US FDA approved Lenacapavir; antiretroviral; PrEP (Pre-Exposure Prophylaxis); HIV attacks CD4 T lymphocytes; transmission: body fluids; ART treatment; untreated→AIDS</td><td><span class="tag-pre">[Prelims]</span></td></tr>
+      <tr><td>Trachoma Elimination</td><td>India awarded WHO Certificate of Elimination; 3rd in SE Asia after Nepal & Myanmar; caused by Chlamydia trachomatis; Neglected Tropical Disease; blindness; controlled via NPCBVI</td><td><span class="tag-pre">[Prelims]</span></td></tr>
+      <tr><td>Hepatitis D – Cancer</td><td>WHO classified Hepatitis D as cancer-causing like B & C; HDV requires HBV for replication; types B, C, D → chronic liver disease, cirrhosis, cancer; no vaccine for Hep C; Havisure = India's 1st Hep A vaccine</td><td><span class="tag-pre">[Prelims]</span></td></tr>
+      <tr><td>MPOX</td><td>WHO: no longer global health emergency in Africa; Orthopoxvirus; zoonotic; no proven treatment; PHEIC declared by WHO; RT-PCR diagnosis</td><td><span class="tag-pre">[Prelims]</span></td></tr>
+      <tr><td>HPV</td><td>India's 1st indigenous HPV test kits validated by DBT; STI; persistent infection → cervical cancer; no treatment for HPV infection itself</td><td><span class="tag-pre">[Prelims]</span></td></tr>
+      <tr><td>Nobel Physiology 2025</td><td>Mary Brunkow, Fred Ramsdell, Shimon Sakaguchi → peripheral immune tolerance; FOXP3 gene → regulatory T cells (Tregs); IPEX disease if FOXP3 mutated</td><td><span class="tag-pre">[Prelims]</span></td></tr>
+      <tr><td>Type 5 Diabetes</td><td>Malnutrition-related diabetes; recognized at IDF World Diabetes Congress; J-type; undernutrition+low BMI; childhood/adolescence; Types: 1 (autoimmune), 2 (obesity), Gestational, now Type 5</td><td><span class="tag-pre">[Prelims]</span></td></tr>
+    </table>
+  </div>
+
+  <div class="concept">
+    <div class="concept-title">📐 Concept: Immune Tolerance (Nobel 2025)</div>
+    <b>Central Tolerance</b>: Thymus removes self-reactive T cells during training<br>
+    <b>Peripheral Tolerance</b>: Regulatory T cells (Tregs) guard against escaped self-reactive cells<br>
+    <b>FOXP3 gene</b> → controls Treg development | <b>IPEX disease</b> → FOXP3 mutation → autoimmune attack<br>
+    <b>Applications</b>: autoimmune disease treatment, cancer immunotherapy (Tregs suppress killer T cells in tumors), organ transplant rejection prevention
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="card-title">💉 Vaccines in News</div>
+      <ul>
+        <li><kw>AdFalciVax</kw> – India's 1st multi-stage malaria vaccine; ICMR+DBT-NII; targets P.falciparum; dual-stage (liver + sexual); recombinant chimeric</li>
+        <li><kw>Oncolytic vaccine Enteromix</kw> – Russia; 4 non-pathogenic viruses kill cancer cells + stimulate immunity</li>
+        <li><kw>Personalized mRNA Cancer Vaccines</kw> – based on patient's genetic cancer analysis; lipid nanoparticles carry mRNA</li>
+        <li><kw>saRNA Vaccine</kw> – Gennova against Nipah; self-amplifying; CEPI funded; lower doses needed</li>
+      </ul>
+      <div class="tags"><span class="tag-pre">[Prelims]</span></div>
+    </div>
+    <div class="card">
+      <div class="card-title">🦠 AMR & Drug Regulation</div>
+      <ul>
+        <li>WHO Global Antibiotic Resistance Surveillance Report 2025</li>
+        <li><kw>AMR</kw> – bacteria/viruses evolve to resist drugs; "silent pandemic"; top 10 global health threat</li>
+        <li>Superbugs = resistant to most antimicrobials; spread via horizontal gene transfer</li>
+        <li><kw>FDC Drugs</kw> – Fixed Dose Combination; CDSCO banned 35 unapproved FDCs</li>
+        <li>Regulation: Drugs+Cosmetics Act 1940; CDSCO (under DGHS); NPPA; Schedule M GMP</li>
+        <li><kw>SHRESTH Initiative</kw> – State Health Regulatory Excellence Index; CDSCO proposed</li>
+      </ul>
+      <div class="tags"><span class="tag-mains">[Mains GS3]</span></div>
+    </div>
+    <div class="card">
+      <div class="card-title">🌍 Global Health Initiatives</div>
+      <ul>
+        <li><kw>WHO Pandemic Agreement</kw> – 2nd international legal instrument under WHO Art 19; IGWG; PABS system; IHR 2005</li>
+        <li><kw>UIP India</kw> – 12 diseases free immunization; NRHM; U-WIN Platform; Polio-free India achieved</li>
+        <li><kw>Monoclonal Antibodies (mAbs)</kw> – ICMR seeking partners for Nipah mAbs; lab-produced proteins; cloned from single B-cell</li>
+        <li><kw>3 By 35 Initiative (WHO)</kw> – raise prices of tobacco, alcohol, sugary drinks 50% via health taxes by 2035</li>
+        <li><kw>National One Health Mission</kw> – ICMR nodal; integrates human+livestock+wildlife+environment; anchor: NIOH Nagpur</li>
+      </ul>
+      <div class="tags"><span class="tag-mains">[Mains GS3]</span></div>
+    </div>
+    <div class="card">
+      <div class="card-title">🧪 Other Health Developments</div>
+      <ul>
+        <li><kw>Transfats</kw> – WHO recognized Austria, Norway, Oman, Singapore for elimination; India: max 2% via FSSAI 2021; WHO's REPLACE package</li>
+        <li><kw>Wegovy (Semaglutide)</kw> – Novo Nordisk; GLP-1 hormone mimic; appetite suppressor; Ozempic, Mounjaro also in news</li>
+        <li><kw>ORS (FSSAI)</kw> – states directed to remove beverages using "ORS" term; WHO standard: NaCl+glucose+KCl+trisodium citrate; developed by Dilip Mahalanabis</li>
+        <li><kw>SPArc Therapy</kw> – Step-and-Shoot Proton Arc; 1st used for Adenoid Cystic Carcinoma; radiation therapy targeting tumors with protons</li>
+      </ul>
+      <div class="tags"><span class="tag-pre">[Prelims]</span></div>
+    </div>
+  </div>
+
+  <div class="concept">
+    <div class="concept-title">📐 Concept: Vaccine Types</div>
+    <b>Live attenuated</b>: weakened pathogen (MMR) | <b>Inactivated/Dead</b>: killed pathogen (Polio, Influenza)<br>
+    <b>Subunit</b>: proteins/polysaccharides from pathogen surface → types: Toxoid (Diphtheria), Conjugate (ZyVac typhoid), Recombinant (Hep B, HPV), DNA/RNA (HIV, COVID)<br>
+    <b>mRNA vaccine</b>: synthetic mRNA → lipid nanoparticles → cells produce antigen protein → immune response<br>
+    <b>Benefits of mRNA</b>: rapid development, no live virus, strong immune response
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- SECTION 7: DEFENCE -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="section" id="defence">
+  <div class="sec-title">🛡️ 7. DEFENCE TECHNOLOGY</div>
+
+  <div class="concept">
+    <div class="concept-title">📐 Concept: Cruise vs Ballistic Missiles</div>
+    <pre>Cruise Missile:   Jet engine → low altitude → manoeuvrable → shorter range (BrahMos)
+Ballistic Missile: Rocket boost → coasts in space → arcs down → longer range (Agni, Prithvi)
+Quasi-Ballistic:  Low trajectory + can manoeuvre mid-flight (Pralay)
+Hypersonic:       >Mach 5 → scramjet → lower altitude than ballistic → hard to intercept</pre>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <tr><th>System/Event</th><th>Key Facts</th><th>UPSC Tag</th></tr>
+      <tr><td>India's ADS (Op Sindoor)</td><td>S-400 Triumf (Sudarshan Chakra, Russia) + Barak-8 (India-Israel) + Akash (indigenous); Integrated Counter-UAS Grid; successfully thwarted western border attacks</td><td><span class="tag-pre">[Prelims]</span></td></tr>
+      <tr><td>Akashteer</td><td>India's indigenous automated Air Defence Control & Reporting System; C4ISR framework; AI-driven; mobile vehicle-based; developed by BEL; used in Op Sindoor</td><td><span class="tag-pre">[Prelims]</span></td></tr>
+      <tr><td>IADWS</td><td>DRDO maiden flight-test; multi-layer protection; integrates QRSAM + VSHORADS + DEW laser; centralized command by DRDL</td><td><span class="tag-pre">[Prelims]</span></td></tr>
+      <tr><td>Agni-5</td><td>Nuclear-capable SSBM; 3-stage solid fuel; range >5000km; MIRV-capable (India = 5th nation with MIRV ICBMs after US, Russia, China, France); DRDO; SFC launch</td><td><span class="tag-pre">[Prelims]</span></td></tr>
+      <tr><td>Agni Prime</td><td>1st rail-based missile launch; 2-stage solid-fueled canister; conventional+nuclear; new generation post-IGMDP</td><td><span class="tag-pre">[Prelims]</span></td></tr>
+      <tr><td>AMCA (5th Gen Fighter)</td><td>India-France (Safran) joint engine; ADA under DRDO; Mk1: GE-F414 engines; Mk2: indigenous; supercruise, stealth, AI avionics; US(F-22,F-35), Russia(Su-57), China(J-20) have 5th gen</td><td><span class="tag-pre">[Prelims]</span></td></tr>
+      <tr><td>Mk-II(A) DEW (Laser)</td><td>DRDO CHESS Hyderabad; 30kW laser; India joins US, China, Russia in advanced laser weapons; Israel 1st country to shoot down drones with laser (Iron Beam/Barak Magen variant)</td><td><span class="tag-pre">[Prelims]</span></td></tr>
+      <tr><td>Scramjet Engine</td><td>DRDL 1000+ sec Scramjet test; Supersonic Combusting Ramjet; India = elite club (US, Russia, China); flame stabilisation + assisted takeoff required; AVATAR project (ISRO)</td><td><span class="tag-pre">[Prelims]</span></td></tr>
+      <tr><td>GSAT-7R (CMS-03)</td><td>Launched via LVM3; GTO→GEO; covers Indian Ocean Region + 2000km coastline; replaces GSAT-7/Rukmini; 15yr lifespan; for Indian Navy</td><td><span class="tag-pre">[Prelims]</span></td></tr>
+    </table>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="card-title">🚀 Missile Systems Comparison</div>
+      <ul>
+        <li><kw>BrahMos</kw> – India+Russia; long-range supersonic cruise; land/sea/air; 2-stage; ~290km; Fire+Forget</li>
+        <li><kw>Astra</kw> – DRDO; BVRAAM (Beyond Visual Range); all-weather; >100km range</li>
+        <li><kw>Pralay</kw> – quasi-ballistic; solid propellant; 150–500km; DRDO-RCI Hyderabad</li>
+        <li><kw>Akash Prime</kw> – DRDO; Akash SAM variant for cold/high-altitude; above 4500m</li>
+        <li><kw>ULPGM-V3</kw> – DRDO; UAV-launched precision guided; HD dual-channel seeker</li>
+        <li><kw>Rampage</kw> – Israel; air-to-ground; supersonic; precise; IAI-developed</li>
+      </ul>
+      <div class="tags"><span class="tag-pre">[Prelims]</span></div>
+    </div>
+    <div class="card">
+      <div class="card-title">🌍 Global Air Defence Systems</div>
+      <ul>
+        <li><kw>Iron Dome / David's Sling / Arrow-2, Arrow-3</kw> – Israel; layered defence</li>
+        <li><kw>THAAD</kw> – USA; intercepts ballistic missiles at high altitude</li>
+        <li><kw>Golden Dome</kw> – USA; expected 2029; interceptor satellites + surveillance</li>
+        <li><kw>PATRIOT (PMADS)</kw> – USA; mobile surface-to-air; phased array radar</li>
+        <li><kw>HQ-9</kw> – China; inspired by Russia's S-300</li>
+        <li>Project Kusha/PGLRSAM – India; DRDO; long-range; 600+ km Phase 2</li>
+      </ul>
+      <div class="tags"><span class="tag-pre">[Prelims]</span></div>
+    </div>
+    <div class="card">
+      <div class="card-title">✈️ Aircraft & Helicopter News</div>
+      <ul>
+        <li><kw>Apache AH-64E</kw> – multi-role attack helicopter; Hellfire missiles+rockets+chain gun; advanced radar+night vision</li>
+        <li><kw>LCA Tejas Mark-1A</kw> – 4.5 gen; AESA radar; EW suite; advanced version of Tejas</li>
+        <li><kw>Rafale Marine (M)</kw> – Dassault Aviation (France); 4.5 gen; Omnirole; 1.8 Mach; for Navy→INS Vikrant</li>
+        <li><kw>6th Gen Aircraft</kw> – AI integration, hypersonic, unmanned; China flew J-36 + J-50 prototypes</li>
+      </ul>
+      <div class="tags"><span class="tag-pre">[Prelims]</span></div>
+    </div>
+    <div class="card">
+      <div class="card-title">🚢 Ships & Naval Assets</div>
+      <ul>
+        <li><kw>INS Arnala</kw> – named after Maharashtra fort; India's 1st Anti-Submarine Warfare Shallow Water Craft (ASW-SWC); largest Indian Naval warship on Diesel Engine-Waterjet</li>
+        <li><kw>INS Nistar</kw> – India's 1st indigenously designed Diving Support Vessel; deep sea saturation diving up to 300m; "Mother Ship" for DSRV</li>
+        <li><kw>INS Udaygiri + INS Himgiri</kw> – Project 17A stealth frigates commissioned; follow-on of Shivalik class; 7 frigates by Mazagon Dock + GRSE</li>
+      </ul>
+      <div class="tags"><span class="tag-pre">[Prelims]</span></div>
+    </div>
+    <div class="card">
+      <div class="card-title">🤖 Drones & Other Defence</div>
+      <ul>
+        <li><kw>Rudrastra</kw> – Hybrid VTOL UAV; Solar Defence+Aerospace Ltd; precision-guided warheads; autonomous mode</li>
+        <li><kw>Bhargavastra</kw> – anti-drone; 2-layer: unguided micro-rockets (20m radius) + guided micro-missiles</li>
+        <li><kw>Gaurav Glide Bomb</kw> – 1000kg; 100km range; INS+GPS hybrid navigation; DRDO</li>
+        <li><kw>Fiber Optic Drones</kw> – Russia-Ukraine war; cable-controlled; immune to electronic warfare/jamming</li>
+        <li><kw>Netra MkII</kw> – next-gen AWACS on Airbus A321; detect+track threats at vast distances</li>
+        <li><kw>Stratospheric Airship Platform (SAP)</kw> – DRDO; 17–22km altitude; HAPS; solar-powered; ISR capability</li>
+      </ul>
+      <div class="tags"><span class="tag-pre">[Prelims]</span></div>
+    </div>
+    <div class="card">
+      <div class="card-title">⚡ SAT-7 Series (GSAT)</div>
+      <ul>
+        <li><kw>GSAT-7 Rukmini</kw> – Navy; India's 1st officially dedicated military satellite</li>
+        <li><kw>GSAT-7A Angry Bird</kw> – Air Force; connects aircraft, helicopters, UAVs, AWACS, radars</li>
+        <li><kw>GSAT-7C</kw> – Air Force (to be developed); ground hubs for real-time secure comms</li>
+        <li><kw>GSAT-7B</kw> – Army (to be developed); border surveillance + comms</li>
+        <li><kw>GSAT-7R (CMS-03)</kw> – Navy; replaces Rukmini; multi-band; Indian Ocean Region</li>
+      </ul>
+      <div class="tags"><span class="tag-pre">[Prelims]</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- SECTION 8: ALTERNATIVE ENERGY -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="section" id="energy">
+  <div class="sec-title">⚡ 8. ALTERNATIVE ENERGY</div>
+
+  <div class="concept">
+    <div class="concept-title">📐 Concept: Nuclear Fission vs Fusion</div>
+    <pre>FISSION: neutron hits heavy atom → splits → chain reaction → energy
+  Fuel: Uranium/Plutonium | Waste: long-lived radioactive | Tech: proven (reactors)
+
+FUSION: two light atoms (H isotopes: D+T) slam together → heavier atom → massive energy
+  Fuel: Deuterium+Tritium | Waste: only helium+neutrons (short-lived) | Tech: experimental
+  Requires: plasma at 150,000,000°C | confined by magnetic field (Tokamak)
+  Net Energy Gain (NEG) = critical for commercial viability</pre>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <tr><th>Event/Topic</th><th>Key Facts</th><th>UPSC Tag</th></tr>
+      <tr><td>ITER (Tokamak)</td><td>World's biggest fusion project; France; India manufactured cryostat + cryolines; India's lead institution: Institute for Plasma Research, Ahmedabad; India's Tokamaks: ADITYA, ADITYA-U, SST-1</td><td><span class="tag-mains">[Mains GS3]</span></td></tr>
+      <tr><td>Fast Breeder Reactor (PFBR)</td><td>500 MWe; commissioning by 2026; Kalpakkam TN; BHAVINI; MOX fuel (U-Pu); liquid sodium coolant; U-238 → Pu; India = 2nd after Russia for commercial FBR; Stage II of India's 3-stage nuclear program</td><td><span class="tag-pre">[Prelims]</span></td></tr>
+      <tr><td>Thorium Molten Salt Reactor (TMSR)</td><td>China = 1st ever Th→U fuel conversion; 4th gen nuclear; molten salt coolant; passive safety (salt plug melts); India = world's largest Th reserves (Kerala+Odisha monazite); BARC developing AHWR; India: IMSBR planned</td><td><span class="tag-pre">[Prelims]</span></td></tr>
+      <tr><td>MBRAPP</td><td>Mahi Banswara Rajasthan Atomic Power Project; 4×700 MWe PHWR; ASHVINI (NPCIL+NTPC JV); part of India's "fleet mode" 10 identical 700MW reactors</td><td><span class="tag-pre">[Prelims]</span></td></tr>
+      <tr><td>Li-ion Battery Plant</td><td>India's largest LIB manufacturing plant inaugurated in Haryana; Li-ion: graphite anode + Li-metal oxide cathode + non-aqueous electrolyte</td><td><span class="tag-mains">[Mains GS3]</span></td></tr>
+      <tr><td>Vanadium Redox Flow Battery (VRFB)</td><td>India's 1st MWh-scale VRFB at NTPC NETRA; flow batteries = redox reactions + two liquid electrolytes + porous membrane; alternatives to Li-ion for grid-scale</td><td><span class="tag-pre">[Prelims]</span></td></tr>
+    </table>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="card-title">☢️ India's 3-Stage Nuclear Programme</div>
+      <ul>
+        <li><kw>Stage I</kw> – PHWR fueled by natural Uranium → produces Pu (Plutonium)</li>
+        <li><kw>Stage II</kw> – Fast Breeder Reactor (FBR); Pu+natural U fuel; Th blanket → U-233; <alert>PFBR Kalpakkam</alert></li>
+        <li><kw>Stage III</kw> – Th+U-233 fuel; very large scale electricity from India's vast thorium reserves</li>
+        <li>India: world's largest Th reserves; Kerala, Odisha, AP, TN (monazite sands)</li>
+        <li>Uranium enrichment: 3–5% civilian; >20% HEU; ~90% weapons-grade</li>
+      </ul>
+      <div class="tags"><span class="tag-mains">[Mains GS3]</span></div>
+    </div>
+    <div class="card">
+      <div class="card-title">🔋 Next-Gen Battery Technologies</div>
+      <ul>
+        <li><kw>Li-ion</kw> – high energy density; lightweight; low self-discharge; no memory effect</li>
+        <li><kw>Flow Batteries</kw> – redox reactions; liquid electrolytes; store large amounts; types: Vanadium Redox, Zinc-Bromine, Iron-Salt</li>
+        <li><kw>Solid-State Batteries (SSB)</kw> – solid electrolyte; safer (no leakage/fire); 4–6× faster charging; more energy density</li>
+        <li><kw>Sodium-Ion Battery (SIB)</kw> – DST developed; charges 80% in 6 min; 3000 cycles; transported at zero voltage (safer); uses Na+ instead of Li+</li>
+        <li><kw>Black Mass Recovery</kw> – TDB funded; dual-mode wet+dry recovery of Li, Co, Ni from used batteries</li>
+      </ul>
+      <div class="tags"><span class="tag-pre">[Prelims]</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- SECTION 9: MISCELLANEOUS -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="section" id="misc">
+  <div class="sec-title">🔬 9. MISCELLANEOUS SCIENCE & TECH</div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="card-title">🗺️ Geospatial Technology</div>
+      <ul>
+        <li><kw>Operation Dronagiri</kw> – pilot under National Geospatial Policy 2022; DST Geospatial Innovation Cell; UP, Haryana, Assam, AP, Maharashtra; Agriculture+Logistics+Urban planning; GDI development</li>
+        <li><kw>Geospatial Tech</kw> – GIS + GPS + Remote Sensing + Cartography</li>
+        <li>Nodal Agency: Survey of India (SoI)</li>
+        <li>CORS Network (SoI); National Geospatial Data Repository</li>
+      </ul>
+      <div class="tags"><span class="tag-pre">[Prelims]</span></div>
+    </div>
+    <div class="card">
+      <div class="card-title">💎 Critical Minerals</div>
+      <ul>
+        <li>Quad Critical Minerals Initiative; India + USA + Japan + Australia</li>
+        <li>Ministry of Mines: list of <kw>30 critical minerals</kw> (Li, Co, REEs, Graphite, Ni, Ti, Vanadium etc.)</li>
+        <li>India initiatives: NCMM; MMDR Amendment Act 2023; KABIL (JV for global mineral acquisition); MSP (US-led, India joined 2023)</li>
+        <li><alert>Ni-Cu-PGE discovery</alert> – India's 1st; Bhalukona-Jamnidih, Chhattisgarh; clean energy + EV + defence applications</li>
+      </ul>
+      <div class="tags"><span class="tag-pre">[Prelims]</span></div>
+    </div>
+    <div class="card">
+      <div class="card-title">🏔️ Rare Earth Elements (REEs)</div>
+      <ul>
+        <li>China restricts REE exports (retaliation to US tariffs)</li>
+        <li>17 lustrous heavy metals (Ce, Y, Eu, etc.); difficult to extract (not concentrated)</li>
+        <li>Applications: electronics, magnets, renewable energy, defence radar, catalysts</li>
+        <li>China: >2/3 global production; controls 85% supply chain</li>
+        <li>India REE reserves: TN, Kerala, AP, Odisha (monazite sands) = 8% world reserves</li>
+      </ul>
+      <div class="tags"><span class="tag-mains">[Mains GS3]</span></div>
+    </div>
+    <div class="card">
+      <div class="card-title">🔬 Nanotechnology</div>
+      <ul>
+        <li>Works at 1–100nm scale; properties depend on shape+size+surface</li>
+        <li><kw>Nanozyme</kw> – IISc; vanadium pentoxide (V₂O₅); treats blood clotting (pulmonary thromboembolism)</li>
+        <li><kw>Nano Fertilizers</kw> – IFFCO: world's 1st Nano Liquid Urea (2021) + Nano-DAP (2023); 1st overseas plant in Brazil; 90–100% utilization efficiency</li>
+        <li><kw>Nano Sulphur</kw> – TERI; green product (bacteria-derived); mustard yield↑30–40%; antibacterial + insecticidal</li>
+      </ul>
+      <div class="tags"><span class="tag-pre">[Prelims]</span></div>
+    </div>
+    <div class="card">
+      <div class="card-title">🏗️ Metal-Organic Framework (MOF)</div>
+      <ul>
+        <li><kw>Nobel Chemistry 2025</kw> – Kitagawa + Robson + Yaghi for MOF development</li>
+        <li>MOF = metal ions (joints) + organic molecules (bridges) → 3D porous network</li>
+        <li>Idea from diamond structure; highly porous; molecular storehouse</li>
+        <li>Applications: water from desert air, food packaging (ethylene absorption), PFAS removal, REE mining from wastewater, H₂/CO₂/CH₄ storage</li>
+        <li>More absorbent than zeolites</li>
+      </ul>
+      <div class="tags"><span class="tag-pre">[Prelims]</span></div>
+    </div>
+    <div class="card">
+      <div class="card-title">🚗 Electric Vehicles (EVs)</div>
+      <ul>
+        <li>NITI Aayog: 1st India Electric Mobility Index (IEMI); Delhi scored 77 (1st), Maharashtra 68; 16 indicators</li>
+        <li><kw>PM E-DRIVE Scheme</kw> – e-2W, e-3W, e-trucks, e-buses, e-ambulances, charging infra</li>
+        <li><kw>PM e-Bus Sewa PSM</kw> – 38,000+ e-buses</li>
+        <li><kw>PLI-ACC</kw> – 50 GWh domestic battery manufacturing</li>
+        <li><kw>V2G Technology</kw> – Vehicle-to-Grid; KSEB+IIT Bombay pilot; EV battery feeds back to grid; integrates renewable energy</li>
+      </ul>
+      <div class="tags"><span class="tag-mains">[Mains GS3]</span></div>
+    </div>
+    <div class="card">
+      <div class="card-title">🚄 Hyperloop & Transport Tech</div>
+      <ul>
+        <li>Maharashtra + IIT Madras startup TuTr Hyperloop: JNPT Navi Mumbai → Vadhavan Port</li>
+        <li>Maglev pods in low-pressure tubes; Linear Induction Motor (LIM); theoretical 1200 km/h</li>
+        <li><kw>Shinkansen E10</kw> – Japan's bullet train; Mumbai-Ahmedabad bullet train project; safest high-speed rail</li>
+        <li><kw>Kavach 5.0</kw> – Mumbai suburban trains; Automatic Train Protection; RFID-based; auto-braking</li>
+        <li><kw>Black Box</kw> – AAIB recovered from Air India Boeing 787; FDR + CVR; bright orange; steel/titanium</li>
+      </ul>
+      <div class="tags"><span class="tag-pre">[Prelims]</span></div>
+    </div>
+    <div class="card">
+      <div class="card-title">🌊 Deep Ocean Mission (Samudrayaan)</div>
+      <ul>
+        <li>2 Indian aquanauts dived 4025m + 5002m in Atlantic (French submersible Nautile + IFREMER); NIOT Chennai</li>
+        <li>India = among select nations for deep-sea exploration; only US, Russia, China, France, Japan have crewed missions</li>
+        <li><kw>Matsya-6000</kw> – 4th gen submersible; 6000m depth; 12hr normal/96hr emergency; NIOT</li>
+        <li>Samudrayaan = component of Deep Ocean Mission (DOM); nodal: Ministry of Earth Sciences</li>
+        <li>DOM supports India's Blue Economy</li>
+      </ul>
+      <div class="tags"><span class="tag-mains">[Mains GS3]</span></div>
+    </div>
+    <div class="card">
+      <div class="card-title">💡 RDI Scheme & Science Policy</div>
+      <ul>
+        <li><kw>RDI Scheme</kw> – ₹1 lakh crore; DST nodal; long-term low-interest financing for private R&D in sunrise sectors</li>
+        <li>Fund mechanism: SPF (in ANRF) → second-level fund managers → concessional loans/equity</li>
+        <li><kw>ANRF</kw> – Anusandhan National Research Foundation; established under ANRF Act 2023</li>
+      </ul>
+      <div class="tags"><span class="tag-mains">[Mains GS3]</span></div>
+    </div>
+    <div class="card">
+      <div class="card-title">🔩 Other Miscellaneous News</div>
+      <ul>
+        <li><kw>SODAR System</kw> – Sound Detection and Ranging; IMD Delhi; CSIR-AMPRI Bhopal; wind profile + fog layer + turbulence detection</li>
+        <li><kw>HANSA-3 (NG)</kw> – CSIR-NAL; Rotax 912 iSc3 engine; trainer aircraft; technology transfer to private firm</li>
+        <li><kw>Altermagnets</kw> – SNBNCBS; discovered in Chromium Antimonide (CrSb); combine features of ferromagnets + antiferromagnets; unique crystal symmetry; strongest spin-splitting</li>
+        <li><kw>Accelerometer</kw> – Google Android detected 18,000+ earthquakes via phone sensors; Newton's law; static + dynamic acceleration</li>
+        <li><kw>Desalination</kw> – IIT Bombay: graphene-based solar evaporator (lotus-leaf); thermal (LTTD) vs membrane (RO: Nemmeli TN = S.Asia's largest)</li>
+        <li><kw>ADAS</kw> – Advanced Driver Assistance System; Lidar+Radar+cameras; adaptive cruise, emergency braking, blind spot; govt considering mandatory for trucks/buses</li>
+        <li><kw>Biostimulants</kw> – 11 animal-source biostimulants approval withdrawn; humic acids, seaweed, bacteria; regulated under Fertiliser Control Order 1985</li>
+        <li><kw>Agrienics Programme</kw> – MeitY; C-DAC Kolkata; tech in agriculture + environment</li>
+        <li><kw>Metre Convention 1875</kw> – 150th anniversary; created BIPM; India = member; global metric system uniformity</li>
+      </ul>
+      <div class="tags"><span class="tag-pre">[Prelims]</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- LAST-MINUTE REVISION TABLE -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div id="lastmin">
+  <div class="sec-title">⚡ LAST-MINUTE REVISION — TOP 50 ITEMS</div>
+  <div class="tbl-wrap">
+    <table>
+      <tr><th>#</th><th>Topic</th><th>One-Liner Gist</th></tr>
+      <tr><td>1</td><td>BIRSA-101</td><td>India's 1st CRISPR therapy for Sickle Cell Disease; CSIR-IGIB + Serum Institute; named after Birsa Munda</td></tr>
+      <tr><td>2</td><td>NexCAR19</td><td>India's 1st indigenous CAR-T cell therapy for B-cell blood cancers; IIT Bombay + Tata Memorial; DBT-BIRAC</td></tr>
+      <tr><td>3</td><td>GE Rice (ICAR)</td><td>India = world's 1st to develop genome-edited rice; DRR Dhan 100 Kamala + Pusa DST Rice 1; CRISPR-Cas; no foreign DNA</td></tr>
+      <tr><td>4</td><td>NISAR Satellite</td><td>World's 1st L+S-band SAR satellite; NASA-ISRO; launched July 2025 via GSLV-F16; SSO; 12-day repeat cycle</td></tr>
+      <tr><td>5</td><td>SpaDeX Mission</td><td>India = 4th country to achieve in-space satellite docking; Bhartiya Docking System; Chaser + Target spacecraft</td></tr>
+      <tr><td>6</td><td>Axiom-4 / Shubhanshu Shukla</td><td>1st Indian on ISS; 2nd Indian in space after Rakesh Sharma (1984); returned July 15, 2025; SpaceX Dragon</td></tr>
+      <tr><td>7</td><td>Gaganyaan</td><td>India's 1st human spaceflight; LVM-3; 3 crew; 400km LEO; 3 days; India = 4th crewed spacecraft nation; Vyommitra first</td></tr>
+      <tr><td>8</td><td>NavIC in Op Sindoor</td><td>Used for missile guidance, drone nav, BDA in Operation Sindoor; encrypted L5 band; 7 satellites; independence from GPS</td></tr>
+      <tr><td>9</td><td>Nobel Physics 2025</td><td>Clarke, Devoret, Martinis → macroscopic quantum tunnelling + energy quantisation in Josephson Junction → enabled qubits</td></tr>
+      <tr><td>10</td><td>Nobel Chemistry 2025</td><td>Kitagawa, Robson, Yaghi for Metal-Organic Frameworks (MOF); ultra-porous material for gas storage, water collection, pollution control</td></tr>
+      <tr><td>11</td><td>Nobel Physiology 2025</td><td>Brunkow, Ramsdell, Sakaguchi → peripheral immune tolerance; FOXP3 gene controls Regulatory T cells; IPEX autoimmune disease</td></tr>
+      <tr><td>12</td><td>AdFalciVax Vaccine</td><td>India's 1st multi-stage malaria vaccine; ICMR+DBT; dual-stage (liver + sexual); recombinant chimeric; targets P.falciparum</td></tr>
+      <tr><td>13</td><td>Bharat Gen</td><td>India's 1st Multimodal LLM for Indian languages; DST; IIT Bombay; covers all 22 scheduled languages; Bharat Data Sagar</td></tr>
+      <tr><td>14</td><td>PFBR Kalpakkam</td><td>India's 1st Fast Breeder Reactor; 500 MWe; commissioning 2026; BHAVINI; MOX fuel; liquid sodium coolant; Stage II of nuclear program</td></tr>
+      <tr><td>15</td><td>QKD Network (QNu Labs)</td><td>India's 1st 500km QKD network; NQM-supported; quantum-secure communication over optical fiber</td></tr>
+      <tr><td>16</td><td>Akashteer</td><td>India's indigenous automated Air Defence Control & Reporting System; BEL; C4ISR; AI-driven; used in Operation Sindoor</td></tr>
+      <tr><td>17</td><td>Agni-5 MIRV</td><td>India = 5th nation with MIRV ICBMs (US, Russia, China, France + India); range >5000km; DRDO; SFC launch</td></tr>
+      <tr><td>18</td><td>S-400 (Sudarshan Chakra)</td><td>Russia-acquired; 360° radar+missile coverage; multi-missile layered defence; successfully used on western border</td></tr>
+      <tr><td>19</td><td>Scramjet Engine (DRDL)</td><td>1000+ sec test; Supersonic Combusting Ramjet; India in elite club (US, Russia, China); key for hypersonic weapons</td></tr>
+      <tr><td>20</td><td>MRT (Three-Parent Baby)</td><td>UK clinical trial: 8 babies protected from mitochondrial disease; MST + PNT techniques; mt-DNA replaced with donor's</td></tr>
+      <tr><td>21</td><td>Black Hole Merger GW231123</td><td>Biggest merger ever; 225× Sun's mass; detected by LVK network (LIGO+Virgo+KAGRA); LIGO-India → Hingoli Maharashtra</td></tr>
+      <tr><td>22</td><td>JUNO Neutrino Observatory</td><td>World's largest neutrino detector; China; 700m underground; studies neutrino mass hierarchy + oscillation</td></tr>
+      <tr><td>23</td><td>Google Willow Chip</td><td>Quantum processor; 13,000× faster than classical supercomputers; quantum information scrambling demonstrated</td></tr>
+      <tr><td>24</td><td>AMCA (5th Gen Fighter)</td><td>India-France (Safran) joint engine; ADA/DRDO; Mk1 with GE-F414; India developing 5th gen fighter jet</td></tr>
+      <tr><td>25</td><td>Trachoma Elimination</td><td>India 3rd in SE Asia (after Nepal, Myanmar) to eliminate Trachoma as public health problem; WHO certified</td></tr>
+      <tr><td>26</td><td>Type 5 Diabetes</td><td>Malnutrition-related diabetes officially recognized at IDF; J-type; undernutrition + low BMI; childhood onset</td></tr>
+      <tr><td>27</td><td>CERN Breakthrough Prize 2025</td><td>Bose Institute (India) part of ALICE collaboration; CP violation in baryons observed for 1st time; matter-antimatter asymmetry</td></tr>
+      <tr><td>28</td><td>TMSR (China)</td><td>China's Thorium Molten Salt Reactor: 1st ever Th→U fuel conversion; only operational MSR globally; 4th-gen nuclear</td></tr>
+      <tr><td>29</td><td>Vanadium Redox Flow Battery</td><td>India's 1st MWh-scale VRFB at NTPC NETRA; grid-scale alternative to Li-ion; redox reactions; no flammable materials</td></tr>
+      <tr><td>30</td><td>Project Waterworth (Meta)</td><td>World's longest subsea cable; Mumbai + Visakhapatnam landing sites; connects 5 continents</td></tr>
+      <tr><td>31</td><td>Vikram3201</td><td>India's 1st 32-bit processor; ISRO VSSC + SCL Chandigarh; Make-in-India for launch vehicles; also KALPANA3201</td></tr>
+      <tr><td>32</td><td>SSI Mantra</td><td>India's indigenous surgical robot; world's 1st cardiac telesurgery across 10,000 km distance</td></tr>
+      <tr><td>33</td><td>FRBs Detect Ordinary Matter</td><td>Harvard+Caltech used Fast Radio Bursts as "cosmic flashlights" to detect universe's missing ordinary matter; 76% in IGM</td></tr>
+      <tr><td>34</td><td>JWST Biosignatures (K2-18b)</td><td>Cambridge scientists found biosignatures on exoplanet K2-18b using JWST; NASA+ESA+CSA; orbits at L2</td></tr>
+      <tr><td>35</td><td>Ni-Cu-PGE Discovery</td><td>India's 1st Nickel-Copper-PGE sulphide discovery; Chhattisgarh; critical for EVs, clean energy, defence</td></tr>
+      <tr><td>36</td><td>Mk-II(A) DEW System</td><td>DRDO CHESS; 30kW laser weapon; India joins US/China/Russia in laser weapons; Israel 1st to use laser against drones</td></tr>
+      <tr><td>37</td><td>HOPE Analog Mission (ISRO)</td><td>Mars/Moon simulation in Tso Kar Valley, Ladakh; HSFC-led; epigenetics+physiology+psychology studies</td></tr>
+      <tr><td>38</td><td>Phenome India Biobank</td><td>CSIR-IGIB; PI-Check; 10,000 individuals; AI-driven diagnostics; based on UK Biobank; genomic+lifestyle+clinical data</td></tr>
+      <tr><td>39</td><td>BioE3 Policy + Biofoundry</td><td>India's 1st Biotech policy; DBT; National Biofoundry Network launched Aug 2025; 1st anniversary of BioE3</td></tr>
+      <tr><td>40</td><td>INS Arnala & INS Nistar</td><td>Arnala = India's 1st ASW-SWC; Nistar = India's 1st indigenous Diving Support Vessel; both commissioned 2025</td></tr>
+      <tr><td>41</td><td>Sodium-Ion Battery (SIB)</td><td>DST-developed; 80% charge in 6 min; 3000 cycles; safer transport; Na+ instead of Li+; good for grid storage</td></tr>
+      <tr><td>42</td><td>WHO Pandemic Agreement</td><td>2nd WHO international legal instrument (Art 19); PABS system; IGWG established; strengthens IHR 2005</td></tr>
+      <tr><td>43</td><td>One Health Mission</td><td>ICMR-anchored; human+livestock+wildlife+environment integration; NIOH Nagpur; zoonotic disease focus</td></tr>
+      <tr><td>44</td><td>PSLV-C61/EOS-09 Failure</td><td>ISRO's 63rd PSLV mission failed; 3rd stage malfunction; only 2nd PSLV failure; EOS-09 had C-band SAR</td></tr>
+      <tr><td>45</td><td>Digital Rupee (CBDC)</td><td>RBI's CBDC; sovereign-backed; retail (general public) + wholesale (banks) pilots ongoing; preferred over stablecoins</td></tr>
+      <tr><td>46</td><td>Bhargavastra Anti-Drone</td><td>India's indigenous anti-drone; 2-layer (unguided rockets + guided missiles); neutralizes drone swarms</td></tr>
+      <tr><td>47</td><td>3I/ATLAS Interstellar Comet</td><td>3rd interstellar object detected; active comet; hyperbolic orbit; found by NASA-funded ATLAS telescope, Chile</td></tr>
+      <tr><td>48</td><td>Lenacapavir (HIV)</td><td>US FDA approved; antiretroviral PrEP; HIV prevention for HIV-negative at-risk individuals</td></tr>
+      <tr><td>49</td><td>Aditya-L1 CME Finding</td><td>VELC onboard Aditya-L1 helped IIA+NASA estimate CME parameters; placed at L1 point (1.5M km from Earth)</td></tr>
+      <tr><td>50</td><td>RDI Scheme</td><td>₹1 lakh crore; DST; long-term financing for private R&D; SPF under ANRF; sunrise sectors; strategic self-reliance</td></tr>
+    </table>
+  </div>
+</div>
+
+<footer>
+  <div>⚗️ UPSC PT365 S&T Revision Sheet | Apr–Nov 2025 | Vision IAS | Built for Night Study</div>
+  <div style="margin-top:6px; color: #333;">All content from Vision IAS PT365 classroom study material. For educational revision only.</div>
+</footer>
+
+</body>
+</html>
