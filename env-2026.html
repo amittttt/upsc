@@ -1,0 +1,1328 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UPSC Environment CA 2025 | Last-Day Revision</title>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Exo+2:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d0d0d;--bg2:#111;--bg3:#161616;--bg4:#1a1a1a;
+  --cyan:#00e5ff;--amber:#ffd600;--green:#69ff47;--pink:#ff4081;--purple:#ce93d8;--orange:#ff9800;
+  --text:#e8e8e8;--muted:#888;--border:#222;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Exo 2',sans-serif;background:var(--bg);color:var(--text);font-size:13px;line-height:1.5;}
+h1,h2,h3,h4{font-family:'Share Tech Mono',monospace;}
+
+/* NAVBAR */
+.navbar{position:sticky;top:0;z-index:100;background:#0a0a0a;border-bottom:1px solid #1e1e1e;padding:6px 12px;overflow-x:auto;white-space:nowrap;scrollbar-width:thin;}
+.navbar::-webkit-scrollbar{height:3px;}
+.navbar::-webkit-scrollbar-track{background:#111;}
+.navbar::-webkit-scrollbar-thumb{background:var(--cyan);}
+.pill{display:inline-block;padding:4px 12px;margin-right:6px;border-radius:20px;border:1px solid var(--border);cursor:pointer;font-size:11px;font-family:'Share Tech Mono',monospace;transition:all 0.2s;text-decoration:none;color:var(--muted);}
+.pill:hover,.pill.active{border-color:var(--cyan);color:var(--cyan);background:rgba(0,229,255,0.08);}
+
+/* HEADER */
+.page-header{padding:16px;background:linear-gradient(135deg,#0d0d0d,#0a1628);border-bottom:2px solid var(--cyan);}
+.page-header h1{color:var(--cyan);font-size:18px;letter-spacing:2px;}
+.page-header .sub{color:var(--amber);font-size:11px;margin-top:4px;}
+.tags-row{margin-top:8px;display:flex;gap:8px;flex-wrap:wrap;}
+.tag{font-size:10px;padding:2px 8px;border-radius:3px;font-family:'Share Tech Mono',monospace;font-weight:600;}
+.tag-p{background:rgba(0,229,255,0.15);color:var(--cyan);border:1px solid rgba(0,229,255,0.3);}
+.tag-m{background:rgba(255,214,0,0.15);color:var(--amber);border:1px solid rgba(255,214,0,0.3);}
+.tag-a{background:rgba(255,64,129,0.15);color:var(--pink);border:1px solid rgba(255,64,129,0.3);}
+
+/* SECTIONS */
+.section{padding:14px;border-bottom:1px solid #1a1a1a;}
+.sec-header{display:flex;align-items:center;gap:10px;margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid #222;}
+.sec-header h2{font-size:14px;color:var(--cyan);}
+.sec-emoji{font-size:18px;}
+
+/* TIMELINE */
+.timeline{background:#0f0f1a;border:1px solid #1a1a2e;border-left:3px solid var(--purple);padding:8px 12px;margin-bottom:12px;border-radius:4px;font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--purple);overflow-x:auto;white-space:nowrap;}
+.timeline span{color:var(--amber);}
+
+/* GRID */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:8px;margin-bottom:12px;}
+
+/* CARDS */
+.card{background:var(--bg3);border:1px solid #1e1e1e;border-radius:6px;padding:10px;position:relative;transition:border-color 0.2s;}
+.card:hover{border-color:var(--cyan);}
+.card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;border-radius:3px 0 0 3px;background:var(--cyan);}
+.card.amber::before{background:var(--amber);}
+.card.green::before{background:var(--green);}
+.card.pink::before{background:var(--pink);}
+.card.purple::before{background:var(--purple);}
+.card.orange::before{background:var(--orange);}
+.card-title{font-family:'Share Tech Mono',monospace;font-size:12px;color:var(--amber);margin-bottom:6px;}
+.card ul{list-style:none;padding:0;}
+.card ul li{font-size:12px;color:var(--text);padding:2px 0;padding-left:14px;position:relative;line-height:1.4;}
+.card ul li::before{content:'→';position:absolute;left:0;color:var(--cyan);font-size:10px;}
+.card ul li.pink::before{color:var(--pink);}
+.card ul li.green::before{color:var(--green);}
+.card ul li.amber::before{color:var(--amber);}
+
+/* CONCEPT BOX */
+.concept{background:#0a1a0a;border:1px solid rgba(105,255,71,0.3);border-left:3px solid var(--green);padding:8px 10px;border-radius:4px;margin-bottom:8px;}
+.concept-title{font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--green);margin-bottom:4px;}
+.concept p{font-size:11px;color:#aaa;}
+
+/* ALERT BOX */
+.alert{background:#1a0a10;border:1px solid rgba(255,64,129,0.4);border-left:3px solid var(--pink);padding:8px 10px;border-radius:4px;margin-bottom:8px;font-size:12px;}
+.alert-title{font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--pink);margin-bottom:4px;}
+
+/* TABLES */
+.tbl-wrap{overflow-x:auto;margin-bottom:12px;}
+table{width:100%;border-collapse:collapse;font-size:11px;}
+th{background:#111;color:var(--cyan);font-family:'Share Tech Mono',monospace;padding:6px 8px;text-align:left;border:1px solid #222;font-size:10px;letter-spacing:0.5px;}
+td{padding:5px 8px;border:1px solid #1e1e1e;color:var(--text);vertical-align:top;}
+tr:nth-child(even) td{background:#101010;}
+tr:hover td{background:#151515;}
+td.hl{color:var(--amber);}
+td.cy{color:var(--cyan);}
+td.gn{color:var(--green);}
+
+/* KW */
+.kw{color:var(--amber);font-weight:600;}
+.cy{color:var(--cyan);}
+.gn{color:var(--green);}
+.pk{color:var(--pink);}
+.pr{color:var(--purple);}
+
+/* LAST REVISION TABLE */
+.lrt{background:#050508;border:2px solid var(--pink);border-radius:8px;overflow:hidden;margin:12px;}
+.lrt-header{background:var(--pink);color:#000;padding:8px 14px;font-family:'Share Tech Mono',monospace;font-size:13px;letter-spacing:1px;}
+.lrt table{font-size:11px;}
+.lrt th{background:#0a0008;color:var(--pink);}
+.lrt td{border-color:#1a0a10;}
+.lrt tr:nth-child(even) td{background:#080005;}
+
+/* SUBSECTION */
+.subsec{background:var(--bg4);border-radius:6px;padding:10px;margin-bottom:8px;}
+.subsec h3{font-size:11px;color:var(--cyan);font-family:'Share Tech Mono',monospace;margin-bottom:8px;letter-spacing:1px;border-bottom:1px solid #222;padding-bottom:4px;}
+
+/* SEPARATOR */
+.sep{height:1px;background:linear-gradient(to right,transparent,#333,transparent);margin:12px 0;}
+
+a{color:var(--cyan);text-decoration:none;}
+.num{color:var(--green);font-family:'Share Tech Mono',monospace;font-size:10px;}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <a href="#bio" class="pill active">🌿 Biodiversity</a>
+  <a href="#climate" class="pill">🌡️ Climate Change</a>
+  <a href="#pollution" class="pill">💨 Pollution</a>
+  <a href="#sustdev" class="pill">⚡ Sustainable Dev</a>
+  <a href="#disaster" class="pill">🌊 Disaster Mgmt</a>
+  <a href="#geo" class="pill">🌏 Geography</a>
+  <a href="#intlaw" class="pill">📜 Intl Laws</a>
+  <a href="#species" class="pill">🐾 Species</a>
+  <a href="#reports" class="pill">📊 Reports</a>
+  <a href="#lrt" class="pill">⚡ Last-Min Table</a>
+</div>
+
+<!-- HEADER -->
+<div class="page-header">
+  <h1>⚡ UPSC ENVIRONMENT CA 2025 | LAST-DAY REVISION</h1>
+  <div class="sub">Vision IAS | April 2025 – November 2025 | Complete Coverage</div>
+  <div class="tags-row">
+    <span class="tag tag-p">[Prelims]</span>
+    <span class="tag tag-m">[Mains GS3]</span>
+    <span class="tag tag-a">🔥 CRITICAL ALERTS highlighted in Pink</span>
+  </div>
+</div>
+
+<!-- ============================================ BIODIVERSITY ============================================ -->
+<div id="bio" class="section">
+  <div class="sec-header">
+    <span class="sec-emoji">🌿</span>
+    <h2>BIODIVERSITY & CONSERVATION</h2>
+    <span class="tag tag-p">[Prelims]</span><span class="tag tag-m">[GS3]</span>
+  </div>
+
+  <!-- TIMELINE -->
+  <div class="timeline">
+    <span>1948</span>→IUCN founded │ <span>1964</span>→IUCN Red List │ <span>1971</span>→UNESCO MAB Programme │ <span>1972</span>→WPA India │ <span>1975</span>→CITES enters force │ <span>1992</span>→CBD (Rio) │ <span>1994</span>→Ramsar COP1 │ <span>2002</span>→BD Act India │ <span>2010</span>→Nagoya Protocol │ <span>2022</span>→Kunming-Montreal GBF (COP15) │ <span>2025</span>→IUCN Congress Abu Dhabi
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="card-title">🌍 IUCN World Conservation Congress 2025</div>
+      <ul>
+        <li><span class="kw">Location:</span> Abu Dhabi, UAE</li>
+        <li>Strategic Vision: <span class="kw">'Unite for Nature on Path to 2045'</span></li>
+        <li>Abu Dhabi Call to Action → 5 key areas</li>
+        <li class="pink">FIRST: Phase-out fossil fuels motion adopted</li>
+        <li class="pink">FIRST: World Summit of Indigenous Peoples & Nature</li>
+        <li>Wild animals → climate-allies, nature-based solutions</li>
+        <li><span class="kw">6 new member states:</span> Armenia, Tajikistan, Marshall Islands, Gabon, Tuvalu, Zimbabwe</li>
+      </ul>
+    </div>
+    <div class="card amber">
+      <div class="card-title">📋 IUCN Red List Updates</div>
+      <ul>
+        <li>Established <span class="kw">1964</span>, updated ≥2x per year, 9 categories</li>
+        <li class="amber">Green Sea Turtle: Endangered → <span class="kw">Least Concern</span></li>
+        <li>3 Arctic seal species → closer to extinction</li>
+        <li class="amber">Indian birds: 4 uplisted:</li>
+        <li>→ Indian Courser, Indian Roller, Rufous-tailed Lark → <span class="kw">Near Threatened</span></li>
+        <li>→ Long-billed Grasshopper-warbler → <span class="kw">Endangered</span></li>
+        <li class="pink">FIRST: Policy on Synthetic Biology & Nature Conservation</li>
+        <li class="pink">Ecocide = international crime under ICC proposed</li>
+      </ul>
+    </div>
+    <div class="card green">
+      <div class="card-title">💚 IUCN Green Status (New Tool)</div>
+      <ul>
+        <li>Proposed 2012, launched <span class="kw">2021</span></li>
+        <li>Measures conservation SUCCESS (complements Red List)</li>
+        <li>8 categories: Extinct → Non-Depleted</li>
+        <li>Green Score: 0–100% (100% = full recovery)</li>
+        <li class="green">Lion (Panthera leo) Green Status = <span class="kw">'Largely Depleted'</span></li>
+        <li>Lion extinct in: North Africa + Southwest Asia</li>
+      </ul>
+    </div>
+    <div class="card pink">
+      <div class="card-title">🦁 Asiatic vs African Lion</div>
+      <ul>
+        <li><span class="kw">Asiatic:</span> Gir NP, India | sparser mane | belly fold | smaller</li>
+        <li><span class="kw">African:</span> Sub-Saharan savannas | fuller mane | no belly fold | larger</li>
+        <li class="pink">Project Lion: Announced 15 Aug 2020</li>
+        <li>Greater Gir Concept → Girnar, Pania, Mitiyala</li>
+        <li>CITES Appendix I species → now Schedule IV WPA (2022 Amdt)</li>
+        <li>Barda WS → 2nd home for Asiatic lions (Porbandar-Devbhumi Dwarka, Gujarat)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">🏔️ Cold Desert Biosphere Reserve</div>
+      <ul>
+        <li class="pink">NEWLY designated to UNESCO WNBR 2025</li>
+        <li><span class="kw">Location:</span> Himachal Pradesh (Pin Valley NP, Chandratal, Kibber WS)</li>
+        <li>India's first high-altitude cold desert BR</li>
+        <li><span class="kw">WNBR:</span> Launched 1976, under MAB (1971)</li>
+        <li>785 sites globally | <span class="kw">13 BRs in India</span></li>
+        <li>São Tomé & Príncipe → entire territory as BR (first nation)</li>
+        <li>Fauna: Snow Leopard, Himalayan Ibex, Blue Sheep, Himalayan Wolf</li>
+      </ul>
+    </div>
+    <div class="card amber">
+      <div class="card-title">⚖️ Wildlife Protection Act 1972</div>
+      <ul>
+        <li>4 Schedules post-2022 amendment:</li>
+        <li>Sch I → highest protection | Sch II → lesser | Sch III → plants | Sch IV → CITES spp</li>
+        <li><span class="kw">Kerala:</span> First state to amend WPA for easier culling of man-animal conflict animals</li>
+        <li>Translocation: Schedule I → Central Govt approval; Others → State Govt</li>
+        <li>Institutional bodies: NBWL (PM chairs), State BWL, CZA, WCCB</li>
+      </ul>
+    </div>
+    <div class="card green">
+      <div class="card-title">🧬 ABS Regulation 2025</div>
+      <ul>
+        <li>Notified by <span class="kw">NBA</span> → replaces 2014 Guidelines</li>
+        <li>Under Biological Diversity Act 2002</li>
+        <li class="green">FIRST inclusion of <span class="kw">Digital Sequence Information (DSI)</span></li>
+        <li>Slabs: Nil (≤₹5Cr turnover) → 0.6% (>₹250Cr)</li>
+        <li>High-value resources (red sanders, agarwood): ≥5% of sale</li>
+        <li>Prior Informed Consent (PIC) mandatory</li>
+        <li>Kani tribe + Jeevani (Arogyapacha) = benefit sharing model</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">🐆 Project Cheetah</div>
+      <ul>
+        <li>Launched <span class="kw">2022</span> | Under Project Tiger umbrella</li>
+        <li><span class="kw">India-Botswana:</span> 8 more cheetahs to be translocated</li>
+        <li>Kuno NP: 30 cheetahs (Dec 2025)</li>
+        <li>Implementing: NTCA | Technical: WII</li>
+        <li>Cheetah extinct in India: Late 1940s/early 1950s</li>
+        <li>Gandhi Sagar WS → potential 2nd site (Chambal R., MP)</li>
+      </ul>
+    </div>
+    <div class="card amber">
+      <div class="card-title">🐅 Tiger Reserves 2025</div>
+      <ul>
+        <li>Total: <span class="kw">58 reserves</span></li>
+        <li>Newest: Madhav Tiger Reserve + Ratapani WS (both MP)</li>
+        <li>SC directives: No tiger safaris in core | Night tourism banned in core</li>
+        <li>Natural Disaster status for Human-Wildlife Conflicts</li>
+        <li>Ex-gratia: ₹10 lakh for human deaths</li>
+        <li>Core = inviolable | Buffer = regulated tourism</li>
+      </ul>
+    </div>
+    <div class="card pink">
+      <div class="card-title">🐘 Elephant Status India</div>
+      <ul>
+        <li class="pink">SAIEE 2021-25: First DNA-based elephant count by WII</li>
+        <li>India: ~60% of global Asian elephant pop → >22,000</li>
+        <li>Largest pop state: <span class="kw">Karnataka > Assam > TN > Kerala</span></li>
+        <li>Largest pop region: Western Ghats > NE hills</li>
+        <li>Andaman Islands: small feral population</li>
+        <li>Asian Elephant: Endangered (IUCN); African Savanna: Endangered; African Forest: Critically Endangered</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">🐊 Crocodile Conservation (50 yrs)</div>
+      <ul>
+        <li>Launch: April 1975 (H.R. Bustard's recommendations)</li>
+        <li><span class="kw">Odisha:</span> Only state with all 3 crocodilian conservation centres</li>
+        <li>Saltwater croc: recovered to ~2,500</li>
+        <li>Mugger: 8,000–10,000 (reclaimed Ganga drainage)</li>
+        <li>Gharial: India holds <span class="kw">80% of global wild gharial pop</span></li>
+        <li>Key sites: National Chambal Sanctuary, Katarnia Ghat WS</li>
+        <li>Gharial Conservation Project 2025 → Ganga, Brahmaputra, Indus, Mahanadi</li>
+      </ul>
+    </div>
+    <div class="card green">
+      <div class="card-title">🐬 River Dolphins India</div>
+      <ul>
+        <li>First comprehensive estimate by WII + MoEFCC</li>
+        <li>Total: <span class="kw">6327</span> (Gangetic: 6324, Indus: only 3)</li>
+        <li>State-wise: UP > Bihar > West Bengal</li>
+        <li>Distribution: Ganga, Brahmaputra, Indus basins</li>
+        <li>Gangetic River Dolphin = National Aquatic Animal of India</li>
+        <li>Under CSS-IDWH Species Recovery Programme</li>
+      </ul>
+    </div>
+    <div class="card amber">
+      <div class="card-title">🦅 Vultures India</div>
+      <ul>
+        <li>WII: First Pan-India vulture assessment (216 sites, 17 states)</li>
+        <li>54% nests in Protected Areas</li>
+        <li>4 Critically Endangered: White-rumped, Indian, Slender-billed, Red-headed</li>
+        <li>Threat: Diclofenac (NSAID used for livestock) toxicity</li>
+        <li>VCBCs at: Rani (Assam), Pinjore (Haryana)</li>
+        <li>Indian Vulture → max in <span class="kw">Mukundra Hills, Rajasthan</span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">🐫 Camels India</div>
+      <ul>
+        <li>Pop declined >75% since 1970s</li>
+        <li>National Camel Sustainability Initiative (NCSI) proposed</li>
+        <li>90% in Rajasthan & Gujarat</li>
+        <li>Communities: Raika, Rabari, Fakirani Jat, Manganiyar</li>
+        <li class="green">Kharai (Kutch): Swims 3km in seawater, grazes mangroves</li>
+        <li>Bactrian (double hump): Ladakh, India; Wild Bactrian = <span class="kw">Critically Endangered</span></li>
+        <li>Humps store FAT, not water (water stored in blood cells)</li>
+      </ul>
+    </div>
+    <div class="card pink">
+      <div class="card-title">🦬 Tamil Nadu Endangered Species</div>
+      <ul>
+        <li><span class="kw">Lion-tailed macaque:</span> Endangered, Appendix I CITES, Schedule I WPA</li>
+        <li><span class="kw">Madras Hedgehog:</span> Endemic to India, Schedule II WPA</li>
+        <li><span class="kw">Striped Hyaena:</span> Appendix III CITES, Schedule I WPA</li>
+        <li><span class="kw">Hump-headed Mahseer:</span> 'Tiger of Kaveri'; Krishna, Kaveri, Cauvery basin</li>
+        <li>TN allocated ₹1 crore for conservation</li>
+      </ul>
+    </div>
+    <div class="card green">
+      <div class="card-title">🌱 CSS-IDWH Scheme</div>
+      <ul>
+        <li>Nodal: MoEFCC | Type: Centrally Sponsored Scheme</li>
+        <li>22 species under Species Recovery Programme</li>
+        <li>Includes: Snow Leopard, Asiatic Lion, GIB, Gangetic Dolphin</li>
+        <li class="green">NEW: Gharial + Sloth Bear recommended for inclusion (2025)</li>
+        <li>Key components: Wildlife Habitats Dev + Project Tiger + Project Elephant</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- FORESTS -->
+  <div class="sep"></div>
+  <div class="subsec">
+    <h3>🌳 FORESTS</h3>
+    <div class="grid">
+      <div class="card amber">
+        <div class="card-title">Van Amendment Rules 2025</div>
+        <ul>
+          <li>Under Forest Conservation Act 1980 (amended 2023)</li>
+          <li>Critical minerals (MMDR Act) → CA on degraded land, double extent</li>
+          <li>States can now give initial 'working permission' for linear projects</li>
+          <li>CA land → transfer to Forest Dept OR notified as PA</li>
+          <li class="amber">Forest clearance: ≤5 Ha → CCF Regional; >5 Ha/mining → MoEFCC</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title">National Forest Stats (ISFR 2023)</div>
+        <ul>
+          <li>Total Forest + Tree cover: <span class="kw">25.17%</span> (2021: 24.62%)</li>
+          <li>Forest cover: 21.76% | Tree cover: 3.41%</li>
+          <li>Max increase: Chhattisgarh, UP, Odisha, Rajasthan</li>
+          <li>States >75% forest: Mizoram, Lakshadweep, A&N, AP, Nagaland, Meghalaya, Tripura, Manipur</li>
+          <li>Top by area: MP, Arunachal Pradesh, Chhattisgarh</li>
+          <li>Mangrove cover: 4,992 km² (Gujarat ↓, AP+MH ↑)</li>
+          <li>Carbon stock: 30.43 Bt CO₂ eq (2.29 Bt above 2005 levels vs NDC target 2.5-3.0 Bt)</li>
+        </ul>
+      </div>
+      <div class="card green">
+        <div class="card-title">Green India Mission (GIM)</div>
+        <ul>
+          <li>Launched 2014, one of 8 NAPCC missions</li>
+          <li>Timeline: 2021–2030</li>
+          <li>Target: Afforestation over 24 Mha + 2.5-3.0 Bt CO₂ sink by 2030</li>
+          <li>Funding: GIM allocation + National CAMPA Fund</li>
+          <li>Bottom-up model via JFMCs</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title">Environmental Accounting on Forest 2025</div>
+        <ul>
+          <li>Released by MoSPI | First dedicated forest accounting report</li>
+          <li>Based on UN SEEA Framework (developed 2012, adopted by India 2018)</li>
+          <li>8th consecutive environment accounts issue</li>
+          <li>Global Forest Resources Assessment (GFRA) 2025: Forests = 32% global land</li>
+          <li>India: 9th position in total forest area globally (2% of global forest)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- WETLANDS & OCEANS -->
+  <div class="sep"></div>
+  <div class="subsec">
+    <h3>🌊 WETLANDS, COASTLAND & OCEANS</h3>
+    <div class="grid">
+      <div class="card pink">
+        <div class="card-title">🌊 BBNJ Agreement (High Seas Treaty)</div>
+        <ul>
+          <li>Full name: Treaty for Conservation & Sustainable Use of Marine Biodiversity of ABNJ</li>
+          <li>Under <span class="kw">UNCLOS</span> | Legally binding | Enters force: 120 days after 60 ratifications</li>
+          <li class="pink">India signed but NOT ratified yet</li>
+          <li>4 Pillars: Marine Protected Areas + MGR benefit sharing + Capacity building + EIA</li>
+          <li>Third implementation agreement under UNCLOS (after 1994 Part XI + 1995 UNFSA)</li>
+          <li>Nodal Ministry: Ministry of Earth Sciences</li>
+        </ul>
+      </div>
+      <div class="card amber">
+        <div class="card-title">🐸 Ramsar COP15 (Victoria Falls, Zimbabwe)</div>
+        <ul>
+          <li>Theme: 'Protecting Wetlands for Our Common Future'</li>
+          <li>5th Strategic Plan 2025–2030 adopted</li>
+          <li>India: 96 Ramsar sites (highest in Asia)</li>
+          <li>UK has most sites globally | Largest: Rio Negro, Brazil</li>
+          <li>Montreux Record India: Keoladeo NP + Loktak Lake</li>
+          <li class="amber">India: Indore + Udaipur → Wetland City Accreditation</li>
+          <li>India passed 'Sustainable Lifestyles for Wise Use of Wetlands' resolution (LiFE linkage)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title">💧 New Ramsar Sites India 2025</div>
+        <ul>
+          <li><span class="kw">Khichan Wetland (RJ):</span> Migratory demoiselle cranes, Thar Desert</li>
+          <li><span class="kw">Menar Wetland Complex (RJ):</span> White-rumped + long-billed vulture</li>
+          <li><span class="kw">Siliserh Lake (RJ):</span> Man-made, 1845, near Sariska TR</li>
+          <li><span class="kw">Gokul Reservoir (Bihar):</span> Oxbow lake, blackbuck habitat</li>
+          <li><span class="kw">Udaipur Lake (Bihar):</span> Oxbow, W. Champaran</li>
+          <li><span class="kw">Gogabeel Lake (Bihar):</span> 1st community reserve of Bihar</li>
+          <li><span class="kw">Kopra Jalashay (Chhattisgarh):</span> Upper Mahanadi catchment</li>
+        </ul>
+      </div>
+      <div class="card green">
+        <div class="card-title">🪸 Coral Bleaching</div>
+        <ul>
+          <li>4th mass coral bleaching event (started 2023) → Australia worst hit</li>
+          <li>Bleaching: Stress → expel zooxanthellae algae → turn white → die</li>
+          <li>Optimal conditions: 23–29°C, clear shallow water <50m</li>
+          <li>Support ~25% marine species</li>
+          <li>India's corals: A&N (largest), Lakshadweep, Gulf of Kachchh, Gulf of Mannar</li>
+          <li>Coral Triangle: World's richest marine biodiversity hotspot</li>
+          <li>Tech: Biorock Technology, 3D-printed structures, Coral Cryopreservation</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONCEPTS BOX -->
+  <div class="grid">
+    <div class="concept">
+      <div class="concept-title">📐 eDNA (Environmental DNA)</div>
+      <p>Genetic material shed by organisms in environment → Non-invasive biodiversity tracking tool → maps species presence/distribution → Highly sensitive, rapid, cost-effective</p>
+    </div>
+    <div class="concept">
+      <div class="concept-title">📐 Functional De-extinction</div>
+      <p>Reviving ecological roles (not exact replicas) of extinct species → CRISPR + cloning + genome mapping → Colossal Biosciences: grey wolf pups with dire wolf traits (2025) → Next: Woolly mammoth, thylacine, dodo</p>
+    </div>
+    <div class="concept">
+      <div class="concept-title">📐 Conservation Reserve</div>
+      <p>Under WPA 1972 Sec 36A → State/Central Govt → Acts as buffer/corridor between NPs, WLSs → Managed by Conservation Reserve Management Committee → Hesaraghatta Grassland (Karnataka) newly notified</p>
+    </div>
+    <div class="concept">
+      <div class="concept-title">📐 Global Ocean Darkening</div>
+      <p>21% of ocean darker (2003-2022) → Coastal: nutrient/sediment loading → Open ocean: algal bloom + warming → Shrinks photic zone (0-200m) → Limits photosynthesis + marine productivity</p>
+    </div>
+    <div class="concept">
+      <div class="concept-title">📐 Blue Washing</div>
+      <p>Overstates company's commitment to social/ethical practices → Waste-to-Energy industry adapting this → Related: Greenwashing (false eco claims), Pinkwashing (LGBTQ+ exploitation)</p>
+    </div>
+    <div class="concept">
+      <div class="concept-title">📐 Mangroves</div>
+      <p>Salt-tolerant, intertidal → Viviparous → Pneumatophores/prop roots → Store 7.5-10x more carbon/acre than tropical forests → India: 4,992 km² → WB (42.45%) > Gujarat (23.32%) > A&N (12.39%)</p>
+    </div>
+  </div>
+
+  <!-- ORGANIZATIONS -->
+  <div class="sep"></div>
+  <div class="tbl-wrap">
+    <table>
+      <tr><th>Organization</th><th>Key Facts</th><th>India Status</th></tr>
+      <tr><td class="cy">CITES</td><td>Convention on International Trade in Endangered Species | 1975 | 3 Appendices | Species covered now under WPA Schedule IV (2022 amdt)</td><td class="gn">Party</td></tr>
+      <tr><td class="cy">UPOV</td><td>International Union for Protection of New Varieties of Plants | 1968 | Protects plant breeders' rights</td><td class="gn">Member</td></tr>
+      <tr><td class="cy">IBAT Alliance</td><td>Integrated Biodiversity Assessment Tool | Provides biodiversity data for investment decisions</td><td class="gn">Participates</td></tr>
+      <tr><td class="cy">NGT</td><td>National Green Tribunal | Statutory body → Environment Protection Act 1986 + National Green Tribunal Act 2010 | Fast-track environmental cases</td><td class="gn">National Body</td></tr>
+      <tr><td class="cy">IUCN SSC</td><td>Species Survival Commission → Vivek Menon elected new Chair (2025-29) | Science-based, 10,500+ volunteers | 1949</td><td class="gn">Active Member</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ============================================ CLIMATE CHANGE ============================================ -->
+<div id="climate" class="section">
+  <div class="sec-header">
+    <span class="sec-emoji">🌡️</span>
+    <h2>CLIMATE CHANGE</h2>
+    <span class="tag tag-p">[Prelims]</span><span class="tag tag-m">[GS3]</span>
+  </div>
+
+  <!-- UNFCCC TIMELINE -->
+  <div class="timeline">
+    <span>1992</span>→UNFCCC (Rio) │ <span>1997</span>→Kyoto Protocol │ <span>2005</span>→Kyoto enters force │ <span>2010</span>→Cancun Agreements │ <span>2012</span>→Doha Amdt │ <span>2015</span>→Paris Agreement (COP21) │ <span>2016</span>→Kigali Amdt (HFCs) │ <span>2021</span>→COP26 Glasgow (Panchamrit) │ <span>2022</span>→COP27 Sharm El-Sheikh (Loss&Damage) │ <span>2023</span>→COP28 Dubai (Global Stocktake) │ <span>2024</span>→COP29 Baku (NCQG $300B) │ <span>2025</span>→COP30 Belém Brazil
+  </div>
+
+  <div class="alert">
+    <div class="alert-title">🔥 COP30 — BELÉM PACKAGE (2025)</div>
+    COP30 held in <span class="kw">Belém, Brazil</span> (Amazon) | 10th anniversary of Paris Agreement | Called "COP of Implementation" + "Forest COP" | Spirit of Mutirão (inclusion + balance) | 195 Parties adopted Belém Package
+  </div>
+
+  <div class="grid">
+    <div class="card pink">
+      <div class="card-title">🎯 COP30 Key Outcomes</div>
+      <ul>
+        <li class="pink">Belém Mission to 1.5°C: COP29-31 Troika (UAE, Azerbaijan, Brazil)</li>
+        <li>NCQG: $1.3 trillion/year by 2035 (Baku to Belém Roadmap)</li>
+        <li>Adaptation finance → triple to $120 B/yr</li>
+        <li>GGA Measurement Framework: 7 sectors + 4-stage cycle</li>
+        <li>Tropical Forest Forever Facility (TFFF): $125B fund | India = Observer</li>
+        <li>LeadIT Industry Roundtable: India + Sweden, 18 countries + 27 companies</li>
+        <li>Belém 4x Pledge: Sustainable fuels by 2035 | India + Italy + Japan + Brazil</li>
+        <li>Global Cooling Pledge: 72 nations | reduce cooling emissions 68% by 2050</li>
+      </ul>
+    </div>
+    <div class="card amber">
+      <div class="card-title">🌿 COP30 Forest & Nature Initiatives</div>
+      <ul>
+        <li>Scaling J-REDD+ Coalition → $3-6B/yr to halt deforestation by 2030</li>
+        <li>RAIZ Accelerator → restore 3M Ha degraded farmland (FAO FAST partnership)</li>
+        <li>Global Carbon Harvest Coalition: Brazil, India, Kenya → soil carbon, biochar</li>
+        <li>Indigenous Land Tenure: 15 govts → 160M Ha for indigenous groups</li>
+        <li>Food Waste Breakthrough (UNEP): Halve food waste + 7% methane by 2030</li>
+        <li>No Organic Waste (NOW): 30% methane cut from organic waste by 2030</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">💰 COP30 Finance Outcomes</div>
+      <ul>
+        <li>Global Implementation Accelerator: Voluntary NDC support</li>
+        <li>ARISE (Germany+Spain): $100M for climate-resilient economies via CIF</li>
+        <li>Country Platforms for Climate Finance: India + 12 developing nations + AISCC</li>
+        <li>FINI: NAPs to $1 trillion adaptation investment by 2028</li>
+        <li>Open Coalition Compliance Carbon Markets: Brazil, China, EU, UK, India etc.</li>
+        <li>Belem Declaration for Green Industrialization (35 countries)</li>
+      </ul>
+    </div>
+    <div class="card green">
+      <div class="card-title">⚕️ COP30 Health & Social</div>
+      <ul>
+        <li class="green">Belém Health Action Plan: World's FIRST intl climate adaptation plan for health</li>
+        <li>$300M initial funding | Focus: extreme heat, air pollution, infectious diseases</li>
+        <li>Belém GAP: Gender Action Plan 2026–2034</li>
+        <li>Declaration on Information Integrity: Counter climate disinformation (FIRST)</li>
+        <li>Global Mutirão Against Heat: 185 cities, 3B people, 50 national frameworks by 2030</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- NDC & INDIA -->
+  <div class="sep"></div>
+  <div class="grid">
+    <div class="card amber">
+      <div class="card-title">🇮🇳 India's Climate Commitments</div>
+      <ul>
+        <li>NDC: Updated 2022 | Revising for 2035 period by December</li>
+        <li><span class="kw">Panchamrit (COP26 Glasgow):</span></li>
+        <li>→ 500 GW non-fossil capacity by 2030</li>
+        <li>→ 50% energy from RE by 2030</li>
+        <li>→ Reduce 1 Bt cumulative carbon by 2030</li>
+        <li>→ 45% reduction in carbon intensity by 2030 (vs 2005)</li>
+        <li>→ Net Zero by <span class="kw">2070</span></li>
+        <li>LT-LCDC submitted to UNFCCC in 2022</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">📊 GEI Target Rules 2025</div>
+      <ul>
+        <li>Legally binding GHG emission targets for >400 industrial units</li>
+        <li>4 initial sectors: Aluminium, Cement, Chlor-alkali, Pulp & Paper</li>
+        <li>5 more: Iron & steel, Fertilizer, Petroleum refining, Petrochem, Textiles</li>
+        <li>Under Carbon Credit Trading Scheme 2023 (ECA 2022)</li>
+        <li>Administrator: Bureau of Energy Efficiency (BEE)</li>
+        <li>Regulator: CERC | Non-compliance: Environmental Compensation (2x credit price)</li>
+        <li>India GHG: 4th BUR – 2,959 Mt CO₂ excl LULUCF</li>
+      </ul>
+    </div>
+    <div class="card green">
+      <div class="card-title">🌱 Green Credit Program</div>
+      <ul>
+        <li>Under Environment Protection Act 1986 | Nodal: MoEFCC</li>
+        <li>Part of <span class="kw">LiFE (Mission LiFE, 2021)</span> movement</li>
+        <li>1 Green Credit = 1 new tree (over 5 yrs old)</li>
+        <li>Claim after: 5 yrs + 40% canopy density</li>
+        <li>Credits: Non-tradable, non-transferable, used once only</li>
+        <li>Different from Carbon Credits (under ECA 2001)</li>
+      </ul>
+    </div>
+    <div class="card pink">
+      <div class="card-title">💱 Article 6 Paris Agreement</div>
+      <ul>
+        <li>COP29 (Baku): Finalised rules for Art 6.2 + Art 6.4</li>
+        <li>NDA for India: 21-member committee, headed by Env Ministry Secretary</li>
+        <li>Art 6.2: Cooperative approaches (bilateral trading)</li>
+        <li>Art 6.4: Paris Agreement Crediting Mechanism (PACM)</li>
+        <li>India eligible activities: RE, green hydrogen, green ammonia, CCUS</li>
+        <li class="pink">Kyoto → Annex I only | Paris Art 6 → ALL countries</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">🌬️ Montreal Protocol</div>
+      <ul>
+        <li>Signed <span class="kw">1987</span>, in force 1989, India ratified <span class="kw">1992</span></li>
+        <li>Under Vienna Convention (1985)</li>
+        <li>Targets: ODS → CFCs, Halons, HBFCs, Carbon tetrachloride etc.</li>
+        <li>Kigali Amendment <span class="kw">2016</span>: Phase-down HFCs (potent GHGs, non-ODS)</li>
+        <li>HFCs: 3,790x more potent than CO₂ over 20 years</li>
+        <li>Ozone recovery: Global by 2040, Antarctic by 2066, Arctic by 2045</li>
+        <li>MOP37 (2025): Discrepancies in HFC reporting flagged</li>
+        <li>India: Phased out CFCs by 2010 (ahead of schedule)</li>
+      </ul>
+    </div>
+    <div class="card amber">
+      <div class="card-title">🚢 Net Zero Shipping Framework (IMO)</div>
+      <ul>
+        <li>Annex VI of MARPOL Convention</li>
+        <li>Target: Net zero by/around 2050</li>
+        <li>Shipping = ~3% of global GHG</li>
+        <li class="amber">FIRST: Combines mandatory emission limits + GHG pricing for entire industry</li>
+        <li>Mandatory for ships >5,000 gross tonnage (85% of CO₂ from shipping)</li>
+        <li>Two compliance tools: Global Fuel Standard + Global Economic Measure</li>
+        <li>IMO Net-Zero Fund established</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CLIMATE CONCEPTS -->
+  <div class="sep"></div>
+  <div class="grid">
+    <div class="concept">
+      <div class="concept-title">📐 Carbon Capture & Utilisation (CCU)</div>
+      <p>Capture CO₂ (industrial/DAC) → Use as feedstock for fuels/chemicals → Ocean-based: OAE + ocean fertilisation + blue carbon sinks → DST R&D Roadmap 2025 for India's Net Zero</p>
+    </div>
+    <div class="concept">
+      <div class="concept-title">📐 Climate Tipping Points (IPCC)</div>
+      <p>Critical thresholds → irreversible change when crossed → Cascading effect → Identified: Amazon dieback, permafrost collapse, AMOC slowdown, Greenland/Antarctic ice sheet collapse, Boreal forest shift → Coral reefs already crossed thermal tipping point</p>
+    </div>
+    <div class="concept">
+      <div class="concept-title">📐 Arctic Amplification</div>
+      <p>Arctic warms FASTER than rest of Earth → Reasons: Reduced albedo (ice melt) + lapse rate feedback + water vapour triple effect + atmospheric heat transport → India impact: disrupts monsoon + sea level rise → Svalbard event 2025</p>
+    </div>
+    <div class="concept">
+      <div class="concept-title">📐 Planetary Boundaries</div>
+      <p>9 processes defining safe operating space for humanity → PHC 2025 (Potsdam Institute): 7 of 9 transgressed → Safe: Only Atmospheric Aerosol Loading + Stratospheric Ozone Depletion → Ocean Acidification crossed safe limit for FIRST time (2025)</p>
+    </div>
+    <div class="concept">
+      <div class="concept-title">📐 Methane Emissions</div>
+      <p>2nd biggest climate driver (after CO₂) → 80x more potent than CO₂ over 20 yrs → Persists 7-12 yrs → India = 3rd largest emitter (stubble burning) → 60% human sources: agriculture + fossil fuels + landfills → CCAC founded 2012 (India joined 2019)</p>
+    </div>
+    <div class="concept">
+      <div class="concept-title">📐 Glacier Preservation</div>
+      <p>2025 = International Year of Glaciers' Preservation → Decade of Action for Cryospheric Sciences 2025-2034 → World Day for Glaciers: March 21 → Nepal's Yala Glacier declared dead (shrank 66% since 1970s) → Glaciers = 75% Earth's freshwater</p>
+    </div>
+  </div>
+
+  <!-- CLIMATE REPORTS -->
+  <div class="sep"></div>
+  <div class="tbl-wrap">
+    <table>
+      <tr><th>Report</th><th>Released By</th><th>India Rank/Key Data</th><th>Tag</th></tr>
+      <tr><td class="cy">State & Trends of Carbon Pricing 2025</td><td>World Bank Group</td><td>Power sector highest carbon pricing coverage</td><td>[Prelims]</td></tr>
+      <tr><td class="cy">State of Cryosphere 2025</td><td>ICCI</td><td>Glacial loss accelerating globally</td><td>[GS3]</td></tr>
+      <tr><td class="cy">Energy Transition Index 2025</td><td>WEF</td><td>India: Rank 71 (↓ from 63 in 2024) | Sweden #1</td><td>[Prelims]</td></tr>
+      <tr><td class="cy">Climate Risk Index 2026</td><td>Germanwatch</td><td>India: 15th (CRI 2024) | 9th for 1995-2024</td><td>[Prelims]</td></tr>
+      <tr><td class="cy">CCPI 2026</td><td>Germanwatch + New Climate Inst + CAN</td><td>India: 23rd (high → medium performer) | None in Top 3</td><td>[Prelims]</td></tr>
+      <tr><td class="cy">GHG Status Report 2025</td><td>UNEP + CCAC</td><td>Methane conc doubled since pre-industrial times</td><td>[GS3]</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ============================================ POLLUTION ============================================ -->
+<div id="pollution" class="section">
+  <div class="sec-header">
+    <span class="sec-emoji">💨</span>
+    <h2>POLLUTION</h2>
+    <span class="tag tag-p">[Prelims]</span><span class="tag tag-m">[GS3]</span>
+  </div>
+
+  <!-- INTL CONVENTIONS TIMELINE -->
+  <div class="timeline">
+    <span>1989</span>→Basel Convention (hazardous waste) │ <span>2001</span>→Stockholm Convention (POPs) │ <span>2004</span>→Rotterdam Convention (PIC chemicals) │ <span>2013</span>→Minamata Convention (mercury) │ <span>2022</span>→UNEA resolution on plastic treaty │ <span>2025</span>→Basel COP17, Rotterdam COP12, Stockholm COP12 (Geneva)
+  </div>
+
+  <div class="grid">
+    <div class="card pink">
+      <div class="card-title">☠️ 3 Conventions COP 2025 (Geneva)</div>
+      <ul>
+        <li class="pink">Basel COP17: Updated POPs guidelines + New strategy 2025-31 + Textile waste focus</li>
+        <li class="pink">Rotterdam COP12: Added Carbosulfan + Fenthion to Annex III</li>
+        <li class="pink">Stockholm COP12: Added Chlorpyrifos + LC-PFCAs + MCCPs to Annex A</li>
+        <li>Joint commitment: Enhanced collaboration with other env. agreements</li>
+      </ul>
+    </div>
+    <div class="card amber">
+      <div class="card-title">🌡️ Minamata Convention COP6</div>
+      <ul>
+        <li>Mercury-based dental amalgams → phase out by <span class="kw">2034</span></li>
+        <li>Step up action on skin-lightening products with mercury</li>
+        <li>Strengthened artisanal & small-scale gold mining (ASGM) action</li>
+        <li>Hg toxicity: Converts to methylmercury → bioaccumulates in fish</li>
+        <li>No safe level of mercury exposure for humans</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">🧴 Global Plastic Pollution Treaty</div>
+      <ul>
+        <li>UNEA Resolution 2022: Develop legally binding instrument on plastic pollution</li>
+        <li>INC process ongoing (adjourned in latest session)</li>
+        <li>Like-Minded Countries (India, China, Saudi Arabia etc.): Oppose production caps</li>
+        <li>High Ambition Coalition (~100 countries): Support production caps</li>
+        <li>Microplastics: <5mm | Nanoplastics: <1,000 nm</li>
+        <li>460M MT plastic/yr; only 9% recycled</li>
+      </ul>
+    </div>
+    <div class="card green">
+      <div class="card-title">💨 Air Quality India 2025</div>
+      <ul>
+        <li>IQAir 2024-25: India = World's 5th most polluted country</li>
+        <li>13 of world's 20 most polluted cities in India</li>
+        <li class="green">Most polluted city: Byrnihat (Assam-Meghalaya border)</li>
+        <li>Delhi: 6th consecutive year most polluted capital</li>
+        <li>GRAP stages: Stage I (AQI 201-300) → Stage IV (451+)</li>
+        <li>NCAP (2019): 131 cities | Target 40% PM10 reduction by 2025-26</li>
+        <li>Swachh Vayu Sarveshan 2025: Indore (Cat 1), Amravati (Cat 2), Dewas (Cat 3) winners</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">💧 Polluted River Stretches 2025</div>
+      <ul>
+        <li>CPCB: 296 polluted stretches on 271 rivers (645 assessed), 32 States/UTs</li>
+        <li>Down from 351 (2018) → 296 (2025)</li>
+        <li>Criteria: BOD >3 mg/L</li>
+        <li>Maharashtra = highest (54 PRS)</li>
+        <li>Notable: Yamuna (Delhi), Sabarmati (Ahmedabad), Chambal (MP)</li>
+        <li>BOD = indicator of water quality; measures O₂ needed to break down organic matter</li>
+      </ul>
+    </div>
+    <div class="card amber">
+      <div class="card-title">🏭 Industry Classification Revision</div>
+      <ul>
+        <li>CPCB directed SPCBs to adopt revised classification</li>
+        <li>New <span class="kw">Blue category</span> added (in addition to Red, Orange, Green, White)</li>
+        <li>Pollution Index (PI): 0-100 scale | Based on precautionary principle</li>
+        <li>PI covers: Water pollution + Air pollution + Hazardous waste potential</li>
+        <li>Originated in 1989 Doon Valley Notification | PI-based classification from 2016</li>
+        <li>Red category: CTO validity up to 10 years if compliance achieved</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- POLLUTION CONCEPTS -->
+  <div class="sep"></div>
+  <div class="grid">
+    <div class="concept">
+      <div class="concept-title">📐 Ground-level Ozone (Secondary Pollutant)</div>
+      <p>NOx + VOC → chemical reaction → GLO → Short-lived (hours to weeks) → Delhi-NCR worst affected (2025) → 8-hr safe limit: 100 μg/m³ → Worsens asthma, bronchitis</p>
+    </div>
+    <div class="concept">
+      <div class="concept-title">📐 PFAS (Forever Chemicals)</div>
+      <p>Carbon-fluorine bonds → very strong → don't degrade → Found in cookware, packaging, fabrics → Bioaccumulate in humans → 20 bacteria species discovered that can break down PFAS (2025)</p>
+    </div>
+    <div class="concept">
+      <div class="concept-title">📐 FGD (Flue Gas Desulphurisation)</div>
+      <p>Removes SO₂ from coal plant exhaust → Scrubbing via alkaline reagent → 2015 policy: mandatory for all coal plants → New study: Recommended only for imported coal / >0.5% sulphur coal</p>
+    </div>
+    <div class="concept">
+      <div class="concept-title">📐 E-flow (Environmental Flow)</div>
+      <p>Quantity + timing + quality of water for freshwater ecosystems → Dams, pollution, encroachments severely impact E-flow → Jal Shakti Ministry meeting on Ganga E-flow 2025</p>
+    </div>
+    <div class="concept">
+      <div class="concept-title">📐 Aerosol & Twomey Effect</div>
+      <p>Tiny solid/liquid particles in atmosphere → Primary (sea spray, dust) + Secondary (sulfates from industry) → Twomey Effect: More aerosols → smaller cloud droplets → brighter clouds → more sunlight reflected → cooling effect → Solar dimming from anthropogenic aerosols identified</p>
+    </div>
+    <div class="concept">
+      <div class="concept-title">📐 Contaminated Site Mgmt Rules 2025</div>
+      <p>New rules by MoEFCC → Covers hazardous substances → Excludes radioactive/mining/oil spill sites → Polluter pays principle → SPCB identifies polluter → If polluter unknown → SPCB executes cleanup → Funded by Environmental Relief Fund</p>
+    </div>
+  </div>
+
+  <!-- AIR QUALITY TABLE -->
+  <div class="tbl-wrap">
+    <table>
+      <tr><th>Pollutant</th><th>WHO Guideline</th><th>India NAAQS</th><th>Key Impact</th></tr>
+      <tr><td class="cy">PM2.5</td><td>5 µg/m³</td><td class="pk">40 µg/m³</td><td>Cardiovascular, respiratory</td></tr>
+      <tr><td class="cy">PM10</td><td>15 µg/m³</td><td class="pk">60 µg/m³</td><td>Respiratory tract</td></tr>
+      <tr><td class="cy">NO₂</td><td>10 µg/m³</td><td class="pk">40 µg/m³</td><td>Lung disease, acid rain</td></tr>
+      <tr><td class="cy">O₃ (GLO)</td><td>100 µg/m³ (8hr)</td><td class="pk">180 µg/m³ (1hr)</td><td>Asthma, crop damage</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ============================================ SUSTAINABLE DEVELOPMENT ============================================ -->
+<div id="sustdev" class="section">
+  <div class="sec-header">
+    <span class="sec-emoji">⚡</span>
+    <h2>SUSTAINABLE DEVELOPMENT, ENERGY & AGRICULTURE</h2>
+    <span class="tag tag-p">[Prelims]</span><span class="tag tag-m">[GS3]</span>
+  </div>
+
+  <!-- ENERGY TIMELINE -->
+  <div class="timeline">
+    <span>1987</span>→Brundtland Report (SD defined) │ <span>2000</span>→MDGs │ <span>2003</span>→EBP Programme India │ <span>2015</span>→SDGs (17 goals, 169 targets) │ <span>2015</span>→ISA launched (Paris) │ <span>2022</span>→NGHM launched │ <span>2023</span>→NBP launched │ <span>2025</span>→SDG 10-yr milestone, India RE reaches 51%
+  </div>
+
+  <div class="grid">
+    <div class="card pink">
+      <div class="card-title">🎯 SDG Progress 2025</div>
+      <ul>
+        <li>10th anniversary | India: <span class="kw">Rank 99</span> (first in top 100!) | Score: 67/100</li>
+        <li>Global: Finland #1 | Only 17% SDG targets on track globally</li>
+        <li>India achievements: 135M out of poverty (SDG1) | MMR 80.5 (SDG3) | Net enrolment 99.9% (SDG4)</li>
+        <li>SDG 1,10 on track | SDG 13 Decreasing globally</li>
+        <li>Sevilla Commitment (FFD4): Close $4T annual SDG financing gap</li>
+      </ul>
+    </div>
+    <div class="card amber">
+      <div class="card-title">☀️ India Renewable Energy 2025</div>
+      <ul>
+        <li class="amber">MILESTONE: RE met 51.5% electricity demand (July 2025)</li>
+        <li class="amber">Non-fossil fuel capacity reached 51% (Sept 2025) → 5 yrs ahead of NDC!</li>
+        <li>Total installed non-fossil: 256.09 GW</li>
+        <li>Solar: 39.4% | Wind: 10.6% | Hydro: 10%</li>
+        <li>Global: 4th RE capacity | 4th Wind | 3rd Solar | 3rd Ethanol producer</li>
+        <li>Top 5 RE states: Rajasthan, Gujarat, TN, Karnataka, Maharashtra</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">🌍 International Solar Alliance (ISA)</div>
+      <ul>
+        <li>8th Session held in New Delhi</li>
+        <li>Mauritius: 1st African country to sign CPF</li>
+        <li>SUNRISE: Solar Upcycling for PV recycling (new global initiative)</li>
+        <li>SIDS Procurement MoU: 16 SIDS under ISA-World Bank platform</li>
+        <li>Global Capability Centre unveiled → Silicon Valley for Solar in India</li>
+      </ul>
+    </div>
+    <div class="card green">
+      <div class="card-title">🟢 Green Hydrogen Mission (NGHM)</div>
+      <ul>
+        <li>Launched <span class="kw">2023</span> | Target: 5 MMT Green H₂ by 2030</li>
+        <li>GHCI (Green H₂ Certification): 'Green' = ≤2 kg CO₂eq/kg H₂</li>
+        <li>Nodal: BEE | Ministry: MNRE</li>
+        <li>3 Green H₂ Hubs: Deendayal, VOC Chidambaranar, Paradip ports</li>
+        <li>1 MW GHPP commissioned at Kandla Port</li>
+        <li>H₂ = Electrolysis + renewable electricity</li>
+      </ul>
+    </div>
+    <div class="card amber">
+      <div class="card-title">🌾 Ethanol Blending (EBP Programme)</div>
+      <ul>
+        <li>EBP launched <span class="kw">2003</span></li>
+        <li class="amber">ACHIEVED: 20% ethanol blending target (2025) → 13x increase since 2014</li>
+        <li>E20: 30% lower carbon emissions vs E10</li>
+        <li>India: 3rd largest ethanol producer (after USA, Brazil)</li>
+        <li>Top producers: Maharashtra, UP, Karnataka</li>
+        <li>National Policy on Biofuels 2018 (amended 2022): Advanced target to 2025-26</li>
+        <li>PM JIVAN Yojana: 2G ethanol | EISS: Dedicated Ethanol Plants</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">⚙️ New Energy Policies 2025</div>
+      <ul>
+        <li><span class="kw">NPGE 2025:</span> India's FIRST National Geothermal Energy Policy</li>
+        <li>→ Vision: Net zero by 2070 | Potential: 10,600 MW | 381 hot springs</li>
+        <li>→ Best sites: Puga + Chumathang (Ladakh)</li>
+        <li><span class="kw">CAFE-3 Norms:</span> From 1 April 2027 | Under ECA 2001</li>
+        <li><span class="kw">ADEETIE Scheme:</span> MSMEs reduce energy 30-50% | BEE | ₹1000 Cr</li>
+        <li><span class="kw">UCG Guidelines:</span> Underground Coal Gasification → syngas (CO, H₂, CO₂, CH₄)</li>
+        <li><span class="kw">Coal Gasification FIS 2024:</span> 100 MT coal gasification by 2030</li>
+      </ul>
+    </div>
+    <div class="card green">
+      <div class="card-title">🌿 Biofuels 2025</div>
+      <ul>
+        <li><span class="kw">Bamboo-based Bioethanol Plant:</span> India's FIRST (Assam) by PM</li>
+        <li><span class="kw">E-Methanol:</span> World's FIRST commercial plant → Denmark</li>
+        <li>→ Green H₂ + captured CO₂ → catalytic reactor → methanol</li>
+        <li><span class="kw">CBG:</span> India's 1st cooperative multi-feed CBG plant → Maharashtra (12 ton/day)</li>
+        <li>GOBAR-DHAN scheme: cattle dung → Bio-CNG</li>
+        <li>SATAT initiative: CBG plants for affordable transportation fuel</li>
+        <li><span class="kw">SAF:</span> India mandated 1% SAF blending for international flights from 2027</li>
+      </ul>
+    </div>
+    <div class="card pink">
+      <div class="card-title">🌱 Natural Farming & Agriculture</div>
+      <ul>
+        <li>NMNF (CSS): 10,000 BRCs under Budget 2023-24</li>
+        <li>BRC: Cluster-level enterprise for bio-inputs, ₹1 lakh financial assistance</li>
+        <li>Natural farming: Chemical-free, Desi Cow-based inputs, no external purchases</li>
+        <li>Organic vs Natural: Organic allows off-farm inputs; Natural = no external inputs</li>
+        <li><span class="kw">GIAHS 2025:</span> 95 sites in 28 countries | India: Saffron (Kashmir), Koraput (Odisha), Kuttanad (Kerala)</li>
+        <li>Agroforestry Model Rules 2025: Felling permit for >10 trees on agri land</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- MISC POLICIES -->
+  <div class="sep"></div>
+  <div class="grid">
+    <div class="card">
+      <div class="card-title">📋 Environmental Laws 2025</div>
+      <ul>
+        <li><span class="kw">EA Rules 2025:</span> Formal env auditing framework | 2-tier system (regulator + third-party) | Under EPA 1986</li>
+        <li><span class="kw">EIA:</span> SC overturned ban on ex-post facto EC for mining | EIA 2006 requires prior EC</li>
+        <li><span class="kw">Great Nicobar Island Project:</span> Tribal rights controversy | ANIIDCO nodal agency | 4 components: port + airport + power + township</li>
+        <li><span class="kw">Dam Safety Act 2021:</span> NCDSA + State bodies | India: 3rd largest dam nation, ~6000 large dams | Maharashtra highest</li>
+        <li><span class="kw">Seed Bill 2025:</span> Replaces Seeds Act 1966 | Mandatory SATHI portal registration | 3-tier penalty</li>
+      </ul>
+    </div>
+    <div class="card amber">
+      <div class="card-title">📊 Finance Terms 2025</div>
+      <ul>
+        <li><span class="kw">RPO:</span> Mandates distribution cos to buy minimum RE (Electricity Act 2003)</li>
+        <li><span class="kw">RCO:</span> Focuses on consumption (not just purchase) from RE → Moving from RPO → RCO</li>
+        <li><span class="kw">GMB:</span> Green Municipal Bonds | Ghaziabad: India's 1st certified GMB (₹150 Cr for TSTP)</li>
+        <li><span class="kw">Gas Hydrates:</span> Crystalline H₂O+methane | In India: Andaman Is. + Krishna-Godavari offshore | China building world's 1st permanent undersea research station</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================ DISASTER MANAGEMENT ============================================ -->
+<div id="disaster" class="section">
+  <div class="sec-header">
+    <span class="sec-emoji">🌊</span>
+    <h2>DISASTER MANAGEMENT</h2>
+    <span class="tag tag-p">[Prelims]</span><span class="tag tag-m">[GS3]</span>
+  </div>
+
+  <div class="grid">
+    <div class="card pink">
+      <div class="card-title">🛡️ CDRI & ICDRI 2025</div>
+      <ul>
+        <li>African Union joined CDRI → 54th member (at ICDRI 2025, France)</li>
+        <li class="pink">FIRST ICDRI in Europe</li>
+        <li>Theme: Shaping a Resilient Future for Coastal Regions</li>
+        <li>Focus: SIDS coastal resilience (10 concrete actions)</li>
+        <li>CDRI: India-led initiative | Based in New Delhi</li>
+      </ul>
+    </div>
+    <div class="card amber">
+      <div class="card-title">💰 DRR Financing India</div>
+      <ul>
+        <li>15th FC allocation: >₹2.32 trillion (~$28 B)</li>
+        <li>India showcased: World's Largest DRR Financing System at GPDRR 2025</li>
+        <li>DRR Finance uses: Disaster Risk Index (capacity + risk + hazard + vulnerability)</li>
+        <li>NDMF + SDMF recommended by 15th FC</li>
+        <li>Centre contributes: 75% (90% for NE/Himalayan states) in SDMF</li>
+        <li>Sendai Framework 2015-30 | GPDRR established 2006</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">🌊 C-FLOOD Platform</div>
+      <ul>
+        <li>Web-based: 2-day advance flood inundation forecasts (village-level)</li>
+        <li>Developed by: C-DAC + CWC + NRS + Ministry of Jal Shakti</li>
+        <li>Under National Supercomputing Mission (2015)</li>
+        <li>2D hydrodynamic modelling + inundation maps</li>
+        <li>Coverage: Mahanadi, Godavari, Tapi → expanding to all basins</li>
+        <li>Integration with NDEM portal planned</li>
+      </ul>
+    </div>
+    <div class="card green">
+      <div class="card-title">❄️ Glacial Lakes & GLOFs</div>
+      <ul>
+        <li>IHR: 11 river basins + 28,000 glacial lakes</li>
+        <li>2 types: Supraglacial (summer melting) + Moraine-dammed (sudden failure)</li>
+        <li>2023 South Lhonak GLOF → damaged Teesta III Dam (Sikkim)</li>
+        <li>CWC monitors 902 glacial lakes</li>
+        <li>NGRMP: Arunachal Pradesh, HP, Sikkim, Uttarakhand</li>
+        <li>SAR imagery to detect changes automatically</li>
+      </ul>
+    </div>
+    <div class="card amber">
+      <div class="card-title">🌪️ Disasters Concepts 2025</div>
+      <ul>
+        <li><span class="kw">Cloudburst:</span> ≥10 cm rain in 1 hour (IMD definition) | More in mountains (orographic lift)</li>
+        <li><span class="kw">Twister/Tornado:</span> 250 mph funnel | Warm-moist + cold-dry air collision | Gulf of Mexico moisture</li>
+        <li><span class="kw">Super Typhoon:</span> >185 kph winds | SST >26°C | >5° latitude from equator</li>
+        <li><span class="kw">Grey Rhino Event:</span> High probability, high impact, neglected (≠ Black Swan) | Wayanad landslide example</li>
+        <li><span class="kw">Swell Waves:</span> Long-wavelength, wind-generated | Kallakkadal in India | UNESCO approved term</li>
+        <li><span class="kw">Earthquake Swarm:</span> Many quakes, no main shock | Iceland example | Volcanic areas</li>
+        <li><span class="kw">MCS:</span> Mesoscale Convective System → state-wide thunderstorms, >12 hrs</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">🚨 Disaster Alerts India</div>
+      <ul>
+        <li><span class="kw">SACHET:</span> SMS-based alert system by NDMA | Geo-targeted | 36 States/UTs active</li>
+        <li><span class="kw">Cell Broadcast:</span> Under development by C-DOT | Faster than SMS | For tsunamis, earthquakes</li>
+        <li><span class="kw">EW4All:</span> Launched COP27 (2022) | Led by WMO + UNDRR + ITU + IFRC | 100+ nations</li>
+        <li><span class="kw">RIMES:</span> Intergovernmental | 22 members | Evolved post-2004 tsunami | Bangkok HQ</li>
+        <li><span class="kw">NCMC Rules 2025:</span> Given statutory status (DM Act Amendment 2025) | Cabinet Secretary heads</li>
+        <li><span class="kw">WiFEX:</span> Winter Fog Experiment | IITM + Ministry of Earth Sciences</li>
+        <li><span class="kw">Weather Derivatives:</span> India launching first WD (NCDEX + IMD) | Helps farmers hedge rainfall risk</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- OIL SPILL & TSUNAMI -->
+  <div class="sep"></div>
+  <div class="grid">
+    <div class="concept">
+      <div class="concept-title">📐 Tsunami</div>
+      <p>Large sudden ocean displacement → Earthquake/landslide/volcanic eruption → Wavelength in deep ocean ~200 km → Amplitude increases near coast (shoaling) → Pacific Ring of Fire = most frequent zone → Kamchatka 8.8 quake 2025</p>
+    </div>
+    <div class="concept">
+      <div class="concept-title">📐 Oil Spill Tech</div>
+      <p>Bioremediation: Oilzapper + Oilivorous-S (TERI) → bacteria converts hydrocarbons → CO₂ + water | Sorbents: Milkweed fibre (Rajasthan) | Oil Boom: Floating barriers | Skimmers: Skim oil from surface | Calcium Carbide → reacts with seawater → flammable acetylene gas</p>
+    </div>
+  </div>
+
+  <!-- TSUNAMI COMPARISON -->
+  <div class="tbl-wrap">
+    <table>
+      <tr><th>Term</th><th>Region</th><th>Wind Speed</th><th>Key Condition</th></tr>
+      <tr><td class="cy">Hurricane</td><td>North Atlantic, E. North Pacific, S. Pacific</td><td>>119 kph</td><td>SST >26°C, >5° latitude</td></tr>
+      <tr><td class="cy">Typhoon</td><td>Western North Pacific</td><td>>119 kph</td><td>SST >26°C, >5° latitude</td></tr>
+      <tr><td class="cy">Cyclone</td><td>Indian Ocean</td><td>>119 kph</td><td>SST >26°C, >5° latitude</td></tr>
+      <tr><td class="cy">Super Typhoon</td><td>W. North Pacific</td><td>>185 kph</td><td>Extreme tropical cyclone</td></tr>
+      <tr><td class="cy">Willy-willy</td><td>E. Southern Indian Ocean</td><td>Variable</td><td>Australian term for tropical cyclone</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ============================================ GEOGRAPHY ============================================ -->
+<div id="geo" class="section">
+  <div class="sec-header">
+    <span class="sec-emoji">🌏</span>
+    <h2>GEOGRAPHY & EARTH SCIENCES</h2>
+    <span class="tag tag-p">[Prelims]</span>
+  </div>
+
+  <div class="grid">
+    <div class="card amber">
+      <div class="card-title">🌊 AMOC (Atlantic Meridional Overturning Circulation)</div>
+      <ul>
+        <li>Brings warm water north + cold water south in Atlantic</li>
+        <li>Driving force: Temperature + salinity differences (thermohaline)</li>
+        <li>12,000-yr reconstruction shows unprecedented modern weakening</li>
+        <li>Cause: Freshwater influx from melting Greenland ice</li>
+        <li>India impact: Disrupts monsoon rainfall patterns</li>
+        <li>AMOC slowdown → Carbon feedback: less ocean CO₂ uptake → more warming</li>
+        <li>AMOC is a climate tipping point (IPCC)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">🔬 Bharat Forecast System (BFS)</div>
+      <ul>
+        <li>Developed by IITM Pune | World's FIRST indigenously developed high-res system</li>
+        <li>Resolution: 12km → <span class="kw">6km</span> (ahead of US/UK/EU at 9-14km)</li>
+        <li>64% better accuracy in high-risk zones</li>
+        <li>HPC: Arka (IITM Pune) + Arunika (NCMRWF Delhi)</li>
+        <li>40 Doppler Weather Radars integrated</li>
+        <li>Forecast in 4-6 hrs (vs 12-14 hrs earlier)</li>
+        <li>Mission Mausam: MoES 2024 | IMD + NCMRWF + IITM</li>
+      </ul>
+    </div>
+    <div class="card green">
+      <div class="card-title">🌋 Pacific Ring of Fire</div>
+      <ul>
+        <li>Horseshoe-shaped belt around Pacific Ocean</li>
+        <li>~75% world's active volcanoes + ~90% earthquakes</li>
+        <li>Kamchatka 8.8 quake (2025) → tsunami triggered</li>
+        <li>Shallow reverse faulting = upthrust of one block over another</li>
+        <li>Convergent boundaries → subduction zones → volcanoes</li>
+        <li>Mariana Trench = deepest ocean trench (in Ring of Fire subduction zone)</li>
+      </ul>
+    </div>
+    <div class="card pink">
+      <div class="card-title">🌊 Deep-Sea & Ocean Science</div>
+      <ul>
+        <li>Polymetallic Sulphides (PMS): India signed 15-yr exploration contract with ISA</li>
+        <li>Location: Carlsberg Ridge (Arabian Sea) → FIRST licence for PMS here globally</li>
+        <li>PMS = Cu, Zn, Au, Ag from hydrothermal vents on ocean floor</li>
+        <li>Polymetallic Nodules (manganese nodules): Central Indian Ocean Basin</li>
+        <li>ISA = manages seabed ("common heritage of mankind" under UNCLOS)</li>
+        <li>Deep ocean: <200m = photic zone | Average temp 4°C | Extreme pressure</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">🌡️ Climate Geography Concepts</div>
+      <ul>
+        <li><span class="kw">LPA:</span> Long-period average (1971-2020 = 87cm) | Normal = 96-104% | Excess = >110%</li>
+        <li><span class="kw">True Polar Wander (TPW):</span> Dam construction shifted Earth's axis >1m since 1835 → longer days</li>
+        <li><span class="kw">Delamination:</span> Indian plate's dense lower section peels + sinks into mantle → new theory for rapid plate movement</li>
+        <li><span class="kw">Arabian Sea Mini Warm Pool:</span> SST >28.5°C | Apr-May | Self-correcting mechanism for monsoon post-El Niño</li>
+        <li><span class="kw">Thirstwave:</span> ≥3 consecutive days of >90th percentile evaporative demand</li>
+        <li><span class="kw">Cold Pools:</span> Evaporatively cooled downdraft air spreading under precipitating clouds</li>
+        <li><span class="kw">Solar Tornado:</span> Ionized gas/plasma held by magnetic fields at Sun's poles | 130,000 km height | 250,000°C</li>
+      </ul>
+    </div>
+    <div class="card amber">
+      <div class="card-title">🗺️ Map & Geography Misc</div>
+      <ul>
+        <li>UNESCO Global Geoparks: 229 in 50 countries (NONE in India)</li>
+        <li>GGN: Non-profit under UNESCO, establishes ethical standards</li>
+        <li>NCPOR: National Centre of Polar & Ocean Research | India's polar research</li>
+        <li>Maitri II (Antarctica): India's 4th research base → approved, operational by 2029</li>
+        <li>India's bases: Maitri + Bharati (Antarctica), Himadri (Arctic)</li>
+        <li>Mercator Map: 1569 | Distorts size near poles | Africa 14x bigger than Greenland but looks similar</li>
+        <li>African Union endorsed 'Correct the Map' campaign → Equal Earth projection</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================ INTERNATIONAL LAWS ============================================ -->
+<div id="intlaw" class="section">
+  <div class="sec-header">
+    <span class="sec-emoji">📜</span>
+    <h2>INTERNATIONAL AGREEMENTS & LAWS</h2>
+    <span class="tag tag-p">[Prelims]</span><span class="tag tag-m">[GS3]</span>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <tr><th>Treaty/Law</th><th>Year</th><th>Purpose</th><th>India Status</th></tr>
+      <tr><td class="cy">Vienna Convention</td><td>1985</td><td>Framework for ozone layer protection</td><td class="gn">Party</td></tr>
+      <tr><td class="cy">Montreal Protocol</td><td>1987</td><td>Phase-out ODS (CFCs, HCFCs etc.)</td><td class="gn">Party (1992)</td></tr>
+      <tr><td class="cy">Basel Convention</td><td>1989</td><td>Hazardous waste transboundary control + PIC procedure</td><td class="gn">Party</td></tr>
+      <tr><td class="cy">UNFCCC</td><td>1992 (Rio)</td><td>Climate change framework treaty</td><td class="gn">Party</td></tr>
+      <tr><td class="cy">CBD</td><td>1992 (Rio)</td><td>Biodiversity conservation + ABS</td><td class="gn">Party</td></tr>
+      <tr><td class="cy">Kyoto Protocol</td><td>1997</td><td>Binding GHG targets for Annex I countries | CDM mechanism</td><td class="gn">Party</td></tr>
+      <tr><td class="cy">Cartagena Protocol</td><td>2000</td><td>Biosafety → GMO regulation (under CBD)</td><td class="gn">Party</td></tr>
+      <tr><td class="cy">Stockholm Convention</td><td>2001</td><td>Eliminate Persistent Organic Pollutants (POPs)</td><td class="gn">Ratified 2006</td></tr>
+      <tr><td class="cy">Rotterdam Convention</td><td>2004</td><td>Prior Informed Consent for hazardous chemicals in trade</td><td class="gn">Acceded 2006</td></tr>
+      <tr><td class="cy">Nagoya Protocol</td><td>2010</td><td>Legally binding ABS framework (under CBD)</td><td class="gn">Party</td></tr>
+      <tr><td class="cy">Minamata Convention</td><td>2013</td><td>Mercury reduction + elimination</td><td class="gn">Party</td></tr>
+      <tr><td class="cy">Paris Agreement</td><td>2015</td><td>1.5°C target + NDCs + Art 6 carbon markets</td><td class="gn">Party</td></tr>
+      <tr><td class="cy">Kigali Amendment</td><td>2016</td><td>Phase-down HFCs (potent GHGs) under Montreal Protocol</td><td class="gn">Party</td></tr>
+      <tr><td class="cy">BBNJ Agreement</td><td>2023</td><td>Conservation of marine biodiversity in areas beyond national jurisdiction</td><td class="pk">Signed NOT ratified</td></tr>
+      <tr><td class="cy">Kunming-Montreal GBF</td><td>2022</td><td>30x30 target (30% land & sea protected by 2030)</td><td class="gn">Party (CBD COP15)</td></tr>
+      <tr><td class="cy">Sendai Framework</td><td>2015</td><td>DRR 2015-2030 (succeeds Hyogo Framework)</td><td class="gn">Party</td></tr>
+    </table>
+  </div>
+
+  <div class="sep"></div>
+  <div class="alert">
+    <div class="alert-title">🔥 KEY INDIA-SPECIFIC ENVIRONMENTAL LAWS</div>
+    Wildlife Protection Act 1972 | Forest Conservation Act 1980 | Air Act 1981 | Environment Protection Act 1986 | Water Act 1974 | Biological Diversity Act 2002 | NGT Act 2010 | Disaster Management Act 2005 | Indian Antarctic Act 2022 | Dam Safety Act 2021 | Forest Conservation Amendment Act 2023 | Van Amendment Rules 2025 | GEI Target Rules 2025 | EA Rules 2025 | Contaminated Site Rules 2025 | Draft Seeds Bill 2025
+  </div>
+
+  <div class="sep"></div>
+  <div class="grid">
+    <div class="card">
+      <div class="card-title">🏛️ Key Organizations</div>
+      <ul>
+        <li><span class="kw">UNEP:</span> 1972, Nairobi | CCAC under UNEP (India 2019) | Global Methane Status Report</li>
+        <li><span class="kw">GEF:</span> Finances CBD, UNFCCC, Stockholm, Minamata, UNCCD implementation</li>
+        <li><span class="kw">WMO:</span> UN specialized agency for meteorology | GGP established 1992</li>
+        <li><span class="kw">ISA:</span> International Seabed Authority | Manages seabed beyond national jurisdiction</li>
+        <li><span class="kw">ITLOS:</span> International Tribunal for Law of the Sea (UNCLOS body)</li>
+        <li><span class="kw">IMO:</span> International Maritime Organization | Net Zero Shipping Framework 2025</li>
+        <li><span class="kw">IUCN:</span> Founded 1948 | SSC (1949) | WCPA (Kenton Miller Award)</li>
+        <li><span class="kw">FAO:</span> AIM4NatuRe + GIAHS + Biofuels guidance | Under UN</li>
+      </ul>
+    </div>
+    <div class="card amber">
+      <div class="card-title">📊 Key India Environment Data</div>
+      <ul>
+        <li>Tiger Reserves: <span class="kw">58</span> | Elephant Reserves: 33 | Biosphere Reserves: 18</li>
+        <li>Ramsar Sites: <span class="kw">96</span> (highest in Asia)</li>
+        <li>Forest + Tree cover: <span class="kw">25.17%</span> | Forest cover: 21.76%</li>
+        <li>Mangrove: 4,992 km² | WB (42.45%) largest</li>
+        <li>River Dolphins: 6,327 | Tigers: ~3800+ | Elephants: >22,000</li>
+        <li>RE Installed: 256 GW | India: 4th globally in RE</li>
+        <li>Ethanol blending: <span class="kw">20%</span> achieved (2025)</li>
+        <li>Polluted River Stretches: 296 (in 2025)</li>
+        <li>Large Dams: ~6000 | 3rd largest dam nation</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================ SPECIES ============================================ -->
+<div id="species" class="section">
+  <div class="sec-header">
+    <span class="sec-emoji">🐾</span>
+    <h2>SPECIES IN NEWS (Prelims Focus)</h2>
+    <span class="tag tag-p">[Prelims]</span>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <tr><th>Species</th><th>IUCN Status</th><th>CITES</th><th>WPA Sch</th><th>Key Fact</th></tr>
+      <tr><td class="cy">Asiatic Lion</td><td class="gn">Endangered</td><td>App I</td><td>I → Sch IV (2022)</td><td>Gir NP Gujarat | Largely Depleted (Green Status)</td></tr>
+      <tr><td class="cy">Gharial</td><td class="pk">Critically Endangered</td><td>App I</td><td>I</td><td>India: 80% global wild pop | National Chambal Sanctuary</td></tr>
+      <tr><td class="cy">Saltwater Crocodile</td><td>Least Concern</td><td>App I</td><td>I</td><td>~2500 in India | Bhitarkanika (Odisha)</td></tr>
+      <tr><td class="cy">Gangetic River Dolphin</td><td class="pk">Endangered</td><td>App I</td><td>I</td><td>National Aquatic Animal | 6324 in India</td></tr>
+      <tr><td class="cy">Indus River Dolphin</td><td class="pk">Endangered</td><td>App I</td><td>I</td><td>Only 3 found in India</td></tr>
+      <tr><td class="cy">Lion-tailed Macaque</td><td class="pk">Endangered</td><td>App I</td><td>I</td><td>Western Ghats endemic | Fragmented rainforests</td></tr>
+      <tr><td class="cy">Striped Hyaena</td><td>Near Threatened</td><td>App III</td><td>I</td><td>Natural scavenger | Declining across Mudumalai TR</td></tr>
+      <tr><td class="cy">Hump-headed Mahseer</td><td>Critically Endangered</td><td>Not listed</td><td>Not explicitly</td><td>'Tiger of Kaveri' | TN, Kerala, Karnataka</td></tr>
+      <tr><td class="cy">Wild Bactrian Camel</td><td class="pk">Critically Endangered</td><td>App I</td><td>I</td><td>4 Gobi desert habitats | Distinct from domestic Bactrian</td></tr>
+      <tr><td class="cy">Wild Yak (Bos mutus)</td><td>Vulnerable</td><td>App I</td><td>I</td><td>Tibet + India | 4000-6100m altitude | First genome assembled by ICAR</td></tr>
+      <tr><td class="cy">Green Sea Turtle</td><td class="gn">Least Concern (↑ 2025)</td><td>App I</td><td>I</td><td>Upgraded from Endangered to LC in IUCN 2025</td></tr>
+      <tr><td class="cy">White-rumped Vulture</td><td class="pk">Critically Endangered</td><td>App II</td><td>I</td><td>Gyps bengalensis | Kangra Valley, HP</td></tr>
+      <tr><td class="cy">Indian Vulture</td><td class="pk">Critically Endangered</td><td>App II</td><td>I</td><td>Gyps indicus | MP + Rajasthan | Mukundra Hills</td></tr>
+      <tr><td class="cy">Madras Hedgehog</td><td>Least Concern</td><td>Not listed</td><td>II</td><td>Endemic to India | 'Thorny rat' | Nocturnal | Semi-arid</td></tr>
+      <tr><td class="cy">Ungulates (general)</td><td>Varies</td><td>Varies</td><td>Varies</td><td>First WII survey (2025) | Declining in Odisha, Jharkhand, CG</td></tr>
+      <tr><td class="cy">Small Cats India</td><td>Varies</td><td>Varies</td><td>Varies</td><td>10 species | Jungle Cat = most widespread | Rusty-spotted = world's smallest wildcat</td></tr>
+      <tr><td class="cy">Blue Pinkgill Mushroom</td><td>-</td><td>-</td><td>-</td><td>Native NZ | Found Telangana 2025 | Color from azulene</td></tr>
+      <tr><td class="cy">Shuttlecock Mushroom</td><td>-</td><td>-</td><td>-</td><td>Found Kawal TR 2025 | FIRST confirmed Eastern Ghats sighting</td></tr>
+    </table>
+  </div>
+
+  <div class="sep"></div>
+  <div class="alert">
+    <div class="alert-title">🔥 IUCN CATEGORIES (Memory Aid)</div>
+    EX (Extinct) → EW (Extinct in Wild) → <span class="kw">CR (Critically Endangered)</span> → <span class="kw">EN (Endangered)</span> → <span class="kw">VU (Vulnerable)</span> → NT (Near Threatened) → LC (Least Concern) → DD (Data Deficient) → NE (Not Evaluated)
+    | Green Status: Extinct in Wild → Critically Depleted → Largely Depleted → Moderately Depleted → Slightly Depleted → Fully Recovered → Non-Depleted → Indeterminate
+  </div>
+</div>
+
+<!-- ============================================ REPORTS ============================================ -->
+<div id="reports" class="section">
+  <div class="sec-header">
+    <span class="sec-emoji">📊</span>
+    <h2>REPORTS & INDICES 2025</h2>
+    <span class="tag tag-p">[Prelims]</span>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <tr><th>Report</th><th>Released By</th><th>India/Key Data</th></tr>
+      <tr><td class="cy">SDR 2025 (Sustainable Dev Report)</td><td>SDSN</td><td>India: Rank 99 (1st time top 100) | Finland #1 | 17% SDG targets on track globally</td></tr>
+      <tr><td class="cy">ISFR 2023 (India State of Forest Report)</td><td>Forest Survey of India (biennial)</td><td>Forest+Tree cover: 25.17% | Mangrove: 4992 km²</td></tr>
+      <tr><td class="cy">GFRA 2025 (Global Forest Resources Assmt)</td><td>FAO</td><td>Forests = 32% global land | India: 9th in forest area | Europe has 25%</td></tr>
+      <tr><td class="cy">IUCN World Heritage Outlook 4</td><td>IUCN</td><td>W. Ghats + Manas NP + Sundarbans NP: 'Significant Concern' | Khangchendzonga = 'Good'</td></tr>
+      <tr><td class="cy">India Red List Roadmap 2025-30</td><td>ZSI + BSI + IUCN India</td><td>Assess ~11,000 species | National Red Data Books by 2030</td></tr>
+      <tr><td class="cy">CCPI 2026</td><td>Germanwatch + New Climate Inst</td><td>India: 23rd (medium performer) | None in Top 3 | Denmark #4</td></tr>
+      <tr><td class="cy">CRI 2026 (Climate Risk Index)</td><td>Germanwatch</td><td>India: 15th (2024) | 9th for 1995-2024 period</td></tr>
+      <tr><td class="cy">ETI 2025 (Energy Transition Index)</td><td>WEF</td><td>India: Rank 71 (↓ from 63) | Sweden #1</td></tr>
+      <tr><td class="cy">State of Global Air 2025</td><td>HEI + IHME</td><td>~2M deaths from air pollution (52% India share) | India: 3rd highest ozone exposure</td></tr>
+      <tr><td class="cy">AQLI 2025 (Air Quality Life Index)</td><td>Energy Policy Inst, Univ of Chicago</td><td>WHO compliance → +3.5 yrs life expectancy in India | Delhi: +8.2 yrs</td></tr>
+      <tr><td class="cy">Global Methane Status Report 2025</td><td>UNEP + CCAC</td><td>Methane doubled since pre-industrial | India = 3rd largest emitter</td></tr>
+      <tr><td class="cy">Population Status of River Dolphins 2024</td><td>WII + MoEFCC</td><td>6327 river dolphins | Gangetic: 6324, Indus: 3</td></tr>
+      <tr><td class="cy">Production Gap Report 2025</td><td>SEI + Climate Analytics + IISD</td><td>Planned fossil fuel production 120% above 1.5°C path</td></tr>
+      <tr><td class="cy">Small Cats in Tiger Landscape India</td><td>WII + NTCA</td><td>First comprehensive small cat survey | 10 species | Jungle Cat most widespread</td></tr>
+      <tr><td class="cy">Environmental Accounting on Forest 2025</td><td>MoSPI</td><td>First dedicated forest accounting | SEEA framework</td></tr>
+      <tr><td class="cy">Global Drought Outlook 2025</td><td>OECD</td><td>Drought risk assessment</td></tr>
+      <tr><td class="cy">Polluted River Stretches 2025</td><td>CPCB</td><td>296 stretches on 271 rivers | Maharashtra highest (54)</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ============================================ LAST MINUTE TABLE ============================================ -->
+<div id="lrt" class="lrt">
+  <div class="lrt-header">⚡ LAST-MINUTE REVISION TABLE — 50 MOST IMPORTANT ITEMS</div>
+  <div class="tbl-wrap">
+    <table>
+      <tr><th>#</th><th>Topic</th><th>One-Line Summary</th></tr>
+      <tr><td class="num">01</td><td class="cy">COP30 Location</td><td>Belém, Brazil (Amazon) | 2025 | 10th anniversary of Paris Agreement</td></tr>
+      <tr><td class="num">02</td><td class="cy">NCQG (New Collective Quantified Goal)</td><td>$1.3 trillion/yr by 2035 | Baku to Belém Roadmap | Adopted COP29</td></tr>
+      <tr><td class="num">03</td><td class="cy">India NDC target achieved early</td><td>50% non-fossil fuel capacity → achieved in Sept 2025 (5 yrs ahead of 2030 NDC)</td></tr>
+      <tr><td class="num">04</td><td class="cy">India RE Milestone</td><td>RE met 51.5% electricity demand (July 2025) | Installed: 256 GW non-fossil</td></tr>
+      <tr><td class="num">05</td><td class="cy">Ethanol Blending</td><td>20% achieved 2025 | India 3rd largest ethanol producer | EBP launched 2003</td></tr>
+      <tr><td class="num">06</td><td class="cy">Tiger Reserves</td><td>58 total | Newest: Madhav + Ratapani (MP) | SC ban on core area safaris</td></tr>
+      <tr><td class="num">07</td><td class="cy">Elephant Population</td><td>India: 60% global Asian elephant | >22,000 | Karnataka highest</td></tr>
+      <tr><td class="num">08</td><td class="cy">River Dolphins India</td><td>6327 total | 6324 Gangetic + 3 Indus | UP > Bihar > WB</td></tr>
+      <tr><td class="num">09</td><td class="cy">IUCN Congress 2025</td><td>Abu Dhabi | 'Unite for Nature to 2045' | First fossil fuel phase-out motion</td></tr>
+      <tr><td class="num">10</td><td class="cy">Green Status of Lion</td><td>IUCN First Green Status assessment | 'Largely Depleted' | IUCN Green Status = measures conservation success</td></tr>
+      <tr><td class="num">11</td><td class="cy">Cold Desert BR</td><td>India's first high-altitude cold desert BR | HP | Newly added to UNESCO WNBR 2025</td></tr>
+      <tr><td class="num">12</td><td class="cy">Ramsar Sites India</td><td>96 sites | Highest in Asia | New: 7 in 2025 (3 Rajasthan, 3 Bihar, 1 CG) | Indore + Udaipur: Wetland City Accreditation</td></tr>
+      <tr><td class="num">13</td><td class="cy">BBNJ Agreement</td><td>High Seas Treaty | India signed NOT ratified | Under UNCLOS | 3rd implementation agreement</td></tr>
+      <tr><td class="num">14</td><td class="cy">ABS Regulation 2025</td><td>NBA notified | First inclusion of Digital Sequence Information (DSI) | Replaces 2014 guidelines</td></tr>
+      <tr><td class="num">15</td><td class="cy">Forest Cover India</td><td>25.17% (forest + tree) | 21.76% forest | Top: MP, Arunachal, CG (area) | Mizoram, Lakshadweep, A&N (%) </td></tr>
+      <tr><td class="num">16</td><td class="cy">Gharial</td><td>India = 80% global wild gharial | Critically Endangered | National Chambal Sanctuary | Conservation Project 2025</td></tr>
+      <tr><td class="num">17</td><td class="cy">Project Cheetah</td><td>Launched 2022 | Kuno NP: 30 cheetahs | India-Botswana: 8 more | Under NTCA</td></tr>
+      <tr><td class="num">18</td><td class="cy">Montreal Protocol</td><td>1987 | India 1992 | Kigali Amendment 2016 = HFCs phase-down | Ozone recovery by 2040 globally</td></tr>
+      <tr><td class="num">19</td><td class="cy">GEI Rules 2025</td><td>Legally binding GHG intensity targets | 4 sectors (alum, cement, chlor-alkali, pulp) | Under CCTS 2023 | BEE administers</td></tr>
+      <tr><td class="num">20</td><td class="cy">Carbon Credit Trading Scheme</td><td>Under ECA 2022 | Baseline-and-credit system | Scope 1 + Scope 2 emissions | CERC regulates trading</td></tr>
+      <tr><td class="num">21</td><td class="cy">SDG Index India 2025</td><td>Rank 99 (FIRST time in Top 100!) | Score 67/100 | Finland #1 globally</td></tr>
+      <tr><td class="num">22</td><td class="cy">Basel/Rotterdam/Stockholm 2025</td><td>Chlorpyrifos added to Stockholm Annex A | Carbosulfan added to Rotterdam Annex III | All held in Geneva</td></tr>
+      <tr><td class="num">23</td><td class="cy">Minamata Convention COP6</td><td>Dental amalgams phase-out by 2034 | Skin-lightening products action | ASGM action</td></tr>
+      <tr><td class="num">24</td><td class="cy">Plastic Pollution Treaty</td><td>UNEA 2022 mandate | INC adjourned | India = Like-Minded Country (opposes production caps) | 460M MT plastic/yr</td></tr>
+      <tr><td class="num">25</td><td class="cy">NCAP 2019</td><td>National Clean Air Programme | 131 cities | PM10 reduction 40% by 2025-26 | CPCB implements</td></tr>
+      <tr><td class="num">26</td><td class="cy">Air Quality Delhi</td><td>6th consecutive year most polluted capital | Byrnihat = world's most polluted city (2025) | India: 5th most polluted country</td></tr>
+      <tr><td class="num">27</td><td class="cy">GRAP Stages</td><td>Stage I = 201-300 AQI | Stage II = 301-400 | Stage III = 401-450 | Stage IV = 451+</td></tr>
+      <tr><td class="num">28</td><td class="cy">Polluted River Stretches</td><td>296 in 2025 (down from 351 in 2018) | Maharashtra highest | BOD >3 mg/L criteria</td></tr>
+      <tr><td class="num">29</td><td class="cy">Planetary Boundaries</td><td>9 boundaries | 7 transgressed | Safe only: Aerosol Loading + Stratospheric Ozone | Ocean Acidification crossed safe limit FIRST TIME (2025)</td></tr>
+      <tr><td class="num">30</td><td class="cy">Article 6 Paris Agreement</td><td>International carbon compliance markets | COP29 finalised Art 6.2 + 6.4 rules | India NDA: 21-member committee</td></tr>
+      <tr><td class="num">31</td><td class="cy">NGHM</td><td>National Green Hydrogen Mission 2023 | 5 MMT/yr by 2030 | GHCI: ≤2 kg CO₂eq/kg H₂ = 'Green' | BEE nodal</td></tr>
+      <tr><td class="num">32</td><td class="cy">Panchamrit (India)</td><td>500 GW non-fossil by 2030 | 50% RE energy by 2030 | 1 Bt carbon reduction | 45% carbon intensity cut | Net Zero 2070</td></tr>
+      <tr><td class="num">33</td><td class="cy">IMO Shipping Net Zero</td><td>First framework combining mandatory emission limits + GHG pricing for entire industry | Net zero by 2050 | Ships >5000 GT</td></tr>
+      <tr><td class="num">34</td><td class="cy">AMOC</td><td>Atlantic thermohaline circulation | Unprecedented weakening now | Climate tipping point | Impacts Indian monsoon</td></tr>
+      <tr><td class="num">35</td><td class="cy">Bharat Forecast System</td><td>IITM Pune | World's FIRST indigenous high-res weather system | 12km→6km resolution | 40 Doppler radars</td></tr>
+      <tr><td class="num">36</td><td class="cy">Van Amendment Rules 2025</td><td>Critical minerals → CA on degraded land (double extent) | States can give working permission for linear projects</td></tr>
+      <tr><td class="num">37</td><td class="cy">Geothermal Policy 2025</td><td>India's FIRST NPGE | MNRE | 10,600 MW potential | Best: Puga + Chumathang (Ladakh)</td></tr>
+      <tr><td class="num">38</td><td class="cy">First Bamboo Bioethanol Plant</td><td>India's FIRST | Assam | 2G ethanol from lignocellulosic bamboo</td></tr>
+      <tr><td class="num">39</td><td class="cy">E-Methanol</td><td>World's FIRST commercial plant → Denmark | Green H₂ + captured CO₂ → methanol</td></tr>
+      <tr><td class="num">40</td><td class="cy">C-FLOOD</td><td>2-day advance village-level flood forecast | C-DAC + CWC + NRSC | 2D hydrodynamic modelling</td></tr>
+      <tr><td class="num">41</td><td class="cy">CDRI African Union</td><td>AU joined CDRI (54th member) | ICDRI 2025 in France | FIRST ICDRI in Europe</td></tr>
+      <tr><td class="num">42</td><td class="cy">GLOFs India</td><td>IHR: 28,000 glacial lakes | CWC monitors 902 | 2023 Sikkim GLOF example | NGRMP: 4 states</td></tr>
+      <tr><td class="num">43</td><td class="cy">Polymetallic Sulphides</td><td>India: 1st licence for Carlsberg Ridge (Arabian Sea) | 15-yr ISA contract | Cu, Zn, Au, Ag source</td></tr>
+      <tr><td class="num">44</td><td class="cy">GIAHS India</td><td>Saffron (Kashmir) + Koraput (Odisha) + Kuttanad (Kerala) | FAO programme | Launched 2002 | 95 sites globally</td></tr>
+      <tr><td class="num">45</td><td class="cy">BRCs + Natural Farming</td><td>10,000 BRCs under NMNF | ₹1 lakh/BRC | Natural farming: chemical-free, Desi Cow-based</td></tr>
+      <tr><td class="num">46</td><td class="cy">Maitri II Antarctica</td><td>India's 4th polar base | Green/RE-powered | Operational by 2029 | Indian Antarctic Act 2022</td></tr>
+      <tr><td class="num">47</td><td class="cy">UNESCO Global Geoparks</td><td>229 sites, 50 countries | NONE in India | GGN under UNESCO | Reassessed every 4 years</td></tr>
+      <tr><td class="num">48</td><td class="cy">International Year of Glaciers 2025</td><td>2025 = IY Glaciers' Preservation | World Day for Glaciers = March 21 | Decade of Cryospheric Sciences 2025-34</td></tr>
+      <tr><td class="num">49</td><td class="cy">Sevilla Commitment (FFD4)</td><td>Close $4T annual SDG financing gap | Debt swaps + Blended finance + Solidarity levies | Adopted by consensus</td></tr>
+      <tr><td class="num">50</td><td class="cy">Dam Safety India</td><td>3rd largest dam nation | ~6000 large dams | Maharashtra highest | Dam Safety Act 2021 | DRIP Phase II&III</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div style="background:#050505;border-top:2px solid #1a1a1a;padding:12px;text-align:center;font-family:'Share Tech Mono',monospace;font-size:11px;color:#333;">
+  ⚡ UPSC ENVIRONMENT CA 2025 | Vision IAS Apr–Nov 2025 | Complete Coverage | Last-Day Revision Tool ⚡
+</div>
+
+<script>
+// Pill navigation highlighting
+const pills = document.querySelectorAll('.pill');
+const sections = document.querySelectorAll('[id]');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      pills.forEach(p => p.classList.remove('active'));
+      const active = document.querySelector(`.pill[href="#${entry.target.id}"]`);
+      if (active) active.classList.add('active');
+    }
+  });
+}, { threshold: 0.3 });
+sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>
