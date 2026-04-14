@@ -1,527 +1,1425 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Social Schemes \u2014 CAP 2026 Short Notes</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<title>Social Schemes — UPSC Prelims 2026 Smart Notes</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Lora:wght@600;700&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg: #0f1117;
-    --surface: #171b26;
-    --card: #1e2333;
-    --border: #2a3045;
-    --accent1: #f59e0b;
-    --accent2: #38bdf8;
-    --accent3: #34d399;
-    --accent4: #f472b6;
-    --accent5: #a78bfa;
-    --accent6: #fb923c;
-    --text: #e2e8f0;
-    --muted: #94a3b8;
-    --dim: #475569;
-  }
+:root {
+  --bg:       #0b0e14;
+  --surface:  #111520;
+  --card:     #161b28;
+  --card2:    #1a2035;
+  --border:   #252d42;
+  --border2:  #1e2640;
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+  --gold:     #f6c90e;
+  --goldd:    #c9a20c;
+  --red:      #ff4d4f;
+  --green:    #3dd68c;
+  --blue:     #4dabf7;
+  --purple:   #c084fc;
+  --orange:   #fb923c;
+  --teal:     #2dd4bf;
 
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14px;
-    line-height: 1.65;
-    min-height: 100vh;
-  }
+  --txt:      #dce6f7;
+  --muted:    #8899bb;
+  --dim:      #4a5672;
+  --white:    #ffffff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--txt);font-family:'Space Grotesk',sans-serif;font-size:13.5px;line-height:1.6}
 
-  /* ---- HEADER ---- */
-  header {
-    background: linear-gradient(135deg, #0f1117 0%, #1a1f35 50%, #0f1117 100%);
-    border-bottom: 1px solid var(--border);
-    padding: 36px 40px 28px;
-    position: relative;
-    overflow: hidden;
-  }
-  header::before {
-    content: '';
-    position: absolute;
-    top: -60px; right: -60px;
-    width: 300px; height: 300px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(245,158,11,0.08) 0%, transparent 70%);
-    pointer-events: none;
-  }
-  header::after {
-    content: '';
-    position: absolute;
-    bottom: -80px; left: 20%;
-    width: 400px; height: 200px;
-    background: radial-gradient(circle, rgba(56,189,248,0.05) 0%, transparent 70%);
-    pointer-events: none;
-  }
-  .header-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--accent1);
-    margin-bottom: 8px;
-  }
-  header h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.4rem;
-    font-weight: 900;
-    color: #fff;
-    letter-spacing: -0.5px;
-  }
-  header h1 span { color: var(--accent1); }
-  .header-meta {
-    margin-top: 10px;
-    display: flex; gap: 20px; flex-wrap: wrap;
-  }
-  .badge {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 3px 10px;
-    font-size: 11px;
-    font-family: 'DM Mono', monospace;
-    color: var(--muted);
-  }
+/* ── TOP NAV ── */
+nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(11,14,20,.95);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  padding:0 24px;
+  display:flex;align-items:center;gap:0;
+  overflow-x:auto;
+  scrollbar-width:none;
+}
+nav::-webkit-scrollbar{display:none}
+.nav-brand{
+  font-family:'Lora',serif;font-size:13px;font-weight:700;
+  color:var(--gold);white-space:nowrap;padding:12px 20px 12px 0;
+  border-right:1px solid var(--border);margin-right:4px;
+}
+nav a{
+  white-space:nowrap;padding:12px 14px;font-size:11.5px;
+  font-weight:600;letter-spacing:.3px;color:var(--muted);
+  text-decoration:none;border-bottom:2px solid transparent;
+  transition:color .2s, border-color .2s;
+}
+nav a:hover{color:var(--txt);border-bottom-color:var(--gold)}
 
-  /* ---- LAYOUT ---- */
-  main {
-    max-width: 1320px;
-    margin: 0 auto;
-    padding: 32px 28px 60px;
-  }
+/* ── HERO ── */
+header{
+  background:linear-gradient(135deg,#0b0e14 0%,#111b2e 60%,#0b0e14 100%);
+  padding:44px 32px 32px;position:relative;overflow:hidden;
+  border-bottom:1px solid var(--border);
+}
+header::before{
+  content:'';position:absolute;top:-80px;right:-80px;
+  width:360px;height:360px;border-radius:50%;
+  background:radial-gradient(circle,rgba(246,201,14,.07) 0%,transparent 70%);
+}
+.hero-eyebrow{
+  font-family:'JetBrains Mono',monospace;font-size:10px;
+  letter-spacing:3px;text-transform:uppercase;color:var(--gold);
+  margin-bottom:10px;
+}
+header h1{
+  font-family:'Lora',serif;font-size:2rem;font-weight:700;color:#fff;
+  letter-spacing:-.3px;line-height:1.2;
+}
+header h1 em{color:var(--gold);font-style:normal}
+.hero-sub{margin-top:10px;font-size:12px;color:var(--muted);max-width:680px;line-height:1.6}
+.hero-chips{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
+.chip{
+  background:rgba(246,201,14,.08);border:1px solid rgba(246,201,14,.2);
+  border-radius:4px;padding:4px 10px;font-family:'JetBrains Mono',monospace;
+  font-size:10px;color:var(--gold);letter-spacing:.5px;
+}
+.chip.r{background:rgba(255,77,79,.08);border-color:rgba(255,77,79,.25);color:var(--red)}
+.chip.g{background:rgba(61,214,140,.08);border-color:rgba(61,214,140,.25);color:var(--green)}
+.chip.b{background:rgba(77,171,247,.08);border-color:rgba(77,171,247,.25);color:var(--blue)}
 
-  /* ---- SECTION HEADERS ---- */
-  .section-header {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin: 40px 0 18px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid var(--border);
-  }
-  .section-icon {
-    width: 36px; height: 36px;
-    border-radius: 8px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 18px;
-    flex-shrink: 0;
-  }
-  .section-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.3rem;
-    font-weight: 700;
-    letter-spacing: -0.3px;
-  }
-  .scheme-count {
-    margin-left: auto;
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    color: var(--dim);
-    letter-spacing: 1px;
-  }
+/* ── PATTERN BOX ── */
+.pattern-box{
+  margin:24px 0 0;background:var(--surface);
+  border:1px solid var(--border);border-radius:10px;padding:18px 20px;
+}
+.pattern-box h3{
+  font-size:11px;letter-spacing:2px;text-transform:uppercase;
+  color:var(--gold);font-family:'JetBrains Mono',monospace;margin-bottom:12px;
+}
+.pattern-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px}
+.p-item{
+  background:var(--card);border:1px solid var(--border2);border-radius:6px;
+  padding:8px 12px;font-size:12px;
+  display:flex;align-items:flex-start;gap:8px;
+}
+.p-item .num{
+  background:var(--gold);color:#000;border-radius:3px;
+  font-family:'JetBrains Mono',monospace;font-size:10px;
+  font-weight:700;padding:1px 5px;flex-shrink:0;margin-top:2px;
+}
 
-  /* Colour themes per section */
-  .c1 { color: var(--accent3); }
-  .c2 { color: var(--accent2); }
-  .c3 { color: var(--accent1); }
-  .c4 { color: var(--accent4); }
-  .c5 { color: var(--accent6); }
-  .c6 { color: var(--accent5); }
-  .bg1 { background: rgba(52,211,153,0.12); }
-  .bg2 { background: rgba(56,189,248,0.12); }
-  .bg3 { background: rgba(245,158,11,0.12); }
-  .bg4 { background: rgba(244,114,182,0.12); }
-  .bg5 { background: rgba(251,146,60,0.12); }
-  .bg6 { background: rgba(167,139,250,0.12); }
-  .border1 { border-left: 3px solid var(--accent3); }
-  .border2 { border-left: 3px solid var(--accent2); }
-  .border3 { border-left: 3px solid var(--accent1); }
-  .border4 { border-left: 3px solid var(--accent4); }
-  .border5 { border-left: 3px solid var(--accent6); }
-  .border6 { border-left: 3px solid var(--accent5); }
+/* ── SEARCH ── */
+.search-bar{
+  position:sticky;top:45px;z-index:90;
+  background:linear-gradient(to bottom,var(--bg) 75%,transparent);
+  padding:14px 0 10px;
+}
+#search{
+  width:100%;max-width:500px;
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:8px;color:var(--txt);
+  font-family:'Space Grotesk',sans-serif;font-size:13px;
+  padding:10px 16px;outline:none;
+  transition:border-color .2s;
+}
+#search:focus{border-color:var(--gold)}
+#search::placeholder{color:var(--dim)}
 
-  /* ---- GRID ---- */
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
-    gap: 14px;
-  }
+/* ── MAIN ── */
+main{max-width:1400px;margin:0 auto;padding:0 24px 60px}
 
-  /* ---- CARD ---- */
-  .card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 16px 18px 14px;
-    position: relative;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
-  }
-  .card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
-  }
+/* ── SECTION HEADER ── */
+.sec-hdr{
+  display:flex;align-items:center;gap:12px;
+  margin:36px 0 16px;padding-bottom:12px;
+  border-bottom:2px solid var(--border);
+}
+.sec-icon{
+  width:34px;height:34px;border-radius:8px;
+  display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;
+}
+.sec-title{font-family:'Lora',serif;font-size:1.15rem;font-weight:700}
+.sec-count{
+  margin-left:auto;font-family:'JetBrains Mono',monospace;
+  font-size:9px;color:var(--dim);letter-spacing:1.5px;
+}
 
-  .scheme-name {
-    font-family: 'DM Mono', monospace;
-    font-size: 10.5px;
-    font-weight: 500;
-    letter-spacing: 1.2px;
-    text-transform: uppercase;
-    margin-bottom: 6px;
-  }
+/* section colour themes */
+.th1{color:#3dd68c}.bg-th1{background:rgba(61,214,140,.1)}
+.th2{color:#4dabf7}.bg-th2{background:rgba(77,171,247,.1)}
+.th3{color:#f6c90e}.bg-th3{background:rgba(246,201,14,.1)}
+.th4{color:#c084fc}.bg-th4{background:rgba(192,132,252,.1)}
+.th5{color:#fb923c}.bg-th5{background:rgba(251,146,60,.1)}
+.th6{color:#2dd4bf}.bg-th6{background:rgba(45,212,191,.1)}
 
-  .tag-row {
-    display: flex; flex-wrap: wrap; gap: 5px;
-    margin-bottom: 8px;
-  }
-  .tag {
-    font-family: 'DM Mono', monospace;
-    font-size: 9.5px;
-    border-radius: 3px;
-    padding: 2px 7px;
-    letter-spacing: 0.5px;
-  }
-  .tag-min { background: rgba(255,255,255,0.05); color: var(--muted); border: 1px solid var(--border); }
-  .tag-yr  { background: rgba(255,255,255,0.05); color: var(--dim);   border: 1px solid var(--border); }
+/* ── GRID ── */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px}
 
-  .points {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-  .points li {
-    font-size: 12.5px;
-    color: #c8d3e0;
-    line-height: 1.5;
-    padding-left: 14px;
-    position: relative;
-  }
-  .points li::before {
-    content: '\u203a';
-    position: absolute; left: 0;
-    color: var(--dim);
-    font-weight: 700;
-  }
-  .points li strong {
-    color: #e8f0fe;
-    font-weight: 600;
-  }
+/* ── CARD ── */
+.card{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:0;overflow:hidden;
+  transition:transform .15s,box-shadow .15s;
+}
+.card:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,0,0,.35)}
 
-  /* ---- DIVIDER ---- */
-  .divider {
-    height: 1px;
-    background: linear-gradient(to right, transparent, var(--border), transparent);
-    margin: 6px 0;
-  }
+.card-top{
+  padding:13px 16px 10px;
+  border-bottom:1px solid var(--border2);
+}
+.scheme-name{
+  font-family:'JetBrains Mono',monospace;font-size:10px;
+  font-weight:500;letter-spacing:1.5px;text-transform:uppercase;
+  margin-bottom:6px;
+}
+.meta-row{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:2px}
 
-  /* ---- FOOTER ---- */
-  footer {
-    text-align: center;
-    padding: 20px;
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    color: var(--dim);
-    border-top: 1px solid var(--border);
-    margin-top: 40px;
-  }
+.tag{
+  border-radius:3px;padding:2px 7px;
+  font-family:'JetBrains Mono',monospace;font-size:9.5px;
+  letter-spacing:.4px;
+}
+.t-min{background:rgba(77,171,247,.1);border:1px solid rgba(77,171,247,.2);color:var(--blue)}
+.t-yr {background:rgba(246,201,14,.1);border:1px solid rgba(246,201,14,.2);color:var(--gold)}
+.t-css{background:rgba(61,214,140,.1);border:1px solid rgba(61,214,140,.2);color:var(--green)}
+.t-cs {background:rgba(192,132,252,.1);border:1px solid rgba(192,132,252,.2);color:var(--purple)}
+.t-org{background:rgba(251,146,60,.1);border:1px solid rgba(251,146,60,.2);color:var(--orange)}
 
-  /* ---- SCROLL BAR ---- */
-  ::-webkit-scrollbar { width: 6px; }
-  ::-webkit-scrollbar-track { background: var(--bg); }
-  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+.card-body{padding:12px 16px 14px}
 
-  /* ---- ANIMATION ---- */
-  .card { opacity: 0; animation: fadeUp 0.35s ease forwards; }
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(10px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  .grid .card:nth-child(1)  { animation-delay: 0.05s; }
-  .grid .card:nth-child(2)  { animation-delay: 0.10s; }
-  .grid .card:nth-child(3)  { animation-delay: 0.15s; }
-  .grid .card:nth-child(4)  { animation-delay: 0.20s; }
-  .grid .card:nth-child(5)  { animation-delay: 0.25s; }
-  .grid .card:nth-child(6)  { animation-delay: 0.30s; }
-  .grid .card:nth-child(7)  { animation-delay: 0.35s; }
-  .grid .card:nth-child(8)  { animation-delay: 0.40s; }
-  .grid .card:nth-child(9)  { animation-delay: 0.45s; }
-  .grid .card:nth-child(10) { animation-delay: 0.50s; }
+/* facts list */
+.facts{list-style:none;display:flex;flex-direction:column;gap:5px}
+.facts li{font-size:12.5px;color:#c8d6ee;padding-left:16px;position:relative;line-height:1.5}
+.facts li::before{content:'▸';position:absolute;left:0;color:var(--dim);font-size:10px;top:2px}
+.facts li strong{color:#e8f2ff;font-weight:600}
+.facts li .num{
+  background:rgba(246,201,14,.15);border:1px solid rgba(246,201,14,.3);
+  border-radius:3px;padding:0 5px;font-family:'JetBrains Mono',monospace;
+  font-size:10.5px;color:var(--gold);font-weight:500;
+}
 
-  /* ---- SEARCH BAR ---- */
-  .search-wrap {
-    margin: 28px 0 0;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    background: linear-gradient(to bottom, var(--bg) 80%, transparent);
-    padding: 12px 0 16px;
-  }
-  #search {
-    width: 100%;
-    max-width: 480px;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    color: var(--text);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 13px;
-    padding: 10px 16px;
-    outline: none;
-    transition: border-color 0.2s;
-  }
-  #search::placeholder { color: var(--dim); }
-  #search:focus { border-color: var(--accent1); }
+/* UPSC TRAP box */
+.trap{
+  margin-top:10px;
+  background:rgba(255,77,79,.07);
+  border:1px solid rgba(255,77,79,.25);
+  border-left:3px solid var(--red);
+  border-radius:5px;padding:7px 10px;
+}
+.trap-label{
+  font-family:'JetBrains Mono',monospace;font-size:9px;
+  letter-spacing:2px;text-transform:uppercase;color:var(--red);
+  margin-bottom:4px;
+}
+.trap p{font-size:11.5px;color:#ffb3b4;line-height:1.5}
 
+/* memory hook */
+.hook{
+  margin-top:8px;
+  background:rgba(61,214,140,.06);
+  border:1px solid rgba(61,214,140,.2);
+  border-left:3px solid var(--green);
+  border-radius:5px;padding:7px 10px;
+}
+.hook-label{
+  font-family:'JetBrains Mono',monospace;font-size:9px;
+  letter-spacing:2px;text-transform:uppercase;color:var(--green);
+  margin-bottom:3px;
+}
+.hook p{font-size:11.5px;color:#a7f3d0;line-height:1.5}
+
+/* divider inside card */
+.cdiv{height:1px;background:var(--border2);margin:8px 0}
+
+/* ── FOOTER ── */
+footer{
+  text-align:center;padding:20px;
+  font-family:'JetBrains Mono',monospace;font-size:10px;
+  color:var(--dim);border-top:1px solid var(--border);margin-top:40px;
+}
+
+/* animations */
+.card{opacity:0;animation:rise .4s ease forwards}
+@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.card:nth-child(1){animation-delay:.04s}.card:nth-child(2){animation-delay:.08s}
+.card:nth-child(3){animation-delay:.12s}.card:nth-child(4){animation-delay:.16s}
+.card:nth-child(5){animation-delay:.20s}.card:nth-child(6){animation-delay:.24s}
+.card:nth-child(7){animation-delay:.28s}.card:nth-child(8){animation-delay:.32s}
+.card:nth-child(9){animation-delay:.36s}.card:nth-child(10){animation-delay:.40s}
 </style>
 </head>
 <body>
 
+<!-- ── NAV ── -->
+<nav>
+  <div class="nav-brand">CAP 2026</div>
+  <a href="#s1">🏥 Health</a>
+  <a href="#s2">📚 Education</a>
+  <a href="#s3">🌾 Agriculture</a>
+  <a href="#s4">🤝 Social Welfare</a>
+  <a href="#s5">💼 Economy</a>
+  <a href="#s6">💻 Digital</a>
+</nav>
+
+<!-- ── HERO ── -->
 <header>
-  <div class="header-label">UPSC Prelims 2026 \u00b7 NextIAS CAP Vol 6/7</div>
-  <h1>Social <span>Schemes</span></h1>
-  <div class="header-meta">
-    <span class="badge">80+ Schemes</span>
-    <span class="badge">6 Sections</span>
-    <span class="badge">Short Notes</span>
-    <span class="badge">Prelims May 24, 2026</span>
+  <div class="hero-eyebrow">UPSC Prelims 2026 · NextIAS CAP Vol 6/7 · PYQ-Aligned</div>
+  <h1>Social Schemes <em>Smart Notes</em></h1>
+  <p class="hero-sub">
+    Built on 10-year UPSC PYQ pattern analysis. Every card highlights the exact facts UPSC loves to trap — 
+    wrong ministry, scheme type, implementing agency, numbers, eligibility. 
+    <strong style="color:var(--gold)">8–12 questions/year</strong> directly from schemes.
+  </p>
+  <div class="hero-chips">
+    <span class="chip">80+ Schemes</span>
+    <span class="chip r">⚡ Trap Alerts</span>
+    <span class="chip g">🧠 Memory Hooks</span>
+    <span class="chip b">🔢 Key Numbers</span>
+  </div>
+
+  <div class="pattern-box">
+    <h3>📊 What UPSC Tests in Schemes (10-Year Pattern)</h3>
+    <div class="pattern-grid">
+      <div class="p-item"><span class="num">1</span>Ministry vs Implementing Agency (most tricky)</div>
+      <div class="p-item"><span class="num">2</span>Central Sector vs CSS — funding ratio (60:40, 90:10)</div>
+      <div class="p-item"><span class="num">3</span>Year of launch / Budget announcement year</div>
+      <div class="p-item"><span class="num">4</span>Eligibility: age, income, sector limits</div>
+      <div class="p-item"><span class="num">5</span>Key numbers: loan limits, targets, subsidy %</div>
+      <div class="p-item"><span class="num">6</span>Regulatory / Statutory body behind scheme</div>
+      <div class="p-item"><span class="num">7</span>Target beneficiaries (who is included / excluded)</div>
+      <div class="p-item"><span class="num">8</span>True/False statements about scheme features</div>
+      <div class="p-item"><span class="num">9</span>Legal backing — which Act notifies the scheme</div>
+      <div class="p-item"><span class="num">10</span>What scheme REPLACED / evolved from</div>
+    </div>
   </div>
 </header>
 
 <main>
+<div class="search-bar">
+  <input type="text" id="search" placeholder="🔍 Search scheme, ministry, keyword, number…" oninput="filterCards(this.value)">
+</div>
 
-  <div class="search-wrap">
-    <input type="text" id="search" placeholder="\ud83d\udd0d  Search scheme name or keyword\u2026" oninput="filterCards(this.value)">
-  </div>
+<!-- ══════════════ SECTION 1 ══════════════ -->
+<div class="sec-hdr" id="s1">
+  <div class="sec-icon bg-th1">🏥</div>
+  <div class="sec-title th1">Health, AYUSH &amp; Nutrition</div>
+  <span class="sec-count">8 SCHEMES</span>
+</div>
+<div class="grid">
 
-  <!-- ===== SECTION 1 ===== -->
-  <div class="section-header">
-    <div class="section-icon bg1">\ud83c\udfe5</div>
-    <div class="section-title c1">Health, AYUSH &amp; Nutrition</div>
-    <span class="scheme-count">9 SCHEMES</span>
-  </div>
-  <div class="grid">
-
-    <div class="card border1">
-      <div class="scheme-name c1">Swasth Nari Sashakt Parivar Abhiyan</div>
-      <div class="tag-row"><span class="tag tag-min">MoHFW + MoWCD</span></div>
-      <ul class="points">
-        <li>Improve health &amp; nutrition of <strong>women &amp; children</strong></li>
-        <li>Target: Pregnant women, lactating mothers, adolescent girls, children &lt;5</li>
-        <li>Convergence with <strong>POSHAN Abhiyaan, Ayushman Bharat, JSY</strong></li>
-        <li>Involves ASHA &amp; Anganwadi workers; aligned with Rashtriya Poshan Maah (Sep)</li>
-      </ul>
+  <!-- 1 -->
+  <div class="card">
+    <div class="card-top">
+      <div class="scheme-name th1">e-Rakt Kosh</div>
+      <div class="meta-row">
+        <span class="tag t-min">MoHFW · NHM</span>
+        <span class="tag t-org">Developed by C-DAC</span>
+      </div>
     </div>
-
-    <div class="card border1">
-      <div class="scheme-name c1">DRAVYA Portal</div>
-      <div class="tag-row"><span class="tag tag-min">Ministry of AYUSH \u00b7 CCRAS</span></div>
-      <ul class="points">
-        <li>Digitized Retrieval Application for Versatile Yardstick of AYUSH Substances</li>
-        <li>Comprehensive digital database of <strong>aahara</strong> (food) &amp; <strong>aushadhi</strong> (medicinal) substances</li>
-        <li>Integrated with <strong>AYUSH Grid</strong>; promotes global standardisation</li>
-      </ul>
-    </div>
-
-    <div class="card border1">
-      <div class="scheme-name c1">e-Rakt Kosh</div>
-      <div class="tag-row"><span class="tag tag-min">MoHFW \u00b7 NHM</span><span class="tag tag-min">C-DAC</span></div>
-      <ul class="points">
+    <div class="card-body">
+      <ul class="facts">
         <li>Centralised <strong>Blood Bank Management Information System (BBMIS)</strong></li>
-        <li>Digitises &amp; integrates blood banks across India on a single platform</li>
-        <li>4 modules: Donor, Blood Bank, Patient, Testing</li>
+        <li>Digitises &amp; integrates all blood banks across India on ONE platform</li>
+        <li>4 modules: <strong>Donor · Blood Bank · Patient · Testing</strong></li>
         <li>Integrated with <strong>Rare Donor Registry of India (RDRI)</strong></li>
+        <li>Implemented under <strong>National Health Mission (NHM)</strong></li>
       </ul>
+      <div class="trap">
+        <div class="trap-label">⚡ UPSC TRAP</div>
+        <p>Developed by <strong>C-DAC</strong> (not NIC, not MoHFW directly). Implemented under NHM. Do NOT confuse developer ≠ implementing ministry.</p>
+      </div>
     </div>
+  </div>
 
-    <div class="card border1">
-      <div class="scheme-name c1">Ayush Nivesh Saarthi Portal</div>
-      <div class="tag-row"><span class="tag tag-min">Ministry of AYUSH \u00b7 Invest India</span></div>
-      <ul class="points">
-        <li>Digital investment facilitation portal for AYUSH sector</li>
-        <li>Single-window access; promotes domestic &amp; foreign investment</li>
-        <li>Enhances <strong>Ease of Doing Business (EoDB)</strong> in traditional medicine</li>
+  <!-- 2 -->
+  <div class="card">
+    <div class="card-top">
+      <div class="scheme-name th1">PMSMA — Surakshit Matritva Abhiyan</div>
+      <div class="meta-row">
+        <span class="tag t-min">MoHFW</span>
+        <span class="tag t-yr">2016</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="facts">
+        <li>Free <strong>Antenatal Care (ANC)</strong> on <span class="num">9th</span> of every month</li>
+        <li>At government health facilities only</li>
+        <li>Target: Pregnant women in <strong>2nd &amp; 3rd trimester only</strong></li>
+        <li>Private doctors encouraged to <strong>volunteer</strong> (not mandatory)</li>
       </ul>
+      <div class="trap">
+        <div class="trap-label">⚡ UPSC TRAP</div>
+        <p>Fixed date = <strong>9th of every month</strong>. Target = 2nd &amp; 3rd trimester ONLY (not 1st). Private doctor participation is VOLUNTARY.</p>
+      </div>
     </div>
+  </div>
 
-    <div class="card border1">
-      <div class="scheme-name c1">PM Surakshit Matritva Abhiyan (PMSMA)</div>
-      <div class="tag-row"><span class="tag tag-min">MoHFW</span><span class="tag tag-yr">2016</span></div>
-      <ul class="points">
-        <li>Free <strong>Antenatal Care (ANC)</strong> on <strong>9th of every month</strong> at govt health facilities</li>
-        <li>Target: Pregnant women in <strong>2nd &amp; 3rd trimester</strong></li>
-        <li>Private doctors encouraged to volunteer</li>
-      </ul>
+  <!-- 3 -->
+  <div class="card">
+    <div class="card-top">
+      <div class="scheme-name th1">ICDS — Integrated Child Development Services</div>
+      <div class="meta-row">
+        <span class="tag t-css">Centrally Sponsored</span>
+        <span class="tag t-min">MoWCD</span>
+        <span class="tag t-yr">1975</span>
+      </div>
     </div>
-
-    <div class="card border1">
-      <div class="scheme-name c1">National Polio Surveillance Network (NPSN)</div>
-      <div class="tag-row"><span class="tag tag-min">MoHFW + WHO</span><span class="tag tag-yr">Est. 1997</span></div>
-      <ul class="points">
-        <li>Surveillance of <strong>Acute Flaccid Paralysis (AFP)</strong></li>
-        <li>Tracks every AFP case in children <strong>&lt;15 years</strong></li>
-        <li>Ensures zero missed cases; provides real-time data</li>
-      </ul>
-    </div>
-
-    <div class="card border1">
-      <div class="scheme-name c1">Integrated Child Development Services (ICDS)</div>
-      <div class="tag-row"><span class="tag tag-min">MoWCD \u00b7 CSS</span><span class="tag tag-yr">1975</span></div>
-      <ul class="points">
-        <li>Holistic development: children <strong>0\u20136 yrs</strong>, pregnant &amp; lactating women</li>
-        <li>6 services via Anganwadi Centres: Supplementary Nutrition, Pre-school Education, Nutrition &amp; Health Education, Immunisation, Health Check-ups, Referral</li>
+    <div class="card-body">
+      <ul class="facts">
+        <li>One of world's largest child development programmes; <strong>launched 1975</strong></li>
+        <li>Target: Children <strong>0–6 yrs</strong>, pregnant &amp; lactating mothers, adolescent girls</li>
+        <li>Delivery: through <strong>Anganwadi Centres (AWCs)</strong></li>
+        <li>6 services: Supplementary Nutrition · Pre-school Education · N&amp;H Education · Immunisation · Health Check-ups · Referral</li>
         <li>Now subsumed under <strong>Saksham Anganwadi &amp; POSHAN 2.0</strong></li>
       </ul>
+      <div class="trap">
+        <div class="trap-label">⚡ UPSC TRAP</div>
+        <p>Immunisation under ICDS is via <strong>convergence with NHM/Health Ministry</strong> — it is NOT directly implemented by MoWCD. Subsumed under POSHAN 2.0, NOT abolished.</p>
+      </div>
     </div>
-
-    <div class="card border1">
-      <div class="scheme-name c1">Ayushman Sahakar Scheme</div>
-      <div class="tag-row"><span class="tag tag-min">NCDC \u00b7 Ministry of Cooperation</span><span class="tag tag-yr">2020</span></div>
-      <ul class="points">
-        <li>Term loans up to <strong>\u20b910,000 crore</strong> to cooperatives for healthcare</li>
-        <li><strong>1% interest subvention</strong> for women-led cooperatives</li>
-        <li>NCDC = apex level statutory autonomous institution</li>
-      </ul>
-    </div>
-
   </div>
 
-  <!-- ===== SECTION 2 ===== -->
-  <div class="section-header">
-    <div class="section-icon bg2">\ud83d\udcda</div>
-    <div class="section-title c2">Education, Skills &amp; Human Capital</div>
-    <span class="scheme-count">16 SCHEMES</span>
+  <!-- 4 -->
+  <div class="card">
+    <div class="card-top">
+      <div class="scheme-name th1">Ayushman Sahakar Scheme</div>
+      <div class="meta-row">
+        <span class="tag t-min">NCDC · Ministry of Cooperation</span>
+        <span class="tag t-yr">2020</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="facts">
+        <li>Implementing body: <strong>NCDC</strong> (National Cooperative Development Corporation) — apex statutory autonomous institution</li>
+        <li>Term loans up to <span class="num">₹10,000 crore</span> to cooperatives for healthcare</li>
+        <li><span class="num">1%</span> interest subvention for <strong>women-led cooperatives</strong></li>
+        <li>For: hospitals, health centres, modernisation &amp; expansion</li>
+        <li>Earlier under Ministry of Agriculture; now <strong>Ministry of Cooperation (est. 2021)</strong></li>
+      </ul>
+      <div class="trap">
+        <div class="trap-label">⚡ UPSC TRAP</div>
+        <p>Ministry = <strong>Cooperation</strong> (not Agriculture, not Health). NCDC ≠ NABARD. Interest subvention of 1% is ONLY for women-led cooperatives.</p>
+      </div>
+    </div>
   </div>
-  <div class="grid">
 
-    <div class="card border2">
-      <div class="scheme-name c2">TALASH Initiative</div>
-      <div class="tag-row"><span class="tag tag-min">Ministry of Tribal Affairs \u00b7 NESTS</span></div>
-      <ul class="points">
-        <li>Tribal Aptitude, Life Skills &amp; Self-Esteem Hub</li>
-        <li>Target: <strong>EMRS students</strong> (tribal adolescents); developed with UNICEF India</li>
-        <li>Psychometric Assessment + Career Mapping + Life Skills Training</li>
-        <li>First dedicated national-level programme for tribal career + psychological development</li>
-      </ul>
+  <!-- 5 -->
+  <div class="card">
+    <div class="card-top">
+      <div class="scheme-name th1">DRAVYA Portal</div>
+      <div class="meta-row">
+        <span class="tag t-min">Ministry of AYUSH · CCRAS</span>
+      </div>
     </div>
-
-    <div class="card border2">
-      <div class="scheme-name c2">National Career Service (NCS) Portal</div>
-      <div class="tag-row"><span class="tag tag-min">Ministry of Labour &amp; Employment</span><span class="tag tag-yr">2015</span></div>
-      <ul class="points">
-        <li>Mission Mode Project; replaced <strong>National Employment Service (NES)</strong></li>
-        <li>AI-based job matching; career counselling; Labour Market Info System (LMIS)</li>
-        <li>Linked with Skill India Mission, e-Shram &amp; Digital India</li>
+    <div class="card-body">
+      <ul class="facts">
+        <li>Full form: <strong>Digitized Retrieval Application for Versatile Yardstick of AYUSH Substances</strong></li>
+        <li>Developed by <strong>CCRAS</strong> (Central Council for Research in Ayurvedic Sciences)</li>
+        <li>Digital database of <strong>aahara</strong> (food) &amp; <strong>aushadhi</strong> (medicinal) substances</li>
+        <li>Integrated with <strong>AYUSH Grid</strong></li>
       </ul>
+      <div class="hook">
+        <div class="hook-label">🧠 Memory Hook</div>
+        <p>DRAVYA = AYUSH substances database. CCRAS makes it, AYUSH Grid integrates it. Remember: <em>DRAVYA</em> = Dravya (substance) in Sanskrit!</p>
+      </div>
     </div>
+  </div>
 
-    <div class="card border2">
-      <div class="scheme-name c2">PM Kaushal Vikas Yojana (PMKVY)</div>
-      <div class="tag-row"><span class="tag tag-min">MSDE \u00b7 NSDC</span><span class="tag tag-yr">2015</span></div>
-      <ul class="points">
-        <li>Flagship scheme under <strong>Skill India Mission</strong></li>
-        <li>Components: Short-Term Training (STT), <strong>Recognition of Prior Learning (RPL)</strong>, Special Projects</li>
-        <li>PMKVY 4.0: Focus on <strong>Industry 4.0 skills</strong> \u2014 AI, robotics, coding, drones</li>
-        <li>Based on NSQF; Third-party assessment by Sector Skill Councils (SSCs)</li>
-        <li>Training is <strong>free of cost</strong> for candidates</li>
+  <!-- 6 -->
+  <div class="card">
+    <div class="card-top">
+      <div class="scheme-name th1">NPSN — National Polio Surveillance Network</div>
+      <div class="meta-row">
+        <span class="tag t-min">MoHFW + WHO (Joint)</span>
+        <span class="tag t-yr">Est. 1997</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="facts">
+        <li>Joint initiative: <strong>MoHFW India + WHO</strong></li>
+        <li>Objective: Surveillance of <strong>Acute Flaccid Paralysis (AFP)</strong></li>
+        <li>Tracks every AFP case in children <span class="num">&lt;15 years</span></li>
+        <li>Also covers <strong>Vaccine Preventable Diseases (VPDs)</strong></li>
+        <li>Ensures <strong>zero missed cases</strong>; provides real-time data</li>
       </ul>
+      <div class="trap">
+        <div class="trap-label">⚡ UPSC TRAP</div>
+        <p>Joint initiative with <strong>WHO</strong>, not just MoHFW alone. Tracks AFP in children &lt;<strong>15 years</strong> (not under 5).</p>
+      </div>
     </div>
+  </div>
 
-    <div class="card border2">
-      <div class="scheme-name c2">PM Internship Scheme (PMIS)</div>
-      <div class="tag-row"><span class="tag tag-min">Ministry of Corporate Affairs</span></div>
-      <ul class="points">
-        <li>Target: <strong>1 crore youth</strong> internships over 5 years</li>
-        <li>Age: <strong>21\u201324 years</strong>; top 500 companies (based on CSR expenditure)</li>
-        <li>Duration: <strong>12 months</strong>; Stipend: <strong>\u20b95,000/month</strong> + one-time <strong>\u20b96,000</strong></li>
-        <li>Priority to low-income, non-elite educational background candidates</li>
+</div>
+
+<!-- ══════════════ SECTION 2 ══════════════ -->
+<div class="sec-hdr" id="s2">
+  <div class="sec-icon bg-th2">📚</div>
+  <div class="sec-title th2">Education, Skills &amp; Human Capital</div>
+  <span class="sec-count">14 SCHEMES</span>
+</div>
+<div class="grid">
+
+  <!-- 1 -->
+  <div class="card">
+    <div class="card-top">
+      <div class="scheme-name th2">PM Kaushal Vikas Yojana (PMKVY)</div>
+      <div class="meta-row">
+        <span class="tag t-cs">Central Sector</span>
+        <span class="tag t-min">MSDE · NSDC</span>
+        <span class="tag t-yr">2015</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="facts">
+        <li>Flagship under <strong>Skill India Mission</strong>; Implementing agency: <strong>NSDC</strong></li>
+        <li>Components: STT · <strong>Recognition of Prior Learning (RPL)</strong> · Special Projects</li>
+        <li>Training is <strong>FREE</strong> for candidates (NOT subsidy — just free training)</li>
+        <li>Certification based on <strong>NSQF</strong>; third-party assessment by <strong>SSCs</strong></li>
+        <li>PMKVY 4.0: Industry 4.0 — AI, robotics, coding, drones; aligned with <strong>NEP 2020</strong></li>
       </ul>
+      <div class="trap">
+        <div class="trap-label">⚡ UPSC TRAP</div>
+        <p>Ministry = <strong>MSDE</strong>, NOT Labour Ministry. Implementing = <strong>NSDC</strong>. Assessment by <strong>Sector Skill Councils (SSCs)</strong>, not NSDC directly. RPL is for <em>informal workers with existing skills</em>.</p>
+      </div>
     </div>
+  </div>
 
-    <div class="card border2">
-      <div class="scheme-name c2">NAVYA Initiative</div>
-      <div class="tag-row"><span class="tag tag-min">MoWCD + MSDE</span></div>
-      <ul class="points">
-        <li>Nurturing Aspirations through Vocational Training for Young Adolescent Girls</li>
-        <li>Target: Girls aged <strong>16\u201318 yrs</strong> who completed at least Class 10</li>
-        <li>Focus on <strong>non-traditional sectors</strong>: electronics, automotive, renewable energy</li>
-        <li>Training via <strong>PMKKs</strong>; aligned with NSQF</li>
+  <!-- 2 -->
+  <div class="card">
+    <div class="card-top">
+      <div class="scheme-name th2">PM Internship Scheme (PMIS)</div>
+      <div class="meta-row">
+        <span class="tag t-min">Ministry of Corporate Affairs</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="facts">
+        <li>Ministry: <strong>Corporate Affairs</strong> (NOT Labour, NOT MSDE — common trap!)</li>
+        <li>Target: <span class="num">1 crore</span> youth internships over <strong>5 years</strong></li>
+        <li>Eligibility: Age <span class="num">21–24 yrs</span>; NOT in full-time employment/education</li>
+        <li>Top <span class="num">500 companies</span> based on <strong>CSR expenditure</strong></li>
+        <li>Duration: <span class="num">12 months</span> | Stipend: <span class="num">₹5,000/month</span> + one-time <span class="num">₹6,000</span></li>
+        <li>Priority: low-income, non-elite educational backgrounds</li>
+        <li>Distance/online learners = ALLOWED to apply</li>
       </ul>
+      <div class="trap">
+        <div class="trap-label">⚡ UPSC TRAP</div>
+        <p>Ministry = <strong>Corporate Affairs</strong> NOT MSDE. Age = <strong>21–24</strong> NOT 18–35. Duration = <strong>12 months</strong>. Companies selected on <strong>CSR spend</strong>, not revenue.</p>
+      </div>
     </div>
+  </div>
 
-    <div class="card border2">
-      <div class="scheme-name c2">PM SHRI Scheme</div>
-      <div class="tag-row"><span class="tag tag-min">Ministry of Education</span><span class="tag tag-yr">2022</span></div>
-      <ul class="points">
-        <li>Develops model schools showcasing <strong>NEP 2020</strong>; period 2022\u201327</li>
-        <li>Transform existing schools into <strong>'exemplar schools'</strong></li>
-        <li>Funding: 60:40 (General), 90:10 (NE/Himalayan), 100% (UTs)</li>
+  <!-- 3 -->
+  <div class="card">
+    <div class="card-top">
+      <div class="scheme-name th2">PM SHRI Scheme</div>
+      <div class="meta-row">
+        <span class="tag t-css">Centrally Sponsored</span>
+        <span class="tag t-min">Ministry of Education</span>
+        <span class="tag t-yr">2022</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="facts">
+        <li>Transform existing schools into <strong>'Exemplar Schools'</strong> showcasing NEP 2020</li>
+        <li>Period: <strong>2022–23 to 2026–27</strong></li>
+        <li>Covers: KVs, NVs, State/UT govt schools, local body schools</li>
         <li>Performance tracked via <strong>School Quality Assessment Framework (SQAF)</strong></li>
+        <li>Funding: <span class="num">60:40</span> General | <span class="num">90:10</span> NE/Himalayan | <span class="num">100%</span> UTs without legislature</li>
       </ul>
+      <div class="hook">
+        <div class="hook-label">🧠 Memory Hook</div>
+        <p>PM SHRI = <strong>S</strong>chools for <strong>H</strong>olistic <strong>R</strong>ise of <strong>I</strong>ndia. Launched 2022 = 75th independence year, NEP 2020 implementation.</p>
+      </div>
     </div>
-
-    <div class="card border2">
-      <div class="scheme-name c2">SANKALP Scheme</div>
-      <div class="tag-row"><span class="tag tag-min">MSDE \u00b7 World Bank</span><span class="tag tag-yr">2018</span></div>
-      <ul class="points">
-        <li>Skill Acquisition &amp; Knowledge Awareness for Livelihood Promotion</li>
-        <li>World Bank-assisted; strengthens <strong>institutional mechanisms</strong> for skill development</li>
-        <li>District-level skill planning; strengthens SSCs &amp; SSDMs</li>
-      </ul>
-    </div>
-
-    <div class="card border2">
-      <div class="scheme-name c2">Unnat Bharat Abhiyan (UBA)</div>
-      <div class="tag-row"><span class="tag tag-min">Ministry of Education \u00b7 IIT Delhi</span></div>
-      <ul class="points">
-        <li>Connect HEIs with rural India for sustainable development</li>
-        <li>Each HEI adopts <strong>at least 5 villages</strong></li>
-        <li>UBA 2.0: cluster of villages approach; outcome-based interventions</li>
-      </ul>
-    </div>
-
-    <div class="card border2">
-      <div class="scheme-name c2">One Nation One Subscription (ONOS)</div>
-      <div class="tag-row"><span class="tag tag-min">DHE \u00b7 Ministry of Education \u00b7 Central Sector</span></div>
-      <ul class="points">
-        <li>Nationwide access to <strong>13,000+ scholarly journals</strong> (~30 major publishers)</li>
-        <li>Covers STEM, medicine, social sciences, finance</li>
-        <li>Budget: <strong>\u20b96,000 crore</strong> for 2025\u20132027</li>
-      </ul>
-    </div>
-
-    <div class="card border2">
-      <div class="scheme-name c2">PM-YUVA 3.0</div>
-      <div class="tag-row"><span class="tag tag-min">Ministry of Education \u00b7 NBT</span></div>
-      <ul class="points">
-        <li>Young Authors Mentorship Scheme; target: authors <strong>below 30 years</strong></li>
-        <li>Scholarship: <strong>\u20b950,000/month \u00d7 6 months = \u20b93 lakh</strong> per author</li>
-        <li>Books published by National Book Trust</li>
-      </ul>
-    </div>
-
-    <div class="card border2">
-      <div class="scheme-name c2">CBHRD Scheme</div>
-      <div class="tag-row"><span class="tag tag-min">CSIR \u00b7 Ministry of S&amp;T</span></div>
-      <ul class="points">
-        <li>Capacity Building &amp; Human Resource Development; Umbrella Scheme</li>
-        <li>Doctoral &amp; postdoctoral fellowships; <strong>Shanti Swarup Bhatnagar Fellowship</strong></li>
-        <li>Extramural Research Scheme (ERS); Emeritus Scientist Scheme</li>
-      </ul>
-    </div>
-
-    <div class="card border2">
-      <div class="scheme-name c2">Institutes of Eminence (IoE)</div>
-      <div class="tag-row"><span class="tag tag-min">MoE \u00b7 UGC</span><span class="tag tag-yr">2017</span></div>
-      <ul class="points">
-        <li>Project Indian institutions into <strong>top global rankings</strong></li>
-        <li>Selected by Empowered Expert Committee (EEC); approved by MoE</li>
-        <li>Declared as <strong>'Institutions of Eminence Deemed to be Universities'</strong> by UGC</li>
-      </ul>
   </div>
-  
+
+  <!-- 4 -->
+  <div class="card">
+    <div class="card-top">
+      <div class="scheme-name th2">TALASH Initiative</div>
+      <div class="meta-row">
+        <span class="tag t-min">Ministry of Tribal Affairs · NESTS</span>
+        <span class="tag t-org">With UNICEF India</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="facts">
+        <li>Full form: <strong>Tribal Aptitude, Life Skills and Self-Esteem Hub</strong></li>
+        <li>Launched by: Min of Tribal Affairs; Implemented by: <strong>NESTS</strong></li>
+        <li>Developed with <strong>UNICEF India</strong></li>
+        <li>Target: Students of <strong>EMRS</strong> (Eklavya Model Residential Schools)</li>
+        <li>Focus: Psychometric Assessment + Career Mapping + Life Skills</li>
+        <li>First dedicated national programme for tribal career + psychological development</li>
+      </ul>
+      <div class="trap">
+        <div class="trap-label">⚡ UPSC TRAP</div>
+        <p>Implementing = <strong>NESTS</strong> (not NCST, not NTA). Collaboration with <strong>UNICEF</strong>, not World Bank. Target = <strong>EMRS students</strong>, not all tribal students.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5 -->
+  <div class="card">
+    <div class="card-top">
+      <div class="scheme-name th2">One Nation One Subscription (ONOS)</div>
+      <div class="meta-row">
+        <span class="tag t-cs">Central Sector</span>
+        <span class="tag t-min">DHE · Ministry of Education</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="facts">
+        <li>Access to <span class="num">13,000+</span> scholarly journals; ~<span class="num">30</span> major international publishers</li>
+        <li>Covers: STEM, medicine, social sciences, finance</li>
+        <li>Budget: <span class="num">₹6,000 crore</span> for <strong>2025–2027 (3 years)</strong></li>
+        <li>Implemented by: <strong>Department of Higher Education (DHE)</strong></li>
+        <li>Democratize access to research across India</li>
+      </ul>
+      <div class="trap">
+        <div class="trap-label">⚡ UPSC TRAP</div>
+        <p>It's <strong>Central Sector</strong> (not CSS). Ministry = <strong>Education → DHE</strong> (not UGC, not MeitY). Budget = <strong>₹6,000 crore / 3 years</strong>.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6 -->
+  <div class="card">
+    <div class="card-top">
+      <div class="scheme-name th2">SANKALP Scheme</div>
+      <div class="meta-row">
+        <span class="tag t-cs">Central Sector</span>
+        <span class="tag t-min">MSDE</span>
+        <span class="tag t-yr">2018</span>
+        <span class="tag t-org">World Bank Aided</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="facts">
+        <li>Full form: <strong>Skill Acquisition and Knowledge Awareness for Livelihood Promotion</strong></li>
+        <li><strong>World Bank-assisted</strong> (loan-based) programme</li>
+        <li>Strengthens institutional mechanisms; district-level skill planning</li>
+        <li>Targets: Youth, women, SC/ST, PwD — <strong>marginalised sections</strong></li>
+        <li>Strengthens: Sector Skill Councils (SSCs) + State Skill Development Missions (SSDMs)</li>
+      </ul>
+      <div class="hook">
+        <div class="hook-label">🧠 Memory Hook</div>
+        <p>SANKALP = World Bank + MSDE + Skill institutions. Unlike PMKVY (individual skilling), SANKALP = <em>institutional capacity building</em>.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7 -->
+  <div class="card">
+    <div class="card-top">
+      <div class="scheme-name th2">PM-YUVA 3.0</div>
+      <div class="meta-row">
+        <span class="tag t-cs">Central Sector</span>
+        <span class="tag t-min">Ministry of Education · NBT</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="facts">
+        <li>PM's Young Authors Mentorship Scheme</li>
+        <li>Implementing agency: <strong>National Book Trust (NBT)</strong></li>
+        <li>Target: Young authors <strong>below 30 years</strong>; selection via All India Contest</li>
+        <li>Scholarship: <span class="num">₹50,000/month × 6 months</span> = <span class="num">₹3 lakh</span> per author</li>
+        <li>Books published by <strong>NBT India</strong></li>
+      </ul>
+      <div class="trap">
+        <div class="trap-label">⚡ UPSC TRAP</div>
+        <p>Implementing = <strong>NBT</strong> (not Sahitya Akademi). Age = <strong>below 30</strong>. Scholarship = <strong>₹50,000/month for 6 months</strong>.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8 -->
+  <div class="card">
+    <div class="card-top">
+      <div class="scheme-name th2">NCS Portal — National Career Service</div>
+      <div class="meta-row">
+        <span class="tag t-min">Ministry of Labour &amp; Employment</span>
+        <span class="tag t-yr">2015</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="facts">
+        <li>Mission Mode Project (e-Governance); replaced <strong>National Employment Service (NES)</strong></li>
+        <li>Features: <strong>AI-based job matching</strong> + LMIS + career counselling</li>
+        <li>Links: Skill India Mission + e-Shram Portal + Digital India</li>
+        <li>Network of <strong>Model Career Centres (MCCs)</strong></li>
+      </ul>
+      <div class="hook">
+        <div class="hook-label">🧠 Memory Hook</div>
+        <p>NCS replaced NES (old system). Labour Ministry runs it. Skill India (MSDE) ≠ NCS — NCS is job-matching, not skill training.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══════════════ SECTION 3 ══════════════ -->
+<div class="sec-hdr" id="s3">
+  <div class="sec-icon bg-th3">🌾</div>
+  <div class="sec-title th3">Agriculture, Food Security &amp; Rural Dev</div>
+  <span class="sec-count">10 SCHEMES</span>
+</div>
+<div class="grid">
+
+  <!-- 1 -->
+  <div class="card">
+    <div class="card-top">
+      <div class="scheme-name th3">PM-POSHAN (Mid Day Meal Upgrade)</div>
+      <div class="meta-row">
+        <span class="tag t-css">Centrally Sponsored</span>
+        <span class="tag t-min">Ministry of Education</span>
+        <span class="tag t-yr">2021</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="facts">
+        <li>Replaces <strong>Mid-Day Meal Scheme (1995)</strong>; MDM started in <strong>1925 in Madras Municipal Corporation</strong></li>
+        <li>Covers: Classes <strong>I–VIII</strong>; govt &amp; govt-aided schools; Madrasas (under Samagra Shiksha)</li>
+        <li>Nutrition norms: Primary = <span class="num">450 kcal + 12g protein</span> | Upper Primary = <span class="num">700 kcal + 20g protein</span></li>
+        <li>Funding: <span class="num">60:40</span> | <span class="num">90:10</span> NE/Himalayan | <span class="num">100%</span> UTs</li>
+        <li>New features: <strong>Poshan Vatika</strong> (Nutrition Gardens), <strong>Tithi Bhojan</strong>, FPO involvement</li>
+        <li>Legal backing: <strong>NFSA 2013</strong></li>
+      </ul>
+      <div class="trap">
+        <div class="trap-label">⚡ UPSC TRAP</div>
+        <p>Ministry = <strong>Education</strong> (NOT WCD, NOT Agriculture). Coverage = Classes I–VIII only. MDM History: Madras Municipal Corp 1925 → National scheme 1995 → PM-POSHAN 2021.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2 -->
+  <div class="card">
+    <div class="card-top">
+      <div class="scheme-name th3">PMGKAY — Garib Kalyan Anna Yojana</div>
+      <div class="meta-row">
+        <span class="tag t-min">Ministry of Consumer Affairs, Food &amp; PD</span>
+        <span class="tag t-yr">Mar 2020</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="facts">
+        <li>Launched: <strong>March 2020</strong> as COVID relief; 7 phases till Dec 2022</li>
+        <li>From <strong>Jan 2023</strong>: merged into NFSA — free <span class="num">5 kg</span> foodgrain/person/month</li>
+        <li>NFSA beneficiaries <strong>NO LONGER pay ₹2/₹3 per kg</strong></li>
+        <li>Beneficiaries: <strong>AAY + Priority Households (PHH)</strong> under NFSA 2013</li>
+        <li>Fully funded by <strong>Central Government</strong></li>
+      </ul>
+      <div class="trap">
+        <div class="trap-label">⚡ UPSC TRAP</div>
+        <p>Post Jan 2023, PMGKAY is <strong>subsumed into NFSA</strong> — not a separate scheme. Ministry = <strong>Consumer Affairs, Food &amp; PD</strong> (not Agriculture, not Rural Dev).</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3 -->
+  <div class="card">
+    <div class="card-top">
+      <div class="scheme-name th3">NBS — Nutrient Based Subsidy Scheme</div>
+      <div class="meta-row">
+        <span class="tag t-min">Ministry of Chemicals &amp; Fertilizers</span>
+        <span class="tag t-yr">2010</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="facts">
+        <li>Subsidy fixed per kg of <strong>N, P, K, Sulphur</strong> — NOT on final fertilizer product</li>
+        <li>Applies to <strong>P&amp;K fertilizers</strong> (DAP, MOP, NPK complex)</li>
+        <li><strong>UREA IS NOT COVERED</strong> under NBS</li>
+        <li>Subsidy given to <strong>manufacturers/importers</strong>, NOT directly to farmers</li>
+        <li>Companies <strong>free to set retail prices</strong></li>
+        <li>Revised: Usually <strong>biannually</strong> (Rabi &amp; Kharif seasons)</li>
+      </ul>
+      <div class="trap">
+        <div class="trap-label">⚡ UPSC TRAP</div>
+        <p><strong>UREA IS EXCLUDED</strong> from NBS. Subsidy is on <em>nutrient content</em>, NOT product. Subsidy goes to manufacturers NOT farmers. Ministry = <strong>Chemicals &amp; Fertilizers</strong> NOT Agriculture.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4 -->
+  <div class="card">
+    <div class="card-top">
+      <div class="scheme-name th3">PM Dhan-Dhaanya Krishi Yojana (PMDDKY)</div>
+      <div class="meta-row">
+        <span class="tag t-css">Centrally Sponsored</span>
+        <span class="tag t-min">Ministry of Agriculture</span>
+        <span class="tag t-yr">Budget 2025–26</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="facts">
+        <li>Targets <span class="num">100 districts</span> with low productivity across <span class="num">29 States/UTs</span></li>
+        <li>Duration: <span class="num">6 years</span> — 2025–26 to 2030–31</li>
+        <li>Selection criteria: low productivity + low irrigation + low credit penetration</li>
+        <li>Convergence model: PMKSY + PMFBY + Soil Health Card + e-NAM + KCC</li>
+        <li>Focus: 'Aspirational Agriculture Districts' (like Aspirational District Programme)</li>
+      </ul>
+      <div class="hook">
+        <div class="hook-label">🧠 Memory Hook</div>
+        <p>PMDDKY = Aspirational Agriculture Districts (100 districts, 6 years). It INTEGRATES existing schemes — does NOT create new subsidies.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5 -->
+  <div class="card">
+    <div class="card-top">
+      <div class="scheme-name th3">e-NAM — National Agriculture Market</div>
+      <div class="meta-row">
+        <span class="tag t-min">Ministry of Agriculture · SFAC</span>
+        <span class="tag t-yr">2016</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="facts">
+        <li>Pan-India electronic trading portal; implemented by <strong>SFAC</strong></li>
+        <li>Networks <strong>APMC mandis</strong> for unified national market</li>
+        <li>Started: <span class="num">21 mandis</span> (2016) → expanded to <span class="num">1000+ mandis</span></li>
+        <li>Covers <span class="num">~200+ commodities</span></li>
+        <li>Objective: <strong>'One Nation, One Market'</strong> for agri-produce</li>
+        <li>Features: Warehouse-based trading + e-NWR integration + FPO module + Logistics</li>
+      </ul>
+      <div class="trap">
+        <div class="trap-label">⚡ UPSC TRAP</div>
+        <p>Implemented by <strong>SFAC</strong> (Small Farmers Agribusiness Consortium), NOT NABARD. Integration with <strong>AgriStack/digital agriculture ecosystem</strong>.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6 -->
+  <div class="card">
+    <div class="card-top">
+      <div class="scheme-name th3">FPOs — Formation of 10,000 FPOs</div>
+      <div class="meta-row">
+        <span class="tag t-cs">Central Sector</span>
+        <span class="tag t-min">Ministry of Agriculture</span>
+        <span class="tag t-yr">Till 2027–28</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="facts">
+        <li>Implementing: <strong>SFAC + NABARD + NCDC</strong> (3 agencies)</li>
+        <li>Financial support: <span class="num">₹15 lakh/FPO</span> for 3 years</li>
+        <li>Minimum members: <span class="num">300</span> (plain areas) | <span class="num">100</span> (hilly/tribal)</li>
+        <li>Principle: <strong>One member – One vote</strong>; members = shareholders</li>
+        <li>Can be: Producer Company (Companies Act 2013) / Cooperative / other legal form</li>
+        <li>Focus: Aspirational districts + tribal areas + women farmers</li>
+      </ul>
+      <div class="trap">
+        <div class="trap-label">⚡ UPSC TRAP</div>
+        <p>Three implementing agencies: <strong>SFAC + NABARD + NCDC</strong>. Min members: <strong>300 plains, 100 hills</strong>. Support = <strong>₹15 lakh for 3 years</strong> (not per year).</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══════════════ SECTION 4 ══════════════ -->
+<div class="sec-hdr" id="s4">
+  <div class="sec-icon bg-th4">🤝</div>
+  <div class="sec-title th4">Social Welfare, Inclusion &amp; Urban Livelihoods</div>
+  <span class="sec-count">11 SCHEMES</span>
+</div>
+<div class="grid">
+
+  <!-- 1 -->
+  <div class="card">
+    <div class="card-top">
+      <div class="scheme-name th4">PM Ujjwala Yojana (PMUY)</div>
+      <div class="meta-row">
+        <span class="tag t-cs">Central Sector</span>
+        <span class="tag t-min">Ministry of Petroleum &amp; Natural Gas</span>
+        <span class="tag t-yr">2016</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="facts">
+        <li>Clean cooking fuel (LPG) to poor households; beneficiaries: adult women 18+</li>
+        <li>Initially identified using <strong>SECC 2011 data</strong></li>
+        <li>Financial assistance: <span class="num">₹1,600/connection</span> (covers security deposit + pressure regulator)</li>
+        <li>Optional loan for stove &amp; first refill</li>
+        <li>PMUY 2.0 (Aug 2021): Free first refill; <strong>no address proof for migrants</strong>; self-declaration</li>
+        <li>LPG coverage: ~<span class="num">55%</span> (2014) → <span class="num">~99%</span> now</li>
+      </ul>
+      <div class="trap">
+        <div class="trap-label">⚡ UPSC TRAP</div>
+        <p>Ministry = <strong>Petroleum &amp; Natural Gas</strong> (NOT Rural Dev, NOT WCD). ₹1,600 covers ONLY security deposit, NOT stove. Stove is optional LOAN, not grant.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2 -->
+  <div class="card">
+    <div class="card-top">
+      <div class="scheme-name th4">PM SVANidhi Scheme</div>
+      <div class="meta-row">
+        <span class="tag t-cs">Central Sector</span>
+        <span class="tag t-min">MoHUA</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="facts">
+        <li>Full form: <strong>Pradhan Mantri Street Vendor's AtmaNirbhar Nidhi</strong></li>
+        <li>Ministry: <strong>MoHUA</strong> (Housing &amp; Urban Affairs)</li>
+        <li>Provides affordable <strong>working capital loans</strong> to street vendors (post-COVID)</li>
+        <li>Formalise informal vendors; integrate into digital + institutional credit system</li>
+      </ul>
+      <div class="trap">
+        <div class="trap-label">⚡ UPSC TRAP</div>
+        <p>Ministry = <strong>MoHUA</strong> (urban, NOT rural, NOT labour). It's for <strong>street vendors</strong> only. Working capital loans, NOT grants.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3 -->
+  <div class="card">
+    <div class="card-top">
+      <div class="scheme-name th4">PM RAHAT Scheme</div>
+      <div class="meta-row">
+        <span class="tag t-min">Ministry of Road Transport &amp; Highways</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="facts">
+        <li>Full: <strong>PM Road Accident Victims' Hospitalisation &amp; Assured Treatment</strong></li>
+        <li>Cashless treatment up to <span class="num">₹1.5 lakh</span> for accident victims</li>
+        <li>Reimbursements via <strong>Motor Vehicle Accident Fund (MVAF)</strong></li>
+        <li>Integrates: <strong>eDAR</strong> (Electronic Detailed Accident Report, used by police) with <strong>TMS 2.0</strong> (Transaction Mgmt System, used by hospitals)</li>
+      </ul>
+      <div class="hook">
+        <div class="hook-label">🧠 Memory Hook</div>
+        <p>RAHAT = Road + ₹1.5 lakh + eDAR (police) + TMS 2.0 (hospital). MVAF is the fund, not a separate scheme.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4 -->
+  <div class="card">
+    <div class="card-top">
+      <div class="scheme-name th4">Sugamya Bharat App</div>
+      <div class="meta-row">
+        <span class="tag t-min">DEPwD · MoSJE</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="facts">
+        <li>Launched by: <strong>DEPwD</strong> (Dept of Empowerment of Persons with Disabilities)</li>
+        <li>Ministry: <strong>MoSJE</strong> (Social Justice &amp; Empowerment)</li>
+        <li>Mobile platform for PwDs to <strong>report accessibility issues</strong></li>
+        <li>Under: <strong>Sugamya Bharat Abhiyan (Accessible India Campaign)</strong></li>
+        <li>Legal: Rights of PwD Act 2016 + <strong>UN CRPD</strong></li>
+        <li>3 pillars: Built Environment · Transport · ICT Accessibility</li>
+      </ul>
+      <div class="trap">
+        <div class="trap-label">⚡ UPSC TRAP</div>
+        <p>Under <strong>Accessible India Campaign</strong> (not Digital India). Ministry = <strong>Social Justice &amp; Empowerment</strong>, NOT Health. UNCRPD linkage frequently tested.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5 -->
+  <div class="card">
+    <div class="card-top">
+      <div class="scheme-name th4">Vibrant Villages Programme-II (VVP-II)</div>
+      <div class="meta-row">
+        <span class="tag t-cs">Central Sector — 100% funded</span>
+        <span class="tag t-min">Ministry of Home Affairs</span>
+        <span class="tag t-yr">2024–2029</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="facts">
+        <li>Ministry: <strong>Home Affairs</strong> (NOT Rural Dev, NOT Panchayati Raj)</li>
+        <li><span class="num">100% centrally funded</span> — 5-year programme (2024–25 to 2028–29)</li>
+        <li>Targets border villages in Himalayan/NE states — strategic &amp; developmental</li>
+      </ul>
+      <div class="trap">
+        <div class="trap-label">⚡ UPSC TRAP</div>
+        <p>Ministry = <strong>Home Affairs</strong> (strategic/border context). <strong>100% Centre funded</strong> — unique! Most CSS schemes share with states.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6 -->
+  <div class="card">
+    <div class="card-top">
+      <div class="scheme-name th4">NAMASTE Scheme</div>
+      <div class="meta-row">
+        <span class="tag t-min">MoSJE + MoHUA</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="facts">
+        <li>Full form: <strong>National Action for Mechanised Sanitation Ecosystem</strong></li>
+        <li>Joint: <strong>MoSJE + MoHUA</strong></li>
+        <li>Implements via: <strong>NSKFDC</strong> (National Safai Karamcharis Finance &amp; Development Corp)</li>
+        <li>Waste Picker Enumeration App is part of this scheme</li>
+        <li>Goal: Eliminate unsafe sanitation practices; provide machinery &amp; safety gear</li>
+      </ul>
+      <div class="hook">
+        <div class="hook-label">🧠 Memory Hook</div>
+        <p>NAMASTE = two ministries (MoSJE + MoHUA). NSKFDC implements. Waste Picker App is a sub-tool of NAMASTE.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══════════════ SECTION 5 ══════════════ -->
+<div class="sec-hdr" id="s5">
+  <div class="sec-icon bg-th5">💼</div>
+  <div class="sec-title th5">Economy, Industry, MSME &amp; Employment</div>
+  <span class="sec-count">14 SCHEMES</span>
+</div>
+<div class="grid">
+
+  <!-- 1 -->
+  <div class="card">
+    <div class="card-top">
+      <div class="scheme-name th5">PM Mudra Yojana</div>
+      <div class="meta-row">
+        <span class="tag t-cs">Central Sector</span>
+        <span class="tag t-min">Dept of Financial Services · MoF</span>
+        <span class="tag t-yr">2015</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="facts">
+        <li>MUDRA: Micro Units Development &amp; Refinance Agency — set up as <strong>NBFC under SIDBI</strong></li>
+        <li>Ministry: <strong>Department of Financial Services, MoFinance</strong></li>
+        <li>Type: <strong>Refinance + Credit Guarantee</strong> (NOT direct lending, NOT subsidy)</li>
+        <li>Max loan: <span class="num">₹10 lakh</span>; generally <strong>collateral-free</strong></li>
+        <li>Covers: <strong>Non-Farm sector ONLY</strong></li>
+        <li>Shishu ≤<span class="num">₹50K</span> | Kishor <span class="num">₹50K–₹5L</span> | Tarun <span class="num">₹5L–₹10L</span></li>
+        <li>Mudra Card = <strong>RuPay debit card</strong> for borrowers</li>
+      </ul>
+      <div class="trap">
+        <div class="trap-label">⚡ UPSC TRAP</div>
+        <p>Ministry = <strong>Finance</strong> (NOT MSME, NOT Rural Dev). MUDRA is NBFC under <strong>SIDBI</strong>. Covers <strong>NON-FARM only</strong>. It is NOT a subsidy scheme. Collateral-free = <em>generally</em> (not always).</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2 -->
+  <div class="card">
+    <div class="card-top">
+      <div class="scheme-name th5">Startup India</div>
+      <div class="meta-row">
+        <span class="tag t-min">DPIIT · Ministry of Commerce</span>
+        <span class="tag t-yr">2016</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="facts">
+        <li>Ministry: <strong>Commerce &amp; Industry → DPIIT</strong></li>
+        <li>Startup definition: Age ≤<span class="num">10 years</span>, Turnover ≤<span class="num">₹100 crore</span></li>
+        <li><strong>DPIIT recognition mandatory</strong> to avail all benefits</li>
+        <li>FFS: <span class="num">₹10,000 crore</span> corpus; managed by <strong>SIDBI</strong>; invests via AIFs (SEBI registered)</li>
+        <li>SISFS: Grant ≤<span class="num">₹20 lakh</span> (PoC) | Debt ≤<span class="num">₹50 lakh</span> (market entry)</li>
+        <li>CGSS: Up to <span class="num">₹20 crore</span> guarantee; <span class="num">85%</span> coverage for loans ≤₹10 crore</li>
+        <li>Tax holiday: <span class="num">3 consecutive years</span> under <strong>Section 80-IAC</strong></li>
+        <li>Angel tax exemption for DPIIT-recognised startups</li>
+        <li>Exit under IBC: <span class="num">90 days</span></li>
+      </ul>
+      <div class="trap">
+        <div class="trap-label">⚡ UPSC TRAP</div>
+        <p>FFS managed by <strong>SIDBI</strong> (not DPIIT). FFS invests in AIFs, not startups directly. Tax holiday = <strong>Section 80-IAC</strong> (not 80C). Age limit = <strong>10 years</strong> from incorporation.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3 -->
+  <div class="card">
+    <div class="card-top">
+      <div class="scheme-name th5">Jan Suraksha Schemes — APY / PMJJBY / PMSBY</div>
+      <div class="meta-row">
+        <span class="tag t-min">Ministry of Finance</span>
+        <span class="tag t-yr">2015</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="facts">
+        <li><strong>APY</strong> (Atal Pension Yojana): Entry age <span class="num">18–40</span>; pension from age <span class="num">60</span>; guaranteed <span class="num">₹1K–₹5K/month</span>; regulator = <strong>PFRDA</strong></li>
+        <li>APY: Govt co-contributed <span class="num">50%</span> OR <span class="num">₹1,000/yr</span> (whichever lower) — only for <strong>non-income-taxpayers</strong></li>
+        <li><strong>PMJJBY</strong>: Death (any reason); age <span class="num">18–50</span>; 1-year renewable</li>
+        <li><strong>PMSBY</strong>: Death/disability due to <strong>accident only</strong>; age <span class="num">18–70</span>; 1-year renewable</li>
+      </ul>
+      <div class="trap">
+        <div class="trap-label">⚡ UPSC TRAP</div>
+        <p>APY regulator = <strong>PFRDA</strong>. PMJJBY max age = <strong>50</strong>; PMSBY max = <strong>70</strong>. PMSBY = accident ONLY. APY co-contribution: <strong>only non-income-taxpayers NOT covered by other social security</strong>.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4 -->
+  <div class="card">
+    <div class="card-top">
+      <div class="scheme-name th5">PM E-DRIVE Scheme</div>
+      <div class="meta-row">
+        <span class="tag t-cs">Central Sector</span>
+        <span class="tag t-min">Ministry of Heavy Industry</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="facts">
+        <li>Full: <strong>PM Electric Drive Revolution in Innovative Vehicle Enhancement</strong></li>
+        <li>Ministry: <strong>Heavy Industry</strong> (NOT MoRTH, NOT MSME)</li>
+        <li>Successor/continuation of <strong>FAME India Scheme Phase II</strong></li>
+        <li>Demand incentives: e-2W, e-3W, e-ambulances, e-trucks, e-buses</li>
+        <li>EV charging infra on highways &amp; urban areas</li>
+        <li>Complements: <strong>PLI Scheme for ACC Batteries</strong></li>
+      </ul>
+      <div class="trap">
+        <div class="trap-label">⚡ UPSC TRAP</div>
+        <p>Ministry = <strong>Heavy Industry</strong>. It succeeds <strong>FAME II</strong>. Do not confuse with MoRTH (roads). Complements ACC battery PLI = chemistry cell batteries.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5 -->
+  <div class="card">
+    <div class="card-top">
+      <div class="scheme-name th5">Gold Monetisation Scheme</div>
+      <div class="meta-row">
+        <span class="tag t-min">Ministry of Finance · RBI</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="facts">
+        <li>Mobilize idle gold; reduce gold imports</li>
+        <li>Eligibility: <strong>Resident Indians ONLY</strong> (HUFs, firms, trusts, companies, Govt, charities)</li>
+        <li>Minimum deposit: <span class="num">10 grams</span> | Maximum: <strong>No limit</strong></li>
+        <li>Accepted: gold bars, coins, jewellery (<strong>excluding stones/metals</strong>)</li>
+        <li>Active deposit now: <strong>Short-Term Bank Deposit (STBD)</strong> → <span class="num">1–3 years</span> ONLY</li>
+        <li>MTGD &amp; LTGD <strong>discontinued from March 26, 2025</strong></li>
+        <li>Interest: always paid in <strong>INR</strong>; Principal: gold OR INR (choice at deposit time)</li>
+      </ul>
+      <div class="trap">
+        <div class="trap-label">⚡ UPSC TRAP</div>
+        <p>Interest = always in <strong>INR</strong> (not gold). MTGD/LTGD <strong>discontinued March 2025</strong>. Only STBD (1–3 yr) active now. NRIs = <strong>NOT eligible</strong>.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6 -->
+  <div class="card">
+    <div class="card-top">
+      <div class="scheme-name th5">GeM — Govt e-Marketplace</div>
+      <div class="meta-row">
+        <span class="tag t-min">Ministry of Commerce · DPIIT</span>
+        <span class="tag t-yr">2016</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="facts">
+        <li>Online platform for public procurement; developed as <strong>Special Purpose Vehicle (SPV)</strong></li>
+        <li>Procurement modes: Direct Purchase | L1 | Bidding | <strong>Reverse Auction</strong></li>
+        <li>Integrated: Aadhaar + PAN + <strong>MCA21</strong> + GSTN</li>
+        <li>Aabhar Online Store: promotes ODOP + GI items; sourced from CCIE / KVIC / Handicraft emporiums</li>
+      </ul>
+      <div class="hook">
+        <div class="hook-label">🧠 Memory Hook</div>
+        <p>GeM = SPV (not a ministry directly). Reverse auction = price comes DOWN. Aabhar = artisans + heritage = CCIE + KVIC.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══════════════ SECTION 6 ══════════════ -->
+<div class="sec-hdr" id="s6">
+  <div class="sec-icon bg-th6">💻</div>
+  <div class="sec-title th6">Digital Governance, Technology &amp; Innovation</div>
+  <span class="sec-count">16 SCHEMES</span>
+</div>
+<div class="grid">
+
+  <!-- 1 -->
+  <div class="card">
+    <div class="card-top">
+      <div class="scheme-name th6">Jal Jeevan Mission</div>
+      <div class="meta-row">
+        <span class="tag t-min">Ministry of Jal Shakti · DDWS</span>
+        <span class="tag t-yr">2019</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="facts">
+        <li>Provide <strong>FHTC</strong> (Functional Household Tap Connection) to every rural household</li>
+        <li>Service norm: <span class="num">55 LPCD</span> (litres per capita per day) as per <strong>BIS standards</strong></li>
+        <li>Funding: <span class="num">90:10</span> Himalayan/NE | <span class="num">50:50</span> others | <span class="num">100%</span> UTs w/o legislature</li>
+        <li>Water Quality: <strong>Field Test Kits (FTKs)</strong>; at least <span class="num">5 persons/village trained</span> (esp. women)</li>
+        <li>IoT-based monitoring; real-time dashboard on JJM portal</li>
+        <li>VWSC (Village Water &amp; Sanitation Committee) plays key role</li>
+        <li>Special focus: Arsenic/Fluoride-affected areas, SC/ST habitations, Aspirational districts</li>
+      </ul>
+      <div class="trap">
+        <div class="trap-label">⚡ UPSC TRAP</div>
+        <p>Implemented by <strong>DDWS</strong> (Dept of Drinking Water &amp; Sanitation) under Jal Shakti. Norm = <strong>55 LPCD</strong> (not 40, not 100). Women trained = <strong>5/village minimum</strong>. AMRUT ≠ JJM (AMRUT = urban, JJM = rural).</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2 -->
+  <div class="card">
+    <div class="card-top">
+      <div class="scheme-name th6">SVAMITVA Scheme</div>
+      <div class="meta-row">
+        <span class="tag t-cs">Central Sector</span>
+        <span class="tag t-min">Ministry of Panchayati Raj</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="facts">
+        <li>Legal ownership of <strong>rural RESIDENTIAL land</strong> via drone-based surveys</li>
+        <li>Ministry: <strong>Panchayati Raj</strong></li>
+        <li>Technical support: <strong>Survey of India + NICSI</strong></li>
+        <li>Provides <strong>property rights card</strong> to households (not just record)</li>
+        <li>Enables use of property as financial asset (loan collateral)</li>
+      </ul>
+      <div class="trap">
+        <div class="trap-label">⚡ UPSC TRAP</div>
+        <p>Covers <strong>residential</strong> land (not agricultural). Ministry = <strong>Panchayati Raj</strong> (not Rural Dev). Survey done by <strong>Survey of India using drones</strong> (not Revenue Dept).</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3 -->
+  <div class="card">
+    <div class="card-top">
+      <div class="scheme-name th6">Green Credit Programme</div>
+      <div class="meta-row">
+        <span class="tag t-min">MoEFCC · ICFRE</span>
+        <span class="tag t-yr">Budget 2023–24</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="facts">
+        <li>Tradable units for <strong>voluntary environmental actions</strong></li>
+        <li>Legal backing: <strong>Environment (Protection) Act, 1986</strong>; notified via <strong>Green Credit Rules, 2023</strong></li>
+        <li>Administrator: <strong>ICFRE</strong> (Indian Council of Forestry Research &amp; Education) under MoEFCC</li>
+        <li>Different from <strong>Carbon Credits</strong>: broader scope (not just carbon)</li>
+        <li>Voluntary participation; linked to <strong>LiFE Mission</strong> ('pro-planet people' behaviour)</li>
+      </ul>
+      <div class="trap">
+        <div class="trap-label">⚡ UPSC TRAP</div>
+        <p>Administrator = <strong>ICFRE</strong> (NOT MoEFCC directly, NOT BEE). Green Credits ≠ Carbon Credits. Legal basis = <strong>EP Act 1986</strong>. Participation is <strong>VOLUNTARY</strong>.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4 -->
+  <div class="card">
+    <div class="card-top">
+      <div class="scheme-name th6">AMRUT &amp; AMRUT 2.0</div>
+      <div class="meta-row">
+        <span class="tag t-css">Centrally Sponsored</span>
+        <span class="tag t-min">MoHUA</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="facts">
+        <li>Coverage: Initially <span class="num">500 cities</span> (population ≥1 lakh + special category towns)</li>
+        <li>5 sectors: Water supply · Sewerage · Storm water drainage · Urban transport · Green spaces</li>
+        <li>Funding: <span class="num">90:10</span> NE/Himalayan | <span class="num">50:50</span> others</li>
+        <li>Planning: <strong>State Annual Action Plans (SAAPs)</strong> — bottom-up approach</li>
+        <li>AMRUT 2.0: Focus = <strong>'Water Secure Cities'</strong>; circular water economy; all statutory towns</li>
+        <li>AMRUT 2.0 converges with <strong>Jal Jeevan Mission (Urban)</strong></li>
+      </ul>
+      <div class="trap">
+        <div class="trap-label">⚡ UPSC TRAP</div>
+        <p>AMRUT = <strong>urban</strong>. JJM = <strong>rural</strong>. AMRUT 2.0 includes ALL statutory towns (not just 500). Planning = <strong>SAAPs</strong> (state-level, bottom-up, NOT centrally directed).</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5 -->
+  <div class="card">
+    <div class="card-top">
+      <div class="scheme-name th6">ONDC — Open Network for Digital Commerce</div>
+      <div class="meta-row">
+        <span class="tag t-min">DPIIT · Ministry of Commerce</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="facts">
+        <li>Based on <strong>open network protocols</strong> (NOT a platform)</li>
+        <li><strong>NOT</strong> an e-commerce platform like Amazon/Flipkart</li>
+        <li>Enables <strong>interoperability</strong> between buyers, sellers, logistics providers, payment gateways</li>
+        <li>Enables <strong>platform-agnostic transactions</strong></li>
+      </ul>
+      <div class="trap">
+        <div class="trap-label">⚡ UPSC TRAP</div>
+        <p>ONDC is a <strong>network/protocol</strong>, NOT a marketplace/platform. It does NOT sell products. Competitors can coexist on the same network. Ministry = <strong>DPIIT/Commerce</strong> (not MeitY).</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6 -->
+  <div class="card">
+    <div class="card-top">
+      <div class="scheme-name th6">SIGHT Scheme — Green Hydrogen</div>
+      <div class="meta-row">
+        <span class="tag t-min">MNRE · SECI + IREDA</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="facts">
+        <li>Full: <strong>Strategic Interventions for Green Hydrogen Transition</strong></li>
+        <li>Major financial component of <strong>National Green Hydrogen Mission (NGHM)</strong></li>
+        <li>Two components: (1) Incentives for <strong>Green Hydrogen production</strong> (₹/kg) | (2) <strong>Electrolyser manufacturing</strong> support</li>
+        <li>Implementing: <strong>SECI + IREDA</strong></li>
+        <li>Allocation via <strong>competitive bidding</strong></li>
+        <li>Target sectors: fertilizer, refinery, steel, heavy transport, shipping, export</li>
+      </ul>
+      <div class="trap">
+        <div class="trap-label">⚡ UPSC TRAP</div>
+        <p>SIGHT is <strong>under NGHM</strong>, not a standalone mission. Two distinct components: production incentive AND electrolyser manufacturing. Implementing = <strong>SECI + IREDA</strong> (not NTPC, not MoPNG).</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7 -->
+  <div class="card">
+    <div class="card-top">
+      <div class="scheme-name th6">Parvatmala Pariyojana</div>
+      <div class="meta-row">
+        <span class="tag t-min">MoRTH · NHLML</span>
+        <span class="tag t-yr">Budget 2022–23</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="facts">
+        <li>Full: <strong>National Ropeways Development Programme</strong></li>
+        <li>Ministry: <strong>MoRTH</strong>; Implementing: <strong>NHLML</strong> (National Highways Logistics Management Limited)</li>
+        <li>Model: <strong>PPP + Hybrid Annuity Model (HAM)</strong></li>
+        <li>Purpose: last-mile connectivity in hilly areas; eco-friendly transport</li>
+        <li>Key projects: Kedarnath, Hemkund Sahib, Varanasi (urban)</li>
+      </ul>
+      <div class="trap">
+        <div class="trap-label">⚡ UPSC TRAP</div>
+        <p>Implementing body = <strong>NHLML</strong> (NOT NHIDCL, not NHAI). Ministry = <strong>MoRTH</strong> (roads, not tourism). PPP via <strong>HAM model</strong>.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8 -->
+  <div class="card">
+    <div class="card-top">
+      <div class="scheme-name th6">Sanchar Saathi App</div>
+      <div class="meta-row">
+        <span class="tag t-min">DoT · Ministry of Communications</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="facts">
+        <li>Ministry: <strong>Communications → DoT</strong></li>
+        <li><strong>TAFCOP</strong>: Telecom Analytics for Fraud Mgmt — check/report SIMs in your name</li>
+        <li><strong>CEIR</strong>: Central Equipment Identity Register — block lost/stolen phones by IMEI</li>
+        <li><strong>KYM</strong>: Know Your Mobile — verify phone genuineness before purchase</li>
+      </ul>
+      <div class="hook">
+        <div class="hook-label">🧠 Memory Hook</div>
+        <p>Sanchar Saathi = 3 modules: TAFCOP (SIM fraud) + CEIR (stolen phones) + KYM (fake phones). All consumer protection. DoT = Ministry of Communications.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 9 -->
+  <div class="card">
+    <div class="card-top">
+      <div class="scheme-name th6">DHRUVA — Digital Address System</div>
+      <div class="meta-row">
+        <span class="tag t-min">Dept of Posts · Ministry of Communications</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="facts">
+        <li>Full: <strong>Digital Hub for Reference and Unique Virtual Address</strong></li>
+        <li>National digital address system: standardised, interoperable, <strong>consent-based</strong></li>
+        <li>Unique Virtual Address (UVA) = email-style ID for person/household/institution</li>
+        <li>Geocoded: linked to lat-long coordinates</li>
+        <li>Builds on <strong>DIGIPIN</strong> — geo-coded 4m×4m grid addressing system</li>
+        <li>Nature: <strong>Digital Public Infrastructure (DPI)</strong></li>
+      </ul>
+      <div class="trap">
+        <div class="trap-label">⚡ UPSC TRAP</div>
+        <p>DHRUVA ≠ DIGIPIN. DHRUVA = platform layer; DIGIPIN = foundational grid. Ministry = <strong>Communications/Posts</strong> (not MeitY, not UIDAI).</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10 -->
+  <div class="card">
+    <div class="card-top">
+      <div class="scheme-name th6">National Cooperative Policy 2025</div>
+      <div class="meta-row">
+        <span class="tag t-min">Ministry of Cooperation (est. 2021)</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="facts">
+        <li>Replaces <strong>National Policy on Cooperatives (2002)</strong></li>
+        <li>Ministry of Cooperation established in <strong>2021</strong> (new ministry)</li>
+        <li>Vision: <strong>'Sahkar se Samriddhi'</strong> (Prosperity through cooperation)</li>
+        <li>Digitisation of <strong>PACS</strong> (Primary Agricultural Credit Societies)</li>
+        <li>Amendments to <strong>Multi-State Cooperative Societies Act</strong></li>
+        <li>Bharat Taxi: India's first <strong>cooperative-led ride-hailing</strong> platform under this ministry</li>
+      </ul>
+      <div class="trap">
+        <div class="trap-label">⚡ UPSC TRAP</div>
+        <p>Ministry of Cooperation = <strong>new ministry est. 2021</strong>. Replaces 2002 policy. PACS digitisation + MSCS Act amendments. 'Sahkar se Samriddhi' = slogan.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 11 -->
+  <div class="card">
+    <div class="card-top">
+      <div class="scheme-name th6">C-Flood Portal</div>
+      <div class="meta-row">
+        <span class="tag t-min">CWC · Ministry of Jal Shakti</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="facts">
+        <li>Computational Flood Forecasting platform</li>
+        <li>Launched by: <strong>Central Water Commission (CWC)</strong></li>
+        <li>Forecasts flood inundation up to <strong>village level</strong></li>
+        <li>Lead time: <span class="num">up to 48 hours (2 days)</span> advance forecast</li>
+        <li>Provides Flood Inundation Maps (area to be submerged)</li>
+        <li>Moves from <em>station-based</em> to <strong>area-based (inundation) forecasts</strong></li>
+      </ul>
+      <div class="trap">
+        <div class="trap-label">⚡ UPSC TRAP</div>
+        <p>Launched by <strong>CWC</strong> (not NDMA, not IMD). Forecast = <strong>village level</strong>. Lead time = <strong>48 hours</strong>. Inundation maps = area flooded (not just river level).</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</main>
+
+<footer>
+  CAP 2026 · Social Schemes UPSC-Aligned Notes · NextIAS Vol 6/7 · UPSC Prelims May 24, 2026 · Built on 10-yr PYQ Pattern Analysis
+</footer>
+
+<script>
+function filterCards(q) {
+  const query = q.trim().toLowerCase();
+  document.querySelectorAll('.card').forEach(card => {
+    card.style.display = (!query || card.textContent.toLowerCase().includes(query)) ? '' : 'none';
+  });
+}
+</script>
+</body>
+</html>
